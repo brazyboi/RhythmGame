@@ -266,6 +266,7 @@ bool playSoundMidi(string midiFile)
 		result = mFmodSystem.createSound(midiStream , FMOD.MODE.OPENMEMORY, ref soundExInfo, out sh.sound);
 
 		if(result != FMOD.RESULT.OK) {
+            UnityEngine.Debug.Log("prepareSoundMidiStream " + result);
 			return null;
 		}
 		soundHandles.Add (sh);
@@ -279,9 +280,9 @@ bool playSoundMidi(string midiFile)
 			result = sh.sound.setMode (FMOD.MODE.LOOP_OFF);
 			FMOD.ChannelGroup group = new FMOD.ChannelGroup();
 			result = mFmodSystem.playSound (sh.sound, group, false, out sh.channel);
-			//UnityEngine.Debug.Log ("playSound" + result);
+			UnityEngine.Debug.Log ("playSound " + result);
 			if (result != FMOD.RESULT.OK) {
-			//	UnityEngine.Debug.Log ("playSound failed");
+				UnityEngine.Debug.Log ("playSound failed");
 				return false;
 			}
 			return true;
@@ -596,7 +597,7 @@ bool playSoundMidi(string midiFile)
 
 	public bool playNoteFlute(int instrumentId_, int note, string folderInstrument, long duration, float volume) {
 		//stopAllNoteFlute();
-		//UnityEngine.Debug.Log ("playNoteFlute-------------" + (fluteIndex++) + " duration - "+ duration);
+		UnityEngine.Debug.Log ("playNoteFlute-------------" + (fluteIndex++) + " duration - "+ duration);
 		if(instrumentId != instrumentId_ || soundFont == null) {
 			instrumentId = instrumentId_;
 			soundFontOld = null;
@@ -647,7 +648,7 @@ bool playSoundMidi(string midiFile)
 
 	int stopFluteIndex = 0;
 	public bool stopAllNoteFlute(int atLeastMS_, int noteLastTimeMs_) {
-		//UnityEngine.Debug.Log ("stopAllNoteFlute-------------" + (stopFluteIndex++) + " atLeastMS_ - "+ atLeastMS_);
+		UnityEngine.Debug.Log ("stopAllNoteFlute-------------" + (stopFluteIndex++) + " atLeastMS_ - "+ atLeastMS_);
 		for(int i=0; i<fluteNotes.Count; i++) {
 			SoundNote sn = fluteNotes [i];
 			sn.stopWave (NOTE_DEFAULT_FADE_OUT_MS, atLeastMS_, noteLastTimeMs_);
