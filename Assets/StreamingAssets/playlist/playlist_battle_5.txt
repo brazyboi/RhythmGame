@@ -1,0 +1,151 @@
+﻿{
+	"name": "playlist_battle_5.pls",
+    "index": 5,
+	"list": 
+	[ 
+   
+        {
+        "title": "天意",
+        "artist": "刘德华",
+		"path": "tianyi.sht"	,		
+        "melody": 10000
+		}
+        ,
+        
+        {
+        "title": "星空",
+        "artist": "五月天",
+		"path": "xingkong-wuyuetian.sht"	,	
+        "instr": 0,
+        "melody": 3,
+		"blow": 0
+		}
+        ,
+         {
+        "title": "解脱",
+        "artist": "张惠妹",
+		"path": "zhanghuimei_jietuo.sht"	,		
+        "melody": 0
+		}
+        ,
+		 {
+        "title": "我可以抱你吗",
+        "artist": "张惠妹",
+		"path": "zhanghuimei_wokeyibaonima.sht"	,		
+        "melody": 10002
+		}
+        ,
+         {
+        "title": "我的最爱",
+        "artist": "张韶涵",
+		"path": "zhangshaohan_wodezuiai.sht"	,		
+        "melody": 10006
+		}
+
+        ,
+         {
+        "title": "别说对不起",
+        "artist": "S.H.E",
+		"path": "SHE-bieshuoduibuqi.sht"	,
+        "melody": 0
+		}
+        ,
+         
+          {
+		"title": "可爱女人",
+        "artist": "周杰伦",
+		"path": "keainvren.sht"	,		
+        "melody": 0
+		}
+        ,
+         {
+        "title": "祝我生日快乐",
+        "artist": "温岚",
+		"path": "wenlan-zhuwoshengrikuaile.sht"	,
+        "melody": 0
+		},
+		{
+        "title": "外面的世界",
+        "artist": "齐秦",
+		"path": "qiqin-waimiandeshijie.sht"	,		
+        "melody": 13
+		}
+        ,
+		
+		{
+        "title": "往事随风",
+        "artist": "齐秦",
+		"path": "qiqin-wangshisuifeng.sht"	,		
+        "melody": 3
+		}
+        ,
+        
+        {
+        "title": "城里的月光",
+        "artist": "许美静",
+		"path": "chenglideyueguang.sht"	,		
+        "melody": 5
+		}
+        ,
+    {
+        "title": "冬季恋歌",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "wintersonata.sht"	,		
+        "melody": 0
+		}
+        ,
+        	{
+        "title": "画心",
+        "artist": "电影<<画皮>>主题曲",
+		"path": "huaxin-piano.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "情深深雨蒙蒙",
+        "artist": "<<情深深雨蒙蒙>>插曲",
+		"path": "qingshenshenyumengmeng_chaqu.sht"	,		
+        "melody": 2
+		}
+        ,
+        {
+		"title": "我心依旧",
+        "artist": "<<泰坦尼克>>主题曲",
+		"path": "taitannike.sht"	,		
+        "melody": 7
+		}
+        ,
+		{
+		"title": "白色恋人",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "baiselianren.sht",
+        "melody": 99			
+
+		},
+         {
+		"title": "薰衣草",
+        "artist": "许绍洋",
+		"path": "xunyicao.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "一生有意义",
+        "artist": "<<射雕>>主题曲",
+		"path": "yishengyouyiyi.sht"	,		
+        "melody": 0
+		}
+        ,
+
+        {
+		"title": "美丽的神话",
+        "artist": "<<神话>>插曲",
+		"path": "meilideshenhua.sht",
+        "melody": 99,
+		"blow": 0			
+
+		}
+        
+		
+      ]
+}

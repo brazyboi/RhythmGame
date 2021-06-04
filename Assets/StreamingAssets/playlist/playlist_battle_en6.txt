@@ -1,0 +1,100 @@
+﻿{
+	"name": "playlist_battle_en6.pls",
+    "index": 6,
+    "Des": "长笛曲",
+	"list": 
+	[ 
+    {
+        "title": "Belief",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-xinyang.sht"	,
+        "instr": 131,
+        "melody": 0
+		},
+    {
+        "title": "Impermanent firework",
+        "artist": "周杰伦",
+		"path": "jaychou_yanhuayilen.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+        "title": "Lotus in snow",
+        "artist": "王菲",
+		"path": "wangfei-xuezhonglian.sht"	,		
+        "melody": 10005
+		}
+        ,
+        {
+        "title": "You can hear it",
+        "artist": "周杰伦",
+		"path": "jaychou_nitingdedao.sht"	,		
+        "melody": 12
+		}
+        ,
+         {
+		"title": "Pigeon",
+        "artist": "伍佰",
+		"path": "baige.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "Forever",
+        "artist": "刘德华",
+		"path": "zhanyongyuan.sht"	,		
+        "melody": 3
+		}
+        ,
+
+    {
+        "title": "Free the love",
+        "artist": "范逸臣",
+		"path": "fangsheng.sht"	,		
+        "melody": 10002
+		}
+        ,
+	{
+        "title": "Tropical rainforest",
+        "artist": "S.H.E",
+		"path": "redaiyulin.sht"	,		
+        "melody": 10005
+		}
+        ,
+        {
+        "title": "Leave",
+        "artist": "周杰伦",
+		"path": "jaychou_likai.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "Tear from Mona Lisa",
+        "artist": "林志炫",
+		"path": "mengnalishadeyanlei.sht"	,		
+        "melody": 0
+		}
+        ,
+                	{
+        "title": "Trace",
+        "artist": "周杰伦",
+		"path": "jaychou-guiji.sht"	,		
+        "melody": 0
+		}
+        ,
+		 {
+        "title": "Ambiguous",
+        "artist": "王菲",
+		"path": "aimei.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "Broken point",
+        "artist": "张敬轩",
+		"path": "zhangjingxuan-duandian.sht"	,		
+        "melody": 0
+		}
+
+      ]
+}

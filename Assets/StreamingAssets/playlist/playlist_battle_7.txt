@@ -1,0 +1,161 @@
+﻿{
+	"name": "playlist_battle_7.pls",
+	"list": 
+	[ 
+     {
+		"title": "每天爱你多一些",
+        "artist": "张学友",
+		"path": "meitianainiduoyixie.sht"	,		
+        "melody": 1
+		}
+        ,
+        {
+        "title": "不让你的眼泪陪我过夜",
+        "artist": "齐秦",
+		"path": "burangnideyanleipeiwoguoye.sht"	,		
+        "melody": 0
+		}
+        ,
+{
+        "title": "把悲伤留给自己",
+        "artist": "陈升",
+		"path": "babeishangliugeiziji.sht"	,		
+        "melody": 10000
+		}
+        ,
+      {
+		"title": "吻别",
+        "artist": "张学友",
+		"path": "kissbye.sht"	,		
+        "melody": 0
+		}
+        ,
+     
+        {
+		"title": "晚秋",
+        "artist": "黄凯芹",
+		"path": "wanqiu.sht"	,		
+        "melody": 4
+		}
+        ,
+        
+        {
+        "title": "涛声依旧",
+        "artist": "毛宁",
+		"path": "taoshengyijiu.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "刀剑如梦",
+        "artist": "周华健",
+		"path": "daojianrumeng.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+        {
+        "title": "夕阳醉了",
+        "artist": "张学友",
+		"path": "xiyangzuile.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "城里的月光",
+        "artist": "许美静",
+		"path": "chenglideyueguang.sht"	,		
+        "melody": 5
+		}
+        ,
+        {
+        "title": "分手总要在雨天",
+        "artist": "张学友",
+		"path": "fenshouzongyaozaiyutian.sht"	,		
+        "melody": 10000
+		}
+        ,
+        {
+        "title": "今夜你会不会来",
+        "artist": "黎明",
+		"path": "jinyenihuibuhuilai.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+        {
+        "title": "千纸鹤",
+        "artist": "邰正宵",
+		"path": "qianzhihe.sht"	,		
+        "melody": 10000
+		}
+        ,
+        {
+        "title": "旧情绵绵",
+        "artist": "张学友",
+		"path": "jiuqingmianmian-flute.sht"	,		
+        "melody": 10000
+		}
+        ,
+        {
+        "title": "忘情水",
+        "artist": "刘德华",
+		"path": "wangqingshui.sht"	,		
+        "melody": 10000
+		}
+        ,
+	
+	{
+        "title": "心只有你",
+        "artist": "刘德华",
+		"path": "xinzhiyouni.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "如果我是你的传说",
+        "artist": "刘德华",
+		"path": "ruguowoshinidechuanshuo.sht"	,		
+        "melody": 3
+		}
+        ,
+	{
+        "title": "漂流",
+        "artist": "刘德华",
+		"path": "piaoliu.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "情已逝",
+        "artist": "张学友",
+		"path": "qingyishi.sht"	,		
+        "melody": 0
+		}, 
+        {
+		"title": "Melody",
+        "artist": "李克勤",
+		"path": "melody_ex.sht",		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "月半弯",
+        "artist": "张学友",
+		"path": "yuebanwan.sht",
+        "melody": 10000				
+		}
+        ,
+        {
+        "title": "真永遠",
+        "artist": "刘德华",
+		"path": "zhanyongyuan.sht"	,		
+        "melody": 3
+		}
+        
+        
+        
+		
+		
+      ]
+}

@@ -1,0 +1,215 @@
+﻿{
+	"name": "playlist_battle_10.pls",
+	"list": 
+	[ 
+    {
+		"title": "红豆",
+        "artist": "王菲",
+		"path": "hongdou.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "冬季恋歌（纯钢琴曲）",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "congkaishidaoxianzai.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "过火",
+        "artist": "张信哲",
+		"path": "guohuo.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "夜的钢琴曲",
+        "artist": "石进",
+		"path": "ye.sht",
+        "melody": 99			
+
+		}
+        ,
+                {
+		"title": "星星",
+        "artist": "Vitas",
+		"path": "xingxing.sht",
+        "melody": 99			
+
+		},
+        
+		{
+		"title": "眼泪",
+        "artist": "The Daydream",
+		"path": "yanlei.sht",
+        "melody": 99			
+		}
+        ,
+        
+        {
+		"title": "月半小夜曲",
+        "artist": "李克勤",
+		"path": "yuebanxiaoyequ.sht",
+        "melody": 99			
+        
+		},
+        
+        {
+		"title": "童话",
+        "artist": "光良",
+		"path": "tonghua.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "矜持",
+        "artist": "王菲",
+		"path": "jingchi.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "今天你要嫁给我了",
+        "artist": "陶喆/蔡依林",
+		"path": "jintianniyaojiageiwo.sht",
+        "melody": 99,
+		"blow": 0			
+
+		},
+        {
+		"title": "约定",
+        "artist": "周慧",
+		"path": "yueding.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "我真的受伤了",
+        "artist": "张学友",
+		"path": "wozhendeshoushangle.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "隐形的翅膀",
+        "artist": "容祖儿",
+		"path": "yinxingdechibang.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "月亮代表我的心",
+        "artist": "齐秦",
+		"path": "yueliangdaibiaowodexin.sht",
+        "melody": 99			
+			
+        
+		}
+        ,
+
+
+        {
+		"title": "小星星",
+        "artist": "莫扎特",
+		"path": "xiaoxingxing.sht",
+        "melody": 99			
+
+		},
+		{
+		"title": "生日快乐",
+        "artist": "儿童歌曲",
+		"path": "shengrikuaile.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "小城故事",
+        "artist": "邓丽君",
+		"path": "xiaochenggushi.sht",
+        "melody": 99			
+
+		}
+		,
+        {
+		"title": "漫步人生路",
+        "artist": "邓丽君",
+		"path": "manburenshenglu.sht",
+        "melody": 99			
+
+		},
+		
+        {
+		"title": "雪绒花",
+        "artist": "儿童歌曲",
+		"path": "xueronghua_s.sht",
+        "melody": 99			
+
+		}
+		,
+        {
+		"title": "茉莉花",
+        "artist": "中国歌曲",
+		"path": "molihua.sht",
+        "melody": 99			
+
+		}
+		,
+	    
+        {
+		"title": "很爱很爱你",
+        "artist": "刘若英",
+		"path": "henaihenaini.sht",
+        "melody": 99			
+
+		},       
+	    {
+		"title": "江南",
+        "artist": "林俊杰",
+		"path": "jiangnan.sht",
+        "melody": 99			
+
+		},
+      {
+		"title": "挥着翅膀的女孩",
+		"path": "huizhechibangdenvhai.sht",
+        "artist": "容祖儿",
+        "melody": 99			
+
+		}
+        ,
+         {
+		"title": "安静",
+		"path": "anjing.sht",
+        "artist": "周杰伦",
+        "melody": 99			
+
+		}
+        ,
+		{
+		"title": "Song Bird",
+        "artist": "Sax 名曲",
+		"path": "songbird.mid"	,		
+        "melody": 10015
+		}
+        ,
+        {
+		"title": "下弦月",
+        "artist": "",
+		"path": "xiaxuanyue.sht",
+        "melody": 99,
+		"blow": 0
+
+		}
+
+        
+
+
+      ]
+}

@@ -1,0 +1,150 @@
+﻿{
+	"name": "playlist_battle_en1.txt",
+    "folder" : "song_en/",
+	"list": 
+	[ 
+    
+   
+            {
+		"title":"Right Here Waiting",
+		"path": "Rightherewaiting-all.mid",			
+		"artist": "Richard Marx",
+        "instr": 131,
+		"melody": 3
+		}
+        ,
+         {
+        "title": "Wind Bell",
+        "artist": "周蕙",
+		"path": "zhouhui_fengling.sht"	,	
+        "instr": 131,
+        "folder": "",
+        "melody": 0
+		}
+        ,
+        {
+		"title": "California Hotel",
+        "artist": "Eagles",
+		"path": "California_hotel.sht"	,		
+        "melody": 3
+		}
+        ,
+         {
+		"title": "The Gray Legend",
+        "artist": "Beyond",
+		"path": "huiseguiji.sht",
+        "folder": "",
+        "melody": 10006			
+
+		}
+        ,
+        {
+		"title": "Who Will Venture With Me",
+        "artist": "Beyond",
+		"path": "shuibanwochuangdang.sht",
+        "folder": "",
+        "melody": 10007			
+
+		},
+        {
+		"title": "California Dreaming",
+        "artist": "The Mamas and The Papas",
+		"path": "the_mamas_and_the_papas-california_dreaming.sht"	,		
+        "melody": 2
+		}
+        ,
+
+    
+    {
+		"title": "Sealed With a Kiss",
+        "artist": "Bobby Vinton",
+		"path": "Bobby_Vinton_-_Sealed_With_a_Kiss.sht"	,		
+        "melody": 10003
+		}
+        ,
+    {
+		"title": "No Matter What",
+        "artist": "Boyzone",
+		"path": "Boyzone_-_No_Matter_What.sht"	,		
+        "melody": 10003
+		}
+        ,
+        {
+		"title": "Let the Music Heal Your Soul",
+        "artist": "Backstreet Boys",
+		"path": "Backstreet_Boys_-_Let_the_Music_Heal_Your_Soul.sht"	,		
+        "melody": 10003
+		}
+        ,
+       
+  
+    {
+		"title": "Just Dance",
+        "artist": "Lady Gaga",
+		"path": "LadyGaga-Just_Dance.sht"	,		
+        "melody": 10003
+		}
+        ,
+    {
+		"title": "Pretty Boy",
+        "artist": "M2M",
+		"path": "M2M-prettyboy-new.sht"	,		
+        "melody": 8
+		}
+        ,
+    {
+		"title": "Scarborough Fair",
+        "artist": "Simon and Garfunkel",
+		"path": "simon_and_garfunkel-scarborough_fair.sht"	,		
+        "melody": 0,
+		"blow": 0
+		}
+        ,
+
+
+	{
+        "title": "God Is a Girl",
+        "artist": "Groove Coverage",
+		"path": "Groove_Coverage_God_is_a_girl.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "Hero",
+        "artist": "Mariah Carey",
+		"path": "mariah_carey-hero.sht"	,		
+        "melody": 10002
+		}
+        ,
+		{
+        "title": "You Are Not Alone",
+        "artist": "Michael Jackson",
+		"path": "Michael_Jackson-YouAreNotAlone.sht"	,		
+        "melody": 10003
+		}
+        ,
+    
+    {
+		"title": "All I Have to Give",
+        "artist": "Backstreet Boys",
+		"path": "Backstreet_Boys_-_All_I_Have_to_Give.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "God Father",
+        "artist": "<<God Father>>",
+		"path": "godfather.sht"	,		
+        "melody": 0
+		},
+		{
+		"title":"Soledad",
+		"path": "westlife_soledad.sht",			
+		"artist": "Westlife",
+		"melody": 99
+		}
+       
+         
+		
+      ]
+}

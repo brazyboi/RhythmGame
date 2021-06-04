@@ -1,0 +1,140 @@
+﻿
+{
+	"name": "playlist_battle_en3.txt",
+    "folder" : "song_en/",
+	"list": 
+	[ 
+       
+    {
+		"title":"Love Story",
+		"path": "aiqingdegushi.sht",
+		"melody": 99,
+		"artist": "Erich Segal"
+
+		},
+    {
+		"title":"A Comme Amour", 
+		"path": "qiurisiyu3.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"
+		}
+        ,
+        {
+		"title":"Song From a Secret Garden",
+		"path": "SongFromASecretGarden.sht",			
+		"artist": "Secret Garden",
+		"melody": 99
+		}
+        ,
+		{
+		"title":"Romance De Amor",
+		"path": "aideluomanshi.sht"	,
+		"melody": 99,
+		"artist": "Spanish song"
+		}
+        ,
+        {
+		"title": "Romeo And Juliet",
+        "artist": "Movie Theme",
+		"path": "Movie_Themes_-_Romeo_And_Juliet.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "The Melody of the Night",
+        "level": 2,
+		"path": "ye.sht",
+		"melody": 99,
+		"artist": "Jin Shi"
+		}
+        ,
+        
+       {
+		"title":"Canon",
+		"path": "kanong.sht",
+		"melody": 99,
+		"artist": "Johann Pachelbel"			
+
+		},
+        {
+		"title":"Rondo Alla Turca",
+		"path": "tuerqijinxingqu_s.sht",
+		"melody": 99,
+		"artist": "Mozart"			
+
+		}
+        ,
+        
+        {
+		"title":"Mariage D'amous",
+		"path": "mengzhongdehunli.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"			
+
+		}
+		,
+        
+        {
+		"title":"Ballade Pour Adeline",
+		"path": "shuibiandeadilina.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"			
+
+		}
+        ,
+        {
+		"title":"Lyphard Melody",
+		"path": "xingkong.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"
+		}
+        ,
+        {
+		"title":"The Butterfly Love",
+		"path": "liangzhu_s2.sht",
+		"melody": 99,
+		"artist": "Chinese folk song"			
+
+		}
+        ,
+        {
+		"title":"A Lover's Concerto",
+		"path": "aidexiezouqu.sht",
+		"melody": 99,
+		"artist": "Sandy Linzer"			
+
+		}
+        ,
+        {
+		"title":"Write to The Ocean", 
+		"path": "xiegeihaiyang.sht",
+		"melody": 99,
+		"artist": "Bandari"			
+
+		}
+        ,
+        {
+		"title":"Jardin Secret",
+		"path": "mimidetingyuan.sht",
+		"melody": 99,
+        "artist": "Richard Clayderman"			
+
+		},
+        {
+		"title":"Casablanca",
+		"path": "Casablanca.sht",			
+		"artist": "<<Casablanca>>",
+		"melody": 99
+		}
+        ,
+        {
+		"title":"Dance of Fireflies",
+		"path": "yinghuochongzhiwu.sht",
+		"melody": 99,
+        "artist": "-"			
+
+		}
+		
+    
+      ]
+}

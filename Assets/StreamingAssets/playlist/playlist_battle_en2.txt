@@ -1,0 +1,137 @@
+﻿{
+	"name": "playlist_battle_en2.pls",
+    "index": 2,
+	"list": 
+	[ 
+         
+    		{
+        "title": "One thousand Heartbreaking \nReasons",
+        "artist": "张学友",
+		"path": "yiqiangeshangxindeliyou.sht"	,
+        "folder": "",
+        "melody": 3
+		}
+        ,        
+    {
+        "title": "Love You So Much",
+        "artist": "刘若英",
+		"path": "henaihenaini-all.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "First Love",
+        "artist": "张震岳",
+		"path": "aidechutiyan.sht"	,		
+        "melody": 0
+		},
+
+        {
+        "title": "Night Melody",
+        "artist": "周杰伦",
+		"path": "jaychou_yequ.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "Chess",
+        "artist": "王菲",
+		"path": "qizi.sht"	,		
+        "melody": 5
+		}
+        ,
+		{
+        "title": "Forgiveness",
+        "artist": "张信哲",
+		"path": "kuanrong.sht"	,		
+        "melody": 10004
+		}
+        ,
+		{
+        "title": "Love Feeling",
+        "artist": "辛晓琪",
+		"path": "weidao.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "The Stars",
+        "artist": "周杰伦",
+		"path": "jaychou_xingqing.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+        "title": "Don't worry about my being \nsad",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-biepawoshangxin.sht"	,
+        "melody": 0
+		},
+		{
+        "title": "The Courage",
+        "artist": "梁静茹",
+		"path": "yongqi-all.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "Never Tell Him",
+        "artist": "张信哲",
+		"path": "buyaoduitashuo.sht"	,		
+        "melody": 2
+		} ,
+		{
+		"title":"Falling Slowly",
+		"path": "Once_FallingSlowly.sht",			
+		"artist": "Once",
+		"melody": 99,
+        "folder": "song_en/",
+		"blow": 0
+		}
+        ,
+		{
+		"title":"God is a Girl",
+		"path": "GrooveCoverage_GodisaGirl.sht",			
+		"artist": "Groove Coverage",
+        "folder": "song_en/",
+		"melody": 99
+		}
+        ,
+		{
+		"title":"My Heart Will Go On",
+		"path": "CelineDion_MyHeartWillGoOn.sht",			
+		"artist": "Celine Dion",
+        "folder": "song_en/",
+		"melody": 99
+		}
+        ,
+		{
+		"title": "When Can I See You Again",
+        "artist": "Babyface",
+		"path": "Babyface_-_When_Can_I_See_You_Again.sht"	,	
+        "folder": "song_en/",
+        "melody": 1
+		}
+        ,
+         {
+		"title": "No One Else Comes Close",
+        "artist": "Backstreet Boys",
+		"path": "Backstreet_Boys_-_No_One_Else_Comes_Close.sht"	,	
+        "folder": "song_en/",
+        "melody": 0
+		}
+        ,
+
+		{
+		"title":"Butterfly Waltz",
+		"path": "BrianCrain_ButterflyWaltz.sht",	
+        "folder": "song_en/",		
+		"artist": "Brian Crain",
+		"melody": 99
+		}
+     
+
+		
+      ]
+}

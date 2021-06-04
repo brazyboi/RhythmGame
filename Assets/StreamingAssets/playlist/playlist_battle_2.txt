@@ -1,0 +1,161 @@
+﻿{
+	"name": "playlist_battle_2.pls",
+    "index": 2,
+	"list": 
+	[ 
+         
+    		{
+        "title": "一千个伤心的理由",
+        "artist": "张学友",
+		"path": "yiqiangeshangxindeliyou.sht"	,		
+        "melody": 3
+		}
+        ,        
+    {
+        "title": "很爱很爱你",
+        "artist": "刘若英",
+		"path": "henaihenaini-all.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "爱的初体验",
+        "artist": "张震岳",
+		"path": "aidechutiyan.sht"	,		
+        "melody": 0
+		},
+
+        		{
+        "title": "夜曲",
+        "artist": "周杰伦",
+		"path": "jaychou_yequ.sht"	,		
+        "melody": 0
+		}
+        ,
+	{
+        "title": "后来",
+        "artist": "刘若英",
+		"path": "houlai-all.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "棋子",
+        "artist": "王菲",
+		"path": "qizi.sht"	,		
+        "melody": 5
+		}
+        ,
+		{
+        "title": "朋友首日封",
+        "artist": "光良",
+		"path": "pengyoushourifeng.sht"	,		
+        "melody": 10000
+		}
+        ,
+
+		{
+        "title": "新鸳鸯蝴蝶梦",
+        "artist": "黄安",
+		"path": "xinyuanyanghudiemeng.sht"	,		
+        "melody": 15
+		}
+        ,
+		{
+        "title": "我也不想这样",
+        "artist": "王菲",
+		"path": "woyebuxiangzheyang.sht"	,		
+        "melody": 7
+		}
+        ,
+		{
+        "title": "幻听",
+        "artist": "许嵩",
+		"path": "huanting_xusong.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "宽容",
+        "artist": "张信哲",
+		"path": "kuanrong.sht"	,		
+        "melody": 10004
+		}
+        ,
+
+		{
+        "title": "好想好想",
+        "artist": "赵薇",
+		"path": "haoxianghaoxiang.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "味道",
+        "artist": "辛晓琪",
+		"path": "weidao.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "星晴",
+        "artist": "周杰伦",
+		"path": "jaychou_xingqing.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "十年",
+        "artist": "陈奕迅",
+		"path": "shinian.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "别怕我伤心",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-biepawoshangxin.sht"	,
+        "melody": 0
+		},
+		{
+        "title": "勇气",
+        "artist": "梁静茹",
+		"path": "yongqi-all.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "祝你一路顺风",
+        "artist": "吴奇隆",
+		"path": "zhuniyilushunfeng.sht"	,		
+        "melody": 11
+		}
+        ,
+		{
+        "title": "至少还有你",
+        "artist": "林忆莲",
+		"path": "zhishaohaiyouni.sht"	,		
+        "melody": 10000
+		}
+        ,       
+        {
+		"title": "一辈子的孤单",
+        "artist": "刘若英",
+		"path": "yibeizigudan.sht",
+        "melody": 4			
+    
+		},
+        		{
+        "title": "不要对他说",
+        "artist": "张信哲",
+		"path": "buyaoduitashuo.sht"	,		
+        "melody": 2
+		}
+     
+
+		
+      ]
+}

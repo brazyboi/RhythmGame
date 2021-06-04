@@ -1,0 +1,159 @@
+﻿{
+	"name": "playlist_battle_4.pls",
+    "index": 4,
+	"list": 
+	[ 
+{
+        "title": "不得不爱",
+        "artist": "潘玮柏",
+		"path": "panweibo-budebuai.sht"	,		
+        "melody": 2,
+		"blow": 0
+		}
+        ,
+		{
+        "title": "星语心愿",
+        "artist": "张柏芝",
+		"path": "xingyuxinyuan.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "暗号",
+        "artist": "周杰伦",
+		"path": "jaychou-anhao.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "原来你什么都不想要",
+        "artist": "张惠妹",
+		"path": "zhanghuimei-yuanlainishenmedoubuxiangyao.sht"	,		
+        "melody": 8
+		}
+        ,
+		{
+        "title": "勇气",
+        "artist": "梁静茹",
+		"path": "liangjingru-yongqi.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+		{
+        "title": "扑火",
+        "artist": "王菲",
+		"path": "wangfei-puhuo.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "布拉格广场",
+        "artist": "蔡依林",
+		"path": "caiyilin-bulageguangchang.sht"	,		
+        "melody": 7,
+		"blow": 0
+		}
+        ,
+		{
+        "title": "风中有朵雨做的云",
+        "artist": "孟庭苇",
+		"path": "mengtingwei-fengzhongyouduoyuzuodeyun.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "那么爱你为什么",
+        "artist": "黄品源",
+		"path": "mowenwei-nameainiweishenme.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "你的眼神",
+        "artist": "蔡琴",
+		"path": "caiqin-nideyanshen.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "千千阕歌",
+        "artist": "陈慧娴",
+		"path": "chenhuixian-qianqianquege.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "女人花",
+        "artist": "梅艳芳",
+		"path": "meiyanfang-nvrenhua.sht"	,		
+        "melody": 3
+		}
+        ,
+		
+		{
+        "title": "回到过去",
+        "artist": "周杰伦",
+		"path": "jaychou-huidaoguoqu.sht"	,		
+        "melody": 1
+		}
+        ,
+ {
+        "title": "离人",
+        "artist": "林志炫",
+		"path": "linzhixuan-liren.sht"	,
+        "melody": 0
+		},
+
+		{
+        "title": "偷心",
+        "artist": "张学友",
+		"path": "zhangxueyou-touxin.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "爱我别走",
+        "artist": "张震岳",
+		"path": "zhangzhenyue-aiwobiezou.sht"	,		
+        "melody": 2
+		}
+        ,
+		{
+        "title": "红日",
+        "artist": "李克勤",
+		"path": "likeqin-hongri.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+		
+		{
+        "title": "情敌贝多芬",
+        "artist": "王力宏",
+		"path": "wanglihong-qingdibeiduofen.sht"	,		
+        "melody": 12
+		}
+        ,
+
+		{
+        "title": "Lonely Christmas",
+        "artist": "陈奕迅",
+		"path": "chenyixun-lonelychristmas.sht"	,		
+        "melody": 10000
+		}
+        ,
+
+		{
+        "title": "你怎么舍得我难过",
+        "artist": "黄品源",
+		"path": "huangpinyuan-nizenmeshedewonanguo.sht"	,		
+        "melody": 0
+		}
+        
+
+		
+		
+      ]
+}

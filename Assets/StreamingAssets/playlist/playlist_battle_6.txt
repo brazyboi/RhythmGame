@@ -1,0 +1,134 @@
+﻿{
+	"name": "playlist_battle_6.pls",
+    "index": 6,
+	"list": 
+	[ 
+    {
+        "title": "烟花易冷",
+        "artist": "周杰伦",
+		"path": "jaychou_yanhuayilen.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+		"title": "江南",
+        "artist": "林俊杰",
+		"path": "jiangnan-all.sht"	,		
+        "melody": 0
+		}
+        ,
+    {
+        "title": "青花瓷",
+        "artist": "周杰伦",
+		"path": "jaychou-qinghuaci.sht"	,		
+        "melody": 0
+		}
+        ,
+     {
+        "title": "荷塘月色",
+        "artist": "凤凰组合",
+		"path": "hetangyuese.sht"	,
+        "melody": 0,
+		"blow": 0
+		},
+        
+        {
+		"title": "东风破",
+        "artist": "周杰伦",
+		"path": "jaychou_dongfengpo.sht"	,		
+        "melody": 7
+		}
+        ,
+        {
+		"title": "倩女幽魂",
+        "artist": "张国荣",
+		"path": "zhangguorong_qiannvyouhun.sht"	,		
+        "melody": 10007
+		}
+        ,
+        {
+        "title": "最炫民族风",
+        "artist": "凤凰组合",
+		"path": "zuixuanmingzufeng.sht"	,		
+        "melody": 99,
+		"blow": 0
+		}
+        ,
+        
+        {
+		"title": "菊花台",
+        "artist": "周杰伦",
+		"path": "juhuatai2.sht"	,
+        "melody": 99		
+
+		}
+        ,
+		{
+        "title": "但愿人长久",
+        "artist": "王菲",
+		"path": "wangfei-danyuanrenchangjiu.sht"	,		
+        "melody": 5
+		}
+        ,
+                		
+        {
+        "title": "不装饰你的梦",
+        "artist": "蔡国权",
+		"path": "buzhuangshinidemeng.sht"	,		
+        "melody": 3
+		}
+        ,
+
+        {
+		"title": "早已明知对他的爱",
+        "artist": "<<83射雕>>插曲",
+		"path": "shediao.sht"	,		
+        "melody": 0
+		}
+        ,
+        
+        {
+		"title": "橄榄树",
+        "artist": "齐豫",
+		"path": "ganlanshu.sht",
+        "melody": 99			
+
+		},
+        {
+        "title": "一剪梅",
+        "artist": "费玉清",
+		"path": "feiyuqing-yijianmei.sht"	,		
+        "melody": 10007
+		}
+        ,
+        {
+        "title": "七里香",
+        "artist": "周杰伦",
+		"path": "qilixiang.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "雪中莲",
+        "artist": "王菲",
+		"path": "wangfei-xuezhonglian.sht"	,		
+        "melody": 10005
+		}
+        ,
+        {
+		"title": "梁祝",
+        "artist": "经典音乐",
+		"path": "liangzhu_s2.sht",
+        "melody": 99			
+			
+		}
+        ,
+        {
+        "title": "稻香",
+        "artist": "周杰伦",
+		"path": "jaychou-daoxiang.sht"	,		
+        "melody": 10203
+		}
+
+      ]
+}

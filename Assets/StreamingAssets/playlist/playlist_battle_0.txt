@@ -1,0 +1,60 @@
+{
+	"name": "playlist_battle_0.pls",
+	"list": 
+	[ 
+	
+ {
+        "title": "发如雪",
+        "artist": "周杰伦",
+		"path": "jaychou_faruxue.sht"	,
+        "instr": 0,
+        "melody": 2
+		}
+        ,
+{
+        "title": "信仰",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-xinyang.sht"	,
+        "instr": 131,
+        "melody": 0
+		},
+
+    {
+		"title": "天空之城",
+        "artist": "<<天空之城>>主题曲",
+		"path": "tian_kong_zhi_cheng.sht"	,
+        "instr": 0,
+        "melody": 0
+		}
+        ,
+
+    {
+        "title": "风铃",
+        "artist": "周蕙",
+		"path": "zhouhui_fengling.sht"	,	
+        "instr": 131,
+        "melody": 0
+		}
+        ,
+
+    {
+		"title": "夜夜夜夜",
+		"path": "yeyeyeye-drum.sht",
+        "artist": "齐秦",
+         "instr": 128,
+        "melody": 0			
+
+		},        
+         {
+		"title": "献给爱丽丝",
+		"path": "xiangeiailisi.sht",
+        "artist": "贝多芬",
+        "instr": 0,
+        "melody": 99			
+
+		}
+        
+
+		
+      ]
+}

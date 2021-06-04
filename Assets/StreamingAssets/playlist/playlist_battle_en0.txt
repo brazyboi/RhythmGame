@@ -1,0 +1,70 @@
+﻿{
+	"name": "playlist_battle_en0.txt",
+    "folder" : "song_en/",
+	"list": 
+	[ 
+    {
+		"title": "The Castle in The Sky",
+        "artist": "Movie Theme",
+		"path": "tian_kong_zhi_cheng.sht"	,	
+        "instr": 0,
+        "melody": 0
+		}
+        ,
+		 {
+		"title": "Chess",
+        "artist": "Faye",
+		"path": "qizi-simple.mid"	,		
+        "melody": 5,
+        "instr": 131,
+		"folder": ""
+		}
+        ,
+        {
+		"title": "The Sounds Of Silence",
+        "artist": "Simon and Garfunkel",
+		"path": "Simon_Garfunkel_TheSoundsOfSilence.sht"	,	
+        "instr": 0,
+        "melody": 7
+		}
+        ,
+
+        {
+		"title":"Lyphard Melody",
+		"path": "xingkong.sht",
+		"melody": 99,
+        "instr", 0
+		"artist": "Richard Clayderman"
+		},
+        
+    {
+        "title": "AMANI",
+        "artist": "Beyond",
+		"path": "beyond-amani.sht"	,
+        "folder": "",
+        "instr": 131,
+        "melody": 10004
+		},
+         {
+		"title": "Romantic Night",
+		"path": "yuyedelangman-drum.sht",
+        "artist": "谭咏麟",
+		 "folder": "",	
+         "instr": 128,
+        "melody": 0			
+
+		},
+        {
+		"title": "The Night",
+		"path": "yeyeyeye-drum.sht",
+        "artist": "齐秦",
+		 "folder": "",
+         "instr": 128,
+        "melody": 0			
+
+		}
+
+	
+       
+      ]
+}

@@ -1,0 +1,270 @@
+﻿
+{
+	"name": "playlist_battle_en4.txt",
+    "folder" : "song_en/",
+	"list": 
+	[ 
+	  
+      {
+		"title": "Twinkle, Twinkle Little Star",
+        "level": 1,
+		"path": "xiaoxingxing.sht",
+		"melody": 99,
+		"artist": "Mozart"			
+
+		},
+		 {
+		"title": "Green Sleeves",
+		"path": "lvxiuzi.mid",
+        "artist": "Folk song",
+        "melody": 99,
+		"folder": ""
+
+		} ,
+          {
+		"title": "Happy Birthday",
+        "level": 1,
+		"path": "shengrikuaile.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+		},
+        {
+		"title":"Edelweiss",
+		"path": "xueronghua_s.sht",
+		"melody": 99,
+        "artist": "Folk song"			
+
+		},
+      {
+		"title": "Jingle Bells",
+        "level": 1,
+		"path": "jinglebell.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+
+		}
+        ,
+        {
+		"title": "Beautiful Dreamer",
+        "level": 2,
+		"path": "meilidemengshen.sht",
+		"melody": 99,
+		"artist": "Stephen Foster"			
+
+		}
+		,
+        {
+		"title": "Donna Donna",
+        "level": 1,
+		"path": "tangna.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+		}
+        ,
+        {
+		"title": "Boating",
+        "level": 1,
+		"path": "boating.sht",
+		"melody": 10099,
+		"artist": "Kids song"			
+
+		},
+        {
+		"title":"Christmas Eve",
+		"path": "pinganye.sht",
+		"melody": 10099,
+		"artist": "Kids song"			
+
+		}
+        ,
+        {
+		"title":"Danube Waves",
+		"path": "duonaohezhibo.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+
+		}
+        ,
+        {
+		"title": "Troika Galop",
+        "level": 4,
+		"path": "santaoche2.sht",
+		"melody": 99,
+		"artist": "Russian folk song"			
+        
+		},
+        {
+		"title": "Oh, Susanna",
+        "level": 2,
+		"path": "susanna.sht",
+		"melody": 10099,
+		"artist": "Stephen Foster"			
+
+		},
+      
+       
+        {
+		"title": "Old Folks at Home",
+        "level": 2,
+		"path": "guxiangdeqinren.sht",
+		"melody": 99,
+		"artist": "Stephen Foster"			
+
+		}
+        ,
+        
+        {
+		"title": "Dreaming of Home and Mother",
+        "level": 4,
+		"path": "songbie.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+		
+        {
+		"title": "Edelweiss",
+        "level": 1,
+		"path": "xueronghua_s.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		}
+		,
+		{
+		"title": "The Way We Were",
+        "level": 2,
+		"path": "wangriqinghuai.sht",
+		"melody": 10099,
+		"artist": "Folk song"			
+
+		},
+		
+		{
+		"title": "Home on the Range",
+        "level": 2,
+		"path": "caoyuanshangdejiayuan.sht",
+		"melody": 10099,
+		"artist": "Folk song"			
+
+		}
+		,
+		{
+		"title": "Clementine",
+        "level": 1,
+		"path": "xinnianhao.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+		
+		{
+		"title": "Song of Seashore",
+        "level": 2,
+		"path": "haibinzhige.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		}
+        ,
+        {
+		"title": "Red River Valley",
+        "level": 3,
+		"path": "honghegu2.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+        {
+		"title": "Home, Sweet Home",
+        "level": 2,
+		"path": "keaidejia.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		}
+		,
+        {
+		"title": "The Song of Seasons",
+        "level": 2,
+		"path": "sijige.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+        
+		{
+		"title": "The Last Rose Of Summer",
+        "level": 2,
+		"path": "xiatianzuihoumeigui.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+		}
+        ,
+        {
+		"title": "Memory",
+        "level": 2,
+		"path": "huiyi.sht"	,
+		"melody": 99,
+		"artist": "Kids song"		
+
+		},
+        {
+		"title": "Red Dragonfly",
+        "level": 4,
+		"path": "hongqingting.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Do-Re-Mi",
+        "level": 4,
+		"path": "duoremi.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Old Man River",
+        "level": 4,
+		"path": "laorenhe.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Making Hay",
+        "level": 4,
+		"path": "saidaochao.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "The Roads",
+        "level": 4,
+		"path": "xiaolu.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Oh, My Field",
+        "level": 4,
+		"path": "caoyuan.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        
+		
+    
+      ]
+}
+

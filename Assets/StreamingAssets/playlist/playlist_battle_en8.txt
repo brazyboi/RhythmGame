@@ -1,0 +1,88 @@
+﻿{
+	"name": "playlist_battle_en8.pls",
+    "Des": "Sax曲",
+	"list": 
+	[ 
+
+ {
+		"title": "Going Home",
+        "artist": "Sax song",
+		"path": "Goinghome-all.mid"	,
+        "folder": "",		
+        "melody": 6			
+
+		},
+		{
+		"title": "Song Bird",
+        "artist": "Sax 名曲",
+		"path": "songbird.mid"	,		
+        "melody": 10015
+		},
+        {
+        "title": "The Moon in the City",
+        "artist": "许美静",
+		"path": "chenglideyueguang.sht"	,		
+        "melody": 5
+		}
+        ,
+
+		{
+        "title": "Midnight Blues",
+        "artist": "Beyond",
+		"path": "beyond-wuyeyuanqu.sht"	,		
+        "melody": 10011
+		}
+		,
+		{
+        "title": "Forgive Me Today",
+        "artist": "Beyond",
+		"path": "beyond-yuanliangwojintian.sht"	,		
+        "melody": 10008
+		}
+		,
+		{
+        "title": "Under a Vast Sky",
+        "artist": "Beyond",
+		"path": "beyond-haikuotiankong.sht"	,		
+        "melody": 10000,
+		"blow" : 0
+		}
+		,
+      {
+		"title": "Love You",
+        "artist": "Beyond",
+		"path": "xihuanni.sht",
+        "melody": 10000				
+
+		}
+        ,
+        {
+		"title": "Goodbye My Dream",
+        "artist": "Beyond",
+		"path": "zaijianlixiang.sht",
+        "melody": 10000				
+
+		}
+        ,
+
+        {
+		"title": "The Earth",
+        "artist": "Beyond",
+		"path": "dadi.sht",
+        "melody": 10006		
+
+		}
+        ,
+       
+    
+        {
+		"title": "Cold Rain Night",
+        "artist": "Beyond",
+		"path": "lenyuye.sht",
+        "melody": 10008			
+    
+		}
+
+
+      ]
+}

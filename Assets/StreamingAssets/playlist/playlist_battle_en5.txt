@@ -1,0 +1,228 @@
+﻿{
+	"name": "playlist_battle_en5.txt",
+    "folder" : "song_en/",
+    "Des": "钢琴曲",
+	"list": 
+	[ 
+       
+        {
+		"title":"Fur Elise",
+		"path": "xiangeiailisi.sht",
+		"melody": 99,
+        "artist": "Ludwig van Beethoven"			
+
+		}, 
+	   {
+		"title":" Moonlight Sonata",
+		"path": "yueguangqu.sht",
+		"melody": 10099,
+        "artist": "Ludwig van Beethoven"			
+
+		},
+        
+		{
+		"title":"Dreams of Love",
+		"path": "aizhimeng.sht",
+		"melody": 10099,
+        "artist": "Franz Liszt"			
+
+		}
+        ,
+		{
+		"title":"The Swan",
+		"path": "tiane.sht",
+		"melody": 99,
+        "artist": "Saint Saëns"			
+
+		},
+		{
+		"title":"Frohlicher Landmann", 
+		"path": "kuailedenongfu.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"			
+
+		}
+        ,
+        
+        {
+		"title":"Ballade No. 4",
+		"path": "gangqinxushiqu.sht",
+		"melody": 99,
+        "artist": "Frédéric Chopin"			
+
+		}
+        ,{
+		"title":"Waltz in A minor",
+		"path": "axiaodiaoyuanwuqu.sht",
+		"melody": 99,
+        "artist": "Frédéric Chopin"			
+
+		}
+        ,
+        {
+		"title":"Cradle Lullaby",
+		"path": "yaolanqu.sht",
+		"melody": 99,
+        "artist": "Franz Schubert"
+
+		}
+        ,
+        {
+		"title":"Clair de Lune",
+		"path": "yueguang.sht",
+		"melody": 99,
+        "artist": "Claude Debussy"			
+
+		}
+        ,
+        {
+		"title":"June Barcarolle",
+		"path": "liuyuechuange.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		}
+        ,
+        {
+		"title":"Moon River",
+		"path": "yuelianghe.sht",
+		"melody": 99,
+        "artist": "Folk song"			
+
+		}
+        ,
+        
+        {
+		"title":"Serenade",
+		"path": "xiaoyequ.sht",
+		"melody": 99,
+        "artist": "Franz Schubert"
+
+		}
+        ,
+        {
+		"title":"Traumerei",
+		"path": "menghuanqu.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"
+
+		}
+        ,
+        {
+		"title":"Kinderscenen Op.15",
+		"path": "tongnianqingjing.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"
+
+		}
+        ,
+        
+		{
+		"title":"June Barcarolle",
+		"path": "liuyuechuange_s.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		}
+        ,
+		{
+		"title":"Sonatinas,Op.36",
+		"path": "clementi_xiaozoumingqu.sht",
+		"melody": 99,
+        "artist": "Sonatina Clementi"			
+
+		},
+		{
+		"title":"An der schönen Blauen Donau",
+		"path": "lanseduonaohe.sht",
+		"melody": 99,
+        "artist": "Johann Strauss"			
+
+		},
+		{
+		"title":"Mio Babbino Caro",
+		"path": "woqinaidebaba.sht"	,
+		"melody": 99,
+        "artist": "Giacomo Puccini"		
+
+		}
+        ,
+		{
+		"title":"Swan Lake",
+		"path": "tianehu.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky"			
+
+		},
+		{
+		"title":"Dance of Little Four Swans",
+		"path": "sixiaotiane.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		},
+		{
+		"title":"Ave Maria", 
+		"path": "shengmusong.sht",
+		"melody": 99,
+        "artist": "Wolfgang Amadeus Mozart"			
+
+		},
+		{
+		"title":"Romance",
+		"path": "langmanqu.sht",
+		"melody": 99,
+        "artist": "Wolfgang Amadeus Mozart"			
+
+		},
+		{
+		"title":"Sonatina",
+		"path": "benduofen_xiaozouming.sht"	,
+		"melody": 99,
+        "artist": "Ludwig van Beethoven"		
+
+		},
+		{
+		"title":"Sonata Pathetique",
+		"path": "beiqiangzoumingqu.sht",
+		"melody": 99,
+        "artist": "Ludwig van Beethoven"			
+
+		}
+		,
+		{
+		"title":"On Wings of Song", 
+		"path": "chengzhegeshengdechibang.sht",
+		"melody": 99,
+        "artist": "Felix Mendelssohn"			
+
+		}
+		,
+		{
+		"title":"Spring Song",
+		"path": "chunzhige.sht"	,
+		"melody": 99,
+        "artist": "Felix Mendelssohn"		
+
+		}
+        ,
+        {
+		"title":"Op.30 No.6",
+		"path": "weinisichuange.sht",
+		"melody": 99,
+		"artist": "Felix Mendelssohn"			
+
+		}
+        ,
+        {
+		"title":"Wedding March",
+		"path": "hunlijinxingqu.sht",
+		"melody": 99,
+		"artist": "Felix Mendelssohn"			
+
+		}
+                
+		
+      ]
+}
+

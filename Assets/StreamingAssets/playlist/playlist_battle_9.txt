@@ -1,0 +1,164 @@
+﻿{
+	"name": "playlist_battle_9.pls",
+	"list": 
+	[ 
+    {
+		"title": "月光曲",
+        "artist": "贝多芬",
+		"path": "yueguangqu.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "爱情的故事",
+		"path": "aiqingdegushi.sht",
+        "artist": "埃里奇·西格尔",
+        "melody": 99			
+
+		},
+        {
+		"title": "梦中的婚礼",
+		"path": "mengzhongdehunli.sht",
+        "artist": "理查德.克莱德曼",
+        "melody": 99			
+
+		}
+		,
+        {
+		"title": "爱的罗曼史",
+        "artist": "那西索·叶佩斯",
+		"path": "aideluomanshi.sht"	,
+        "melody": 99		
+
+		}
+        ,
+        {
+		"title": "水边的阿蒂丽娜",
+        "artist": "理查德.克莱德曼",
+		"path": "shuibiandeadilina.sht",
+        "melody": 99			
+
+		}
+        ,
+		 {
+		"title": "土耳其进行曲",
+        "artist": "莫扎特",
+		"path": "tuerqijinxingqu_s.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "星空",
+        "artist": "理查德.克莱德曼",
+		"path": "xingkong.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "卡农",
+        "artist": "Johann Pachelbel",
+		"path": "kanong.sht",
+        "melody": 99,
+		"blow": 0			
+
+		},
+		{
+		"title": "秘密的庭院",
+         "artist": "理查德.克莱德曼",
+		"path": "mimidetingyuan.sht",
+        "melody": 99			
+
+		},
+		{
+		"title": "天鹅",
+         "artist": "圣桑",
+		"path": "tiane.sht",
+        "melody": 99			
+
+		},
+		{
+		"title": "快乐农夫",
+         "artist": "舒曼",
+		"path": "kuailedenongfu.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "秋日私语",
+        "artist": "理查德.克莱德曼",
+		"path": "qiurisiyu3.sht",
+        "melody": 99			
+
+		}
+        ,
+        
+		{
+		"title": "初恋",
+        "artist": "理查德.克莱德曼",
+		"path": "chulian.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "萤火虫之舞",
+		"path": "yinghuochongzhiwu.sht",
+        "artist": "-",	
+        "melody": 99
+		}
+        ,
+		{
+		"title": "钢琴叙事曲",
+		"path": "gangqinxushiqu.sht",
+        "artist": "肖邦",	
+        "melody": 99			
+
+		}
+        ,{
+		"title": "A小调圆舞曲",
+		"path": "axiaodiaoyuanwuqu.sht",
+        "artist": "肖邦",	
+        "melody": 99		
+
+		}
+        ,
+		{
+		"title": "蓝色的多瑙河",
+		"path": "lanseduonaohe.sht",
+        "artist": "小约翰.施特劳斯",	
+        "melody": 99					
+
+		},
+		
+		{
+		"title": "天鹅湖",
+		"path": "tianehu.sht",
+        "artist": "柴可夫斯基",	
+        "melody": 99		
+			
+
+		},
+		{
+		"title": "四小天鹅",
+		"path": "sixiaotiane.sht",
+        "artist": "柴可夫斯基",	
+        "melody": 99		
+			
+
+		},
+		
+		{
+		"title": "浪漫曲",
+		"path": "langmanqu.sht",
+        "artist": "莫扎特 ",	
+        "melody": 99		
+
+		}
+        
+        
+
+      ]
+}

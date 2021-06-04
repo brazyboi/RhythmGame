@@ -1,0 +1,99 @@
+﻿{
+	"name": "playlist_battle_en7.pls",
+    "Des": "爵士鼓",
+	"list": 
+	[ 
+    
+     {
+    "title": "Heal the World",
+        "artist": "Michael Jackson",
+		"path": "healtheworld.sht"	,		
+        "melody": 10003
+		}
+        ,
+    	{
+        "title": "Secret Signal",
+        "artist": "Jay",
+		"path": "jaychou-anhao.sht"	,	
+		 "folder": "",		
+        "melody": 3
+		}
+		,
+        {
+		"title": "Piano after war",
+        "artist": "周杰伦",
+		"path": "zhizhanzhishang.sht"	,		
+        "melody": 2
+		}
+        ,
+     {
+		"title": "Love you every day",
+        "artist": "张学友",
+		"path": "meitianainiduoyixie.sht"	,		
+        "melody": 1
+		}
+        ,
+      {
+		"title": "Kiss bye",
+        "artist": "张学友",
+		"path": "kissbye.sht"	,		
+        "melody": 0
+		}
+        ,
+     
+        {
+		"title": "Late fall",
+        "artist": "黄凯芹",
+		"path": "wanqiu.sht"	,		
+        "melody": 4
+		}
+        ,
+		
+        {
+        "title": "Unfogotten Love",
+        "artist": "张学友",
+		"path": "jiuqingmianmian-flute.sht"	,		
+        "melody": 10000
+		}
+        ,
+        {
+        "title": "Forget Love",
+        "artist": "刘德华",
+		"path": "wangqingshui.sht"	,		
+        "melody": 10000
+		}
+        ,
+	{
+        "title": "Drifting",
+        "artist": "刘德华",
+		"path": "piaoliu.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "Love is Gone",
+        "artist": "张学友",
+		"path": "qingyishi.sht"	,		
+        "melody": 0
+		}, 
+        {
+		"title": "Melody",
+        "artist": "李克勤",
+		"path": "melody_ex.sht",		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "Half Moon Bay",
+        "artist": "张学友",
+		"path": "yuebanwan.sht",
+        "melody": 10000				
+		}
+        
+        
+        
+        
+		
+		
+      ]
+}

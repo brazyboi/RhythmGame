@@ -1,0 +1,1576 @@
+{
+	"name": "playlist_battle_0.pls",
+	"list": 
+	[ 
+	
+ {
+        "title": "发如雪",
+        "artist": "周杰伦",
+		"path": "jaychou_faruxue.sht"	,
+        "instr": 0,
+        "melody": 2
+		}
+        ,
+{
+        "title": "信仰",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-xinyang.sht"	,
+        "instr": 131,
+        "melody": 0
+		},
+
+    {
+		"title": "天空之城",
+        "artist": "<<天空之城>>主题曲",
+		"path": "tian_kong_zhi_cheng.sht"	,
+        "instr": 0,
+        "melody": 0
+		}
+        ,
+
+    {
+        "title": "风铃",
+        "artist": "周蕙",
+		"path": "zhouhui_fengling.sht"	,	
+        "instr": 131,
+        "melody": 0
+		}
+        ,
+
+    {
+		"title": "夜夜夜夜",
+		"path": "yeyeyeye-drum.sht",
+        "artist": "齐秦",
+         "instr": 128,
+        "melody": 0			
+
+		},        
+         {
+		"title": "献给爱丽丝",
+		"path": "xiangeiailisi.sht",
+        "artist": "贝多芬",
+        "instr": 0,
+        "melody": 99			
+
+		},
+
+    		{
+        "title": "你听得到",
+        "artist": "周杰伦",
+		"path": "jaychou_nitingdedao.sht"	,		
+        "melody": 12
+		}
+        ,
+         {
+		"title": "白鸽",
+        "artist": "伍佰",
+		"path": "baige.sht"	,		
+        "melody": 0
+		}
+        ,
+  {
+        "title": "珊瑚海",
+        "artist": "周杰伦",
+		"path": "shanhuhai-all.sht"	,		
+        "melody": 300,
+		"blow": 0
+		}
+        ,
+    {
+        "title": "放生",
+        "artist": "范逸臣",
+		"path": "fangsheng.sht"	,		
+        "melody": 10002
+		}
+        ,
+    {
+        "title": "有没有人告诉你",
+        "artist": "陈楚生",
+		"path": "youmeiyourengaosuni.sht"	,		
+        "melody": 10008
+		}
+        ,
+	{
+        "title": "热带雨林",
+        "artist": "S.H.E",
+		"path": "redaiyulin.sht"	,		
+        "melody": 10005
+		}
+        ,
+	{
+        "title": "我等到花儿也谢了",
+        "artist": "张学友",
+		"path": "wodengdaohuaeryexiele.sht"	,		
+        "melody": 10000
+		}
+        ,
+
+        {
+        "title": "好心分手",
+        "artist": "王力宏/卢巧音",
+		"path": "haoxinfenshou.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "成全",
+        "artist": "刘若英",
+		"path": "liuruoying-chengquan.sht"	,		
+        "melody": 10000
+		}
+        ,
+
+                {
+        "title": "离开",
+        "artist": "周杰伦",
+		"path": "jaychou_likai.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "隐形的翅膀",
+        "artist": "容祖儿",
+		"path": "yinxingdechibang.sht"	,		
+        "melody": 10006
+		}
+        ,
+		{
+        "title": "蒙娜丽莎的眼泪",
+        "artist": "林志炫",
+		"path": "mengnalishadeyanlei.sht"	,		
+        "melody": 0
+		}
+        ,
+                	{
+        "title": "轨迹",
+        "artist": "周杰伦",
+		"path": "jaychou-guiji.sht"	,		
+        "melody": 0
+		}
+        ,
+
+        {
+        "title": "爱上未来的你",
+        "artist": "潘玮柏",
+		"path": "panweibo-aishangweilaideni.sht"	,		
+        "melody": 1
+		}
+        ,
+		{
+        "title": "下一站天后",
+        "artist": "Twins",
+		"path": "mosikemeiyouyanlei-all.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "痴心绝对",
+        "artist": "李圣杰",
+		"path": "chixinjuedui.sht"	,		
+        "melody": 10000
+		}
+        ,
+
+		 {
+        "title": "燕尾蝶",
+        "artist": "梁静茹",
+		"path": "yanweidie.sht"	,		
+        "melody": 0
+		}
+        ,
+        		 {
+        "title": "浪花一朵朵",
+        "artist": "阿牛",
+		"path": "langhuayiduoduo.sht"	,		
+        "melody": 0
+		}
+        ,
+		 {
+        "title": "暧昧",
+        "artist": "王菲",
+		"path": "aimei.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "伤心太平洋",
+        "artist": "任贤齐",
+		"path": "renxianqi-shangxintaipingyang.sht"	,		
+        "melody": 1
+		}
+		,
+
+         {
+        "title": "我是一只小小鸟",
+        "artist": "赵传",
+		"path": "woshiyizhixiaoxiaoniao.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "断点",
+        "artist": "张敬轩",
+		"path": "zhangjingxuan-duandian.sht"	,		
+        "melody": 0
+		},
+        		{
+        "title": "一千个伤心的理由",
+        "artist": "张学友",
+		"path": "yiqiangeshangxindeliyou.sht"	,		
+        "melody": 3
+		}
+        ,        
+    {
+        "title": "很爱很爱你",
+        "artist": "刘若英",
+		"path": "henaihenaini-all.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "爱的初体验",
+        "artist": "张震岳",
+		"path": "aidechutiyan.sht"	,		
+        "melody": 0
+		},
+
+        		{
+        "title": "夜曲",
+        "artist": "周杰伦",
+		"path": "jaychou_yequ.sht"	,		
+        "melody": 0
+		}
+        ,
+	{
+        "title": "后来",
+        "artist": "刘若英",
+		"path": "houlai-all.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "棋子",
+        "artist": "王菲",
+		"path": "qizi.sht"	,		
+        "melody": 5
+		}
+        ,
+		{
+        "title": "朋友首日封",
+        "artist": "光良",
+		"path": "pengyoushourifeng.sht"	,		
+        "melody": 10000
+		}
+        ,
+
+		{
+        "title": "新鸳鸯蝴蝶梦",
+        "artist": "黄安",
+		"path": "xinyuanyanghudiemeng.sht"	,		
+        "melody": 15
+		}
+        ,
+		{
+        "title": "我也不想这样",
+        "artist": "王菲",
+		"path": "woyebuxiangzheyang.sht"	,		
+        "melody": 7
+		}
+        ,
+		{
+        "title": "幻听",
+        "artist": "许嵩",
+		"path": "huanting_xusong.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "宽容",
+        "artist": "张信哲",
+		"path": "kuanrong.sht"	,		
+        "melody": 10004
+		}
+        ,
+
+		{
+        "title": "好想好想",
+        "artist": "赵薇",
+		"path": "haoxianghaoxiang.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "味道",
+        "artist": "辛晓琪",
+		"path": "weidao.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "星晴",
+        "artist": "周杰伦",
+		"path": "jaychou_xingqing.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "十年",
+        "artist": "陈奕迅",
+		"path": "shinian.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "别怕我伤心",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-biepawoshangxin.sht"	,
+        "melody": 0
+		},
+		{
+        "title": "勇气",
+        "artist": "梁静茹",
+		"path": "yongqi-all.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "祝你一路顺风",
+        "artist": "吴奇隆",
+		"path": "zhuniyilushunfeng.sht"	,		
+        "melody": 11
+		}
+        ,
+		{
+        "title": "至少还有你",
+        "artist": "林忆莲",
+		"path": "zhishaohaiyouni.sht"	,		
+        "melody": 10000
+		}
+        ,       
+        {
+		"title": "一辈子的孤单",
+        "artist": "刘若英",
+		"path": "yibeizigudan.sht",
+        "melody": 4			
+    
+		},
+        		{
+        "title": "不要对他说",
+        "artist": "张信哲",
+		"path": "buyaoduitashuo.sht"	,		
+        "melody": 2
+		},
+        {
+		"title": "回家",
+        "artist": "Sax 名曲",
+		"path": "Goinghome-all.mid"	,		
+        "melody": 10006
+		},
+		{
+        "title": "一起开始的旅程",
+        "artist": "S.H.E",
+		"path": "SHE_yiqikaishidelvcheng.sht"	,		
+        "melody": 10000
+		}
+        ,
+    
+		{
+        "title": "童话",
+        "artist": "光良",
+		"path": "tonghua-all2.sht"	,		
+        "melody": 0,
+		"blow": 0
+		}
+        ,
+                {
+		"title": "简单爱",
+        "artist": "周杰伦",
+		"path": "jaychou_jiandanai.sht"	,		
+        "melody": 1
+		}
+        ,
+        		{
+        "title": "约定",
+        "artist": "周慧",
+		"path": "yueding.sht"	,		
+        "melody": 4
+		}
+        ,
+        {
+        "title": "大约在冬季",
+        "artist": "齐秦",
+		"path": "qiqin-dayuezaidongji.sht"	,		
+        "melody": 0
+		}
+		,
+		{
+        "title": "有多少爱可以重来",
+        "artist": "黄仲昆",
+		"path": "youduoshaoaikechonglai.sht"	,		
+        "melody": 2
+		}
+        ,
+		{
+        "title": "同桌的你",
+        "artist": "老狼",
+		"path": "tongzhuodeni.sht"	,		
+        "melody": 0
+		}
+        ,
+    {
+        "title": "太想愛你",
+        "artist": "张信哲",
+		"path": "taixiangaini.sht"	,		
+        "melody": 8
+		}
+        ,
+        {
+		"title": "龙卷风",
+        "artist": "周杰伦",
+		"path": "jaychou_longjuanfeng.sht"	,		
+        "melody": 2
+		}
+        ,
+
+        {
+		"title": "雨蝶",
+        "artist": "李翊君",
+		"path": "yudie.sht"	,		
+        "melody": 10005
+		}
+        ,
+
+       
+        
+        {
+		"title": "一生有你",
+        "artist": "水木年华",
+		"path": "yishengyouni.sht"	,		
+        "melody": 0
+		}
+        ,
+
+
+    {
+		"title": "一起走过的日子",
+        "artist": "刘德华",
+		"path": "laishengyuan.sht"	,		
+        "melody": 0
+		}
+        ,
+{
+		"title": "以父之名",
+        "artist": "周杰伦",
+		"path": "yifudemingyi.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "California Hotel",
+        "artist": "Eagles",
+		"path": "California_hotel.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+		"title": "特别的爱给特别的你",
+        "artist": "伍思凯",
+		"path": "tebiedeaigeitebiedeni.sht"	,		
+        "melody": 2
+		}
+        ,
+        
+        {
+		"title": "我只在乎你",
+        "artist": "邓丽君",
+		"path": "wozhizaihuni.sht"	,		
+        "melody": 0
+		}
+        ,
+        
+
+        {
+		"title": "深秋的黎明",
+        "artist": "黎明",
+		"path": "shenqiudeliming.sht"	,		
+        "melody": 0
+		}
+        ,
+
+         {
+		"title": "最熟悉的陌生人",
+        "artist": "萧亚轩",
+		"path": "zuishuxidemoshengren.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "秋天不回来",
+        "artist": "王强",
+		"path": "qiutian.sht",
+        "melody": 10008						
+
+		}
+        ,
+        {
+		"title": "只想一生跟你走",
+        "artist": "张学友",
+		"path": "gennizou.sht",
+        "melody": 99,
+		"blow": 0						
+        
+		},
+        {
+        "title": "不得不爱",
+        "artist": "潘玮柏",
+		"path": "panweibo-budebuai.sht"	,		
+        "melody": 2,
+		"blow": 0
+		}
+        ,
+		{
+        "title": "星语心愿",
+        "artist": "张柏芝",
+		"path": "xingyuxinyuan.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "暗号",
+        "artist": "周杰伦",
+		"path": "jaychou-anhao.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "原来你什么都不想要",
+        "artist": "张惠妹",
+		"path": "zhanghuimei-yuanlainishenmedoubuxiangyao.sht"	,		
+        "melody": 8
+		}
+        ,
+		{
+        "title": "勇气",
+        "artist": "梁静茹",
+		"path": "liangjingru-yongqi.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+		{
+        "title": "扑火",
+        "artist": "王菲",
+		"path": "wangfei-puhuo.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "布拉格广场",
+        "artist": "蔡依林",
+		"path": "caiyilin-bulageguangchang.sht"	,		
+        "melody": 7,
+		"blow": 0
+		}
+        ,
+		{
+        "title": "风中有朵雨做的云",
+        "artist": "孟庭苇",
+		"path": "mengtingwei-fengzhongyouduoyuzuodeyun.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "那么爱你为什么",
+        "artist": "黄品源",
+		"path": "mowenwei-nameainiweishenme.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+        "title": "你的眼神",
+        "artist": "蔡琴",
+		"path": "caiqin-nideyanshen.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "千千阕歌",
+        "artist": "陈慧娴",
+		"path": "chenhuixian-qianqianquege.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "女人花",
+        "artist": "梅艳芳",
+		"path": "meiyanfang-nvrenhua.sht"	,		
+        "melody": 3
+		}
+        ,
+		
+		{
+        "title": "回到过去",
+        "artist": "周杰伦",
+		"path": "jaychou-huidaoguoqu.sht"	,		
+        "melody": 1
+		}
+        ,
+ {
+        "title": "离人",
+        "artist": "林志炫",
+		"path": "linzhixuan-liren.sht"	,
+        "melody": 0
+		},
+
+		{
+        "title": "偷心",
+        "artist": "张学友",
+		"path": "zhangxueyou-touxin.sht"	,		
+        "melody": 0
+		}
+        ,
+
+		{
+        "title": "爱我别走",
+        "artist": "张震岳",
+		"path": "zhangzhenyue-aiwobiezou.sht"	,		
+        "melody": 2
+		}
+        ,
+		{
+        "title": "红日",
+        "artist": "李克勤",
+		"path": "likeqin-hongri.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+		
+		{
+        "title": "情敌贝多芬",
+        "artist": "王力宏",
+		"path": "wanglihong-qingdibeiduofen.sht"	,		
+        "melody": 12
+		}
+        ,
+
+		{
+        "title": "Lonely Christmas",
+        "artist": "陈奕迅",
+		"path": "chenyixun-lonelychristmas.sht"	,		
+        "melody": 10000
+		}
+        ,
+
+		{
+        "title": "你怎么舍得我难过",
+        "artist": "黄品源",
+		"path": "huangpinyuan-nizenmeshedewonanguo.sht"	,		
+        "melody": 0
+		},
+          {
+        "title": "天意",
+        "artist": "刘德华",
+		"path": "tianyi.sht"	,		
+        "melody": 10000
+		}
+        ,
+        
+        {
+        "title": "星空",
+        "artist": "五月天",
+		"path": "xingkong-wuyuetian.sht"	,	
+        "instr": 0,
+        "melody": 3,
+		"blow": 0
+		}
+        ,
+         {
+        "title": "解脱",
+        "artist": "张惠妹",
+		"path": "zhanghuimei_jietuo.sht"	,		
+        "melody": 0
+		}
+        ,
+		 {
+        "title": "我可以抱你吗",
+        "artist": "张惠妹",
+		"path": "zhanghuimei_wokeyibaonima.sht"	,		
+        "melody": 10002
+		}
+        ,
+         {
+        "title": "我的最爱",
+        "artist": "张韶涵",
+		"path": "zhangshaohan_wodezuiai.sht"	,		
+        "melody": 10006
+		}
+
+        ,
+         {
+        "title": "别说对不起",
+        "artist": "S.H.E",
+		"path": "SHE-bieshuoduibuqi.sht"	,
+        "melody": 0
+		}
+        ,
+         
+          {
+		"title": "可爱女人",
+        "artist": "周杰伦",
+		"path": "keainvren.sht"	,		
+        "melody": 0
+		}
+        ,
+         {
+        "title": "祝我生日快乐",
+        "artist": "温岚",
+		"path": "wenlan-zhuwoshengrikuaile.sht"	,
+        "melody": 0
+		},
+		{
+        "title": "外面的世界",
+        "artist": "齐秦",
+		"path": "qiqin-waimiandeshijie.sht"	,		
+        "melody": 13
+		}
+        ,
+		
+		{
+        "title": "往事随风",
+        "artist": "齐秦",
+		"path": "qiqin-wangshisuifeng.sht"	,		
+        "melody": 3
+		}
+        ,
+        
+        {
+        "title": "城里的月光",
+        "artist": "许美静",
+		"path": "chenglideyueguang.sht"	,		
+        "melody": 5
+		}
+        ,
+    {
+        "title": "冬季恋歌",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "wintersonata.sht"	,		
+        "melody": 0
+		}
+        ,
+        	{
+        "title": "画心",
+        "artist": "电影<<画皮>>主题曲",
+		"path": "huaxin-piano.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "情深深雨蒙蒙",
+        "artist": "<<情深深雨蒙蒙>>插曲",
+		"path": "qingshenshenyumengmeng_chaqu.sht"	,		
+        "melody": 2
+		}
+        ,
+        {
+		"title": "我心依旧",
+        "artist": "<<泰坦尼克>>主题曲",
+		"path": "taitannike.sht"	,		
+        "melody": 7
+		}
+        ,
+		{
+		"title": "白色恋人",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "baiselianren.sht",
+        "melody": 99			
+
+		},
+         {
+		"title": "薰衣草",
+        "artist": "许绍洋",
+		"path": "xunyicao.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "一生有意义",
+        "artist": "<<射雕>>主题曲",
+		"path": "yishengyouyiyi.sht"	,		
+        "melody": 0
+		}
+        ,
+
+        {
+		"title": "美丽的神话",
+        "artist": "<<神话>>插曲",
+		"path": "meilideshenhua.sht",
+        "melody": 99,
+		"blow": 0			
+
+		},
+        {
+        "title": "烟花易冷",
+        "artist": "周杰伦",
+		"path": "jaychou_yanhuayilen.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+		"title": "江南",
+        "artist": "林俊杰",
+		"path": "jiangnan-all.sht"	,		
+        "melody": 0
+		}
+        ,
+    {
+        "title": "青花瓷",
+        "artist": "周杰伦",
+		"path": "jaychou-qinghuaci.sht"	,		
+        "melody": 0
+		}
+        ,
+     {
+        "title": "荷塘月色",
+        "artist": "凤凰组合",
+		"path": "hetangyuese.sht"	,
+        "melody": 0,
+		"blow": 0
+		},
+        
+        {
+		"title": "东风破",
+        "artist": "周杰伦",
+		"path": "jaychou_dongfengpo.sht"	,		
+        "melody": 7
+		}
+        ,
+        {
+		"title": "倩女幽魂",
+        "artist": "张国荣",
+		"path": "zhangguorong_qiannvyouhun.sht"	,		
+        "melody": 10007
+		}
+        ,
+        {
+        "title": "最炫民族风",
+        "artist": "凤凰组合",
+		"path": "zuixuanmingzufeng.sht"	,		
+        "melody": 99,
+		"blow": 0
+		}
+        ,
+        
+        {
+		"title": "菊花台",
+        "artist": "周杰伦",
+		"path": "juhuatai2.sht"	,
+        "melody": 99		
+
+		}
+        ,
+		{
+        "title": "但愿人长久",
+        "artist": "王菲",
+		"path": "wangfei-danyuanrenchangjiu.sht"	,		
+        "melody": 5
+		}
+        ,
+                		
+        {
+        "title": "不装饰你的梦",
+        "artist": "蔡国权",
+		"path": "buzhuangshinidemeng.sht"	,		
+        "melody": 3
+		}
+        ,
+
+        {
+		"title": "早已明知对他的爱",
+        "artist": "<<83射雕>>插曲",
+		"path": "shediao.sht"	,		
+        "melody": 0
+		}
+        ,
+        
+        {
+		"title": "橄榄树",
+        "artist": "齐豫",
+		"path": "ganlanshu.sht",
+        "melody": 99			
+
+		},
+        {
+        "title": "一剪梅",
+        "artist": "费玉清",
+		"path": "feiyuqing-yijianmei.sht"	,		
+        "melody": 10007
+		}
+        ,
+        {
+        "title": "七里香",
+        "artist": "周杰伦",
+		"path": "qilixiang.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "雪中莲",
+        "artist": "王菲",
+		"path": "wangfei-xuezhonglian.sht"	,		
+        "melody": 10005
+		}
+        ,
+        {
+		"title": "梁祝",
+        "artist": "经典音乐",
+		"path": "liangzhu_s2.sht",
+        "melody": 99			
+			
+		}
+        ,
+        {
+        "title": "稻香",
+        "artist": "周杰伦",
+		"path": "jaychou-daoxiang.sht"	,		
+        "melody": 10203
+		},
+        {
+		"title": "每天爱你多一些",
+        "artist": "张学友",
+		"path": "meitianainiduoyixie.sht"	,		
+        "melody": 1
+		}
+        ,
+        {
+        "title": "不让你的眼泪陪我过夜",
+        "artist": "齐秦",
+		"path": "burangnideyanleipeiwoguoye.sht"	,		
+        "melody": 0
+		}
+        ,
+{
+        "title": "把悲伤留给自己",
+        "artist": "陈升",
+		"path": "babeishangliugeiziji.sht"	,		
+        "melody": 10000
+		}
+        ,
+      {
+		"title": "吻别",
+        "artist": "张学友",
+		"path": "kissbye.sht"	,		
+        "melody": 0
+		}
+        ,
+     
+        {
+		"title": "晚秋",
+        "artist": "黄凯芹",
+		"path": "wanqiu.sht"	,		
+        "melody": 4
+		}
+        ,
+        
+        {
+        "title": "涛声依旧",
+        "artist": "毛宁",
+		"path": "taoshengyijiu.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "刀剑如梦",
+        "artist": "周华健",
+		"path": "daojianrumeng.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+        {
+        "title": "夕阳醉了",
+        "artist": "张学友",
+		"path": "xiyangzuile.sht"	,		
+        "melody": 3
+		}
+        ,
+		{
+        "title": "城里的月光",
+        "artist": "许美静",
+		"path": "chenglideyueguang.sht"	,		
+        "melody": 5
+		}
+        ,
+        {
+        "title": "分手总要在雨天",
+        "artist": "张学友",
+		"path": "fenshouzongyaozaiyutian.sht"	,		
+        "melody": 10000
+		}
+        ,
+        {
+        "title": "今夜你会不会来",
+        "artist": "黎明",
+		"path": "jinyenihuibuhuilai.sht"	,		
+        "melody": 0
+		}
+        ,
+		
+        {
+        "title": "千纸鹤",
+        "artist": "邰正宵",
+		"path": "qianzhihe.sht"	,		
+        "melody": 10000
+		}
+        ,
+        {
+        "title": "旧情绵绵",
+        "artist": "张学友",
+		"path": "jiuqingmianmian-flute.sht"	,		
+        "melody": 10000
+		}
+        ,
+        {
+        "title": "忘情水",
+        "artist": "刘德华",
+		"path": "wangqingshui.sht"	,		
+        "melody": 10000
+		}
+        ,
+	
+	{
+        "title": "心只有你",
+        "artist": "刘德华",
+		"path": "xinzhiyouni.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "如果我是你的传说",
+        "artist": "刘德华",
+		"path": "ruguowoshinidechuanshuo.sht"	,		
+        "melody": 3
+		}
+        ,
+	{
+        "title": "漂流",
+        "artist": "刘德华",
+		"path": "piaoliu.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "情已逝",
+        "artist": "张学友",
+		"path": "qingyishi.sht"	,		
+        "melody": 0
+		}, 
+        {
+		"title": "Melody",
+        "artist": "李克勤",
+		"path": "melody_ex.sht",		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "月半弯",
+        "artist": "张学友",
+		"path": "yuebanwan.sht",
+        "melody": 10000				
+		}
+        ,
+        {
+        "title": "真永遠",
+        "artist": "刘德华",
+		"path": "zhanyongyuan.sht"	,		
+        "melody": 3
+		},
+        {
+        "title": "AMANI",
+        "artist": "Beyond",
+		"path": "beyond-amani.sht"	,		
+        "melody": 10004
+		}
+		,
+		{
+        "title": "午夜怨曲",
+        "artist": "Beyond",
+		"path": "beyond-wuyeyuanqu.sht"	,		
+        "melody": 10011
+		}
+		,
+		{
+        "title": "原谅我今天",
+        "artist": "Beyond",
+		"path": "beyond-yuanliangwojintian.sht"	,		
+        "melody": 10008
+		}
+		,
+		{
+        "title": "海阔天空",
+        "artist": "Beyond",
+		"path": "beyond-haikuotiankong.sht"	,		
+        "melody": 10000,
+		"blow" : 0
+		}
+		,
+		{
+        "title": "浪人情歌",
+        "artist": "伍佰",
+		"path": "wubai-langrenqingge.sht"	,		
+        "melody": 1
+		},
+         {
+        "title": "温柔",
+        "artist": "五月天",
+		"path": "wuyuetian-wenrou.sht"	,		
+        "melody": 6
+		}
+        ,
+        
+      {
+		"title": "喜欢你",
+        "artist": "Beyond",
+		"path": "xihuanni.sht",
+        "melody": 10000				
+
+		}
+        ,
+        {
+		"title": "再见理想",
+        "artist": "Beyond",
+		"path": "zaijianlixiang.sht",
+        "melody": 10000				
+
+		}
+        ,
+
+        {
+		"title": "大地",
+        "artist": "Beyond",
+		"path": "dadi.sht",
+        "melody": 10006		
+
+		}
+        ,
+        {
+		"title": "灰色轨迹",
+        "artist": "Beyond",
+		"path": "huiseguiji.sht",
+        "melody": 10006			
+
+		}
+        ,
+        {
+		"title": "谁伴我闯荡",
+        "artist": "Beyond",
+		"path": "shuibanwochuangdang.sht",
+        "melody": 10007			
+
+		},
+    {
+		"title": "止战之殇",
+        "artist": "周杰伦",
+		"path": "zhizhanzhishang.sht"	,		
+        "melody": 2
+		}
+        ,
+        {
+		"title": "冷雨夜",
+        "artist": "Beyond",
+		"path": "lenyuye.sht",
+        "melody": 10008			
+    
+		}
+        ,
+         {
+		"title": "Yeah",
+        "artist": "Usher",
+		"path": "yeah.sht"	,
+        "melody": 4			
+        
+		}
+        ,
+        {
+		"title": "Beat It",
+        "artist": "Michael Jackson",
+		"path": "M_Jackson_beatit.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+		"title": "Heal the World",
+        "artist": "Michael Jackson",
+		"path": "M_Jackson_healtheworld.sht"	,		
+        "melody": 10003
+		},
+        {
+		"title": "月光曲",
+        "artist": "贝多芬",
+		"path": "yueguangqu.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "爱情的故事",
+		"path": "aiqingdegushi.sht",
+        "artist": "埃里奇·西格尔",
+        "melody": 99			
+
+		},
+        {
+		"title": "梦中的婚礼",
+		"path": "mengzhongdehunli.sht",
+        "artist": "理查德.克莱德曼",
+        "melody": 99			
+
+		}
+		,
+        {
+		"title": "爱的罗曼史",
+        "artist": "那西索·叶佩斯",
+		"path": "aideluomanshi.sht"	,
+        "melody": 99		
+
+		}
+        ,
+        {
+		"title": "水边的阿蒂丽娜",
+        "artist": "理查德.克莱德曼",
+		"path": "shuibiandeadilina.sht",
+        "melody": 99			
+
+		}
+        ,
+		 {
+		"title": "土耳其进行曲",
+        "artist": "莫扎特",
+		"path": "tuerqijinxingqu_s.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "星空",
+        "artist": "理查德.克莱德曼",
+		"path": "xingkong.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "卡农",
+        "artist": "Johann Pachelbel",
+		"path": "kanong.sht",
+        "melody": 99,
+		"blow": 0			
+
+		},
+		{
+		"title": "秘密的庭院",
+         "artist": "理查德.克莱德曼",
+		"path": "mimidetingyuan.sht",
+        "melody": 99			
+
+		},
+		{
+		"title": "天鹅",
+         "artist": "圣桑",
+		"path": "tiane.sht",
+        "melody": 99			
+
+		},
+		{
+		"title": "快乐农夫",
+         "artist": "舒曼",
+		"path": "kuailedenongfu.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "秋日私语",
+        "artist": "理查德.克莱德曼",
+		"path": "qiurisiyu3.sht",
+        "melody": 99			
+
+		}
+        ,
+        
+		{
+		"title": "初恋",
+        "artist": "理查德.克莱德曼",
+		"path": "chulian.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "萤火虫之舞",
+		"path": "yinghuochongzhiwu.sht",
+        "artist": "-",	
+        "melody": 99
+		}
+        ,
+		{
+		"title": "钢琴叙事曲",
+		"path": "gangqinxushiqu.sht",
+        "artist": "肖邦",	
+        "melody": 99			
+
+		}
+        ,{
+		"title": "A小调圆舞曲",
+		"path": "axiaodiaoyuanwuqu.sht",
+        "artist": "肖邦",	
+        "melody": 99		
+
+		}
+        ,
+		{
+		"title": "蓝色的多瑙河",
+		"path": "lanseduonaohe.sht",
+        "artist": "小约翰.施特劳斯",	
+        "melody": 99					
+
+		},
+		
+		{
+		"title": "天鹅湖",
+		"path": "tianehu.sht",
+        "artist": "柴可夫斯基",	
+        "melody": 99		
+			
+
+		},
+		{
+		"title": "四小天鹅",
+		"path": "sixiaotiane.sht",
+        "artist": "柴可夫斯基",	
+        "melody": 99		
+			
+
+		},
+		
+		{
+		"title": "浪漫曲",
+		"path": "langmanqu.sht",
+        "artist": "莫扎特 ",	
+        "melody": 99		
+
+		},
+        {
+		"title": "红豆",
+        "artist": "王菲",
+		"path": "hongdou.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "冬季恋歌（纯钢琴曲）",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "congkaishidaoxianzai.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "过火",
+        "artist": "张信哲",
+		"path": "guohuo.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "夜的钢琴曲",
+        "artist": "石进",
+		"path": "ye.sht",
+        "melody": 99			
+
+		}
+        ,
+                {
+		"title": "星星",
+        "artist": "Vitas",
+		"path": "xingxing.sht",
+        "melody": 99			
+
+		},
+        
+		{
+		"title": "眼泪",
+        "artist": "The Daydream",
+		"path": "yanlei.sht",
+        "melody": 99			
+		}
+        ,
+        
+        {
+		"title": "月半小夜曲",
+        "artist": "李克勤",
+		"path": "yuebanxiaoyequ.sht",
+        "melody": 99			
+        
+		},
+        
+        {
+		"title": "童话",
+        "artist": "光良",
+		"path": "tonghua.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "矜持",
+        "artist": "王菲",
+		"path": "jingchi.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "今天你要嫁给我了",
+        "artist": "陶喆/蔡依林",
+		"path": "jintianniyaojiageiwo.sht",
+        "melody": 99,
+		"blow": 0			
+
+		},
+        {
+		"title": "约定",
+        "artist": "周慧",
+		"path": "yueding.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "我真的受伤了",
+        "artist": "张学友",
+		"path": "wozhendeshoushangle.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "隐形的翅膀",
+        "artist": "容祖儿",
+		"path": "yinxingdechibang.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "月亮代表我的心",
+        "artist": "齐秦",
+		"path": "yueliangdaibiaowodexin.sht",
+        "melody": 99			
+			
+        
+		}
+        ,
+
+
+        {
+		"title": "小星星",
+        "artist": "莫扎特",
+		"path": "xiaoxingxing.sht",
+        "melody": 99			
+
+		},
+		{
+		"title": "生日快乐",
+        "artist": "儿童歌曲",
+		"path": "shengrikuaile.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "小城故事",
+        "artist": "邓丽君",
+		"path": "xiaochenggushi.sht",
+        "melody": 99			
+
+		}
+		,
+        {
+		"title": "漫步人生路",
+        "artist": "邓丽君",
+		"path": "manburenshenglu.sht",
+        "melody": 99			
+
+		},
+		
+        {
+		"title": "雪绒花",
+        "artist": "儿童歌曲",
+		"path": "xueronghua_s.sht",
+        "melody": 99			
+
+		}
+		,
+        {
+		"title": "茉莉花",
+        "artist": "中国歌曲",
+		"path": "molihua.sht",
+        "melody": 99			
+
+		}
+		,
+	    
+        {
+		"title": "很爱很爱你",
+        "artist": "刘若英",
+		"path": "henaihenaini.sht",
+        "melody": 99			
+
+		},       
+	    {
+		"title": "江南",
+        "artist": "林俊杰",
+		"path": "jiangnan.sht",
+        "melody": 99			
+
+		},
+      {
+		"title": "挥着翅膀的女孩",
+		"path": "huizhechibangdenvhai.sht",
+        "artist": "容祖儿",
+        "melody": 99			
+
+		}
+        ,
+         {
+		"title": "安静",
+		"path": "anjing.sht",
+        "artist": "周杰伦",
+        "melody": 99			
+
+		}
+        ,
+		{
+		"title": "Song Bird",
+        "artist": "Sax 名曲",
+		"path": "songbird.mid"	,		
+        "melody": 10015
+		}
+        ,
+        {
+		"title": "下弦月",
+        "artist": "",
+		"path": "xiaxuanyue.sht",
+        "melody": 99,
+		"blow": 0
+
+		}
+               
+        
+        
+
+		
+      ]
+}

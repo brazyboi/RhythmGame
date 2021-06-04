@@ -1,0 +1,130 @@
+﻿{
+	"name": "playlist_battle_8.pls",
+	"list": 
+	[ 
+    
+    {
+        "title": "AMANI",
+        "artist": "Beyond",
+		"path": "beyond-amani.sht"	,		
+        "melody": 10004
+		}
+		,
+		{
+        "title": "午夜怨曲",
+        "artist": "Beyond",
+		"path": "beyond-wuyeyuanqu.sht"	,		
+        "melody": 10011
+		}
+		,
+		{
+        "title": "原谅我今天",
+        "artist": "Beyond",
+		"path": "beyond-yuanliangwojintian.sht"	,		
+        "melody": 10008
+		}
+		,
+		{
+        "title": "海阔天空",
+        "artist": "Beyond",
+		"path": "beyond-haikuotiankong.sht"	,		
+        "melody": 10000,
+		"blow" : 0
+		}
+		,
+		{
+        "title": "浪人情歌",
+        "artist": "伍佰",
+		"path": "wubai-langrenqingge.sht"	,		
+        "melody": 1
+		},
+         {
+        "title": "温柔",
+        "artist": "五月天",
+		"path": "wuyuetian-wenrou.sht"	,		
+        "melody": 6
+		}
+        ,
+        
+      {
+		"title": "喜欢你",
+        "artist": "Beyond",
+		"path": "xihuanni.sht",
+        "melody": 10000				
+
+		}
+        ,
+        {
+		"title": "再见理想",
+        "artist": "Beyond",
+		"path": "zaijianlixiang.sht",
+        "melody": 10000				
+
+		}
+        ,
+
+        {
+		"title": "大地",
+        "artist": "Beyond",
+		"path": "dadi.sht",
+        "melody": 10006		
+
+		}
+        ,
+        {
+		"title": "灰色轨迹",
+        "artist": "Beyond",
+		"path": "huiseguiji.sht",
+        "melody": 10006			
+
+		}
+        ,
+        {
+		"title": "谁伴我闯荡",
+        "artist": "Beyond",
+		"path": "shuibanwochuangdang.sht",
+        "melody": 10007			
+
+		},
+    {
+		"title": "止战之殇",
+        "artist": "周杰伦",
+		"path": "zhizhanzhishang.sht"	,		
+        "melody": 2
+		}
+        ,
+        {
+		"title": "冷雨夜",
+        "artist": "Beyond",
+		"path": "lenyuye.sht",
+        "melody": 10008			
+    
+		}
+        ,
+         {
+		"title": "Yeah",
+        "artist": "Usher",
+		"path": "yeah.sht"	,
+        "melody": 4			
+        
+		}
+        ,
+        {
+		"title": "Beat It",
+        "artist": "Michael Jackson",
+		"path": "M_Jackson_beatit.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+		"title": "Heal the World",
+        "artist": "Michael Jackson",
+		"path": "M_Jackson_healtheworld.sht"	,		
+        "melody": 10003
+		}
+               
+        
+        
+
+      ]
+}

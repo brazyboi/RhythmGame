@@ -1,0 +1,169 @@
+﻿{
+	"name": "playlist_battle_3.pls",
+    "index": 3,
+	"list": 
+	[ 
+    
+		{
+		"title": "回家",
+        "artist": "Sax 名曲",
+		"path": "Goinghome-all.mid"	,		
+        "melody": 10006
+		},
+		{
+        "title": "一起开始的旅程",
+        "artist": "S.H.E",
+		"path": "SHE_yiqikaishidelvcheng.sht"	,		
+        "melody": 10000
+		}
+        ,
+    
+		{
+        "title": "童话",
+        "artist": "光良",
+		"path": "tonghua-all2.sht"	,		
+        "melody": 0,
+		"blow": 0
+		}
+        ,
+                {
+		"title": "简单爱",
+        "artist": "周杰伦",
+		"path": "jaychou_jiandanai.sht"	,		
+        "melody": 1
+		}
+        ,
+        		{
+        "title": "约定",
+        "artist": "周慧",
+		"path": "yueding.sht"	,		
+        "melody": 4
+		}
+        ,
+        {
+        "title": "大约在冬季",
+        "artist": "齐秦",
+		"path": "qiqin-dayuezaidongji.sht"	,		
+        "melody": 0
+		}
+		,
+		{
+        "title": "有多少爱可以重来",
+        "artist": "黄仲昆",
+		"path": "youduoshaoaikechonglai.sht"	,		
+        "melody": 2
+		}
+        ,
+		{
+        "title": "同桌的你",
+        "artist": "老狼",
+		"path": "tongzhuodeni.sht"	,		
+        "melody": 0
+		}
+        ,
+    {
+        "title": "太想愛你",
+        "artist": "张信哲",
+		"path": "taixiangaini.sht"	,		
+        "melody": 8
+		}
+        ,
+        {
+		"title": "龙卷风",
+        "artist": "周杰伦",
+		"path": "jaychou_longjuanfeng.sht"	,		
+        "melody": 2
+		}
+        ,
+
+        {
+		"title": "雨蝶",
+        "artist": "李翊君",
+		"path": "yudie.sht"	,		
+        "melody": 10005
+		}
+        ,
+
+       
+        
+        {
+		"title": "一生有你",
+        "artist": "水木年华",
+		"path": "yishengyouni.sht"	,		
+        "melody": 0
+		}
+        ,
+
+
+    {
+		"title": "一起走过的日子",
+        "artist": "刘德华",
+		"path": "laishengyuan.sht"	,		
+        "melody": 0
+		}
+        ,
+{
+		"title": "以父之名",
+        "artist": "周杰伦",
+		"path": "yifudemingyi.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "California Hotel",
+        "artist": "Eagles",
+		"path": "California_hotel.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+		"title": "特别的爱给特别的你",
+        "artist": "伍思凯",
+		"path": "tebiedeaigeitebiedeni.sht"	,		
+        "melody": 2
+		}
+        ,
+        
+        {
+		"title": "我只在乎你",
+        "artist": "邓丽君",
+		"path": "wozhizaihuni.sht"	,		
+        "melody": 0
+		}
+        ,
+        
+
+        {
+		"title": "深秋的黎明",
+        "artist": "黎明",
+		"path": "shenqiudeliming.sht"	,		
+        "melody": 0
+		}
+        ,
+
+         {
+		"title": "最熟悉的陌生人",
+        "artist": "萧亚轩",
+		"path": "zuishuxidemoshengren.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "秋天不回来",
+        "artist": "王强",
+		"path": "qiutian.sht",
+        "melody": 10008						
+
+		}
+        ,
+        {
+		"title": "只想一生跟你走",
+        "artist": "张学友",
+		"path": "gennizou.sht",
+        "melody": 99,
+		"blow": 0						
+        
+		}
+		
+      ]
+}

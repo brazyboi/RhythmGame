@@ -1,0 +1,113 @@
+﻿{
+	"name": "playlist_battle_en10.pls",
+    "Des": "吉他曲",
+	"list": 
+	[ 
+      
+    {
+		"title": "If I were a Boy",
+        "artist": "Beyonce",
+		"path": "aboy.sht"	,		
+        "melody": 3
+		}
+        ,
+     {
+        "title": "the Coral Sea",
+        "artist": "周杰伦",
+		"path": "shanhuhai-all.sht"	,		
+        "melody": 300,
+		"blow": 0
+		}
+        ,
+    {
+		"title": "Love Song",
+        "artist": "王菲",
+		"path": "hongdou.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "Winter Sonata",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "congkaishidaoxianzai.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "Over the Top",
+        "artist": "张信哲",
+		"path": "guohuo.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "The Night Melody",
+        "artist": "石进",
+		"path": "ye.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "the Stars",
+        "artist": "Vitas",
+		"path": "xingxing.sht",
+        "melody": 99			
+
+		},
+        
+		{
+		"title": "Tear",
+        "artist": "The Daydream",
+		"path": "yanlei.sht",
+        "melody": 99			
+		}
+        ,
+        
+        {
+		"title": "Serenade",
+        "artist": "李克勤",
+		"path": "yuebanxiaoyequ.sht",
+        "melody": 99			
+        
+		},
+        {
+		"title": "Reserved",
+        "artist": "王菲",
+		"path": "jingchi.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "Promise",
+        "artist": "周慧",
+		"path": "yueding.sht",
+        "melody": 99			
+
+		},
+        {
+		"title": "I Was Hurt",
+        "artist": "张学友",
+		"path": "wozhendeshoushangle.sht",
+        "melody": 99			
+
+		} 
+        ,
+         {
+		"title": "Silence",
+		"path": "anjing.sht",
+        "artist": "周杰伦",
+        "melody": 99			
+
+		}
+
+
+        
+
+
+      ]
+}
