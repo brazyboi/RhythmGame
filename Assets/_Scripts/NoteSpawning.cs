@@ -12,7 +12,7 @@ public class NoteSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(noteSpawn());
+        
     }
 
     // Update is called once per frame
@@ -28,15 +28,6 @@ public class NoteSpawning : MonoBehaviour
 
     }
     
-    IEnumerator noteSpawn()
-    {
-        while (true)
-        {
-            xPos = UnityEngine.Random.Range(-Screen.width + 200, Screen.width - 200) / 100;
-            Instantiate(noteObj, new Vector3(xPos, (float)(4.75), 0), Quaternion.identity);
-            yield return new WaitForSeconds(waitTime);
-
-        }
-    }
+    
 
 }

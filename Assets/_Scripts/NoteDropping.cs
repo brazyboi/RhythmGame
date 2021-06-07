@@ -20,7 +20,7 @@ public class NoteDropping : MonoBehaviour
         transform.position += new Vector3(0, speed * Time.deltaTime, 0);
 
         Vector3 screenPos = cam.WorldToScreenPoint(gameObject.transform.position);
-        if (screenPos.y > Screen.height + 200)
+        if (screenPos.y < 1)
         {
             Destroy(gameObject);
         }

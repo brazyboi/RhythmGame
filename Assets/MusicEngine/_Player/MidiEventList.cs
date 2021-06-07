@@ -70,6 +70,11 @@ public class MusicNote  {
 
 	}
 
+	public int getValue()
+    {
+		return value;
+    }
+
 	public int getType() {
 		return melodyEventEx;// =  OTHER_HARMONY_NOTE;
 	}
