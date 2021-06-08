@@ -10,9 +10,6 @@ public class MusicPlayerExample : MonoBehaviour
 
     public GameObject noteObj;
 
-    float xPos;
-    MusicNote curNote; 
-
     // Use this for initialization
     void Start()
     {
@@ -56,24 +53,7 @@ public class MusicPlayerExample : MonoBehaviour
 
     void placeNote(MusicNote note)
     {
-        xPos = 0;
-
-        Instantiate(noteObj, new Vector3(xPos, 5, -5), Quaternion.identity);
-
-        StartCoroutine(delaySetNote(note));
-    }
-
-    IEnumerator delaySetNote(MusicNote note)
-    {
-        yield return new WaitForSeconds(2);
-
-        curNote = note;
-
-    }
-
-    private void OnMouseDown()
-    {
-        soundPlayer.playNote(curNote.getValue(), MusicInstrument.FLUTE_INSTRUMENT, 100, 2000, false);
+        
     }
 
     void placeDrumExplosion(long size)

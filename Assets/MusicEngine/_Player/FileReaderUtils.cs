@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
-using System.Collections.Generic;
 using System.Text;
 using System.IO.Compression;
 using UnityEngine.Networking;
