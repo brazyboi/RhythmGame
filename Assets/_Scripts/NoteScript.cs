@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NoteScript : MonoBehaviour
 {
+    public MusicNote melodyNote;
+    public SoundPlayer sp;
 
     Camera cam;
     // Start is called before the first frame update
@@ -20,5 +22,20 @@ public class NoteScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnMouseDown()
+    {
+        sp.playNote(melodyNote.getValue(), MusicInstrument.FLUTE_INSTRUMENT, 200, melodyNote.elapseTime, true);
+
+        UnityEngine.Debug.Log("clicked " + melodyNote.getValue());
+
+        StartCoroutine(destroyAfterComplete());
+    }
+
+    IEnumerator destroyAfterComplete()
+    {
+        yield return new WaitForSeconds(melodyNote.elapseTime / 100);
+        Destroy(this.gameObject);
     }
 }

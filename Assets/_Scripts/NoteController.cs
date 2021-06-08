@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteSpawning : GameBase
+public class NoteController : GameBase
 {
 
     SoundPlayer soundPlayer;
@@ -18,6 +18,7 @@ public class NoteSpawning : GameBase
 
         initSoundPlayer();
         startPlay();
+        
     }
 
 
@@ -25,8 +26,8 @@ public class NoteSpawning : GameBase
     {
         soundPlayer = SoundPlayer.singleton();
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
-        soundPlayer.setMelodyMute(false);
+        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
+        soundPlayer.setMelodyMute(true);
     }
 
     // Update is called once per frame
@@ -55,9 +56,14 @@ public class NoteSpawning : GameBase
 
     void placeNote(MusicNote note)
     {
-        
-        GameObject noteObject = Instantiate(noteObj, new Vector3(0, note.tick * manager.speed / 100, -5), Quaternion.identity);
-        noteObject.transform.localScale = new Vector3(1, note.elapseTime / 100, 1);
+        float xPos = UnityEngine.Random.Range(-Screen.width + 400, Screen.width - 400) / 100;
+
+        GameObject noteObject = Instantiate(noteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
+        noteObject.transform.localScale = new Vector3(1.5f, note.elapseTime / 100 - 0.8f, 1);
+        NoteScript noteScript = noteObject.GetComponent<NoteScript>();
+        noteScript.melodyNote = note;
+        noteScript.sp = soundPlayer;
+
     }
 
     void placeDrumExplosion(long size)
@@ -86,9 +92,9 @@ public class NoteSpawning : GameBase
 
     class Player3DDelegate : PianoPlayerDelegate
     {
-        NoteSpawning controller;
+        NoteController controller;
 
-        public Player3DDelegate(NoteSpawning c)
+        public Player3DDelegate(NoteController c)
         {
             controller = c;
         }
