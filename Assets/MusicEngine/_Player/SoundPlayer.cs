@@ -1127,7 +1127,7 @@ int playNextNote (int hitPressCount, int jumpMaximal) {
 
 	}
 
-	void stopNote (int note, int atLeastMS_, int noteLastTimeMs_) {
+	public void stopNote (int note, int atLeastMS_, int noteLastTimeMs_) {
 		if(appContext.isCurrentFluteStyle() && appContext.isCurrentSoundBank()) {
 			playerDelegate.playEvent(PLAY_EVENT_STOP_SOLOPLAY_NOTE, note,noteLastTimeMs_);
 			midiEngine.stopNoteFlute(note, atLeastMS_, noteLastTimeMs_);

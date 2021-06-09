@@ -14,6 +14,6 @@ public class BackgroundMovingScript : GameBase
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, manager.speed * manager.playTime/100 - 2, 0);
+        transform.position = new Vector3(0, manager.speed * manager.playTime/100 - 3, 0);
     }
 }

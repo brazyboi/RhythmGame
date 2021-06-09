@@ -7,6 +7,7 @@ public class NoteController : GameBase
 
     SoundPlayer soundPlayer;
     AppContext appContext;
+    float prevXPos = -100;
 
     public GameObject noteObj;
 
@@ -58,11 +59,30 @@ public class NoteController : GameBase
     {
         float xPos = UnityEngine.Random.Range(-Screen.width + 400, Screen.width - 400) / 100;
 
+        if (xPos == prevXPos)
+        {
+            xPos += 1;
+        }
+
+        float length = note.elapseTime / 100 - 1.0f;
+
+        if (length < 0)
+        {
+            length = 1.0f;
+        }
+
+        if (length > 5)
+        {
+            length = 5.0f;
+        }
+
         GameObject noteObject = Instantiate(noteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
-        noteObject.transform.localScale = new Vector3(1.5f, note.elapseTime / 100 - 0.8f, 1);
+        noteObject.transform.localScale = new Vector3(1, length, 1);
         NoteScript noteScript = noteObject.GetComponent<NoteScript>();
         noteScript.melodyNote = note;
         noteScript.sp = soundPlayer;
+
+        prevXPos = xPos;
 
     }
 
