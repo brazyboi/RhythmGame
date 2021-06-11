@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8619261290630160565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 4383641077676028021}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 759483e0ba7b2534a9c9533edca04eea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 458441c23edb7421daedcd905037ed8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4383641077676028021}
   - component: {fileID: 1777845432383557025}
-  - component: {fileID: 6423130306308296179}
+  - component: {fileID: 8046096047095361182}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -131,8 +131,10 @@ MonoBehaviour:
   greenFX: {fileID: 6524291876975155327, guid: 553bc7b853771554d8c244c12231d2df, type: 3}
   yellowFX: {fileID: 9025936009824319254, guid: 469d4f3868bcaeb48bf96220d6eac5a2, type: 3}
   purpleFX: {fileID: 1059072137978563044, guid: 816e90bad1e320443bacefc91f6cf515, type: 3}
---- !u!65 &6423130306308296179
-BoxCollider:
+  isLongNote: 0
+  start: {fileID: 209204265164522742, guid: db55660c8d7709d4a914abf9e387ab90, type: 3}
+--- !u!135 &8046096047095361182
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -142,5 +144,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0061762, y: 1, z: 1}
-  m_Center: {x: -0.0013915598, y: 0, z: 0}
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}

@@ -13,10 +13,17 @@ public class NoteScript : GameBase
     public GameObject greenFX;
     public GameObject yellowFX;
     public GameObject purpleFX;
+    long clickTime;
+
+    public bool isLongNote = false;
 
     Camera cam;
 
     GameObject bg;
+
+    GameObject startCircle;
+
+    public GameObject start;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +32,7 @@ public class NoteScript : GameBase
         bg = GameObject.FindGameObjectWithTag("Background");
         sprite = this.transform.GetChild(0).gameObject;
         base.init();
+        startCircle = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -47,7 +55,17 @@ public class NoteScript : GameBase
 
     private void OnMouseDown()
     {
-        long clickTime = manager.playTime;
+
+        if (isLongNote)
+        { 
+            GameObject startGO = Instantiate(start, transform.position, Quaternion.identity);
+            startGO.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
+            startCircle.SetActive(false);
+        }
+
+        clickTime = manager.playTime;
+
+        wasClicked = true;
 
         GameObject fx;
 
@@ -77,7 +95,7 @@ public class NoteScript : GameBase
 
         fx.transform.SetParent(GameObject.FindGameObjectWithTag("Background").transform);
 
-        wasClicked = true;
+        
         sp.playNote(melodyNote.getValue(), MusicInstrument.FLUTE_INSTRUMENT, 200, melodyNote.elapseTime, true);
 
         //UnityEngine.Debug.Log("clicked " + melodyNote.getValue());
@@ -90,9 +108,14 @@ public class NoteScript : GameBase
 
     private void OnMouseUp()
     {
-        sp.stopNote(melodyNote.getValue(), 100, 500);
+        foreach (Transform child in GameObject.FindGameObjectWithTag("MainCamera").transform)
+        {
+            Destroy(child.gameObject);
+        }
+        Instantiate(start, transform.position, Quaternion.identity);
+        sp.stopNote(melodyNote.getValue(), 100, 100);
         sprite.GetComponent<SpriteRenderer>().color = Color.white;
-        this.GetComponent<BoxCollider>().enabled = false;
+        if (!isLongNote) this.GetComponent<SphereCollider>().enabled = false;
     }
 
 }

@@ -10,6 +10,7 @@ public class NoteController : GameBase
     float prevXPos = -100;
 
     public GameObject noteObj;
+    public GameObject longNoteObj;
 
     // Use this for initialization
     void Start()
@@ -76,11 +77,25 @@ public class NoteController : GameBase
             length = 5.0f;
         }
 
-        GameObject noteObject = Instantiate(noteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
-        noteObject.transform.localScale = new Vector3(1, length, 1);
+        GameObject noteObject;
+
+        if (length == 1.0f)
+        {
+            noteObject = Instantiate(noteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
+        } else
+        {
+            noteObject = Instantiate(longNoteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
+            noteObject.transform.GetChild(1).transform.position = new Vector3(noteObject.transform.position.x, noteObject.transform.position.y + length, -5);
+        }
+        
         NoteScript noteScript = noteObject.GetComponent<NoteScript>();
         noteScript.melodyNote = note;
         noteScript.sp = soundPlayer;
+
+        if (length > 1.0f)
+        {
+            noteScript.isLongNote = true;
+        }
 
         prevXPos = xPos;
 
