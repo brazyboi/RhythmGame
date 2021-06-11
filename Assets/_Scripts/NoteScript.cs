@@ -16,6 +16,7 @@ public class NoteScript : GameBase
     long clickTime;
 
     public bool isLongNote = false;
+    public GameObject explosion1;
 
     Camera cam;
 
@@ -38,6 +39,7 @@ public class NoteScript : GameBase
     // Update is called once per frame
     void Update()
     {
+
         Vector3 screenPos = cam.WorldToScreenPoint(gameObject.transform.position);
 
         if (screenPos.y < -Screen.height)
@@ -53,6 +55,8 @@ public class NoteScript : GameBase
         }
     }
 
+    
+
     private void OnMouseDown()
     {
 
@@ -61,6 +65,9 @@ public class NoteScript : GameBase
             GameObject startGO = Instantiate(start, transform.position, Quaternion.identity);
             startGO.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
             startCircle.SetActive(false);
+
+
+
         }
 
         clickTime = manager.playTime;
@@ -73,29 +80,28 @@ public class NoteScript : GameBase
 
         UnityEngine.Debug.Log("diff = " + diff);
 
-        if (diff <= 4)
+        if (diff <= 0.9)
         {
             manager.score += 300 * manager.combo;
 
-            fx = Instantiate(greenFX, new Vector3(transform.position.x, manager.speed*manager.playTime/100 - 5, -5), Quaternion.identity);
+            fx = Instantiate(greenFX, new Vector3(transform.position.x, manager.speed*manager.playTime/100 - 2, -5), Quaternion.identity);
 
-        } else if (diff <= 6)
+        } else if (diff <= 1.8)
         {
             manager.score += 100 * manager.combo;
 
-            fx = Instantiate(yellowFX, new Vector3(transform.position.x, manager.speed * manager.playTime / 100 - 5, -5), Quaternion.identity);
+            fx = Instantiate(yellowFX, new Vector3(transform.position.x, manager.speed * manager.playTime / 100 - 2, -5), Quaternion.identity);
 
         }
         else
         {
             manager.score += 50 * manager.combo;
-            fx = Instantiate(purpleFX, new Vector3(transform.position.x, manager.speed * manager.playTime / 100 - 5, -5), Quaternion.identity);
+            fx = Instantiate(purpleFX, new Vector3(transform.position.x, manager.speed * manager.playTime / 100 - 2, -5), Quaternion.identity);
 
         }
 
         fx.transform.SetParent(GameObject.FindGameObjectWithTag("Background").transform);
 
-        
         sp.playNote(melodyNote.getValue(), MusicInstrument.FLUTE_INSTRUMENT, 200, melodyNote.elapseTime, true);
 
         //UnityEngine.Debug.Log("clicked " + melodyNote.getValue());
@@ -115,7 +121,15 @@ public class NoteScript : GameBase
         Instantiate(start, transform.position, Quaternion.identity);
         sp.stopNote(melodyNote.getValue(), 100, 100);
         sprite.GetComponent<SpriteRenderer>().color = Color.white;
-        if (!isLongNote) this.GetComponent<SphereCollider>().enabled = false;
+        if (!isLongNote)
+        {
+            this.GetComponent<SphereCollider>().enabled = false;
+            this.gameObject.SetActive(false);
+            Instantiate(explosion1, transform.position, Quaternion.identity);
+        } else if (Mathf.Abs(Input.mousePosition.x - transform.GetChild(1).position.x) < 0.6f && Mathf.Abs(Input.mousePosition.y - transform.GetChild(1).position.y) < 0.6f){
+            Instantiate(explosion1, transform.position, Quaternion.identity);
+        }
+
     }
 
 }

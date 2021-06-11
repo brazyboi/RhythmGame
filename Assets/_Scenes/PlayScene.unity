@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3265b174303c1f145b800c713a0b91bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrow: {fileID: 1479482519715057900, guid: 3a4eeb708d6461c499a215a6ae9b5b03, type: 3}
   noteObj: {fileID: 9109275545942032938, guid: d8c7e005f199a7b4a93a104affeddb22, type: 3}
   longNoteObj: {fileID: 4167767982107638234, guid: 458410b62f4dc1b48ae3132e94cb2a8e, type: 3}
 --- !u!4 &177863393
@@ -729,7 +730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221038186529108739, guid: d183d5c7202a1f44e8451ed799c677ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4221038186529108739, guid: d183d5c7202a1f44e8451ed799c677ef, type: 3}
       propertyPath: m_LocalPosition.z

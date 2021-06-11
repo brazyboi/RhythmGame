@@ -12,8 +12,8 @@ public class CreatingBarsScript : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
-            GameObject go = Instantiate(separator, new Vector3(-3.5f + 1.0f * i, 0, -5), Quaternion.identity);
-            go.transform.SetParent(this.GetComponent<Transform>());
+            //GameObject go = Instantiate(separator, new Vector3(-3.5f + 1.0f * i, 0, -5), Quaternion.identity);
+            //go.transform.SetParent(this.GetComponent<Transform>());
         }
     }
 

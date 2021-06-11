@@ -9,6 +9,8 @@ public class NoteController : GameBase
     AppContext appContext;
     float prevXPos = -100;
 
+    public GameObject arrow;
+
     public GameObject noteObj;
     public GameObject longNoteObj;
 
@@ -85,7 +87,13 @@ public class NoteController : GameBase
         } else
         {
             noteObject = Instantiate(longNoteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
-            noteObject.transform.GetChild(1).transform.position = new Vector3(noteObject.transform.position.x, noteObject.transform.position.y + length, -5);
+
+            GameObject child = noteObject.transform.GetChild(1).gameObject;
+
+            child.transform.position = new Vector3(noteObject.transform.position.x, noteObject.transform.position.y + length, -5);
+            //GameObject arrowObj = Instantiate(arrow, new Vector3(transform.position.x, (child.transform.position.y + transform.position.y)/2, -5), Quaternion.identity);
+            //arrow.transform.localScale = new Vector3(0.25f, 0.25f, 1);
+
         }
         
         NoteScript noteScript = noteObject.GetComponent<NoteScript>();
