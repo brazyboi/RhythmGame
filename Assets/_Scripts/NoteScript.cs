@@ -17,7 +17,6 @@ public class NoteScript : GameBase
 
     public bool isLongNote = false;
     public GameObject explosion1;
-
     Camera cam;
 
     GameObject bg;
@@ -26,6 +25,8 @@ public class NoteScript : GameBase
 
     public GameObject start;
 
+    GameObject endCircle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +34,25 @@ public class NoteScript : GameBase
         bg = GameObject.FindGameObjectWithTag("Background");
         sprite = this.transform.GetChild(0).gameObject;
         base.init();
-        startCircle = transform.GetChild(0).gameObject;
+        
+        if (isLongNote)
+        {
+
+            startCircle = transform.GetChild(0).gameObject;
+            endCircle = transform.GetChild(1).gameObject;
+        }
+
+            
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (wasClicked && isLongNote)
+        {
+            startCircle.transform.position = new Vector3(startCircle.transform.position.x, startCircle.transform.position.y + manager.speed * (manager.playTime-clickTime) / 100, startCircle.transform.position.z);
+        }
 
         Vector3 screenPos = cam.WorldToScreenPoint(gameObject.transform.position);
 
@@ -60,15 +74,15 @@ public class NoteScript : GameBase
     private void OnMouseDown()
     {
 
-        if (isLongNote)
-        { 
-            GameObject startGO = Instantiate(start, transform.position, Quaternion.identity);
-            startGO.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
-            startCircle.SetActive(false);
+        //if (isLongNote)
+        //{ 
+           // GameObject startGO = Instantiate(start, transform.position, Quaternion.identity);
+           // startGO.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform);
+          //  startCircle.SetActive(false);
 
+           // startGO.GetComponent<SphereCollider>().enabled = true;
 
-
-        }
+        //}
 
         clickTime = manager.playTime;
 
@@ -106,29 +120,21 @@ public class NoteScript : GameBase
 
         //UnityEngine.Debug.Log("clicked " + melodyNote.getValue());
 
-        sprite.GetComponent<SpriteRenderer>().color = Color.red;
-
         manager.combo++;
 
     }
 
     private void OnMouseUp()
     {
-        foreach (Transform child in GameObject.FindGameObjectWithTag("MainCamera").transform)
-        {
-            Destroy(child.gameObject);
-        }
+        
         Instantiate(start, transform.position, Quaternion.identity);
         sp.stopNote(melodyNote.getValue(), 100, 100);
-        sprite.GetComponent<SpriteRenderer>().color = Color.white;
         if (!isLongNote)
         {
             this.GetComponent<SphereCollider>().enabled = false;
             this.gameObject.SetActive(false);
             Instantiate(explosion1, transform.position, Quaternion.identity);
-        } else if (Mathf.Abs(Input.mousePosition.x - transform.GetChild(1).position.x) < 0.6f && Mathf.Abs(Input.mousePosition.y - transform.GetChild(1).position.y) < 0.6f){
-            Instantiate(explosion1, transform.position, Quaternion.identity);
-        }
+        } 
 
     }
 

@@ -83,16 +83,14 @@ public class NoteController : GameBase
 
         if (length == 1.0f)
         {
-            noteObject = Instantiate(noteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
+            noteObject = Instantiate(noteObj, new Vector3(xPos, note.tick * manager.speed / 100, 0), Quaternion.identity);
         } else
         {
-            noteObject = Instantiate(longNoteObj, new Vector3(xPos, note.tick * manager.speed / 100, -5), Quaternion.identity);
+            noteObject = Instantiate(longNoteObj, new Vector3(xPos, note.tick * manager.speed / 100, 0), Quaternion.identity);
 
             GameObject child = noteObject.transform.GetChild(1).gameObject;
 
-            child.transform.position = new Vector3(noteObject.transform.position.x, noteObject.transform.position.y + length, -5);
-            //GameObject arrowObj = Instantiate(arrow, new Vector3(transform.position.x, (child.transform.position.y + transform.position.y)/2, -5), Quaternion.identity);
-            //arrow.transform.localScale = new Vector3(0.25f, 0.25f, 1);
+            child.transform.position = new Vector3(noteObject.transform.position.x, noteObject.transform.position.y + length, 0);
 
         }
         
