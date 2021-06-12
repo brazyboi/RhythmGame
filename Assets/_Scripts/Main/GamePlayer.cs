@@ -7,7 +7,7 @@ public class GamePlayer : GameBaseEx
 
   
     public GameObject musicNote;
-
+    public GameObject drumNote;
     // Use this for initialization
     void Start()
     {
@@ -18,9 +18,10 @@ public class GamePlayer : GameBaseEx
 
     void init()
     {
+        AppContext.instance().musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
-        soundPlayer.setMelodyMute(true);
+        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
+        soundPlayer.setMelodyMute(false);
     }
 
 
@@ -52,12 +53,18 @@ public class GamePlayer : GameBaseEx
         {
             case SoundPlayer.DRUM_HIT_HEAVY:
                 {
-
+                    GameObject drumExplosion;
+                    drumExplosion = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
+                    DrumNoteController c = drumExplosion.GetComponent<DrumNoteController>();
+                    c.explosionTime = soundPlayer.playTime;
                 }
                 break;
             case SoundPlayer.DRUM_HIT_MEDIUM:
                 {
-
+                    GameObject drumExplosion;
+                    drumExplosion = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
+                    DrumNoteController c = drumExplosion.GetComponent<DrumNoteController>();
+                    c.explosionTime = soundPlayer.playTime;
                 }
                 break;
         }

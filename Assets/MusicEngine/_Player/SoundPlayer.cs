@@ -19,7 +19,7 @@ public abstract class PianoPlayerDelegate
 public class SoundPlayer  {
 
 	//public const int DISPLAY_DURATION_IPAD 2500
-	public const int DISPLAY_DURATION = 2000;
+	public const int DISPLAY_DURATION = 4000;
 
 	public const int TAP_PLAY = 1;
 	public const int NON_STOP_TAP_PLAY = 2;
