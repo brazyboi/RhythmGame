@@ -8,6 +8,18 @@ public class MusicNoteController : GameBaseEx
 	public Transform particle;
 	public Transform noteCube;
 	public float speed;
+	long clickTime;
+	bool initialClick = true;
+	bool playing = true;
+
+	enum NoteState
+    {
+		notClicked,
+		playing,
+		ended
+    }
+
+	NoteState noteState;
 	public MusicNote Note
 	{
 		set {
@@ -17,7 +29,6 @@ public class MusicNoteController : GameBaseEx
 		get { return note; }
 	}
 
-	private bool explosed;
 	private static float prevXPos;
 	// Use this for initialization
 	void Start()
@@ -38,25 +49,24 @@ public class MusicNoteController : GameBaseEx
 		float length = note.tickGapNext / 100 - 1.0f;
 
 		
-		length = length * gameManager.speed/3;
-		transform.position = new Vector3(xPos, note.tick * gameManager.speed / 100, 0);
+		length = length * gameManager.speed/3; 
+		transform.position = new Vector3(xPos, note.tick * gameManager.speed / 100 + length/2, 0);
 		prevXPos = xPos;
 
 		transform.localScale = new Vector3(1.5f, length, 1f);
 
+		noteState = NoteState.notClicked;
+
 	}
 
-
-	void checkTouch()
-	{
-		float playTime = SoundPlayer.singleton().playTime;
-		if (Mathf.Abs(note.tick - playTime) > 300)
-		{
-			return;
-		}
+	void checkTapDown()
+    {
 		if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
 		{
-
+			if (initialClick)
+			{
+				clickTime = soundPlayer.playTime;
+			}
 			/*
 			Vector3 pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
@@ -71,35 +81,89 @@ public class MusicNoteController : GameBaseEx
 			{
 				if (hit.collider.gameObject == gameObject)
 				{
-					Debug.Log("Name = " + hit.collider.name);
-					Debug.Log("Tag = " + hit.collider.tag);
-					Debug.Log("Hit Point = " + hit.point);
-					Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
-					Debug.Log("--------------");
-					hitNote();
+					//Debug.Log("Name = " + hit.collider.name);
+					//Debug.Log("Tag = " + hit.collider.tag);
+					//Debug.Log("Hit Point = " + hit.point);
+					//Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
+					//Debug.Log("--------------");
+					updateNotePos();
+					playNote();
+					initialClick = false;
+
+					
+
 				}
 			}
 
-		}
-		else if (Input.GetMouseButton(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved))
-		{
 
 		}
 	}
 
-	public void hitNote()
-	{
-		if (explosed)
+	bool checkTapTooLate()
+    {
+		float playTime = SoundPlayer.singleton().playTime;
+		if (Mathf.Abs(note.tick - playTime) > 1000)
 		{
-			return;
+			return true;
 		}
+		return false;
+	}
+
+	void checkTapRelease()
+    {
+		UnityEngine.Debug.Log("releasedooooooooooooooooooooooooooooooo!s");
+		if (Input.GetMouseButtonUp(0)) //|| (Input.touchCount == 0)
+		{
+			
+			soundPlayer.stopAllNote(500, 150);
+			noteState = NoteState.ended;
+		}
+	}
+
+	void checkTouch()
+	{
+
+		if (noteState == NoteState.notClicked)
+        {
+			
+			if (!checkTapTooLate())
+            {
+				checkTapDown();
+			}
+			
+        } else if (noteState == NoteState.playing)
+        {
+			checkTapRelease();
+			
+        }
+
+		
+	}
+
+	void updateNotePos()
+    {
+
+		transform.position = new Vector3(transform.position.x, transform.position.y + gameManager.speed * (soundPlayer.playTime - clickTime) / 100, transform.position.z);
+		transform.localScale = new Vector3(1.5f, transform.localScale.y - gameManager.speed * (soundPlayer.playTime - clickTime) / 100, 1f);
+		if (transform.localScale.y < 0)
+        {
+			playing = false;
+        }
+
+	}
+
+	public void playNote()
+	{
+		noteState = NoteState.playing;
+		Debug.Log("NoteState: " + noteState);
+
 		var c = gameObject.GetComponent<BoxCollider>();
 		c.enabled = false;
 		ParticleSystem p = particle.GetComponent<ParticleSystem>();
 		p.Play();
-		explosed = true;
 		noteCube.gameObject.SetActive(false);
-		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext, true);
+		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
+
 	}
 
 	// Update is called once per frame
@@ -109,34 +173,36 @@ public class MusicNoteController : GameBaseEx
 			return;
 
 		float playTime = SoundPlayer.singleton().playTime;
-		if (!explosed)
+
+		if (soundPlayer.getPlayMode() == SoundPlayer.LEARN_PLAY)
 		{
-			if (soundPlayer.getPlayMode() == SoundPlayer.LEARN_PLAY)
-			{
-				if (note.tick <= playTime)
-					hitNote();
-			}
-			else
-			{
-				checkTouch();
-			}
+			if (note.tick <= playTime)
+				playNote();
+		}
+		else
+		{
+			checkTouch();
 		}
 
+		updateHitEffect();
+		autoDestroyWhenPass();
+	}
 
-		if (explosed)
-		{
-			var pos = particle.localPosition;
-			float z = pos.z + speed * Time.deltaTime * 1000;
-			pos.z = z;
-			particle.localPosition = pos;
-		}
-		else if (note.tick - playTime < 200)
-		{
-			var pos = transform.localPosition;
-			pos.z = pos.z + speed * 0.2f * Time.deltaTime * 1000;
-			transform.localPosition = pos;
-		}
-		if (note.tick + 1000 < playTime)
+	void updateHitEffect()
+    {
+		if(noteState == NoteState.notClicked)
+        {
+			return;
+        }
+		var pos = particle.localPosition;
+		float z = pos.z + speed * Time.deltaTime * 1000;
+		pos.z = z;
+		particle.localPosition = pos;
+	}
+
+	void autoDestroyWhenPass()
+    {
+		if (note.tick + 8000 < soundPlayer.playTime)
 		{
 			Destroy(gameObject);
 		}
