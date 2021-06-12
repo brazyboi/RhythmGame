@@ -101,13 +101,14 @@ public class MidiEngine {
 #if UNITY_ANDROID
 		//Debug.Log("Android");
 		string dlsname =  "/mnt/sdcard/xiaimg.tad";
+		soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsname);
 #elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-		
-#else 
+		 
+#else
         string dlsname =  Application.streamingAssetsPath + "/xiaimg.tad";
         soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsname);
 #endif
-        soundExInfo.cbsize =  Marshal.SizeOf(soundExInfo);
+		soundExInfo.cbsize =  Marshal.SizeOf(soundExInfo);
 		soundExInfo.suggestedsoundtype = FMOD.SOUND_TYPE.MIDI;
 
 		// set up DLS file

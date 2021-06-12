@@ -38,7 +38,7 @@ public class MusicNoteController : GameBaseEx
 		float length = note.tickGapNext / 100 - 1.0f;
 
 		
-		length = length * gameManager.speed/2;
+		length = length * gameManager.speed/3;
 		transform.position = new Vector3(xPos, note.tick * gameManager.speed / 100, 0);
 		prevXPos = xPos;
 

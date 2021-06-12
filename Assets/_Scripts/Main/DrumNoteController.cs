@@ -15,7 +15,7 @@ public class DrumNoteController : GameBaseEx
 	void placeByTime(long time)
     {
 
-		transform.position = new Vector3(0, time * gameManager.speed / 100 + 50, 0);
+		transform.position = new Vector3(0, (time + 2500) * gameManager.speed / 100, -11);
 		Transform o = Instantiate(explosion, new Vector3(0, 0, 0), Quaternion.identity);
 		o.parent = transform;
 		o.localPosition = new Vector3();
