@@ -51,7 +51,7 @@ public class NoteScript : GameBase
 
         if (wasClicked && isLongNote)
         {
-            startCircle.transform.position = new Vector3(startCircle.transform.position.x, startCircle.transform.position.y + manager.speed * (manager.playTime-clickTime) / 100, startCircle.transform.position.z);
+            startCircle.transform.position = new Vector3(startCircle.transform.position.x, startCircle.transform.position.y + (manager.speed * (manager.playTime-clickTime)) / 100, startCircle.transform.position.z);
         }
 
         Vector3 screenPos = cam.WorldToScreenPoint(gameObject.transform.position);

@@ -40,11 +40,18 @@ public class MusicNoteController : GameBaseEx
 
 		if (length < 0)
 		{
-			length = 1.0f;
-		}
+			length = 1.5f;
+		} else if (length > 5)
+        {
+			length = 5.0f;
+        }
 
 		transform.position = new Vector3(xPos, note.tick * gameManager.speed / 100, 0);
 		prevXPos = xPos;
+
+		transform.localScale = new Vector3(1.5f, length, 1f);
+		transform.GetComponent<BoxCollider>().size = new Vector3(2f, 1f, length);
+
 	}
 
 
