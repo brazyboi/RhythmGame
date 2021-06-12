@@ -45,18 +45,40 @@ public class MusicNoteController : GameBaseEx
 		{
 			xPos += 1;
 		}
-
-		float length = note.tickGapNext / 100 - 1.0f;
-
-		
-		length = length * gameManager.speed/3; 
-		transform.position = new Vector3(xPos, note.tick * gameManager.speed / 100 + length/2, 0);
+		putNotePosition(xPos);
 		prevXPos = xPos;
-
-		transform.localScale = new Vector3(1.5f, length, 1f);
-
 		noteState = NoteState.notClicked;
 
+	}
+
+	void putNotePosition(float xPos)
+	{
+		float length;
+		if (soundPlayer.playTime < note.tick)
+        { 
+			length = calculateLengthByDuration(note.tickGapNext);
+
+		} else
+        {
+			length = calculateLengthByDuration(note.tick + note.tickGapNext - soundPlayer.playTime);
+        }
+		transform.localScale = new Vector3(1.5f, length, 1f);
+
+		transform.position = new Vector3(prevXPos, note.tick * gameManager.speed / 100 + length / 2, 0);
+
+		transform.position = new Vector3(transform.position.x, transform.position.y + gameManager.speed * (soundPlayer.playTime - clickTime) / 100, transform.position.z);
+		transform.localScale = new Vector3(1.5f, transform.localScale.y - gameManager.speed * (soundPlayer.playTime - clickTime) / 100, 1f);
+
+
+	}
+
+	float calculateLengthByDuration(long noteDuration)
+    {
+		float length = noteDuration;
+
+		length = length * gameManager.speed / 300;
+
+		return length;
 	}
 
 	void checkTapDown()
@@ -86,11 +108,8 @@ public class MusicNoteController : GameBaseEx
 					//Debug.Log("Hit Point = " + hit.point);
 					//Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
 					//Debug.Log("--------------");
-					updateNotePos();
 					playNote();
 					initialClick = false;
-
-					
 
 				}
 			}
@@ -116,6 +135,7 @@ public class MusicNoteController : GameBaseEx
 		{
 			
 			soundPlayer.stopAllNote(500, 150);
+			noteCube.gameObject.SetActive(false);
 			noteState = NoteState.ended;
 		}
 	}
@@ -134,23 +154,12 @@ public class MusicNoteController : GameBaseEx
         } else if (noteState == NoteState.playing)
         {
 			checkTapRelease();
-			
+			putNotePosition(transform.localPosition.x);
         }
 
 		
 	}
 
-	void updateNotePos()
-    {
-
-		transform.position = new Vector3(transform.position.x, transform.position.y + gameManager.speed * (soundPlayer.playTime - clickTime) / 100, transform.position.z);
-		transform.localScale = new Vector3(1.5f, transform.localScale.y - gameManager.speed * (soundPlayer.playTime - clickTime) / 100, 1f);
-		if (transform.localScale.y < 0)
-        {
-			playing = false;
-        }
-
-	}
 
 	public void playNote()
 	{
@@ -161,7 +170,6 @@ public class MusicNoteController : GameBaseEx
 		c.enabled = false;
 		ParticleSystem p = particle.GetComponent<ParticleSystem>();
 		p.Play();
-		noteCube.gameObject.SetActive(false);
 		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
 
 	}
