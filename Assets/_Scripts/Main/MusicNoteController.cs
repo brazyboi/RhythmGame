@@ -50,7 +50,7 @@ public class MusicNoteController : GameBaseEx
 			printLog = false;
         }
 		onlyPrintOnce = true;
-		float xPos = UnityEngine.Random.Range(-Screen.width, Screen.width) / 70;
+		float xPos = UnityEngine.Random.Range(-5, 5);
 
 		if (xPos == prevXPos)
 		{
@@ -86,8 +86,8 @@ public class MusicNoteController : GameBaseEx
 			remainDuration = noteDuration;
 
 		} else //if (note.tick + noteDuration >= soundPlayer.playTime)
-		{
-			remainDuration = noteDuration - (soundPlayer.playTime - note.tick);
+		{ 
+			remainDuration = noteDuration + note.tick - soundPlayer.playTime;
 		}  
 
 		if(remainDuration < 10)
@@ -103,15 +103,15 @@ public class MusicNoteController : GameBaseEx
 		{
 			UnityEngine.Debug.Log("local scale: " + transform.localScale.y + " local pos: " + transform.position.y);
 		}
-		transform.localScale = new Vector3(1.5f, remainlength, 1f);
+		transform.localScale = new Vector3(1.5f, remainlength, 0.1f);
 
-		float yPos = calculatePosYByTick(note.tick);
+		float endyPos = calculatePosYByTick(note.tick) + orignalLength;
+		float yPos = endyPos - remainlength / 2;
 		if (printLog)
         {
 			UnityEngine.Debug.Log("Calculate yPos=" + yPos + " yPos + orignalLength" + (yPos + orignalLength) + " CameraPostion=" + calculatePosYByTick(soundPlayer.playTime));
-
 		}
-		yPos = yPos + orignalLength - remainlength / 2;
+		
 		if (printLog)
 		{
 			UnityEngine.Debug.Log("Calculate yPos=" + yPos + " yPos - remainlength/2" + (yPos - remainlength/2) + " CameraPostion=" + calculatePosYByTick(soundPlayer.playTime));
