@@ -13,6 +13,6 @@ public class BaseLineScript : GameBaseEx
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, soundPlayer.playTime * gameManager.speed / 100, 0);
+        transform.position = new Vector3(0, soundPlayer.playTime * gameManager.speed / 1000, 0);
     }
 }

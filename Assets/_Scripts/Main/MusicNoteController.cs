@@ -11,7 +11,8 @@ public class MusicNoteController : GameBaseEx
 	long clickTime;
 	bool initialClick = true;
 	bool playing = true;
-
+	static bool onlyPrintOnce = false;
+	bool printLog;
 	enum NoteState
     {
 		notClicked,
@@ -39,36 +40,86 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
-		float xPos = UnityEngine.Random.Range(-Screen.width + 400, Screen.width - 400) / 100;
+		if(!onlyPrintOnce)
+        {
+			printLog = true;
+			
+
+		} else
+        {
+			printLog = false;
+        }
+		onlyPrintOnce = true;
+		float xPos = UnityEngine.Random.Range(-Screen.width, Screen.width) / 70;
 
 		if (xPos == prevXPos)
 		{
-			xPos += 1;
+			xPos += 2;
 		}
-		putNotePosition(xPos);
+		updateNotePosition(xPos);
 		prevXPos = xPos;
 		noteState = NoteState.notClicked;
 
 	}
 
-	void putNotePosition(float xPos)
+	float calculatePosYByTick(long tick)
+    {
+		return tick * gameManager.speed / 1000;
+	}
+
+	void updateNotePosition(float xPos)
 	{
-		float length;
-		if (soundPlayer.playTime < note.tick)
-        { 
-			length = calculateLengthByDuration(note.tickGapNext);
+		//Calculate note duration and current remainDuration;
+		long noteDuration = 0;
+		if(note.elapseTime < 500)
+        {
+			noteDuration = note.elapseTime;
 
 		} else
         {
-			length = calculateLengthByDuration(note.tick + note.tickGapNext - soundPlayer.playTime);
+			noteDuration = note.tickGapNext - 100;
+
+		}
+		long remainDuration = 1000;
+		if (noteState == NoteState.notClicked)
+		{
+			remainDuration = noteDuration;
+
+		} else //if (note.tick + noteDuration >= soundPlayer.playTime)
+		{
+			remainDuration = noteDuration - (soundPlayer.playTime - note.tick);
+		}  
+
+		if(remainDuration < 10)
+        {
+			remainDuration = 10;
         }
-		transform.localScale = new Vector3(1.5f, length, 1f);
+		//End Calculation --- DON'T MODIFY ABOVE CODE
 
-		transform.position = new Vector3(prevXPos, note.tick * gameManager.speed / 100 + length / 2, 0);
+		float orignalLength = calculateLengthByDuration(noteDuration);
+		float remainlength = calculateLengthByDuration(remainDuration);
 
-		transform.position = new Vector3(transform.position.x, transform.position.y + gameManager.speed * (soundPlayer.playTime - clickTime) / 100, transform.position.z);
-		transform.localScale = new Vector3(1.5f, transform.localScale.y - gameManager.speed * (soundPlayer.playTime - clickTime) / 100, 1f);
+		if (printLog)
+		{
+			UnityEngine.Debug.Log("local scale: " + transform.localScale.y + " local pos: " + transform.position.y);
+		}
+		transform.localScale = new Vector3(1.5f, remainlength, 1f);
 
+		float yPos = calculatePosYByTick(note.tick);
+		if (printLog)
+        {
+			UnityEngine.Debug.Log("Calculate yPos=" + yPos + " yPos + orignalLength" + (yPos + orignalLength) + " CameraPostion=" + calculatePosYByTick(soundPlayer.playTime));
+
+		}
+		yPos = yPos + orignalLength - remainlength / 2;
+		if (printLog)
+		{
+			UnityEngine.Debug.Log("Calculate yPos=" + yPos + " yPos - remainlength/2" + (yPos - remainlength/2) + " CameraPostion=" + calculatePosYByTick(soundPlayer.playTime));
+			UnityEngine.Debug.Log("Note.tick=" + Note.tick +
+				" yPos + remainlength/2 == " + (yPos + remainlength/2) + " posY=" + yPos + " remainlength=" + remainlength + " orignalLength=" + orignalLength + " remainDuration = " + remainDuration + " noteDuration=" + noteDuration +  "note.tickGapNext=" + note.tickGapNext + " note.elapseTime="+ note.elapseTime);
+		}
+
+		transform.localPosition = new Vector3(xPos, yPos, 0);
 
 	}
 
@@ -76,7 +127,7 @@ public class MusicNoteController : GameBaseEx
     {
 		float length = noteDuration;
 
-		length = length * gameManager.speed / 300;
+		length = length * gameManager.speed / 1000;
 
 		return length;
 	}
@@ -85,10 +136,7 @@ public class MusicNoteController : GameBaseEx
     {
 		if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
 		{
-			if (initialClick)
-			{
-				clickTime = soundPlayer.playTime;
-			}
+			
 			/*
 			Vector3 pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
@@ -109,8 +157,6 @@ public class MusicNoteController : GameBaseEx
 					//Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
 					//Debug.Log("--------------");
 					playNote();
-					initialClick = false;
-
 				}
 			}
 
@@ -121,7 +167,7 @@ public class MusicNoteController : GameBaseEx
 	bool checkTapTooLate()
     {
 		float playTime = SoundPlayer.singleton().playTime;
-		if (Mathf.Abs(note.tick - playTime) > 1000)
+		if (Mathf.Abs(note.tick - playTime) > 500)
 		{
 			return true;
 		}
@@ -144,25 +190,29 @@ public class MusicNoteController : GameBaseEx
 	{
 
 		if (noteState == NoteState.notClicked)
-        {
-			
+		{
+
 			if (!checkTapTooLate())
-            {
+			{
 				checkTapDown();
 			}
-			
-        } else if (noteState == NoteState.playing)
-        {
-			checkTapRelease();
-			putNotePosition(transform.localPosition.x);
-        }
 
-		
+		}
+		else if (noteState == NoteState.playing)
+		{
+			checkTapRelease();
+		}
+
 	}
 
 
 	public void playNote()
 	{
+		if (initialClick)
+		{
+			clickTime = soundPlayer.playTime;
+		}
+		initialClick = false;
 		noteState = NoteState.playing;
 		Debug.Log("NoteState: " + noteState);
 
@@ -184,14 +234,16 @@ public class MusicNoteController : GameBaseEx
 
 		if (soundPlayer.getPlayMode() == SoundPlayer.LEARN_PLAY)
 		{
-			if (note.tick <= playTime)
+			if (note.tick <= playTime && noteState == NoteState.notClicked)
+			{
 				playNote();
+			}
 		}
 		else
 		{
 			checkTouch();
 		}
-
+		updateNotePosition(transform.localPosition.x);
 		updateHitEffect();
 		autoDestroyWhenPass();
 	}
@@ -210,7 +262,7 @@ public class MusicNoteController : GameBaseEx
 
 	void autoDestroyWhenPass()
     {
-		if (note.tick + 8000 < soundPlayer.playTime)
+		if (Mathf.Abs(note.tick - soundPlayer.playTime) > 8000)
 		{
 			Destroy(gameObject);
 		}

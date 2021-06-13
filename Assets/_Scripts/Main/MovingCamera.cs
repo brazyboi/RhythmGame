@@ -13,6 +13,6 @@ public class MovingCamera: GameBaseEx
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, gameManager.speed * soundPlayer.playTime / 100, 0);
+        transform.position = new Vector3(0, gameManager.speed * soundPlayer.playTime / 1000, 0);
     }
 }

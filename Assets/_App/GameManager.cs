@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public SoundPlayer soundPlayer;
     public AppContext appContext;
     public long score;
-    public float speed = 1.0f;
+    public float speed = 30.0f; //unit per second
     // Use this for initialization
     void Start()
     {
