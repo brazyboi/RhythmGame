@@ -87,7 +87,7 @@ public class MusicNoteController : GameBaseEx
 
 		} else //if (note.tick + noteDuration >= soundPlayer.playTime)
 		{ 
-			remainDuration = noteDuration + note.tick - soundPlayer.playTime;
+			remainDuration = noteDuration - (soundPlayer.playTime - clickTime);
 		}  
 
 		if(remainDuration < 10)
@@ -219,6 +219,9 @@ public class MusicNoteController : GameBaseEx
 		var c = gameObject.GetComponent<BoxCollider>();
 		c.enabled = false;
 		ParticleSystem p = particle.GetComponent<ParticleSystem>();
+		Vector3 pos = particle.position;
+		pos.y -= transform.localScale.y / 2;
+		particle.position = pos;
 		p.Play();
 		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
 
