@@ -67954,6 +67954,7 @@ GameObject:
   - component: {fileID: 4566235579911293455}
   - component: {fileID: 4549768633372080477}
   - component: {fileID: 4540653041072394367}
+  - component: {fileID: 135640158}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -68025,6 +68026,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &135640158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4564331739524829653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4564344307456639457
 GameObject:
   m_ObjectHideFlags: 0
@@ -73031,3 +73045,5 @@ MonoBehaviour:
   particle: {fileID: 4557922558841553763}
   noteCube: {fileID: 4566235579911293455}
   speed: 0
+  startCircle: {fileID: 4723947176973762529, guid: eace43be487e8f841bc945d8b8ee48b2, type: 3}
+  endCircle: {fileID: 8653088053541754459, guid: d62b3d7b89c96bc489d4676dd8cba223, type: 3}
