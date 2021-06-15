@@ -8,10 +8,11 @@ public class MusicNoteController : GameBaseEx
 	public Transform particle;
 	public Transform noteCube;
 
+	GameObject noteObj;
+
 	public float speed;
 	long clickTime;
 	bool initialClick = true;
-	bool playing = true;
 	static bool onlyPrintOnce = false;
 	bool printLog;
 
@@ -48,7 +49,9 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
+		noteObj = transform.GetChild(3).gameObject;
 		createStartEndCircles();
+
 		if (!onlyPrintOnce)
         {
 			printLog = true;
@@ -69,11 +72,41 @@ public class MusicNoteController : GameBaseEx
 		prevXPos = xPos;
 		noteState = NoteState.notClicked;
 
-		
-
 	}
 
 	void createStartEndCircles()
+    {
+		long noteDuration = calculateNoteDuration();
+		long remainDuration = calculateRemainDuration(noteDuration);
+
+		//setting inital scale for calculations to work
+		noteObj.transform.localScale = new Vector3(1.5f, calculateLengthByDuration(remainDuration), 0.1f);
+		
+
+		start = Instantiate(startCircle, new Vector3(noteObj.transform.localPosition.x, calculateStartPosY(noteDuration, noteDuration), noteObj.transform.localPosition.z), Quaternion.identity);
+		start.transform.parent = noteObj.transform;
+
+		end = Instantiate(endCircle, new Vector3(noteObj.transform.localPosition.x, calculateEndPosY(noteDuration), noteObj.transform.localPosition.z), Quaternion.identity);
+		end.transform.parent = noteObj.transform;
+
+	}
+
+	float calculatePosYByTick(long tick)
+    {
+		return tick * gameManager.speed / 1000;
+	}
+
+	float calculateStartPosY(long noteDuration, long remainDuration)
+    {
+		return calculatePosYByTick(note.tick + noteDuration - remainDuration) + noteObj.transform.localScale.x/2;
+    }
+
+	float calculateEndPosY(long noteDuration)
+    {
+		return calculatePosYByTick(note.tick + noteDuration) - noteObj.transform.localScale.x / 2; 
+    }
+
+	long calculateNoteDuration()
     {
 		long noteDuration = 0;
 		if (note.elapseTime < 500)
@@ -86,60 +119,34 @@ public class MusicNoteController : GameBaseEx
 			noteDuration = note.tickGapNext - 100;
 
 		}
-
-		GameObject noteObj = transform.GetChild(3).gameObject;
-
-		start = Instantiate(startCircle, new Vector3(transform.localPosition.x, calculateStartPosY(noteDuration, noteDuration), transform.localPosition.z), Quaternion.identity);
-		start.transform.parent = noteObj.transform;
-
-		end = Instantiate(endCircle, new Vector3(transform.localPosition.x, calculateEndPosY(noteDuration), transform.localPosition.z), Quaternion.identity);
-		end.transform.parent = noteObj.transform;
-
+		return noteDuration;
 	}
 
-	float calculatePosYByTick(long tick)
+	long calculateRemainDuration(long noteDuration)
     {
-		return tick * gameManager.speed / 1000;
-	}
-
-	float calculateStartPosY(long noteDuration, long remainDuration)
-    {
-		return calculatePosYByTick(note.tick + noteDuration - remainDuration) + transform.localScale.x/2;
-    }
-
-	float calculateEndPosY(long noteDuration)
-    {
-		return calculatePosYByTick(note.tick + noteDuration) - transform.localScale.x / 2; 
-    }
-
-	void updateNotePosition(float xPos)
-	{
-		//Calculate note duration and current remainDuration;
-		long noteDuration = 0;
-		if(note.elapseTime < 500)
-        {
-			noteDuration = note.elapseTime;
-
-		} else
-        {
-			noteDuration = note.tickGapNext - 100;
-
-		}
 		long remainDuration = 1000;
 		if (noteState == NoteState.notClicked)
 		{
 			remainDuration = noteDuration;
 
-		} else //if (note.tick + noteDuration >= soundPlayer.playTime)
-		{ 
+		}
+		else //if (note.tick + noteDuration >= soundPlayer.playTime)
+		{
 			remainDuration = noteDuration - (soundPlayer.playTime - clickTime);
-		}  
+		}
 
-		if(remainDuration < 10)
-        {
+		if (remainDuration < 10)
+		{
 			remainDuration = 10;
-        }
-		//End Calculation --- DON'T MODIFY ABOVE CODE
+		}
+		return remainDuration;
+	}
+
+	void updateNotePosition(float xPos)
+	{
+
+		long noteDuration = calculateNoteDuration();
+		long remainDuration = calculateRemainDuration(noteDuration);
 
 		float orignalLength = calculateLengthByDuration(noteDuration);
 		float remainlength = calculateLengthByDuration(remainDuration);
@@ -148,11 +155,11 @@ public class MusicNoteController : GameBaseEx
 		{
 			UnityEngine.Debug.Log("local scale: " + transform.localScale.y + " local pos: " + transform.position.y);
 		}
-		transform.localScale = new Vector3(1.5f, remainlength, 0.1f);
+		noteObj.transform.localScale = new Vector3(1.5f, remainlength, 0.1f);
 
 		//revert circles to correct scale
-		start.transform.localScale = new Vector3(1f/transform.localScale.x, 1f/transform.localScale.y, 1f/transform.localScale.z);;
-		end.transform.localScale = new Vector3(1f / transform.localScale.x, 1f / transform.localScale.y, 1f / transform.localScale.z); ;
+		start.transform.localScale = new Vector3(1f/noteObj.transform.localScale.x, 1f/noteObj.transform.localScale.y, 1f/noteObj.transform.localScale.z);;
+		end.transform.localScale = new Vector3(1f /noteObj.transform.localScale.x, 1f / noteObj.transform.localScale.y, 1f / noteObj.transform.localScale.z); ;
 
 		float endyPos = calculatePosYByTick(note.tick) + orignalLength;
 		float yPos = endyPos - remainlength / 2;
@@ -168,7 +175,7 @@ public class MusicNoteController : GameBaseEx
 				" yPos + remainlength/2 == " + (yPos + remainlength/2) + " posY=" + yPos + " remainlength=" + remainlength + " orignalLength=" + orignalLength + " remainDuration = " + remainDuration + " noteDuration=" + noteDuration +  "note.tickGapNext=" + note.tickGapNext + " note.elapseTime="+ note.elapseTime);
 		}
 
-		transform.localPosition = new Vector3(xPos, yPos, 0);
+		noteObj.transform.localPosition = new Vector3(xPos, yPos, 0);
 
 		float startHoldYPos = calculateStartPosY(noteDuration, remainDuration);
 		float endHoldYPos = calculateEndPosY(noteDuration);
@@ -178,8 +185,8 @@ public class MusicNoteController : GameBaseEx
 
 	void moveStartEndCircles(float startPos, float endPos)
     {
-		start.transform.position = new Vector3(transform.localPosition.x, startPos, transform.localPosition.z);
-		end.transform.position = new Vector3(transform.localPosition.x, endPos, transform.localPosition.z);
+		start.transform.position = new Vector3(noteObj.transform.localPosition.x, startPos, noteObj.transform.localPosition.z);
+		end.transform.position = new Vector3(noteObj.transform.localPosition.x, endPos, noteObj.transform.localPosition.z);
 	}
 
 	float calculateLengthByDuration(long noteDuration)
@@ -208,7 +215,7 @@ public class MusicNoteController : GameBaseEx
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit))
 			{
-				if (hit.collider.gameObject == gameObject)
+				if (hit.collider.gameObject == start)
 				{
 					//Debug.Log("Name = " + hit.collider.name);
 					//Debug.Log("Tag = " + hit.collider.tag);
@@ -277,9 +284,12 @@ public class MusicNoteController : GameBaseEx
 
 		var c = gameObject.GetComponent<BoxCollider>();
 		c.enabled = false;
+
+		noteObj.GetComponent<BoxCollider>().enabled = false;
+
 		ParticleSystem p = particle.GetComponent<ParticleSystem>();
 		Vector3 pos = particle.position;
-		pos.y -= transform.localScale.y / 2;
+		pos.y -= noteObj.transform.localScale.y / 2;
 		particle.position = pos;
 		p.Play();
 		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
@@ -305,10 +315,17 @@ public class MusicNoteController : GameBaseEx
 		{
 			checkTouch();
 		}
-		updateNotePosition(transform.localPosition.x);
+		updateNotePosition(noteObj.transform.localPosition.x);
 		updateHitEffect();
 		autoDestroyWhenPass();
 	}
+
+	void updateLinePos()
+    {
+		LineRenderer lr = GetComponent<LineRenderer>();
+		lr.SetPosition(0, start.transform.position);
+		lr.SetPosition(1, end.transform.position);
+    }
 
 	void updateHitEffect()
     {
