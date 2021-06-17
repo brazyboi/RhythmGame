@@ -401,6 +401,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4564331739524829653, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4564344782363365321, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
       propertyPath: m_Name
       value: MusicNote

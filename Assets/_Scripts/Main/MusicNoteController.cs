@@ -300,6 +300,7 @@ public class MusicNoteController : GameBaseEx
 		}
 		updateNotePosition(noteObj.transform.localPosition.x);
 		updateHitEffect();
+		updateLinePos();
 		autoDestroyWhenPass();
 	}
 
