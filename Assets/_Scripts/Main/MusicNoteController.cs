@@ -145,9 +145,12 @@ public class MusicNoteController : GameBaseEx
 		noteObj.transform.localScale = new Vector3(1.5f, remainlength, 0.1f);
 
 		//revert circles to correct scale
-		
-		float endyPos = calculatePosYByTick(note.tick) + orignalLength;
-		float yPos = endyPos - remainlength / 2;
+		float yPos = calculatePosYByTick(note.tick);
+		transform.localPosition = new Vector3(xPos, yPos, 0);
+
+
+		float noteEndPosY = orignalLength;
+		float notePosY = noteEndPosY - remainlength / 2;
 		if (printLog)
         {
 			UnityEngine.Debug.Log("Calculate yPos=" + yPos + " yPos + orignalLength" + (yPos + orignalLength) + " CameraPostion=" + calculatePosYByTick(soundPlayer.playTime));
@@ -159,12 +162,11 @@ public class MusicNoteController : GameBaseEx
 			UnityEngine.Debug.Log("Note.tick=" + Note.tick +
 				" yPos + remainlength/2 == " + (yPos + remainlength/2) + " posY=" + yPos + " remainlength=" + remainlength + " orignalLength=" + orignalLength + " remainDuration = " + remainDuration + " noteDuration=" + noteDuration +  "note.tickGapNext=" + note.tickGapNext + " note.elapseTime="+ note.elapseTime);
 		}
-
-		transform.localPosition = new Vector3(xPos, yPos, 0);
+		noteObj.transform.localPosition = new Vector3(xPos, notePosY, 0);
 		//Debug.Log(xPos);
 
-		float endHoldYPos = endyPos - 1;// calculateEndPosY(noteDuration);
-		float startHoldYPos = endyPos - remainlength + 1;
+		float endHoldYPos = noteEndPosY - 1;// calculateEndPosY(noteDuration);
+		float startHoldYPos = noteEndPosY - remainlength + 1;
 
 		moveStartEndCircles(startHoldYPos, endHoldYPos);
 		
@@ -172,9 +174,9 @@ public class MusicNoteController : GameBaseEx
 
 	void moveStartEndCircles(float startPos, float endPos)
     {
-		start.transform.position = new Vector3(noteObj.transform.localPosition.x, startPos, noteObj.transform.localPosition.z);
-		collider.position = start.transform.position;
-		end.transform.position = new Vector3(noteObj.transform.localPosition.x, endPos, noteObj.transform.localPosition.z);
+		start.transform.localPosition = new Vector3(noteObj.transform.localPosition.x, startPos, noteObj.transform.localPosition.z);
+		collider.localPosition = start.transform.localPosition;
+		end.transform.localPosition = new Vector3(noteObj.transform.localPosition.x, endPos, noteObj.transform.localPosition.z);
 	}
 
 	float calculateLengthByDuration(long noteDuration)
@@ -303,7 +305,7 @@ public class MusicNoteController : GameBaseEx
 		{
 			checkTouch();
 		}
-		updateNotePosition(noteObj.transform.localPosition.x);
+		updateNotePosition(transform.localPosition.x);
 		updateHitEffect();
 		updateLinePos();
 		autoDestroyWhenPass();
@@ -312,8 +314,8 @@ public class MusicNoteController : GameBaseEx
 	void updateLinePos()
     {
 		LineRenderer lr = GetComponent<LineRenderer>();
-		lr.SetPosition(0, start.transform.position);
-		lr.SetPosition(1, end.transform.position);
+		lr.SetPosition(0, start.transform.localPosition);
+		lr.SetPosition(1, end.transform.localPosition);
     }
 
 	void updateHitEffect()
