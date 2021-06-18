@@ -8,12 +8,14 @@ public class MusicNoteController : GameBaseEx
 	public Transform particle;
 	public Transform noteCube;
 
+	public Transform collider;
+
 	GameObject noteObj;
 
 	public float speed;
 	long clickTime;
 	bool initialClick = true;
-	static bool onlyPrintOnce = false;
+	static bool onlyPrintOnce = true;
 	bool printLog;
 
 	public GameObject start;
@@ -47,7 +49,7 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
-		noteObj = transform.GetChild(3).gameObject;
+		noteObj = noteCube.gameObject;
 		createStartEndCircles();
 
 		if (!onlyPrintOnce)
@@ -66,6 +68,7 @@ public class MusicNoteController : GameBaseEx
 		{
 			xPos += 2;
 		}
+		Debug.Log(xPos);
 		updateNotePosition(xPos);
 		prevXPos = xPos;
 		noteState = NoteState.notClicked;
@@ -157,7 +160,8 @@ public class MusicNoteController : GameBaseEx
 				" yPos + remainlength/2 == " + (yPos + remainlength/2) + " posY=" + yPos + " remainlength=" + remainlength + " orignalLength=" + orignalLength + " remainDuration = " + remainDuration + " noteDuration=" + noteDuration +  "note.tickGapNext=" + note.tickGapNext + " note.elapseTime="+ note.elapseTime);
 		}
 
-		noteObj.transform.localPosition = new Vector3(xPos, yPos, 0);
+		transform.localPosition = new Vector3(xPos, yPos, 0);
+		//Debug.Log(xPos);
 
 		float endHoldYPos = endyPos - 1;// calculateEndPosY(noteDuration);
 		float startHoldYPos = endyPos - remainlength + 1;
@@ -169,6 +173,7 @@ public class MusicNoteController : GameBaseEx
 	void moveStartEndCircles(float startPos, float endPos)
     {
 		start.transform.position = new Vector3(noteObj.transform.localPosition.x, startPos, noteObj.transform.localPosition.z);
+		collider.position = start.transform.position;
 		end.transform.position = new Vector3(noteObj.transform.localPosition.x, endPos, noteObj.transform.localPosition.z);
 	}
 
@@ -198,7 +203,7 @@ public class MusicNoteController : GameBaseEx
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit))
 			{
-				if (hit.collider.gameObject == start)
+				if (hit.collider.gameObject == collider.gameObject)
 				{
 					//Debug.Log("Name = " + hit.collider.name);
 					//Debug.Log("Tag = " + hit.collider.tag);
@@ -268,7 +273,7 @@ public class MusicNoteController : GameBaseEx
 		var c = gameObject.GetComponent<BoxCollider>();
 		c.enabled = false;
 
-		noteObj.GetComponent<BoxCollider>().enabled = false;
+		collider.GetComponent<BoxCollider>().enabled = false;
 
 		ParticleSystem p = particle.GetComponent<ParticleSystem>();
 		Vector3 pos = particle.position;
