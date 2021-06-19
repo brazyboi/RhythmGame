@@ -9,6 +9,7 @@ public class MusicNoteController : GameBaseEx
 	public Transform noteCube;
 
 	public Transform collider;
+	public Transform line;
 
 	GameObject noteObj;
 
@@ -68,7 +69,7 @@ public class MusicNoteController : GameBaseEx
 		{
 			xPos += 2;
 		}
-		Debug.Log(xPos);
+		//Debug.Log(xPos);
 		updateNotePosition(xPos);
 		prevXPos = xPos;
 		noteState = NoteState.notClicked;
@@ -142,7 +143,7 @@ public class MusicNoteController : GameBaseEx
 		{
 			UnityEngine.Debug.Log("local scale: " + transform.localScale.y + " local pos: " + transform.position.y);
 		}
-		noteObj.transform.localScale = new Vector3(1.5f, remainlength, 0.1f);
+		noteObj.transform.localScale = new Vector3(noteObj.transform.localScale.x, remainlength, noteObj.transform.localScale.z);
 
 		//revert circles to correct scale
 		float yPos = calculatePosYByTick(note.tick);
@@ -232,13 +233,16 @@ public class MusicNoteController : GameBaseEx
 
 	void checkTapRelease()
     {
-		UnityEngine.Debug.Log("releasedooooooooooooooooooooooooooooooo!s");
+		//UnityEngine.Debug.Log("releasedooooooooooooooooooooooooooooooo!s");
 		if (Input.GetMouseButtonUp(0)) //|| (Input.touchCount == 0)
 		{
-			
 			soundPlayer.stopAllNote(500, 150);
 			noteCube.gameObject.SetActive(false);
+			start.gameObject.SetActive(false);
+			end.gameObject.SetActive(false);
+			line.gameObject.SetActive(false);
 			noteState = NoteState.ended;
+
 		}
 	}
 
@@ -272,15 +276,16 @@ public class MusicNoteController : GameBaseEx
 		noteState = NoteState.playing;
 		Debug.Log("NoteState: " + noteState);
 
-		var c = gameObject.GetComponent<BoxCollider>();
+		var c = collider.GetComponent<BoxCollider>();
 		c.enabled = false;
 
 		collider.GetComponent<BoxCollider>().enabled = false;
 
 		ParticleSystem p = particle.GetComponent<ParticleSystem>();
-		Vector3 pos = particle.position;
-		pos.y -= noteObj.transform.localScale.y / 2;
-		particle.position = pos;
+		Vector3 pos = particle.localPosition;
+		pos.y = start.transform.localPosition.y;
+		pos.x = start.transform.localPosition.x;
+		particle.localPosition = pos;
 		p.Play();
 		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
 
@@ -313,9 +318,9 @@ public class MusicNoteController : GameBaseEx
 
 	void updateLinePos()
     {
-		LineRenderer lr = GetComponent<LineRenderer>();
-		lr.SetPosition(0, start.transform.localPosition);
-		lr.SetPosition(1, end.transform.localPosition);
+		LineRenderer lr = line.GetComponent<LineRenderer>();
+		lr.SetPosition(0, start.transform.position);
+		lr.SetPosition(1, end.transform.position);
     }
 
 	void updateHitEffect()
