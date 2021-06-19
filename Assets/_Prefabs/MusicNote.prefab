@@ -73155,6 +73155,9 @@ MonoBehaviour:
   speed: 0
   start: {fileID: 4723947176121288087}
   end: {fileID: 2298135841233087594}
+  hit1: {fileID: 468506, guid: 8d3a7fbc62f810c43b8c42fdb2978ef4, type: 3}
+  hit2: {fileID: 484662, guid: 7dc0b63f67faaf9479803bcfdff7f71e, type: 3}
+  hit3: {fileID: 441248, guid: cd1ff9e92aad8ac4db78b6ffd5f1eab7, type: 3}
 --- !u!1 &5311584492286592326
 GameObject:
   m_ObjectHideFlags: 0

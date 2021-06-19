@@ -22,7 +22,6 @@ public class MusicNoteController : GameBaseEx
 	public GameObject start;
 	public GameObject end;
 
-
 	enum NoteState
     {
 		notClicked,
@@ -243,6 +242,13 @@ public class MusicNoteController : GameBaseEx
 			line.gameObject.SetActive(false);
 			noteState = NoteState.ended;
 
+			float diff = Mathf.Abs(start.transform.position.y - end.transform.position.y);
+			Debug.Log("diff = " + diff);
+			if (diff <= 0.5f)
+			{
+				hitParticle(particle);
+			}
+
 		}
 	}
 
@@ -274,21 +280,26 @@ public class MusicNoteController : GameBaseEx
 		}
 		initialClick = false;
 		noteState = NoteState.playing;
-		Debug.Log("NoteState: " + noteState);
+		//Debug.Log("NoteState: " + noteState);
 
 		var c = collider.GetComponent<BoxCollider>();
 		c.enabled = false;
 
 		collider.GetComponent<BoxCollider>().enabled = false;
 
-		ParticleSystem p = particle.GetComponent<ParticleSystem>();
-		Vector3 pos = particle.localPosition;
-		pos.y = start.transform.localPosition.y;
-		pos.x = start.transform.localPosition.x;
-		particle.localPosition = pos;
-		p.Play();
+		hitParticle(particle);
 		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
 
+	}
+
+	void hitParticle(Transform particleHit)
+    {
+		ParticleSystem p = particleHit.GetComponent<ParticleSystem>();
+		Vector3 pos = particleHit.localPosition;
+		pos.y = start.transform.localPosition.y;
+		pos.x = start.transform.localPosition.x;
+		particleHit.localPosition = pos;
+		p.Play();
 	}
 
 	// Update is called once per frame
@@ -319,8 +330,8 @@ public class MusicNoteController : GameBaseEx
 	void updateLinePos()
     {
 		LineRenderer lr = line.GetComponent<LineRenderer>();
-		lr.SetPosition(0, start.transform.position);
-		lr.SetPosition(1, end.transform.position);
+		lr.SetPosition(0, new Vector3(start.transform.position.x, start.transform.position.y, start.transform.position.z +0.001f));
+		lr.SetPosition(1, new Vector3(end.transform.position.x, end.transform.position.y, end.transform.position.z + 0.001f));
     }
 
 	void updateHitEffect()
