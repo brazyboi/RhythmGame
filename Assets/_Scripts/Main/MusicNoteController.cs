@@ -9,8 +9,8 @@ public class MusicNoteController : GameBaseEx
 	public Transform noteCube;
 
 	public Transform collider;
-	public Transform line;
-
+	public GameObject line;
+	public GameObject xMark;
 	GameObject noteObj;
 
 	public float speed;
@@ -18,6 +18,7 @@ public class MusicNoteController : GameBaseEx
 	bool initialClick = true;
 	static bool onlyPrintOnce = true;
 	bool printLog;
+	bool clicked = false;
 
 	public GameObject start;
 	public GameObject end;
@@ -40,6 +41,7 @@ public class MusicNoteController : GameBaseEx
 	}
 
 	private static float prevXPos;
+	private float xPos;
 	// Use this for initialization
 	void Start()
 	{
@@ -51,7 +53,6 @@ public class MusicNoteController : GameBaseEx
     {
 		noteObj = noteCube.gameObject;
 		createStartEndCircles();
-
 		if (!onlyPrintOnce)
         {
 			printLog = true;
@@ -62,7 +63,7 @@ public class MusicNoteController : GameBaseEx
 			printLog = false;
         }
 		onlyPrintOnce = true;
-		float xPos = UnityEngine.Random.Range(-5, 5);
+		xPos = UnityEngine.Random.Range(-5, 5);
 
 		if (xPos == prevXPos)
 		{
@@ -213,6 +214,7 @@ public class MusicNoteController : GameBaseEx
 					//Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
 					//Debug.Log("--------------");
 					playNote();
+					clicked = true;
 				}
 			}
 
@@ -235,12 +237,7 @@ public class MusicNoteController : GameBaseEx
 		//UnityEngine.Debug.Log("releasedooooooooooooooooooooooooooooooo!s");
 		if (Input.GetMouseButtonUp(0)) //|| (Input.touchCount == 0)
 		{
-			soundPlayer.stopAllNote(500, 150);
-			noteCube.gameObject.SetActive(false);
-			start.gameObject.SetActive(false);
-			end.gameObject.SetActive(false);
-			line.gameObject.SetActive(false);
-			noteState = NoteState.ended;
+			disableAppearance();
 
 			float diff = Mathf.Abs(start.transform.position.y - end.transform.position.y);
 			Debug.Log("diff = " + diff);
@@ -250,6 +247,16 @@ public class MusicNoteController : GameBaseEx
 			}
 
 		}
+	}
+
+	void disableAppearance()
+    {
+		soundPlayer.stopAllNote(500, 150);
+		noteCube.gameObject.SetActive(false);
+		start.gameObject.SetActive(false);
+		end.gameObject.SetActive(false);
+		line.gameObject.SetActive(false);
+		noteState = NoteState.ended;
 	}
 
 	void checkTouch()
@@ -323,16 +330,9 @@ public class MusicNoteController : GameBaseEx
 		}
 		updateNotePosition(transform.localPosition.x);
 		updateHitEffect();
-		updateLinePos();
 		autoDestroyWhenPass();
+		//indicateMiss();
 	}
-
-	void updateLinePos()
-    {
-		LineRenderer lr = line.GetComponent<LineRenderer>();
-		lr.SetPosition(0, new Vector3(start.transform.position.x, start.transform.position.y, start.transform.position.z +0.001f));
-		lr.SetPosition(1, new Vector3(end.transform.position.x, end.transform.position.y, end.transform.position.z + 0.001f));
-    }
 
 	void updateHitEffect()
     {
@@ -345,6 +345,11 @@ public class MusicNoteController : GameBaseEx
 		pos.z = z;
 		particle.localPosition = pos;
 	}
+
+	void indicateMiss()
+    {	
+		
+    }
 
 	void autoDestroyWhenPass()
     {

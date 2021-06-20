@@ -9,6 +9,7 @@ public class Hovl_Laser : MonoBehaviour
     public int damageOverTime = 30;
 
     public GameObject HitEffect;
+    public GameObject FlashEffect;
     public float HitOffset = 0;
     public bool useLaserRotation = false;
 
@@ -26,11 +27,16 @@ public class Hovl_Laser : MonoBehaviour
 
     private ParticleSystem[] Effects;
     private ParticleSystem[] Hit;
+    private ParticleSystem[] Flash;
+
+    public GameObject start;
+    public GameObject end;
 
     void Start ()
     {
         //Get LineRender and ParticleSystem components from current prefab;  
         Laser = GetComponent<LineRenderer>();
+        Flash = FlashEffect.GetComponentsInChildren<ParticleSystem>();
         Effects = GetComponentsInChildren<ParticleSystem>();
         Hit = HitEffect.GetComponentsInChildren<ParticleSystem>();
         //if (Laser.material.HasProperty("_SpeedMainTexUVNoiseZW")) LaserStartSpeed = Laser.material.GetVector("_SpeedMainTexUVNoiseZW");
@@ -48,7 +54,9 @@ public class Hovl_Laser : MonoBehaviour
         //To set LineRender position
         if (Laser != null && UpdateSaver == false)
         {
-            Laser.SetPosition(0, transform.position);
+            Vector3 startPos = new Vector3(start.transform.position.x, start.transform.position.y, start.transform.position.z - 5f);
+            //Laser.SetPosition(0, transform.position);
+            Laser.SetPosition(0, startPos);
             RaycastHit hit; //DELETE THIS IF YOU WANT USE LASERS IN 2D
             //ADD THIS IF YOU WANNT TO USE LASERS IN 2D: RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, MaxLength);       
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, MaxLength))//CHANGE THIS IF YOU WANT TO USE LASERRS IN 2D: if (hit.collider != null)
@@ -82,13 +90,15 @@ public class Hovl_Laser : MonoBehaviour
             else
             {
                 //End laser position if doesn't collide with object
-                var EndPos = transform.position + transform.forward * MaxLength;
+                //var EndPos = transform.position + transform.forward * MaxLength;
+                var EndPos = new Vector3(end.transform.position.x, end.transform.position.y, end.transform.position.z - 5f);
                 Laser.SetPosition(1, EndPos);
                 HitEffect.transform.position = EndPos;
-                foreach (var AllPs in Hit)
+                FlashEffect.transform.position = startPos;
+                /*foreach (var AllPs in Hit)
                 {
                     if (AllPs.isPlaying) AllPs.Stop();
-                }
+                }*/
                 //Texture tiling
                 Length[0] = MainTextureLength * (Vector3.Distance(transform.position, EndPos));
                 Length[2] = NoiseTextureLength * (Vector3.Distance(transform.position, EndPos));
