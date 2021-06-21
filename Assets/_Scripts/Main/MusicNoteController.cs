@@ -9,8 +9,9 @@ public class MusicNoteController : GameBaseEx
 	public Transform noteCube;
 
 	public Transform collider;
-	public GameObject line;
+	public GameObject touchTrack;
 	public GameObject xMark;
+	public GameObject touchEffect;
 	GameObject noteObj;
 
 	public float speed;
@@ -18,7 +19,6 @@ public class MusicNoteController : GameBaseEx
 	bool initialClick = true;
 	static bool onlyPrintOnce = true;
 	bool printLog;
-	bool clicked = false;
 
 	public GameObject start;
 	public GameObject end;
@@ -73,6 +73,7 @@ public class MusicNoteController : GameBaseEx
 		updateNotePosition(xPos);
 		prevXPos = xPos;
 		noteState = NoteState.notClicked;
+		hideTouchEffect();
 
 	}
 
@@ -82,7 +83,7 @@ public class MusicNoteController : GameBaseEx
 		long remainDuration = calculateRemainDuration(noteDuration);
 
 		//setting inital scale for calculations to work
-		noteObj.transform.localScale = new Vector3(1.5f, calculateLengthByDuration(remainDuration), 0.1f);
+		noteObj.transform.localScale = new Vector3(noteObj.transform.localScale.x, calculateLengthByDuration(remainDuration), noteObj.transform.localScale.z);
 		
 
 	}
@@ -163,13 +164,14 @@ public class MusicNoteController : GameBaseEx
 			UnityEngine.Debug.Log("Note.tick=" + Note.tick +
 				" yPos + remainlength/2 == " + (yPos + remainlength/2) + " posY=" + yPos + " remainlength=" + remainlength + " orignalLength=" + orignalLength + " remainDuration = " + remainDuration + " noteDuration=" + noteDuration +  "note.tickGapNext=" + note.tickGapNext + " note.elapseTime="+ note.elapseTime);
 		}
-		noteObj.transform.localPosition = new Vector3(xPos, notePosY, 0);
+		noteObj.transform.localPosition = new Vector3(0, notePosY, noteObj.transform.localPosition.z);
 		//Debug.Log(xPos);
 
 		float endHoldYPos = noteEndPosY - 1;// calculateEndPosY(noteDuration);
 		float startHoldYPos = noteEndPosY - remainlength + 1;
 
 		moveStartEndCircles(startHoldYPos, endHoldYPos);
+		touchEffect.transform.localPosition = new Vector3(touchEffect.transform.localPosition.x, startHoldYPos, touchEffect.transform.localPosition.z);
 		
 	}
 
@@ -214,7 +216,6 @@ public class MusicNoteController : GameBaseEx
 					//Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
 					//Debug.Log("--------------");
 					playNote();
-					clicked = true;
 				}
 			}
 
@@ -251,11 +252,11 @@ public class MusicNoteController : GameBaseEx
 
 	void disableAppearance()
     {
+		hideTouchEffect();
 		soundPlayer.stopAllNote(500, 150);
 		noteCube.gameObject.SetActive(false);
 		start.gameObject.SetActive(false);
 		end.gameObject.SetActive(false);
-		line.gameObject.SetActive(false);
 		noteState = NoteState.ended;
 	}
 
@@ -278,6 +279,17 @@ public class MusicNoteController : GameBaseEx
 
 	}
 
+	void showTouchEffect()
+    {
+		touchEffect.SetActive(true);
+		touchTrack.SetActive(true);
+    }
+
+	void hideTouchEffect()
+    {
+		touchTrack.SetActive(false);
+		touchEffect.SetActive(false);
+    }
 
 	public void playNote()
 	{
@@ -295,6 +307,7 @@ public class MusicNoteController : GameBaseEx
 		collider.GetComponent<BoxCollider>().enabled = false;
 
 		hitParticle(particle);
+		showTouchEffect();
 		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
 
 	}
