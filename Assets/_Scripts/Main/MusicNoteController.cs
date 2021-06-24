@@ -23,6 +23,8 @@ public class MusicNoteController : GameBaseEx
 	public GameObject start;
 	public GameObject end;
 
+	long noteScore;
+
 	enum NoteState
     {
 		notClicked,
@@ -279,6 +281,11 @@ public class MusicNoteController : GameBaseEx
 
 	}
 
+	void calculateScore()
+    {
+		noteScore = (soundPlayer.playTime - clickTime)/10;
+    }
+
 	void showTouchEffect()
     {
 		touchEffect.SetActive(true);
@@ -341,6 +348,12 @@ public class MusicNoteController : GameBaseEx
 		{
 			checkTouch();
 		}
+		if (noteState == NoteState.playing)
+        {
+			calculateScore();
+			AppContext.instance().score = noteScore;
+			Debug.Log(AppContext.instance().score);
+        }
 		updateNotePosition(transform.localPosition.x);
 		updateHitEffect();
 		autoDestroyWhenPass();
@@ -358,11 +371,6 @@ public class MusicNoteController : GameBaseEx
 		pos.z = z;
 		particle.localPosition = pos;
 	}
-
-	void indicateMiss()
-    {	
-		
-    }
 
 	void autoDestroyWhenPass()
     {

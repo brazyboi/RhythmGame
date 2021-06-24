@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine;  
 
 public class GamePlayer : GameBaseEx
 {
-
-  
     public GameObject musicNote;
     public GameObject drumNote;
+    public UnityEngine.UI.Text scoreNotifyText;
+
     // Use this for initialization
     void Start()
     {
 
         init();
         startPlay();
+    }
+
+    void Update()
+    {
+        scoreNotifyText.text = "" + AppContext.instance().score;
     }
 
     void init()

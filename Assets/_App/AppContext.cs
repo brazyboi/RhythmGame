@@ -8,6 +8,9 @@ public class AppContext  {
     private int instrument = MusicInstrument.FLUTE_INSTRUMENT;
 	public int musicNoteDisplayDuration;
     private int instrumentMelody = MusicInstrument.FLUTE_INSTRUMENT;
+
+	public long score;
+
 	private AppContext() {
 		musicNoteDisplayDuration = 2000;
 	}
