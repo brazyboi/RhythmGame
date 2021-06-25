@@ -73022,7 +73022,7 @@ MonoBehaviour:
   particle: {fileID: 4557922558841553763}
   noteCube: {fileID: 4566235579911293455}
   collider: {fileID: 2555966900948455478}
-  scoreNotify: {fileID: 0}
+  player: {fileID: 0}
   touchTrack: {fileID: 7635677498472481887}
   xMark: {fileID: 3211521846367690436, guid: 2ff8ddb635924e64da248dd78815d675, type: 3}
   touchEffect: {fileID: 4597455264966415546}

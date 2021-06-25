@@ -9,6 +9,7 @@ public class MusicNoteController : GameBaseEx
 	public Transform noteCube;
 
 	public Transform collider;
+
 	public GameObject touchTrack;
 	public GameObject xMark;
 	public GameObject touchEffect;
@@ -24,6 +25,9 @@ public class MusicNoteController : GameBaseEx
 	public GameObject end;
 
 	long noteScore;
+
+
+	public ScoreDelegate scoreDelegate;
 
 	enum NoteState
     {
@@ -249,8 +253,10 @@ public class MusicNoteController : GameBaseEx
 				hitParticle(particle);
 			}
 
+			scoreDelegate.updateScore(noteScore, true);
 		}
 	}
+
 
 	void disableAppearance()
     {
@@ -295,7 +301,7 @@ public class MusicNoteController : GameBaseEx
 	void hideTouchEffect()
     {
 		touchTrack.SetActive(false);
-		touchEffect.SetActive(false);
+		touchEffect.SetActive(false);	
     }
 
 	public void playNote()
@@ -351,9 +357,8 @@ public class MusicNoteController : GameBaseEx
 		if (noteState == NoteState.playing)
         {
 			calculateScore();
-			AppContext.instance().score = noteScore;
-			Debug.Log(AppContext.instance().score);
-        }
+			scoreDelegate.updateScore(noteScore, false);
+		}
 		updateNotePosition(transform.localPosition.x);
 		updateHitEffect();
 		autoDestroyWhenPass();

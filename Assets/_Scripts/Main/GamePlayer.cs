@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;  
 
+public abstract class ScoreDelegate
+{
+    public abstract void updateScore(long score, bool final);
+}
+
 public class GamePlayer : GameBaseEx
 {
     public GameObject musicNote;
     public GameObject drumNote;
     public UnityEngine.UI.Text scoreNotifyText;
+    public UnityEngine.UI.Text totalScoreText;
 
     // Use this for initialization
     void Start()
@@ -16,9 +22,21 @@ public class GamePlayer : GameBaseEx
         startPlay();
     }
 
+    void updateNoteScoreText(long noteScore, bool final)
+    {
+        AppContext.instance().noteScore = noteScore;
+        scoreNotifyText.text = "" + AppContext.instance().noteScore;
+
+        if (final)
+        {
+            AppContext.instance().totalScore += noteScore;
+            totalScoreText.text = "Score: " + AppContext.instance().totalScore;
+        }
+    }
+
     void Update()
     {
-        scoreNotifyText.text = "" + AppContext.instance().score;
+        
     }
 
     void init()
@@ -43,13 +61,13 @@ public class GamePlayer : GameBaseEx
         soundPlayer.startPlay(false);
     }
 
-
     void placeNote(MusicNote note)
     {
         GameObject noteObject;
         noteObject = Instantiate(musicNote, new Vector3(0, 0, 0), Quaternion.identity);
         MusicNoteController c = noteObject.GetComponent<MusicNoteController>();
         c.Note = note;
+        c.scoreDelegate = new NoteScoreDelegate(this);
     }
 
     void placeDrumExplosion(long size)
@@ -120,6 +138,21 @@ public class GamePlayer : GameBaseEx
                     break;
             }
 
+
+        }
+    }
+
+    class NoteScoreDelegate : ScoreDelegate
+    {
+        GamePlayer gamePlayer;
+
+        public NoteScoreDelegate(GamePlayer c)
+        {
+            gamePlayer = c;
+        }
+        public override void updateScore(long score, bool final)
+        {
+            gamePlayer.updateNoteScoreText(score,final);
 
         }
     }
