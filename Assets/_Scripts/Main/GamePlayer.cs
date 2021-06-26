@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;  
+using UnityEngine;
 
 public abstract class ScoreDelegate
 {
@@ -11,8 +11,13 @@ public class GamePlayer : GameBaseEx
 {
     public GameObject musicNote;
     public GameObject drumNote;
+
+    public GameObject inGameScores;
+
     public UnityEngine.UI.Text scoreNotifyText;
     public UnityEngine.UI.Text totalScoreText;
+
+    NoteScoreDelegate noteScoreDelegate;
 
     // Use this for initialization
     void Start()
@@ -24,14 +29,8 @@ public class GamePlayer : GameBaseEx
 
     void updateNoteScoreText(long noteScore, bool final)
     {
-        AppContext.instance().noteScore = noteScore;
-        scoreNotifyText.text = "" + AppContext.instance().noteScore;
+        inGameScores.GetComponent<ScoreTextScript>().updateScoreTexts(noteScore, final);
 
-        if (final)
-        {
-            AppContext.instance().totalScore += noteScore;
-            totalScoreText.text = "Score: " + AppContext.instance().totalScore;
-        }
     }
 
     void Update()
@@ -41,6 +40,7 @@ public class GamePlayer : GameBaseEx
 
     void init()
     {
+        noteScoreDelegate = new NoteScoreDelegate(this);
         AppContext.instance().musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
         soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
@@ -67,7 +67,7 @@ public class GamePlayer : GameBaseEx
         noteObject = Instantiate(musicNote, new Vector3(0, 0, 0), Quaternion.identity);
         MusicNoteController c = noteObject.GetComponent<MusicNoteController>();
         c.Note = note;
-        c.scoreDelegate = new NoteScoreDelegate(this);
+        c.scoreDelegate = noteScoreDelegate;
     }
 
     void placeDrumExplosion(long size)

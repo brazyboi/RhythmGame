@@ -14,7 +14,7 @@ public class MusicNoteController : GameBaseEx
 	public GameObject xMark;
 	public GameObject touchEffect;
 	GameObject noteObj;
-
+	
 	public float speed;
 	long clickTime;
 	bool initialClick = true;
@@ -356,7 +356,7 @@ public class MusicNoteController : GameBaseEx
 		}
 		if (noteState == NoteState.playing)
         {
-			calculateScore();
+				calculateScore();
 			scoreDelegate.updateScore(noteScore, false);
 		}
 		updateNotePosition(transform.localPosition.x);

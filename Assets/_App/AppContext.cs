@@ -9,7 +9,6 @@ public class AppContext  {
 	public int musicNoteDisplayDuration;
     private int instrumentMelody = MusicInstrument.FLUTE_INSTRUMENT;
 
-	public long noteScore;
 	public long totalScore = 0;
 
 	private AppContext() {
