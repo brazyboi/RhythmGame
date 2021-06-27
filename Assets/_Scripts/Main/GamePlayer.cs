@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class ScoreDelegate
 {
     public abstract void updateScore(long score, bool final);
+    public abstract void updateSuperScore(long score);
+    public abstract void missPlayNote(long missScore);
 }
 
 public class GamePlayer : GameBaseEx
@@ -19,18 +21,14 @@ public class GamePlayer : GameBaseEx
 
     NoteScoreDelegate noteScoreDelegate;
 
+    AppContext appContext;
+
     // Use this for initialization
     void Start()
     {
-
+        appContext = AppContext.instance();
         init();
         startPlay();
-    }
-
-    void updateNoteScoreText(long noteScore, bool final)
-    {
-        inGameScores.GetComponent<ScoreTextScript>().updateScoreTexts(noteScore, final);
-
     }
 
     void Update()
@@ -41,10 +39,10 @@ public class GamePlayer : GameBaseEx
     void init()
     {
         noteScoreDelegate = new NoteScoreDelegate(this);
-        AppContext.instance().musicNoteDisplayDuration = 3500;
+        appContext.musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
-        soundPlayer.setMelodyMute(false);
+        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
+        soundPlayer.setMelodyMute(true);
     }
 
 
@@ -57,15 +55,15 @@ public class GamePlayer : GameBaseEx
         */
         string fileLocation;
         int melodyChannel = 0;
-        if (AppContext.instance().songItem == null)
+        if (appContext.songItem == null)
         {
             fileLocation = Application.streamingAssetsPath + "/songs/tian_kong_zhi_cheng.mid";
             melodyChannel = 0;
         } else
         {
-            string name = AppContext.instance().songItem.path.Replace(".sht", ".mid");
+            string name = appContext.songItem.path.Replace(".sht", ".mid");
             fileLocation = Application.streamingAssetsPath + "/songs/" + name;
-            melodyChannel = AppContext.instance().songItem.melody;
+            melodyChannel = appContext.songItem.melody;
             UnityEngine.Debug.Log("filelocation: " + fileLocation);
         }
         soundPlayer.loadMusic(fileLocation, false, melodyChannel);
@@ -157,16 +155,38 @@ public class GamePlayer : GameBaseEx
     class NoteScoreDelegate : ScoreDelegate
     {
         GamePlayer gamePlayer;
-
+        ScoreTextScript scoreTextScript;
         public NoteScoreDelegate(GamePlayer c)
         {
             gamePlayer = c;
+            scoreTextScript = gamePlayer.inGameScores.GetComponent<ScoreTextScript>();
         }
         public override void updateScore(long score, bool final)
         {
-            gamePlayer.updateNoteScoreText(score,final);
+            if (final)
+            {
+                gamePlayer.appContext.totalScore += score;
+                scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
+            }
+            scoreTextScript.updateScoreTexts("" + score);
 
         }
+        public override void updateSuperScore(long score)
+        {
+            
+        }
+        public override void missPlayNote(long missScore)
+        {
+            
+            gamePlayer.appContext.totalScore -= missScore;
+            if(gamePlayer.appContext.totalScore < 0)
+            {
+                gamePlayer.appContext.totalScore = 0;
+            }
+            scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
+            scoreTextScript.updateScoreTexts("MISS");
+        }
+
     }
 
 }

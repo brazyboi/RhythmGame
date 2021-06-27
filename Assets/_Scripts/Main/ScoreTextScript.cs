@@ -22,7 +22,6 @@ public class ScoreTextScript : MonoBehaviour
     {
         scoreTextCallback = new ScoreTextCallback(this);
         timer = GetComponent<Timer>();
-        timer.startTimer(fadeTime, scoreTextCallback);
 
         scoreNotifyText = scoreNotify.GetComponentInChildren<Text>();
         totalScoreText = totalScore.GetComponentInChildren<Text>();
@@ -34,15 +33,15 @@ public class ScoreTextScript : MonoBehaviour
 
     }
 
-    public void updateScoreTexts(long noteScore, bool final)
+    public void updateTotalScoreTexts(string text)
+    {
+        totalScoreText.text = text;
+    }
+
+    public void updateScoreTexts(string text)
     {
         timer.startTimer(fadeTime, scoreTextCallback);
-        scoreNotifyText.text = "" + noteScore;
-        if (final)
-        {
-            AppContext.instance().totalScore += noteScore;
-            totalScoreText.text = "Score: " + AppContext.instance().totalScore;
-        }
+        scoreNotifyText.text = text;
     }
 
     void fadeOut(float tick, float timeOut)
