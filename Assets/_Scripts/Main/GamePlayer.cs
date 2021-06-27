@@ -43,8 +43,8 @@ public class GamePlayer : GameBaseEx
         noteScoreDelegate = new NoteScoreDelegate(this);
         AppContext.instance().musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
-        soundPlayer.setMelodyMute(true);
+        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
+        soundPlayer.setMelodyMute(false);
     }
 
 
@@ -55,8 +55,20 @@ public class GamePlayer : GameBaseEx
         string fileLocation = Application.streamingAssetsPath + "/songs/" + name;
         soundPlayer.loadMusic(fileLocation, false, appContext.songItem.melody);
         */
-        string fileLocation = Application.streamingAssetsPath + "/songs/tian_kong_zhi_cheng.mid";
-        soundPlayer.loadMusic(fileLocation, false, 0);
+        string fileLocation;
+        int melodyChannel = 0;
+        if (AppContext.instance().songItem == null)
+        {
+            fileLocation = Application.streamingAssetsPath + "/songs/tian_kong_zhi_cheng.mid";
+            melodyChannel = 0;
+        } else
+        {
+            string name = AppContext.instance().songItem.path.Replace(".sht", ".mid");
+            fileLocation = Application.streamingAssetsPath + "/songs/" + name;
+            melodyChannel = AppContext.instance().songItem.melody;
+            UnityEngine.Debug.Log("filelocation: " + fileLocation);
+        }
+        soundPlayer.loadMusic(fileLocation, false, melodyChannel);
         soundPlayer.seek(0);
         soundPlayer.startPlay(false);
     }
