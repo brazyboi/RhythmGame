@@ -390,13 +390,14 @@ public class MusicNoteController : GameBaseEx
 	void checkNoteMissPlay()
     {
 
-		if(note.tick >= soundPlayer.playTime + 200)
+		if(note.tick >= soundPlayer.playTime + 200 )
         {
 			return;
         }
 
-		if(isOutOfScreen(this.transform, 0))
+		if(isOutOfScreen(start.transform, 0))
         {
+
 			noteState = NoteState.missed;
 			scoreDelegate.missPlayNote(0);
 			Renderer renderer = noteCube.GetComponent<Renderer>();

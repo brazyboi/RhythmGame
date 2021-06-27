@@ -49,6 +49,11 @@ public class GameBaseEx : MonoBehaviour
         var pos = mainCamera.WorldToScreenPoint(t.position);
         pos.y += yOffset;
         bool outOfBounds = !Screen.safeArea.Contains(pos);
+        if(outOfBounds)
+        {
+            UnityEngine.Debug.Log("OutofBounds pos: " + pos.ToString());
+            UnityEngine.Debug.Log("OutofBounds area: " + Screen.safeArea.ToString());
+        }
 
         return outOfBounds;
     }
