@@ -251,8 +251,12 @@ public class MusicNoteController : GameBaseEx
 			{
 				hitParticle(particle);
 			}
-
 			scoreDelegate.updateScore(noteScore, true);
+
+			if(Mathf.Abs(soundPlayer.playTime - note.tick) < 150) {
+				scoreDelegate.updateSuperScore(100);
+            } 
+
 		}
 	}
 

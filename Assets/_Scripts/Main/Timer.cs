@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class TimerCallback
 {
-    public abstract void onTick(float tick, float timeOut);
-    public abstract void onEnd();
+    public abstract void onTick(Timer timer, float tick, float timeOut);
+    public abstract void onEnd(Timer timer);
 }
 
 public class Timer : MonoBehaviour
@@ -35,12 +35,12 @@ public class Timer : MonoBehaviour
                 tick = timeOut;
             }
             
-            callback.onTick(tick, timeOut);
+            callback.onTick(this, tick, timeOut);
 
             if (tick >= timeOut)
             {
                 active = false;
-                callback.onEnd();
+                callback.onEnd(this);
             }
         }
     }

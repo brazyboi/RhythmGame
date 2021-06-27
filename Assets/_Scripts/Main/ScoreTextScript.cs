@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class ScoreTextScript : MonoBehaviour
 {
-    public GameObject scoreNotify;
-    public GameObject totalScore;
-
     public float fadeTime = 1.0f;
 
-    Timer timer;
+    Timer timerScoreText;
+    Timer timerAlertText;
 
-    Text scoreNotifyText;
-    Text totalScoreText;
+    public Text scoreNotifyText;
+    public Text totalScoreText;
+    public Text alertText;
 
     ScoreTextCallback scoreTextCallback;
 
@@ -21,10 +20,9 @@ public class ScoreTextScript : MonoBehaviour
     void Start()
     {
         scoreTextCallback = new ScoreTextCallback(this);
-        timer = GetComponent<Timer>();
-
-        scoreNotifyText = scoreNotify.GetComponentInChildren<Text>();
-        totalScoreText = totalScore.GetComponentInChildren<Text>();
+        scoreNotifyText.text = "";
+        totalScoreText.text = "";
+        alertText.text = "";
     }
 
     // Update is called once per frame
@@ -40,17 +38,24 @@ public class ScoreTextScript : MonoBehaviour
 
     public void updateScoreTexts(string text)
     {
-        timer.startTimer(fadeTime, scoreTextCallback);
+        if(timerScoreText == null)
+        {
+            timerScoreText = this.gameObject.AddComponent<Timer>() as Timer;
+        }
+        timerScoreText.startTimer(fadeTime, scoreTextCallback);
         scoreNotifyText.text = text;
     }
 
-    void fadeOut(float tick, float timeOut)
+    public void updateAlertText(string text)
     {
-        Color color = scoreNotifyText.color;
-        color.a = (timeOut-tick)/timeOut;
-        scoreNotifyText.color = color;
+        if (timerAlertText == null)
+        {
+            timerAlertText = this.gameObject.AddComponent<Timer>() as Timer;
+        }
+        timerAlertText.startTimer(fadeTime, scoreTextCallback);
+        alertText.text = text;
     }
-    
+
 
     class ScoreTextCallback : TimerCallback
     {
@@ -59,13 +64,24 @@ public class ScoreTextScript : MonoBehaviour
         {
             this.scoreTextScript = scoreTextScript;
         }
-        public override void onTick(float tick, float timeOut)
+        public override void onTick(Timer timer, float tick, float timeOut)
         {
-            //fade in
-            scoreTextScript.fadeOut(tick, timeOut);
-            Debug.Log("reached onTick, tick = " + tick + " timeOut = " + timeOut);
+            if (timer == scoreTextScript.timerScoreText)
+            {
+                //fade in
+                Color color = scoreTextScript.scoreNotifyText.color;
+                color.a = (timeOut - tick) / timeOut;
+                scoreTextScript.scoreNotifyText.color = color;
+                Debug.Log("reached onTick, tick = " + tick + " timeOut = " + timeOut);
+            } else if(timer == scoreTextScript.timerAlertText)
+            {
+                Color color = scoreTextScript.alertText.color;
+                color.a = (timeOut - tick) / timeOut;
+                scoreTextScript.alertText.color = color;
+                Debug.Log("reached 2 onTick, tick = " + tick + " timeOut = " + timeOut);
+            }
         }
-        public override void onEnd()
+        public override void onEnd(Timer timer)
         {
             //fade out
         }
