@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameBaseEx : MonoBehaviour
 {
 
-
+    Camera mainCamera;
     public GameManager gameManager
     {
         get
@@ -37,6 +37,20 @@ public class GameBaseEx : MonoBehaviour
     {
         _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _soundPlayer = gameManager.soundPlayer;
+    }
+
+
+   protected bool isOutOfScreen(Transform t, float yOffset)
+    {
+        if(mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
+        var pos = mainCamera.WorldToScreenPoint(t.position);
+        pos.y += yOffset;
+        bool outOfBounds = !Screen.safeArea.Contains(pos);
+
+        return outOfBounds;
     }
 
   

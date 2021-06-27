@@ -13,7 +13,6 @@ public class MusicNoteController : GameBaseEx
 	public GameObject touchTrack;
 	public GameObject xMark;
 	public GameObject touchEffect;
-	GameObject noteObj;
 	
 	public float speed;
 	long clickTime;
@@ -33,7 +32,8 @@ public class MusicNoteController : GameBaseEx
     {
 		notClicked,
 		playing,
-		ended
+		ended,
+		missed
     }
 
 	NoteState noteState;
@@ -57,7 +57,6 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
-		noteObj = noteCube.gameObject;
 		createStartEndCircles();
 		if (!onlyPrintOnce)
         {
@@ -89,7 +88,7 @@ public class MusicNoteController : GameBaseEx
 		long remainDuration = calculateRemainDuration(noteDuration);
 
 		//setting inital scale for calculations to work
-		noteObj.transform.localScale = new Vector3(noteObj.transform.localScale.x, calculateLengthByDuration(remainDuration), noteObj.transform.localScale.z);
+		noteCube.localScale = new Vector3(noteCube.localScale.x, calculateLengthByDuration(remainDuration), noteCube.localScale.z);
 		
 
 	}
@@ -120,7 +119,7 @@ public class MusicNoteController : GameBaseEx
 	long calculateRemainDuration(long noteDuration)
     {
 		long remainDuration = 1000;
-		if (noteState == NoteState.notClicked)
+		if (noteState == NoteState.notClicked || noteState == NoteState.missed)
 		{
 			remainDuration = noteDuration;
 
@@ -150,7 +149,7 @@ public class MusicNoteController : GameBaseEx
 		{
 			UnityEngine.Debug.Log("local scale: " + transform.localScale.y + " local pos: " + transform.position.y);
 		}
-		noteObj.transform.localScale = new Vector3(noteObj.transform.localScale.x, remainlength, noteObj.transform.localScale.z);
+		noteCube.localScale = new Vector3(noteCube.localScale.x, remainlength, noteCube.localScale.z);
 
 		//revert circles to correct scale
 		float yPos = calculatePosYByTick(note.tick);
@@ -170,7 +169,7 @@ public class MusicNoteController : GameBaseEx
 			UnityEngine.Debug.Log("Note.tick=" + Note.tick +
 				" yPos + remainlength/2 == " + (yPos + remainlength/2) + " posY=" + yPos + " remainlength=" + remainlength + " orignalLength=" + orignalLength + " remainDuration = " + remainDuration + " noteDuration=" + noteDuration +  "note.tickGapNext=" + note.tickGapNext + " note.elapseTime="+ note.elapseTime);
 		}
-		noteObj.transform.localPosition = new Vector3(0, notePosY, noteObj.transform.localPosition.z);
+		noteCube.localPosition = new Vector3(0, notePosY, noteCube.localPosition.z);
 		//Debug.Log(xPos);
 
 		float endHoldYPos = noteEndPosY - 1;// calculateEndPosY(noteDuration);
@@ -183,9 +182,9 @@ public class MusicNoteController : GameBaseEx
 
 	void moveStartEndCircles(float startPos, float endPos)
     {
-		start.transform.localPosition = new Vector3(noteObj.transform.localPosition.x, startPos, noteObj.transform.localPosition.z);
+		start.transform.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
 		collider.localPosition = start.transform.localPosition;
-		end.transform.localPosition = new Vector3(noteObj.transform.localPosition.x, endPos, noteObj.transform.localPosition.z);
+		end.transform.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
 	}
 
 	float calculateLengthByDuration(long noteDuration)
@@ -342,7 +341,7 @@ public class MusicNoteController : GameBaseEx
 			return;
 
 		float playTime = SoundPlayer.singleton().playTime;
-
+		updateNotePosition(transform.localPosition.x);
 		if (soundPlayer.getPlayMode() == SoundPlayer.LEARN_PLAY)
 		{
 			if (note.tick <= playTime && noteState == NoteState.notClicked)
@@ -355,11 +354,14 @@ public class MusicNoteController : GameBaseEx
 			checkTouch();
 		}
 		if (noteState == NoteState.playing)
-        {
-				calculateScore();
+		{
+			calculateScore();
 			scoreDelegate.updateScore(noteScore, false);
-		}
-		updateNotePosition(transform.localPosition.x);
+		} else if(noteState == NoteState.notClicked)
+        {
+			checkNoteMissPlay();
+        }
+
 		updateHitEffect();
 		autoDestroyWhenPass();
 		//indicateMiss();
@@ -383,6 +385,24 @@ public class MusicNoteController : GameBaseEx
 		{
 			Destroy(gameObject);
 		}
+	}
+
+	void checkNoteMissPlay()
+    {
+
+		if(note.tick >= soundPlayer.playTime + 200)
+        {
+			return;
+        }
+
+		if(isOutOfScreen(this.transform, 0))
+        {
+			noteState = NoteState.missed;
+			scoreDelegate.missPlayNote(0);
+			Renderer renderer = noteCube.GetComponent<Renderer>();
+			renderer.material.color = Color.red;
+		}
+
 	}
 
 }

@@ -110,6 +110,14 @@ public class GamePlayer : GameBaseEx
         //hitScore += 100;
     }
 
+    void onGameFailed()
+    {
+        //pause player
+        
+        soundPlayer.pausePlay();
+
+    }
+
     class Player3DDelegate : PianoPlayerDelegate
     {
         GamePlayer gamePlayer;
@@ -185,6 +193,7 @@ public class GamePlayer : GameBaseEx
             }
             scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
             scoreTextScript.updateScoreTexts("MISS");
+            gamePlayer.onGameFailed();
         }
 
     }
