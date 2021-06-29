@@ -115,9 +115,7 @@ public class GamePlayer : GameBaseEx
         
         soundPlayer.pausePlay();
         AppContext.instance().failed = true;
-
-        playPerformance.SetActive(true);
-
+        Instantiate(playPerformance, new Vector3(0, 0, 0), Quaternion.identity);
         GameObject[] notes = GameObject.FindGameObjectsWithTag("MusicNote");
         foreach (GameObject note in notes)
         {
