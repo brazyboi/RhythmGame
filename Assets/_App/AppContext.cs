@@ -10,6 +10,7 @@ public class AppContext  {
     private int instrumentMelody = MusicInstrument.FLUTE_INSTRUMENT;
 
 	public long totalScore = 0;
+	public bool failed = false;
 
 	private AppContext() {
 		musicNoteDisplayDuration = 2000;

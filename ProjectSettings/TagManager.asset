@@ -7,6 +7,9 @@ TagManager:
   - GameManager
   - Background
   - EndCircle
+  - MusicNote
+  - StartCircle
+  - BaseLine
   layers:
   - Default
   - TransparentFX

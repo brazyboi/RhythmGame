@@ -16,8 +16,7 @@ public class GamePlayer : GameBaseEx
 
     public GameObject inGameScores;
 
-    public UnityEngine.UI.Text scoreNotifyText;
-    public UnityEngine.UI.Text totalScoreText;
+    public GameObject playPerformance;
 
     NoteScoreDelegate noteScoreDelegate;
 
@@ -115,6 +114,18 @@ public class GamePlayer : GameBaseEx
         //pause player
         
         soundPlayer.pausePlay();
+        AppContext.instance().failed = true;
+
+        playPerformance.SetActive(true);
+
+        GameObject[] notes = GameObject.FindGameObjectsWithTag("MusicNote");
+        foreach (GameObject note in notes)
+        {
+            note.SetActive(false);
+        }
+
+        GameObject baseLine = GameObject.FindGameObjectWithTag("BaseLine");
+        baseLine.SetActive(false);
 
     }
 
