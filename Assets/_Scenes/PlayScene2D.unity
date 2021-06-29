@@ -35642,9 +35642,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayPerformance
       objectReference: {fileID: 0}
-    - target: {fileID: 6876841553653787762, guid: 010b55bb3492e6e489b3d013cca6b8b7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 010b55bb3492e6e489b3d013cca6b8b7, type: 3}

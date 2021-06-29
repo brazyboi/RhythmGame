@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayPerformance : MonoBehaviour
 {
@@ -21,6 +22,22 @@ public class PlayPerformance : MonoBehaviour
         songTitlePanelText = songTitlePanel.GetComponentInChildren<Text>();
         scorePanelText = scorePanel.GetComponentInChildren<Text>();
         passfailPanelText = passfailPanel.GetComponentInChildren<Text>();
+
+        restartButton.GetComponent<Button>().onClick.AddListener(restartSong);
+        songsButton.GetComponent<Button>().onClick.AddListener(redirectSongList);
+
+    }
+
+    void restartSong()
+    {
+        SceneManager.LoadScene("PlayScene2D", LoadSceneMode.Single);
+        AppContext.instance().totalScore = 0;
+    }
+
+    void redirectSongList()
+    {
+        SceneManager.LoadScene("SongList", LoadSceneMode.Single);
+        AppContext.instance().totalScore = 0;
     }
 
     // Update is called once per frame
