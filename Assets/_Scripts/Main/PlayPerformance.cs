@@ -49,7 +49,7 @@ public class PlayPerformance : MonoBehaviour
         }
 
 
-        checkTouch();
+        //checkTouch();
 
     }
 
