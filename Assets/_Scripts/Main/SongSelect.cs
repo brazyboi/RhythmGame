@@ -20,6 +20,7 @@ public class SongSelect : MonoBehaviour
 
     void playGame()
     {
+        UnityEngine.Debug.Log("Play click");
         SceneManager.LoadScene("PlayScene2D", LoadSceneMode.Single);
     }
 

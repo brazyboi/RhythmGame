@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/PlayScene2D.unity
     guid: fcb52884c54644baf94f123b92fd8872
+  - enabled: 1
+    path: Assets/_Scenes/SongSelect.unity
+    guid: 727d1a26e694a0548921cf453087180a
   m_configObjects: {}
