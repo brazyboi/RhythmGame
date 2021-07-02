@@ -1404,7 +1404,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96304ecacf074f845a992dc57d3957fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instrumentSelectBox: {fileID: 2146696609}
+  instrument1: {fileID: 365272284}
+  instrument2: {fileID: 2146522936}
+  instrument3: {fileID: 1358888465}
+  instrument4: {fileID: 1234553618}
+  instrument5: {fileID: 1266251804}
+  instrument6: {fileID: 1422029968}
+  instrument7: {fileID: 49967007}
+  instrument8: {fileID: 365986949}
+  instrument9: {fileID: 34999183}
+  instrument10: {fileID: 2101455149}
+  instrument11: {fileID: 1798579466}
+  instrument12: {fileID: 1483546289}
 --- !u!1 &885186848
 GameObject:
   m_ObjectHideFlags: 0
