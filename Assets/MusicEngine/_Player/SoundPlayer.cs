@@ -695,8 +695,8 @@ public class SoundPlayer  {
 			int duration = 0;
 			int channel;
 			bool isMelodyNote = false;
-			if(appContext.isCurrentFluteStyle() 
-				|| (AppContext.isFluteStyle(melodyInstrument) && mainInsturment == MusicInstrument.DRUM_INSTRUMENT)) {
+			if(appContext.isWindInstrument() 
+				|| (AppContext.isWindInstrument(melodyInstrument) && mainInsturment == MusicInstrument.DRUM_INSTRUMENT)) {
 				//is Flute style, find the high picth melody note then play
 				while(index < midiEventList.Count) {
 					musicNote = midiEventList[index++];
@@ -915,7 +915,7 @@ public class SoundPlayer  {
 			int note = musicNote.value;
 			int velocity = 255;//musicNote.velocity;
 			bool isMelodyNote = musicNote.melodyEventEx == MusicNote.GENERAL_MELODY_NOTE || musicNote.melodyEventEx == MusicNote.PIANO_MELODY_NOTE;
-			long dt = (long) Math.Abs(musicNote.getDuration(appContext.isCurrentFluteStyle() && isMelodyNote));
+			long dt = (long) Math.Abs(musicNote.getDuration(appContext.isWindInstrument() && isMelodyNote));
 
 			int instrument = appContext.getInstrument();
 
@@ -1083,7 +1083,7 @@ int playNextNote (int hitPressCount, int jumpMaximal) {
 		//midiEngine.playMidiNoteWithFile(note, velocity, duration, noteFile);//(char*) strPath.c_str());
 		*/
 			string strPath = "/soundfont";
-			if(!AppContext.isFluteStyle(instrument)){// !appContext.isCurrentFluteStyle()) {//midiEngine.stopWave()) {
+			if(!AppContext.isWindInstrument(instrument)){// !appContext.isCurrentFluteStyle()) {//midiEngine.stopWave()) {
 
 				// int instrument = appContext.getInstrument();
 				if(instrument == 108)  {// gu zheng
@@ -1128,7 +1128,7 @@ int playNextNote (int hitPressCount, int jumpMaximal) {
 	}
 
 	public void stopNote (int note, int atLeastMS_, int noteLastTimeMs_) {
-		if(appContext.isCurrentFluteStyle() && appContext.isCurrentSoundBank()) {
+		if(appContext.isWindInstrument() && appContext.isCurrentSoundBank()) {
 			playerDelegate.playEvent(PLAY_EVENT_STOP_SOLOPLAY_NOTE, note,noteLastTimeMs_);
 			midiEngine.stopNoteFlute(note, atLeastMS_, noteLastTimeMs_);
 			if( autoPlayMusic == SOLO_RECORDING) {

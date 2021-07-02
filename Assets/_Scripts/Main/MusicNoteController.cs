@@ -24,9 +24,11 @@ public class MusicNoteController : GameBaseEx
 	public GameObject end;
 
 	long noteScore;
-
-
+	private KeyCode keyCode;
+	private static KeyCode lastKeyCode = KeyCode.RightArrow;
 	public ScoreDelegate scoreDelegate;
+
+	private static int playingNoteCount = 0;
 
 	enum NoteState
     {
@@ -57,6 +59,8 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
+		keyCode = KeyCode.Space;// (lastKeyCode == KeyCode.LeftArrow) ? KeyCode.RightArrow : KeyCode.LeftArrow;
+		lastKeyCode = keyCode;
 		createStartEndCircles();
 		if (!onlyPrintOnce)
         {
@@ -113,6 +117,7 @@ public class MusicNoteController : GameBaseEx
 			noteDuration = note.tickGapNext - 100;
 
 		}
+		noteDuration = 1000;
 		return noteDuration;
 	}
 
@@ -193,12 +198,23 @@ public class MusicNoteController : GameBaseEx
 
 		length = length * gameManager.speed / 1000;
 
+		if(!AppContext.instance().isWindInstrument())
+        {
+			return 3.5f;
+        }
 		return length;
 	}
 
 	void checkTapDown()
     {
-		if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+		bool bClick = false;
+		if(Input.GetKeyDown(keyCode))
+        {
+			bClick = true;
+
+		} 
+
+		if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ) 
 		{
 			
 			/*
@@ -220,18 +236,23 @@ public class MusicNoteController : GameBaseEx
 					//Debug.Log("Hit Point = " + hit.point);
 					//Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
 					//Debug.Log("--------------");
-					playNote();
+					bClick = true;
 				}
 			}
 
 
 		}
+		if (bClick)
+		{
+			playingNoteCount++;
+			playNote();
+		}
 	}
 
-	bool checkTapTooLate()
+	bool checkTapTooEarly()
     {
 		float playTime = SoundPlayer.singleton().playTime;
-		if (Mathf.Abs(note.tick - playTime) > 500)
+		if (note.tick - playTime > 400)
 		{
 			return true;
 		}
@@ -241,8 +262,9 @@ public class MusicNoteController : GameBaseEx
 	void checkTapRelease()
     {
 		//UnityEngine.Debug.Log("releasedooooooooooooooooooooooooooooooo!s");
-		if (Input.GetMouseButtonUp(0)) //|| (Input.touchCount == 0)
+		if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(keyCode)) //|| (Input.touchCount == 0)
 		{
+			playingNoteCount--;
 			disableAppearance();
 
 			float diff = Mathf.Abs(start.transform.position.y - end.transform.position.y);
@@ -277,7 +299,7 @@ public class MusicNoteController : GameBaseEx
 		if (noteState == NoteState.notClicked)
 		{
 
-			if (!checkTapTooLate())
+			if (!checkTapTooEarly() && playingNoteCount ==0)
 			{
 				checkTapDown();
 			}

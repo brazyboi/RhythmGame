@@ -35,10 +35,13 @@ public class FileReaderUtils  {
 	}
 
 	public static byte[] readStreamingAssetFile(string filename) {
-		#if UNITY_ANDROID 
-		WWW wwwfile = new WWW(filename);
-		while (!wwwfile.isDone) { }
-		return wwwfile.bytes;
+	#if UNITY_ANDROID || UNITY_WEBGL
+		UnityWebRequest request = UnityWebRequest.Get(filename);
+		request.SendWebRequest();
+		return request.downloadHandler.data;
+	//	WWW wwwfile = new WWW(filename);
+	//	while (!wwwfile.isDone) { }
+	//	return wwwfile.bytes;
 		#else
 		byte[] data;
 		FileInfo info = new FileInfo(filename);

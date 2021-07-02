@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class AppContext  {
 	private static AppContext appContext;
-    private int instrument = MusicInstrument.FLUTE_INSTRUMENT;
+    private int instrument = MusicInstrument.PIANO_INSTRUMENT;
 	public int musicNoteDisplayDuration;
-    private int instrumentMelody = MusicInstrument.FLUTE_INSTRUMENT;
+    private int instrumentMelody = MusicInstrument.PIANO_INSTRUMENT;
 
 	public long totalScore = 0;
 	public bool failed = false;
@@ -30,7 +31,7 @@ public class AppContext  {
 		return instrument;
 	}
 
-	public static bool  isFluteStyle(int i) {
+	public static bool  isWindInstrument(int i) {
 		return i >= MusicInstrument.BLOW_TYPE_INSTRUMENT;
 	}
 
@@ -38,8 +39,8 @@ public class AppContext  {
 		return i>= MusicInstrument.BLOW_TYPE_INSTRUMENT || i == MusicInstrument.ZITHER_INSTRUMENT;
 	}
 
-	public bool isCurrentFluteStyle() {
-		return isFluteStyle(instrument);
+	public bool isWindInstrument() {
+		return isWindInstrument(instrument);
 	}
 	public bool isCurrentSoundBank() {
 		return isSoundBank(instrument);
@@ -100,11 +101,16 @@ public class AppContext  {
 	public static string ReadTextFile (string name)  
 	{  
 		string fileContent = null;   
-		if(Application.platform == RuntimePlatform.Android)  
-		{  
-			WWW www = new WWW(Application.streamingAssetsPath + name);  
-			while(!www.isDone){};  
-			fileContent = www.text;  
+		if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WebGLPlayer)  
+		{
+		//	WWW www = new WWW(Application.streamingAssetsPath + name);  
+		//	while(!www.isDone){};  
+		//	fileContent = www.text;
+			 UnityEngine.Debug.Log("UnityWebRequest reading.....");
+			UnityWebRequest request = UnityWebRequest.Get(Application.streamingAssetsPath + name);
+			request.SendWebRequest();
+			return request.downloadHandler.text;
+
 		}  
 		else  
 		{  
