@@ -50,6 +50,7 @@ public class MusicNoteController : GameBaseEx
 
 	private static float prevXPos;
 	private float xPos;
+	private long holdingNoteScore;
 	// Use this for initialization
 	void Start()
 	{
@@ -289,11 +290,7 @@ public class MusicNoteController : GameBaseEx
 			{
 				hitParticle(particle);
 			}
-			scoreDelegate.updateScore("GOOD" , noteScore, true);
-
-			if(Mathf.Abs(soundPlayer.playTime - note.tick) < 150) {
-				scoreDelegate.updateSuperScore("GREAT" , 100);
-            } 
+			calculateReleaseTimingScore(); 
 
 		}
 	}
@@ -328,10 +325,87 @@ public class MusicNoteController : GameBaseEx
 
 	}
 
-	void calculateScore()
+	bool isHoldingNote()
     {
-		noteScore = (soundPlayer.playTime - clickTime)/10;
+		if (appContext.isWindInstrument())
+        {
+			return true;
+        } else
+        {
+			return false;
+        }
+
+	}
+
+	void calculateTapScore()
+	{
+		if (isHoldingNote())
+		{
+			//do nothing
+			holdingNoteScore = 0;
+		}
+		else
+		{
+			float tapGapTime = Mathf.Abs((float)note.tick - soundPlayer.playTime);
+			string scoreText = "";
+			float score = 0;
+			if (tapGapTime < 100)
+			{
+				scoreText = "GREAT";
+				score = 20 - tapGapTime * 5 / 100;
+			}
+			else if (tapGapTime < 300)
+			{
+				scoreText = "GOOD";
+				score = 15 - (tapGapTime - 100) * 5 / 200;
+			}
+			else if (tapGapTime < 500)
+			{
+				scoreText = "JUST";
+				score = 10 - (tapGapTime - 300) * 5 / 200;
+			}
+			else
+			{
+				scoreText = "JUST";
+				score = 5;
+			}
+			scoreDelegate.updateScore(scoreText,(long) score, true);
+		}
+	}
+
+	void calculateHoldingScore()
+    {
+		if (isHoldingNote())
+		{
+			long holdingTime = soundPlayer.playTime - clickTime;
+			if (soundPlayer.playTime < note.tick + calculateNoteDuration())
+			{//only update if before reach to end.
+				noteScore = holdingTime / 10;
+				holdingNoteScore = noteScore;
+				scoreDelegate.updateScore("HOLDING", noteScore, false);
+			}
+		} else
+        {
+			//do nothing
+        }
     }
+
+	void calculateReleaseTimingScore()
+	{
+		if (isHoldingNote())
+		{
+			float tapGapTime = Mathf.Abs((float)note.tick + calculateNoteDuration() - soundPlayer.playTime);
+			string scoreText = "";
+			float score = 0;
+			scoreDelegate.updateScore("GOOD", holdingNoteScore, true);
+			if (tapGapTime < 100)
+			{
+				scoreText = "SUPER";
+				score = 50;
+				scoreDelegate.updateSuperScore("SUPER!!!", (long) score);
+			}
+		}
+	}
 
 	void showTouchEffect()
     {
@@ -363,6 +437,7 @@ public class MusicNoteController : GameBaseEx
 		hitParticle(particle);
 		showTouchEffect();
 		soundPlayer.playNote(note.value, appContext.getInstrument(), 255, note.tickGapNext + 5000, true);
+		calculateTapScore();
 
 	}
 
@@ -397,8 +472,7 @@ public class MusicNoteController : GameBaseEx
 		}
 		if (noteState == NoteState.playing)
 		{
-			calculateScore();
-			scoreDelegate.updateScore("GOOD" , noteScore, false);
+			calculateHoldingScore();
 		} else if(noteState == NoteState.notClicked)
         {
 			checkNoteMissPlay();
