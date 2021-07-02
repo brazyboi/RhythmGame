@@ -14,7 +14,7 @@ public class TitleScreen : MonoBehaviour
     void Start()
     {
         playButton.GetComponent<Button>().onClick.AddListener(startGame);
-
+        rewardButton.GetComponent<Button>().onClick.AddListener(rewards);
     }
 
     void startGame()
