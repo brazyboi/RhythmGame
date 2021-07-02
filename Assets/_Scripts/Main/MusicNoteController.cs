@@ -25,8 +25,8 @@ public class MusicNoteController : GameBaseEx
 
 	long noteScore;
 	private KeyCode keyCode;
-	private static KeyCode lastKeyCode = KeyCode.RightArrow;
 	public ScoreDelegate scoreDelegate;
+	private AppContext appContext = AppContext.instance();
 
 	private static int playingNoteCount = 0;
 
@@ -60,7 +60,6 @@ public class MusicNoteController : GameBaseEx
 	void initNote()
     {
 		keyCode = KeyCode.Space;// (lastKeyCode == KeyCode.LeftArrow) ? KeyCode.RightArrow : KeyCode.LeftArrow;
-		lastKeyCode = keyCode;
 		createStartEndCircles();
 		if (!onlyPrintOnce)
         {
@@ -117,13 +116,12 @@ public class MusicNoteController : GameBaseEx
 			noteDuration = note.tickGapNext - 100;
 
 		}
-		noteDuration = 1000;
 		return noteDuration;
 	}
 
 	long calculateRemainDuration(long noteDuration)
     {
-		long remainDuration = 1000;
+		long remainDuration;
 		if (noteState == NoteState.notClicked || noteState == NoteState.missed)
 		{
 			remainDuration = noteDuration;
@@ -182,14 +180,32 @@ public class MusicNoteController : GameBaseEx
 
 		moveStartEndCircles(startHoldYPos, endHoldYPos);
 		touchEffect.transform.localPosition = new Vector3(touchEffect.transform.localPosition.x, startHoldYPos, touchEffect.transform.localPosition.z);
-		
+		updateCollider();
 	}
 
 	void moveStartEndCircles(float startPos, float endPos)
     {
 		start.transform.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
-		collider.localPosition = start.transform.localPosition;
+		
 		end.transform.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
+	}
+
+	void updateCollider()
+    {
+		if (appContext.isWindInstrument())
+		{
+			collider.localPosition = start.transform.localPosition;
+			Vector3 scale = noteCube.localScale;
+			scale.y = 2.5f;
+			collider.localScale = scale;
+		} else
+        {
+			collider.localPosition = noteCube.localPosition;
+			Vector3 scale = noteCube.localScale;
+			collider.localScale = noteCube.localScale;
+		}
+
+
 	}
 
 	float calculateLengthByDuration(long noteDuration)
@@ -198,7 +214,7 @@ public class MusicNoteController : GameBaseEx
 
 		length = length * gameManager.speed / 1000;
 
-		if(!AppContext.instance().isWindInstrument())
+		if(!appContext.isWindInstrument())
         {
 			return 3.5f;
         }
@@ -346,7 +362,7 @@ public class MusicNoteController : GameBaseEx
 
 		hitParticle(particle);
 		showTouchEffect();
-		soundPlayer.playNote(note.value, AppContext.instance().getInstrument(), 255, note.tickGapNext + 5000, true);
+		soundPlayer.playNote(note.value, appContext.getInstrument(), 255, note.tickGapNext + 5000, true);
 
 	}
 

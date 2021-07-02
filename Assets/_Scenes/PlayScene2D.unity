@@ -285,6 +285,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2555966900948455478, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4564344782363365321, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
       propertyPath: m_Name
       value: MusicNote
@@ -336,6 +340,18 @@ PrefabInstance:
     - target: {fileID: 4597455264966415546, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311035327853033336, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311035327853033336, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311035327853033336, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_Size.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7634367793979154501, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
       propertyPath: m_IsActive
@@ -423,7 +439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c2ad297cc2ed340b12d8b65070508a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 1
   scoreNotifyText: {fileID: 2114593786}
   alertText: {fileID: 1124902902}
   totalScoreText: {fileID: 915756601}

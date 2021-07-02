@@ -73022,7 +73022,6 @@ MonoBehaviour:
   particle: {fileID: 4557922558841553763}
   noteCube: {fileID: 4566235579911293455}
   collider: {fileID: 2555966900948455478}
-  player: {fileID: 0}
   touchTrack: {fileID: 7635677498472481887}
   xMark: {fileID: 3211521846367690436, guid: 2ff8ddb635924e64da248dd78815d675, type: 3}
   touchEffect: {fileID: 4597455264966415546}
@@ -73055,7 +73054,7 @@ Transform:
   m_GameObject: {fileID: 5311584492286592326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4566232713404323301}
   m_RootOrder: 6
@@ -73071,7 +73070,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1464973942
 PrefabInstance:
@@ -73167,6 +73166,10 @@ PrefabInstance:
     - target: {fileID: 1960382934384514, guid: f06da6411a4b5cf49b36b1f079d5d555, type: 3}
       propertyPath: m_Name
       value: TouchEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960382934384514, guid: f06da6411a4b5cf49b36b1f079d5d555, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4335391421890740, guid: f06da6411a4b5cf49b36b1f079d5d555, type: 3}
       propertyPath: m_RootOrder
@@ -73339,6 +73342,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4566232713404323301}
     m_Modifications:
+    - target: {fileID: 1034448610112352, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300881809885098, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604368145376176, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1818483698145146, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
       propertyPath: m_Name
       value: TouchTrack
@@ -73346,6 +73361,10 @@ PrefabInstance:
     - target: {fileID: 1818483698145146, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910334406089272, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4218847627608472, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
       propertyPath: m_RootOrder
@@ -73450,6 +73469,10 @@ PrefabInstance:
     - target: {fileID: 120781623809727230, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
       value: 0.3106022
+      objectReference: {fileID: 0}
+    - target: {fileID: 198782222027626314, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 199143261753923560, guid: 6028b5b4fbbf45e45a362de709aa2e18, type: 3}
       propertyPath: m_Materials.Array.size
