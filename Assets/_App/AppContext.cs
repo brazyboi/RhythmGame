@@ -12,6 +12,7 @@ public class AppContext  {
 
 	public long totalScore = 0;
 	public bool failed = false;
+	public int playingNoteCount = 0;
 
 	private AppContext() {
 		musicNoteDisplayDuration = 2000;

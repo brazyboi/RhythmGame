@@ -14,7 +14,6 @@ public class MusicNoteController : GameBaseEx
 	public Transform fluteNoteBar;
 	public Transform fluteNoteCircle;
 
-	public GameObject touchTrack;
 	public GameObject xMark;
 	public GameObject touchEffect;
 	
@@ -24,15 +23,12 @@ public class MusicNoteController : GameBaseEx
 	static bool onlyPrintOnce = true;
 	bool printLog;
 
-	public GameObject start;
-	public GameObject end;
-
 	long noteScore;
 	private KeyCode keyCode;
 	public ScoreDelegate scoreDelegate;
 	private AppContext appContext = AppContext.instance();
 
-	private static int playingNoteCount = 0;
+	
 	private float scaleX;
 	enum NoteState
     {
@@ -87,9 +83,6 @@ public class MusicNoteController : GameBaseEx
 		prevXPos = xPos;
 		noteState = NoteState.notClicked;
 		hideTouchEffect();
-		start.SetActive(false);
-		end.SetActive(false);
-
 
 		fluteNoteUp.gameObject.SetActive(isHoldingNote());
 		fluteNoteDown.gameObject.SetActive(isHoldingNote());
@@ -212,10 +205,6 @@ public class MusicNoteController : GameBaseEx
 
 	void moveStartEndCircles(float startPos, float endPos)
     {
-		start.transform.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
-		
-		end.transform.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
-
 		fluteNoteDown.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
 		fluteNoteUp.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
 
@@ -225,7 +214,7 @@ public class MusicNoteController : GameBaseEx
     {
 		if (appContext.isWindInstrument())
 		{
-			collider.localPosition = start.transform.localPosition;
+			collider.localPosition = fluteNoteDown.transform.localPosition;
 			Vector3 scale = noteCube.localScale;
 			scale.y = 2.5f;
 			collider.localScale = scale;
@@ -291,7 +280,7 @@ public class MusicNoteController : GameBaseEx
 		}
 		if (bClick)
 		{
-			playingNoteCount++;
+			appContext.playingNoteCount++;
 			playNote();
 		}
 	}
@@ -311,17 +300,17 @@ public class MusicNoteController : GameBaseEx
 		//UnityEngine.Debug.Log("releasedooooooooooooooooooooooooooooooo!s");
 		if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(keyCode)) //|| (Input.touchCount == 0)
 		{
-			playingNoteCount--;
+			appContext.playingNoteCount--;
 			disableAppearance();
 
-			float diff = Mathf.Abs(start.transform.position.y - end.transform.position.y);
+			float diff = Mathf.Abs(fluteNoteDown.transform.position.y - fluteNoteUp.transform.position.y);
 			Debug.Log("diff = " + diff);
 			if (diff <= 0.5f)
 			{
 				hitParticle(particle);
 			}
-			calculateReleaseTimingScore(); 
-
+			calculateReleaseTimingScore();
+			new Timer().startTimer(1, new NoteTimerCallback(this));
 		}
 	}
 
@@ -331,8 +320,6 @@ public class MusicNoteController : GameBaseEx
 		hideTouchEffect();
 		soundPlayer.stopAllNote(500, 150);
 		noteCube.gameObject.SetActive(false);
-		start.gameObject.SetActive(false);
-		end.gameObject.SetActive(false);
 		noteState = NoteState.ended;
 		
 	}
@@ -343,7 +330,7 @@ public class MusicNoteController : GameBaseEx
 		if (noteState == NoteState.notClicked)
 		{
 
-			if (!checkTapTooEarly() && playingNoteCount ==0)
+			if (!checkTapTooEarly() && appContext.playingNoteCount ==0)
 			{
 				checkTapDown();
 			}
@@ -449,12 +436,10 @@ public class MusicNoteController : GameBaseEx
 	void showTouchEffect()
     {
 		touchEffect.SetActive(true);
-		touchTrack.SetActive(true);
     }
 
 	void hideTouchEffect()
     {
-		touchTrack.SetActive(false);
 		touchEffect.SetActive(false);	
     }
 
@@ -484,8 +469,8 @@ public class MusicNoteController : GameBaseEx
     {
 		ParticleSystem p = particleHit.GetComponent<ParticleSystem>();
 		Vector3 pos = particleHit.localPosition;
-		pos.y = start.transform.localPosition.y;
-		pos.x = start.transform.localPosition.x;
+		pos.y = fluteNoteDown.transform.localPosition.y;
+		pos.x = fluteNoteDown.transform.localPosition.x;
 		particleHit.localPosition = pos;
 		p.Play();
 	}
@@ -536,7 +521,7 @@ public class MusicNoteController : GameBaseEx
 
 	void autoDestroyWhenPass()
     {
-		if (Mathf.Abs(note.tick - soundPlayer.playTime) > 8000)
+		if (soundPlayer.playTime > note.tick + calculateNoteDuration() + 1000)
 		{
 			Destroy(gameObject);
 		}
@@ -545,12 +530,12 @@ public class MusicNoteController : GameBaseEx
 	void checkNoteMissPlay()
     {
 
-		if(note.tick >= soundPlayer.playTime + 200 )
+		if(note.tick >= soundPlayer.playTime + 300 )
         {
 			return;
         }
 
-		if(isOutOfScreen(start.transform, 0))
+		if(isOutOfScreen(fluteNoteDown.transform, 0))
         {
 
 			noteState = NoteState.missed;
@@ -559,6 +544,24 @@ public class MusicNoteController : GameBaseEx
 			renderer.material.color = Color.red;
 		}
 
+	}
+
+
+	class NoteTimerCallback : TimerCallback
+	{
+		MusicNoteController controller;
+		public NoteTimerCallback(MusicNoteController controller)
+		{
+			this.controller = controller;
+		}
+		public override void onTick(Timer timer, float tick, float timeOut)
+		{
+			
+		}
+		public override void onEnd(Timer timer)
+		{
+			Destroy(controller.gameObject);
+		}
 	}
 
 }

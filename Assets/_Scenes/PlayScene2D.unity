@@ -278,107 +278,6 @@ Transform:
   m_Father: {fileID: 832212135}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &539172503
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 59259662, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 59259662, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1939144879, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1939144879, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2010071917, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.426
-      objectReference: {fileID: 0}
-    - target: {fileID: 2010071917, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.426
-      objectReference: {fileID: 0}
-    - target: {fileID: 2010071917, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096267923, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.426
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096267923, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.426
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096267923, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564331739524829653, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564344782363365321, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_Name
-      value: MusicNote
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4566232713404323301, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
 --- !u!1 &584871728
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +308,7 @@ Transform:
   m_Children:
   - {fileID: 1527496525}
   m_Father: {fileID: 2073962634}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &584871730
 MonoBehaviour:
@@ -887,6 +786,36 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 832212135}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1019536890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019536891}
+  m_Layer: 0
+  m_Name: MusicNotesParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1019536891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019536890}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2073962634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066358242
@@ -30157,6 +30086,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1019536891}
   - {fileID: 584871729}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -30177,6 +30107,7 @@ MonoBehaviour:
   drumNote: {fileID: 8943333596460943457, guid: 2ebc713d735e64255b0457903afe2d56, type: 3}
   inGameScores: {fileID: 584871728}
   playPerformance: {fileID: 3675631170098156880, guid: 010b55bb3492e6e489b3d013cca6b8b7, type: 3}
+  musicNotesParent: {fileID: 1019536890}
 --- !u!1 &2114593783
 GameObject:
   m_ObjectHideFlags: 0

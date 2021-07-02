@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RewardInstruments : MonoBehaviour
 {
@@ -86,6 +87,7 @@ public class RewardInstruments : MonoBehaviour
 
         AppContext.instance().setInstrument(musicIntruments[index]);
         Debug.Log("index: " + index + " Current instrument index: " + AppContext.instance().getInstrument());
+        SceneManager.LoadScene("SongSelect", LoadSceneMode.Single);
     }
 
     /*void initReward()

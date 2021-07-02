@@ -17,7 +17,7 @@ public class GamePlayer : GameBaseEx
     public GameObject inGameScores;
 
     public GameObject playPerformance;
-
+    public GameObject musicNotesParent;
     NoteScoreDelegate noteScoreDelegate;
 
     AppContext appContext;
@@ -52,6 +52,11 @@ public class GamePlayer : GameBaseEx
         string fileLocation = Application.streamingAssetsPath + "/songs/" + name;
         soundPlayer.loadMusic(fileLocation, false, appContext.songItem.melody);
         */
+        appContext.playingNoteCount = 0;
+        foreach (Transform child in this.musicNotesParent.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         string fileLocation;
         int melodyChannel = 0;
         if (appContext.songItem == null)
@@ -73,7 +78,7 @@ public class GamePlayer : GameBaseEx
     void placeNote(MusicNote note)
     {
         GameObject noteObject;
-        noteObject = Instantiate(musicNote, new Vector3(0, 0, 0), Quaternion.identity);
+        noteObject = Instantiate(musicNote, new Vector3(0, 0, 0), Quaternion.identity, musicNotesParent.transform);
         MusicNoteController c = noteObject.GetComponent<MusicNoteController>();
         c.Note = note;
         c.scoreDelegate = noteScoreDelegate;
@@ -116,12 +121,10 @@ public class GamePlayer : GameBaseEx
         soundPlayer.pausePlay();
         AppContext.instance().failed = true;
         Instantiate(playPerformance, new Vector3(0, 0, 0), Quaternion.identity);
-        GameObject[] notes = GameObject.FindGameObjectsWithTag("MusicNote");
-        foreach (GameObject note in notes)
+        foreach (Transform child in this.musicNotesParent.transform)
         {
-            note.SetActive(false);
+            GameObject.Destroy(child.gameObject);
         }
-
         GameObject baseLine = GameObject.FindGameObjectWithTag("BaseLine");
         baseLine.SetActive(false);
 
@@ -183,14 +186,16 @@ public class GamePlayer : GameBaseEx
             if (final)
             {
                 gamePlayer.appContext.totalScore += score;
-                scoreTextScript.updateTotalScoreTexts(text + "\n\r"+ gamePlayer.appContext.totalScore);
+                scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
             }
             scoreTextScript.updateScoreTexts(text + "\n\r" + score);
 
         }
         public override void updateSuperScore(string text, long score)
         {
-            
+           // gamePlayer.appContext.totalScore += score;
+           // scoreTextScript.updateAlertText(text + "\n\r" + score);
+
         }
         public override void missPlayNote(long missScore)
         {
