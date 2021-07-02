@@ -7,8 +7,12 @@ public class MusicNoteController : GameBaseEx
 	private MusicNote note;
 	public Transform particle;
 	public Transform noteCube;
-
 	public Transform collider;
+
+	public Transform fluteNoteUp;
+	public Transform fluteNoteDown;
+	public Transform fluteNoteBar;
+	public Transform fluteNoteCircle;
 
 	public GameObject touchTrack;
 	public GameObject xMark;
@@ -29,7 +33,7 @@ public class MusicNoteController : GameBaseEx
 	private AppContext appContext = AppContext.instance();
 
 	private static int playingNoteCount = 0;
-
+	private float scaleX;
 	enum NoteState
     {
 		notClicked,
@@ -83,16 +87,37 @@ public class MusicNoteController : GameBaseEx
 		prevXPos = xPos;
 		noteState = NoteState.notClicked;
 		hideTouchEffect();
+		start.SetActive(false);
+		end.SetActive(false);
+
+
+		fluteNoteUp.gameObject.SetActive(isHoldingNote());
+		fluteNoteDown.gameObject.SetActive(isHoldingNote());
+		fluteNoteBar.gameObject.SetActive(isHoldingNote());
+		scaleX = appContext.isWindInstrument() ? fluteNoteBar.localScale.x : noteCube.localScale.x;
+		if (isHoldingNote())
+		{
+			fluteNoteCircle.gameObject.SetActive(false);
+			noteCube.gameObject.SetActive(false);
+			
+
+		} else
+        {
+			fluteNoteCircle.gameObject.SetActive(appContext.isWindInstrument());
+			noteCube.gameObject.SetActive(!appContext.isWindInstrument());
+			
+		}
+
 
 	}
 
 	void createStartEndCircles()
     {
-		long noteDuration = calculateNoteDuration();
-		long remainDuration = calculateRemainDuration(noteDuration);
+	//	long noteDuration = calculateNoteDuration();
+	//	long remainDuration = calculateRemainDuration(noteDuration);
 
 		//setting inital scale for calculations to work
-		noteCube.localScale = new Vector3(noteCube.localScale.x, calculateLengthByDuration(remainDuration), noteCube.localScale.z);
+	//	noteCube.localScale = new Vector3(noteCube.localScale.x, calculateLengthByDuration(remainDuration), noteCube.localScale.z);
 		
 
 	}
@@ -142,7 +167,7 @@ public class MusicNoteController : GameBaseEx
 
 	void updateNotePosition(float xPos)
 	{
-
+		
 		long noteDuration = calculateNoteDuration();
 		long remainDuration = calculateRemainDuration(noteDuration);
 
@@ -154,7 +179,7 @@ public class MusicNoteController : GameBaseEx
 			UnityEngine.Debug.Log("local scale: " + transform.localScale.y + " local pos: " + transform.position.y);
 		}
 		noteCube.localScale = new Vector3(noteCube.localScale.x, remainlength, noteCube.localScale.z);
-
+		fluteNoteBar.localScale = new Vector3(fluteNoteBar.localScale.x, remainlength - 1, fluteNoteBar.localScale.z);
 		//revert circles to correct scale
 		float yPos = calculatePosYByTick(note.tick);
 		transform.localPosition = new Vector3(xPos, yPos, 0);
@@ -174,10 +199,11 @@ public class MusicNoteController : GameBaseEx
 				" yPos + remainlength/2 == " + (yPos + remainlength/2) + " posY=" + yPos + " remainlength=" + remainlength + " orignalLength=" + orignalLength + " remainDuration = " + remainDuration + " noteDuration=" + noteDuration +  "note.tickGapNext=" + note.tickGapNext + " note.elapseTime="+ note.elapseTime);
 		}
 		noteCube.localPosition = new Vector3(0, notePosY, noteCube.localPosition.z);
+		fluteNoteBar.localPosition = new Vector3(0, notePosY, fluteNoteBar.localPosition.z);
 		//Debug.Log(xPos);
 
-		float endHoldYPos = noteEndPosY - 1;// calculateEndPosY(noteDuration);
-		float startHoldYPos = noteEndPosY - remainlength + 1;
+		float endHoldYPos = noteEndPosY - 0.5f;// calculateEndPosY(noteDuration);
+		float startHoldYPos = noteEndPosY - remainlength + 0.5f;
 
 		moveStartEndCircles(startHoldYPos, endHoldYPos);
 		touchEffect.transform.localPosition = new Vector3(touchEffect.transform.localPosition.x, startHoldYPos, touchEffect.transform.localPosition.z);
@@ -189,6 +215,10 @@ public class MusicNoteController : GameBaseEx
 		start.transform.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
 		
 		end.transform.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
+
+		fluteNoteDown.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
+		fluteNoteUp.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
+
 	}
 
 	void updateCollider()
@@ -304,6 +334,7 @@ public class MusicNoteController : GameBaseEx
 		start.gameObject.SetActive(false);
 		end.gameObject.SetActive(false);
 		noteState = NoteState.ended;
+		
 	}
 
 	void checkTouch()
@@ -329,7 +360,15 @@ public class MusicNoteController : GameBaseEx
     {
 		if (appContext.isWindInstrument())
         {
-			return true;
+			if(calculateNoteDuration() > 300)
+            {
+				return true;
+            } else
+            {
+				return false;
+            }
+			
+
         } else
         {
 			return false;

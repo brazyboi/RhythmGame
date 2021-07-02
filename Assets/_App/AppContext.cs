@@ -6,9 +6,9 @@ using UnityEngine.Networking;
 
 public class AppContext  {
 	private static AppContext appContext;
-    private int instrument = MusicInstrument.PIANO_INSTRUMENT;
+    private int instrument = MusicInstrument.FLUTE_INSTRUMENT;
 	public int musicNoteDisplayDuration;
-    private int instrumentMelody = MusicInstrument.PIANO_INSTRUMENT;
+    private int instrumentMelody = MusicInstrument.FLUTE_INSTRUMENT;
 
 	public long totalScore = 0;
 	public bool failed = false;

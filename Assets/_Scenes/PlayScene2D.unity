@@ -285,6 +285,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59259662, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 59259662, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939144879, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939144879, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010071917, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010071917, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010071917, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096267923, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096267923, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.426
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096267923, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564331739524829653, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4564344782363365321, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
       propertyPath: m_Name
       value: MusicNote
