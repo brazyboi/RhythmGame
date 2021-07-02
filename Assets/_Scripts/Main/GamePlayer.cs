@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class ScoreDelegate
 {
-    public abstract void updateScore(long score, bool final);
-    public abstract void updateSuperScore(long score);
+    public abstract void updateScore(string text, long score, bool final);
+    public abstract void updateSuperScore(string text, long score);
     public abstract void missPlayNote(long missScore);
 }
 
@@ -178,17 +178,17 @@ public class GamePlayer : GameBaseEx
             gamePlayer = c;
             scoreTextScript = gamePlayer.inGameScores.GetComponent<ScoreTextScript>();
         }
-        public override void updateScore(long score, bool final)
+        public override void updateScore(string text, long score, bool final)
         {
             if (final)
             {
                 gamePlayer.appContext.totalScore += score;
-                scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
+                scoreTextScript.updateTotalScoreTexts(text + "\n\r"+ gamePlayer.appContext.totalScore);
             }
-            scoreTextScript.updateScoreTexts("" + score);
+            scoreTextScript.updateScoreTexts(text + "\n\r" + score);
 
         }
-        public override void updateSuperScore(long score)
+        public override void updateSuperScore(string text, long score)
         {
             
         }
@@ -201,7 +201,7 @@ public class GamePlayer : GameBaseEx
                 gamePlayer.appContext.totalScore = 0;
             }
             scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
-            scoreTextScript.updateScoreTexts("MISS");
+            scoreTextScript.updateScoreTexts("MISS" + "\n\r" + missScore);
             gamePlayer.onGameFailed();
         }
 

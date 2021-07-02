@@ -273,10 +273,10 @@ public class MusicNoteController : GameBaseEx
 			{
 				hitParticle(particle);
 			}
-			scoreDelegate.updateScore(noteScore, true);
+			scoreDelegate.updateScore("GOOD" , noteScore, true);
 
 			if(Mathf.Abs(soundPlayer.playTime - note.tick) < 150) {
-				scoreDelegate.updateSuperScore(100);
+				scoreDelegate.updateSuperScore("GREAT" , 100);
             } 
 
 		}
@@ -382,7 +382,7 @@ public class MusicNoteController : GameBaseEx
 		if (noteState == NoteState.playing)
 		{
 			calculateScore();
-			scoreDelegate.updateScore(noteScore, false);
+			scoreDelegate.updateScore("GOOD" , noteScore, false);
 		} else if(noteState == NoteState.notClicked)
         {
 			checkNoteMissPlay();

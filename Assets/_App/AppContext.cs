@@ -59,6 +59,10 @@ public class AppContext  {
 		return instrumentMelody;
 	}
 
+	public bool isInstrumentUnlock(int instrumentId)
+    {
+		return true;
+    }
 	/*
 	private static string RootPath  
 	{  
