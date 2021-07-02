@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/TitleScreen.unity
     guid: 6a5f3c911bfd8a0499510e395c2eb259
+  - enabled: 1
+    path: Assets/_Scenes/RewardScreen.unity
+    guid: 151c6bcaecfcc394c9f001f7860e13c9
   m_configObjects: {}
