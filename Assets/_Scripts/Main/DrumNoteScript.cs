@@ -19,9 +19,8 @@ public class DrumNoteScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		chooseRandomSprite();
 		spriteRenderer = spriteObj.GetComponent<SpriteRenderer>();
-		spriteRenderer.sprite = sprite;
+		chooseRandomSprite();
 		timer = Timer.createTimer(this.gameObject);
 		timer.startTimer(1, new DrumNoteTimerCallback(this));
     }
@@ -31,21 +30,25 @@ public class DrumNoteScript : MonoBehaviour
 		int rand = (int) (Random.Range(1, 4));
 		if (rand == 1)
         {
-			sprite = sprite1;
+			spriteRenderer.sprite = sprite1;
         } else if (rand == 2)
         {
-			sprite = sprite2;
+			spriteRenderer.sprite = sprite2;
         } else if (rand == 3)
         {
-			sprite = sprite3;
+			spriteRenderer.sprite = sprite3;
 		} else
         {
-			sprite = sprite4;
+			spriteRenderer.sprite = sprite4;
         }
+
+		Debug.Log("rand " + rand);
+
     }
 
 	public void restartDrumNote()
     {
+		chooseRandomSprite();
 		if (timer != null)
 		{
 			timer.startTimer(1, new DrumNoteTimerCallback(this));
@@ -79,6 +82,7 @@ public class DrumNoteScript : MonoBehaviour
 		{
 			//Destroy(controller.gameObject);
 			//Debug.Log("reached onEnd");
+			
 			Color color = controller.spriteRenderer.color;
 			color.a = 0;
 			controller.spriteRenderer.color = color;
