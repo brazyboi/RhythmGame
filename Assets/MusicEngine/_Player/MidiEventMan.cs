@@ -64,7 +64,7 @@ public class MidiEventMan  {
 		return d1 > d2 ? d1 : d2;
 	}
 
-	public void insertMidiNote(int trackId, MidiNote note, int melodyChannel, int melodyChannel2, bool isDrumMelody, int pitchValue, float ms_per_tick) {
+	public void insertMidiNote(int trackId, MidiNote note, int melodyChannel, int melodyChannel2, bool isDrumMelody, int pitchValue,  float ms_per_tick) {
 		
 
 
@@ -78,9 +78,10 @@ public class MidiEventMan  {
 		n.elapseTime = (int) (note.Duration * ms_per_tick);
 		//n.velocity = 
 		n.isHit = false;
+		n.velocity = note.velocity;
 
 
-		if(n.channel == melodyChannel || (melodyChannel2>0 && n.channel == melodyChannel2)
+		if (n.channel == melodyChannel || (melodyChannel2>0 && n.channel == melodyChannel2)
 			|| (isDrumMelody && n.channel==9)) {
 			if(isDrumMelody &&  n.channel!=9) {
 				n.melodyEventEx = MusicNote.SUB_MELODY_NOTE; //if play drum , melody note should be marked

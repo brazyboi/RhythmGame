@@ -296,8 +296,8 @@ public class SoundPlayer  {
 			}
 			MidiFile midiFile = new MidiFile (filedata, "");
 			List<MidiTrack> tracks = midiFile.Tracks;
-			float ms_per_tick = midiFile.Time.Tempo / (1000f*midiFile.Time.Quarter);
-			for(int i =0; i< tracks.Count; i++) {
+			float ms_per_tick = midiFile.Time.Tempo / (1000f*midiFile.Time.Quarter); //microseconds per tick = microseconds per quarter note / ticks per quarter note
+			for (int i =0; i< tracks.Count; i++) {
 				MidiTrack t = tracks [i];
 				List<MidiNote> notes = t.Notes;
 				for(int j =0; j< notes.Count; j++) {
@@ -306,7 +306,7 @@ public class SoundPlayer  {
 						int yyy = 0;
 					}
 
-					midiEventMan.insertMidiNote(i, n, melodyChannel1, melodyChannel2, instrument== MusicInstrument.DRUM_INSTRUMENT, 0, ms_per_tick);
+					midiEventMan.insertMidiNote(i, n, melodyChannel1, melodyChannel2, instrument== MusicInstrument.DRUM_INSTRUMENT, 0,  ms_per_tick);
 				}
 			}
 			midiEventMan.sortAllMidiNote ();
@@ -857,8 +857,8 @@ public class SoundPlayer  {
 			midiEngine.addNoteBegin();
 			for(i = 0; i< midiEvents.Count; i++) {
 				MusicNote note =  midiEvents[i];
-				midiEngine.addNote(0, note.value, 255, instrument, 480, 
-					note.channel, 127, true);
+				midiEngine.addNote(0, note.value, note.velocity, instrument, 480, 
+					note.channel, 255, true);
 			}
 			midiEngine.prepareSoundAllNotes();
 			midiEngine.playReadySound();
@@ -920,7 +920,7 @@ public class SoundPlayer  {
 
 			musicNote = midiEventList [index++];
 			int note = musicNote.value;
-			int velocity = 255;//musicNote.velocity;
+			int velocity = musicNote.velocity;
 			bool isMelodyNote = musicNote.melodyEventEx == MusicNote.GENERAL_MELODY_NOTE || musicNote.melodyEventEx == MusicNote.PIANO_MELODY_NOTE;
 			long dt = (long) Math.Abs(musicNote.getDuration(appContext.isWindInstrument() && isMelodyNote));
 
@@ -938,7 +938,7 @@ public class SoundPlayer  {
 				}
 				//make melody sound louder.
 
-				volume = 127;
+				volume = 255;
 				velocity = velocity * 2;
 				if(autoPlayMusic == HARMONY_PLAY) {
 					velocity = 0;

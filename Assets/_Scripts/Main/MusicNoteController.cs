@@ -228,13 +228,14 @@ public class MusicNoteController : GameBaseEx
 		if (appContext.isWindInstrument())
 		{
 			collider.localPosition = fluteNoteDown.transform.localPosition;
-			Vector3 scale = noteCube.localScale;
-			scale.y = 2.5f;
+			Vector3 scale = fluteNoteBar.localScale;
+			scale.y = scale.x * 1.1f;
 			collider.localScale = scale;
 		} else
         {
 			collider.localPosition = noteCube.localPosition;
 			Vector3 scale = noteCube.localScale;
+			scale.x = scale.x * 1.1f;
 			collider.localScale = noteCube.localScale;
 		}
 
@@ -477,7 +478,8 @@ public class MusicNoteController : GameBaseEx
 
 		hitParticle(particle);
 		showTouchEffect();
-		soundPlayer.playNote(note.value, appContext.getInstrument(), 255, note.tickGapNext + 5000, true);
+		int volume = appContext.isWindInstrument() ? 128 : 180; // volume 0~255
+		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, note.tickGapNext + 3000, true);
 		calculateTapScore();
 
 	}
