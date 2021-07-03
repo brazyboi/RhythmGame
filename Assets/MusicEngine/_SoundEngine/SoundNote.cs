@@ -306,6 +306,7 @@ public class SoundNote {
 
 
 	//public delegate RESULT SOUND_PCMREADCALLBACK    (IntPtr soundraw, IntPtr data, uint datalen);
+	[AOT.MonoPInvokeCallback(typeof(FMOD.SOUND_PCMREAD_CALLBACK))]
 	public static FMOD.RESULT PCMREADCALLBACK    (IntPtr soundraw, IntPtr data, uint datalen)
 	{
 		
@@ -324,6 +325,7 @@ public class SoundNote {
 	}
 
 
+	[AOT.MonoPInvokeCallback(typeof(FMOD.SOUND_PCMSETPOS_CALLBACK))]
 	public static FMOD.RESULT PCMSETPOSCALLBACK  (IntPtr soundraw, int subsound, uint position, TIMEUNIT postype)
 	{
 		FMOD.Sound sound = new FMOD.Sound();
