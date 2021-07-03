@@ -120,6 +120,21 @@ public class MidiEventMan  {
 
 		bool isMelody = (n.melodyEventEx == MusicNote.GENERAL_MELODY_NOTE) ||  (n.melodyEventEx == MusicNote.PIANO_MELODY_NOTE);
 		if(isMelody) {
+			if(midiEventListMelody.Count > 0)
+            {
+				MusicNote lastNote = midiEventListMelody[midiEventListMelody.Count - 1];
+				if(Mathf.Abs(lastNote.tick - n.tick) < 20)
+                {
+					if(n.value > lastNote.value)
+                    {
+						midiEventListMelody[midiEventListMelody.Count - 1] = n;
+						return;
+					} else
+                    {
+						return;
+                    }
+                }
+            }
 			updateMaxMinMelodyNote(note.Number);
 			if(!isOverFirstMelody) {
 				isOverFirstMelody = true;
