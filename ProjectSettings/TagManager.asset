@@ -10,6 +10,7 @@ TagManager:
   - MusicNote
   - StartCircle
   - BaseLine
+  - DrumNote
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Backrgroud
+  - Notes
   - 
   - 
   - 
@@ -47,9 +48,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 1425876191
+  - name: UI
+    uniqueID: 4277667815
     locked: 0
   - name: Notes
     uniqueID: 1674254395
+    locked: 0
+  - name: Backrgroud
+    uniqueID: 2000042529
+    locked: 0
+  - name: Notes
+    uniqueID: 1735312247
     locked: 0

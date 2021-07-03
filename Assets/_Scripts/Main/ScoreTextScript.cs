@@ -95,7 +95,7 @@ public class ScoreTextScript : MonoBehaviour
             Vector3 targetPos = originalPos;
             targetPos.y += 70 *  tick / timeOut;
             updateText.localPosition = targetPos;
-            Debug.Log("reached onTick, tick = " + tick + " timeOut = " + timeOut);
+            
         }
         public override void onEnd(Timer timer)
         {

@@ -12,12 +12,12 @@ public abstract class ScoreDelegate
 public class GamePlayer : GameBaseEx
 {
     public GameObject musicNote;
-    public GameObject drumNote;
 
     public GameObject inGameScores;
-
+    public GameObject drumNote;
     public GameObject playPerformance;
     public GameObject musicNotesParent;
+    public GameObject cameraContainer;
     NoteScoreDelegate noteScoreDelegate;
 
     AppContext appContext;
@@ -40,8 +40,8 @@ public class GamePlayer : GameBaseEx
         noteScoreDelegate = new NoteScoreDelegate(this);
         appContext.musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
-        soundPlayer.setMelodyMute(true);
+        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
+        soundPlayer.setMelodyMute(false);
     }
 
 
@@ -84,24 +84,38 @@ public class GamePlayer : GameBaseEx
         c.scoreDelegate = noteScoreDelegate;
     }
 
+    GameObject createDrumNote()
+    {
+        Transform t;
+        t = cameraContainer.transform.Find("DrumNote");
+        if(t != null)
+        {
+            return t.gameObject;
+        } else
+        {
+            GameObject o = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
+            o.transform.SetParent(cameraContainer.transform);
+            o.transform.localPosition = new Vector3(0, 10, 0);
+            o.name = "DrumNote";
+            return o;
+        }
+    }
+
     void placeDrumExplosion(long size)
     {
         switch (size)
         {
             case SoundPlayer.DRUM_HIT_HEAVY:
                 {
-                    GameObject drumExplosion;
-                    drumExplosion = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
-                    DrumNoteController c = drumExplosion.GetComponent<DrumNoteController>();
-                    c.explosionTime = soundPlayer.playTime;
+                    createDrumNote().GetComponent<DrumNoteScript>().restartDrumNote();
                 }
                 break;
             case SoundPlayer.DRUM_HIT_MEDIUM:
                 {
-                    GameObject drumExplosion;
-                    drumExplosion = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
-                    DrumNoteController c = drumExplosion.GetComponent<DrumNoteController>();
-                    c.explosionTime = soundPlayer.playTime;
+                    //  createDrumNote().GetComponent<DrumNoteScript>().restartDrumNote();
+                    //  drumExplosion = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
+                    //  DrumNoteController c = drumExplosion.GetComponent<DrumNoteController>();
+                    //  c.explosionTime = soundPlayer.playTime;
                 }
                 break;
         }

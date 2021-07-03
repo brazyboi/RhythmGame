@@ -16,6 +16,11 @@ public class Timer : MonoBehaviour
 
     bool active = false;
 
+    public static Timer createTimer(GameObject gameObject)
+    {
+      return gameObject.AddComponent<Timer>();
+    }
+
     public void startTimer(float timeOut, TimerCallback callback)
     {
         active = true;

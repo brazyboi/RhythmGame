@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &99180131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99180132}
+  m_Layer: 6
+  m_Name: CameraContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &99180132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99180131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 832212135}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125745739
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390575567}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Background
   m_TagString: Background
   m_Icon: {fileID: 0}
@@ -591,7 +621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832212135}
   - component: {fileID: 832212136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,6 +641,7 @@ Transform:
   m_Children:
   - {fileID: 976963107}
   - {fileID: 390575567}
+  - {fileID: 99180132}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -716,7 +747,7 @@ GameObject:
   - component: {fileID: 976963107}
   - component: {fileID: 976963106}
   - component: {fileID: 976963105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -797,7 +828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1019536891}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MusicNotesParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1193,7 @@ GameObject:
   - component: {fileID: 1552192044}
   - component: {fileID: 1571601452}
   - component: {fileID: 1572021800}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: 02_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1211,7 @@ GameObject:
   - component: {fileID: 1552250096}
   - component: {fileID: 1571683216}
   - component: {fileID: 1572015656}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: magic_ring_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1229,7 @@ GameObject:
   - component: {fileID: 1552271972}
   - component: {fileID: 1571603624}
   - component: {fileID: 1571982850}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1216,7 +1247,7 @@ GameObject:
   - component: {fileID: 1552279434}
   - component: {fileID: 1571660720}
   - component: {fileID: 1571980586}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1265,7 @@ GameObject:
   - component: {fileID: 1552219138}
   - component: {fileID: 1571644248}
   - component: {fileID: 1571577148}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1283,7 @@ GameObject:
   - component: {fileID: 1552248286}
   - component: {fileID: 1571592100}
   - component: {fileID: 1572051774}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: 01_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30104,10 +30135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicNote: {fileID: 4564344782363365321, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-  drumNote: {fileID: 8943333596460943457, guid: 2ebc713d735e64255b0457903afe2d56, type: 3}
   inGameScores: {fileID: 584871728}
+  drumNote: {fileID: 6317620090500661734, guid: 5185e2652f22f45aabf20d3fc1f1f12e, type: 3}
   playPerformance: {fileID: 3675631170098156880, guid: 010b55bb3492e6e489b3d013cca6b8b7, type: 3}
   musicNotesParent: {fileID: 1019536890}
+  cameraContainer: {fileID: 99180131}
 --- !u!1 &2114593783
 GameObject:
   m_ObjectHideFlags: 0
@@ -30180,7 +30212,7 @@ GameObject:
   - component: {fileID: 4074806029976586}
   - component: {fileID: 212521685035814838}
   - component: {fileID: 114881032067174426}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Stars 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30198,7 +30230,7 @@ GameObject:
   - component: {fileID: 4906037011654470}
   - component: {fileID: 114069501841547112}
   - component: {fileID: 50611832454876306}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Stars Background 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30216,7 +30248,7 @@ GameObject:
   - component: {fileID: 4249245103279664}
   - component: {fileID: 198287754686977626}
   - component: {fileID: 199400764792776686}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Speed Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30234,7 +30266,7 @@ GameObject:
   - component: {fileID: 4617016090722214}
   - component: {fileID: 212980422430711466}
   - component: {fileID: 114767877524872264}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Stars 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30250,7 +30282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4314063966198236}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Backgrounds 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30268,7 +30300,7 @@ GameObject:
   - component: {fileID: 4069308571267242}
   - component: {fileID: 212360641046384494}
   - component: {fileID: 114675043775142422}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Nebula1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30286,7 +30318,7 @@ GameObject:
   - component: {fileID: 4120643810468980}
   - component: {fileID: 212779495862292846}
   - component: {fileID: 114155154644721860}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Stars 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30304,7 +30336,7 @@ GameObject:
   - component: {fileID: 4212894078117550}
   - component: {fileID: 212619040671541618}
   - component: {fileID: 114743677943339124}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Stars 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30322,7 +30354,7 @@ GameObject:
   - component: {fileID: 4381866403556406}
   - component: {fileID: 50003821108997142}
   - component: {fileID: 114926458721031048}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Nebula Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30340,7 +30372,7 @@ GameObject:
   - component: {fileID: 4032921853448986}
   - component: {fileID: 212776304461365304}
   - component: {fileID: 114601865497630826}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Nebula2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30358,7 +30390,7 @@ GameObject:
   - component: {fileID: 4276815148960598}
   - component: {fileID: 114417134203906222}
   - component: {fileID: 50328696436769464}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Stars Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
