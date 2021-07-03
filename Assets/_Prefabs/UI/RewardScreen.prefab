@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5613208, g: 0.8153329, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b3a7ba06bfec14506bcf9f4c07614495, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72a40458f6abf4e4398ea531485be5b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1519,6 +1519,7 @@ MonoBehaviour:
   instrument10: {fileID: 8007721439447604096}
   instrument11: {fileID: 8007721439219701671}
   instrument12: {fileID: 8007721438995901468}
+  backButton: {fileID: 6541442671385289388}
 --- !u!1 &8007721438668846701
 GameObject:
   m_ObjectHideFlags: 0

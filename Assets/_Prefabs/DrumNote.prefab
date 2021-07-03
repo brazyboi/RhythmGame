@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb7ada45d2b84bbe8ee406c59536e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 6317620090794857678}
+  sprite1: {fileID: 21300000, guid: 91e955ba2a5044ed5bcccfd8a6f5c0d3, type: 3}
+  sprite2: {fileID: 21300000, guid: f756e9b777c0b4eb8b7f592fd715bd44, type: 3}
+  sprite3: {fileID: 21300000, guid: 3210100109f934a0491151540573cad1, type: 3}
+  sprite4: {fileID: 21300000, guid: cc7a6429c22524347a156e961999b5d7, type: 3}
+  spriteObj: {fileID: 6317620090794857678}
 --- !u!1 &6317620090794857678
 GameObject:
   m_ObjectHideFlags: 0

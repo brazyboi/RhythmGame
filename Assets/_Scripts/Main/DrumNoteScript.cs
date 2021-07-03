@@ -5,15 +5,43 @@ using UnityEngine;
 public class DrumNoteScript : MonoBehaviour
 {
 
-    public GameObject sprite;
+    public Sprite sprite1;
+	public Sprite sprite2;
+	public Sprite sprite3;
+	public Sprite sprite4;
+
+	Sprite sprite;
+
+	public GameObject spriteObj;
+
 	private SpriteRenderer spriteRenderer;
 	private Timer timer;
     // Start is called before the first frame update
     void Start()
     {
-		spriteRenderer = sprite.GetComponent<SpriteRenderer>();
+		chooseRandomSprite();
+		spriteRenderer = spriteObj.GetComponent<SpriteRenderer>();
+		spriteRenderer.sprite = sprite;
 		timer = Timer.createTimer(this.gameObject);
 		timer.startTimer(1, new DrumNoteTimerCallback(this));
+    }
+
+	void chooseRandomSprite()
+    {
+		int rand = (int) (Random.Range(1, 4));
+		if (rand == 1)
+        {
+			sprite = sprite1;
+        } else if (rand == 2)
+        {
+			sprite = sprite2;
+        } else if (rand == 3)
+        {
+			sprite = sprite3;
+		} else
+        {
+			sprite = sprite4;
+        }
     }
 
 	public void restartDrumNote()

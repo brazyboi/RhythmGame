@@ -24,7 +24,7 @@ public class TitleScreen : MonoBehaviour
 
     void rewards()
     {
-        AppContext.instance().prevScene = "SongSelect";
+        AppContext.instance().prevScene = "TitleScreen";
         SceneManager.LoadScene("RewardScreen", LoadSceneMode.Single);
     }
 

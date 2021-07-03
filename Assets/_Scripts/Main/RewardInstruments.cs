@@ -40,7 +40,7 @@ public class RewardInstruments : MonoBehaviour
 
         setUpItemButtons();
 
-
+        backButton.GetComponent<Button>().onClick.AddListener(backToPrevScene);
     }
 
     void backToPrevScene()
@@ -55,7 +55,7 @@ public class RewardInstruments : MonoBehaviour
         musicIntruments[0] = MusicInstrument.PIANO_INSTRUMENT;
         musicIntruments[1] = MusicInstrument.FLUTE_INSTRUMENT;
         musicIntruments[2] = MusicInstrument.SAX_INSTRUMENT;
-        musicIntruments[3] = MusicInstrument.VIOLIN_INSTRUMENT;
+        musicIntruments[3] = MusicInstrument.HARP_INSTRUMENT;
         musicIntruments[4] = MusicInstrument.TRUMPET_INSTRUMENT;
         musicIntruments[5] = MusicInstrument.HARMONICA_INSTRUMENT;
         musicIntruments[6] = MusicInstrument.GUITAR_INSTRUMENT;
@@ -94,7 +94,7 @@ public class RewardInstruments : MonoBehaviour
 
         AppContext.instance().setInstrument(musicIntruments[index]);
         Debug.Log("index: " + index + " Current instrument index: " + AppContext.instance().getInstrument());
-        SceneManager.LoadScene("SongSelect", LoadSceneMode.Single);
+        backToPrevScene();
     }
 
     /*void initReward()
