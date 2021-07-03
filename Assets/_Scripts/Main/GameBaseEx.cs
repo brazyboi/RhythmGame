@@ -58,5 +58,30 @@ public class GameBaseEx : MonoBehaviour
         return outOfBounds;
     }
 
-  
+
+    protected void setChildrenAlpha(Transform trans, float alpha) {
+        foreach(Transform t in trans)
+        {
+            SpriteRenderer r = t.GetComponent<SpriteRenderer>();
+            if(r!=null)
+            {
+                UnityEngine.Debug.Log("setChildrenAlpha ontick--- alpha" + alpha);
+                Color color = r.color;
+                color.a = alpha;
+                r.color = color;
+                continue;
+            }
+            Renderer r2 = t.GetComponent<Renderer>();
+            if (r2 != null)
+            {
+                UnityEngine.Debug.Log("setChildrenAlpha ontick--- alpha2" + +alpha);
+                Color color = r2.material.color;
+                color.a = alpha;
+                r2.material.color = color;
+                continue;
+            }
+        }
+    }
+
+
 }

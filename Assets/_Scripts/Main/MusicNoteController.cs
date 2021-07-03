@@ -51,6 +51,7 @@ public class MusicNoteController : GameBaseEx
 	private static float prevXPos;
 	private float xPos;
 	private long holdingNoteScore;
+	private long lastRemainingDuration;
 	// Use this for initialization
 	void Start()
 	{
@@ -144,11 +145,18 @@ public class MusicNoteController : GameBaseEx
 		if (noteState == NoteState.notClicked || noteState == NoteState.missed)
 		{
 			remainDuration = noteDuration;
+			lastRemainingDuration = remainDuration;
 
 		}
-		else //if (note.tick + noteDuration >= soundPlayer.playTime)
+		else if(noteState == NoteState.playing)
 		{
 			remainDuration = noteDuration - (soundPlayer.playTime - clickTime);
+			lastRemainingDuration = remainDuration;
+		}
+		else //NoteState.ended
+		{
+			remainDuration = lastRemainingDuration;
+
 		}
 
 		if (remainDuration < 10)
@@ -205,6 +213,7 @@ public class MusicNoteController : GameBaseEx
 
 	void moveStartEndCircles(float startPos, float endPos)
     {
+		fluteNoteCircle.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
 		fluteNoteDown.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
 		fluteNoteUp.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
 
@@ -310,7 +319,7 @@ public class MusicNoteController : GameBaseEx
 				hitParticle(particle);
 			}
 			calculateReleaseTimingScore();
-			new Timer().startTimer(1, new NoteTimerCallback(this));
+			Timer.createTimer(this.gameObject).startTimer(0.5f, new NoteFadeOutTimerCallback(this));
 		}
 	}
 
@@ -547,16 +556,21 @@ public class MusicNoteController : GameBaseEx
 	}
 
 
-	class NoteTimerCallback : TimerCallback
+	class NoteFadeOutTimerCallback : TimerCallback
 	{
 		MusicNoteController controller;
-		public NoteTimerCallback(MusicNoteController controller)
+		public NoteFadeOutTimerCallback(MusicNoteController controller)
 		{
 			this.controller = controller;
 		}
 		public override void onTick(Timer timer, float tick, float timeOut)
 		{
-			
+			float alpha = (timeOut - tick) / timeOut;
+			controller.setChildrenAlpha(controller.fluteNoteCircle, alpha);
+			controller.setChildrenAlpha(controller.fluteNoteBar, alpha);
+			controller.setChildrenAlpha(controller.fluteNoteDown, alpha);
+			controller.setChildrenAlpha(controller.fluteNoteUp, alpha);
+			//	controller.fluteNoteCircle.GetComponent<RenderTexture>().
 		}
 		public override void onEnd(Timer timer)
 		{
