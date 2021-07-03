@@ -14,6 +14,10 @@ public class MusicNoteController : GameBaseEx
 	public Transform fluteNoteBar;
 	public Transform fluteNoteCircle;
 
+	public Transform fluteNoteBarUpInside;
+	public Transform fluteNoteBarDownInside;
+	public Transform fluteNoteBarCenter;
+
 	public GameObject xMark;
 	public GameObject touchEffect;
 	
@@ -253,7 +257,7 @@ public class MusicNoteController : GameBaseEx
 	void checkTapDown()
     {
 		bool bClick = false;
-		if(Input.GetKeyDown(keyCode))
+		if(Input.GetKeyDown(keyCode) && appContext.playingNoteCount==0)
         {
 			bClick = true;
 
@@ -339,7 +343,7 @@ public class MusicNoteController : GameBaseEx
 		if (noteState == NoteState.notClicked)
 		{
 
-			if (!checkTapTooEarly() && appContext.playingNoteCount ==0)
+			if (!checkTapTooEarly())
 			{
 				checkTapDown();
 			}
@@ -444,6 +448,10 @@ public class MusicNoteController : GameBaseEx
 
 	void showTouchEffect()
     {
+		Color c = Color.green;
+		fluteNoteBarDownInside.GetComponent<SpriteRenderer>().color = c;
+		fluteNoteBarUpInside.GetComponent<SpriteRenderer>().color = c;
+		fluteNoteBarCenter.GetComponent<Renderer>().material.color = c;
 		touchEffect.SetActive(true);
     }
 

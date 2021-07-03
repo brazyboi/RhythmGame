@@ -110,13 +110,13 @@ public class AppContext  {
 		string fileContent = null;   
 		if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WebGLPlayer)  
 		{
-		//	WWW www = new WWW(Application.streamingAssetsPath + name);  
-		//	while(!www.isDone){};  
-		//	fileContent = www.text;
-			 UnityEngine.Debug.Log("UnityWebRequest reading.....");
-			UnityWebRequest request = UnityWebRequest.Get(Application.streamingAssetsPath + name);
-			request.SendWebRequest();
-			return request.downloadHandler.text;
+			WWW www = new WWW(Application.streamingAssetsPath + name);  
+			while(!www.isDone){};  
+			fileContent = www.text;
+		//	 UnityEngine.Debug.Log("UnityWebRequest reading.....");
+		//	UnityWebRequest request = UnityWebRequest.Get(Application.streamingAssetsPath + name);
+		//	request.SendWebRequest();
+		//	return request.downloadHandler.text;
 
 		}  
 		else  
