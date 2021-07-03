@@ -285,8 +285,8 @@ public class SoundPlayer  {
 		if(musicFile == null && isUserPlay) {
 			minMelodyNote = midiEventMan.minMelodyNote;
 			maxMelodyNote = midiEventMan.maxMelodyNote;
-			midiEventMan.lastNoteTick = midiEventMan.lastNoteTick;
-			midiEventMan.firstMelodyTick = midiEventMan.firstMelodyTick;
+			lastNoteTick = midiEventMan.lastNoteTick;
+			firstMelodyTick = midiEventMan.firstMelodyTick;
 
 		} else {
 			midiEventMan.removeAllEvent();
@@ -460,12 +460,12 @@ public class SoundPlayer  {
 			midiEventMan.lastNoteTick = playTime;
 		}else {
 			//if not solo play , need to adjust time by currentNote Time
-			if(newPlayTime > currentNoteTime) {
-				playTime = currentNoteTime;
-			} else {
-				playTime = (long)newPlayTime;
-			} 
-			//playTime = (long)newPlayTime;
+			//if(newPlayTime > currentNoteTime) {
+			//	playTime = currentNoteTime;
+			//} else {
+			//	playTime = (long)newPlayTime;
+			//} 
+			playTime = (long)newPlayTime;
 		} 
 			
 		actualPlayTime = (long) (actualPlayTime + deltaTime);
@@ -475,7 +475,14 @@ public class SoundPlayer  {
 		//CCLog("play time: %d" , playTime);
 		if(isPlayLastNote) {
 			//have play last note, so calc the time elapse
-			if(actualPlayTime > playTime +TIME_TO_COMPLETE_AFTER_PLAY_LAST_NOTE) {
+			long lastNoteEndTime = playTime + TIME_TO_COMPLETE_AFTER_PLAY_LAST_NOTE;
+			if(midiEventMan.midiEventListMelody.Count > 0)
+            {
+				MusicNote note = midiEventMan.midiEventListMelody[midiEventMan.midiEventListMelody.Count - 1];
+				lastNoteEndTime = note.tick + note.tickGapNext;
+			}
+
+			if (actualPlayTime > lastNoteEndTime + 500) {
 				playComplete();
 			} 
 			return;

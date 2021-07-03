@@ -40,8 +40,8 @@ public class GamePlayer : GameBaseEx
         noteScoreDelegate = new NoteScoreDelegate(this);
         appContext.musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
-        soundPlayer.setMelodyMute(false);
+        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
+        soundPlayer.setMelodyMute(true);
     }
 
 
@@ -144,6 +144,20 @@ public class GamePlayer : GameBaseEx
 
     }
 
+    void onGamePlayCompleted()
+    {
+        soundPlayer.pausePlay();
+        AppContext.instance().failed = false;
+        Instantiate(playPerformance, new Vector3(0, 0, 0), Quaternion.identity);
+        foreach (Transform child in this.musicNotesParent.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        GameObject baseLine = GameObject.FindGameObjectWithTag("BaseLine");
+        baseLine.SetActive(false);
+
+    }
+
     class Player3DDelegate : PianoPlayerDelegate
     {
         GamePlayer gamePlayer;
@@ -179,6 +193,9 @@ public class GamePlayer : GameBaseEx
                     break;
                 case SoundPlayer.PLAY_EVENT_FIRE_DRUM_NOTE:
                     gamePlayer.placeDrumExplosion(info1);
+                    break;
+                case SoundPlayer.PLAY_EVENT_COMPLETE:
+                    gamePlayer.onGamePlayCompleted();
                     break;
             }
 
@@ -221,7 +238,7 @@ public class GamePlayer : GameBaseEx
             }
             scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
             scoreTextScript.updateScoreTexts("MISS" + "\n\r" + missScore);
-            gamePlayer.onGameFailed();
+           // gamePlayer.onGameFailed();
         }
 
     }
