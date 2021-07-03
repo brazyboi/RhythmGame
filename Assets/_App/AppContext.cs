@@ -51,7 +51,7 @@ public class AppContext  {
 		
 	public void setInstrument(int instrumentId) {
 		instrument = instrumentId;
-		//sharePianoPlayer()->adjustBaseNoteByInstrument();
+		SoundPlayer.singleton().adjustBaseNoteByInstrument();
 	}
 
 	public void setInstrumentMelody(int instrumentId) {

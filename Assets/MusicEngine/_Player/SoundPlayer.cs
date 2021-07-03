@@ -652,7 +652,7 @@ public class SoundPlayer  {
 			//	if(lastPlayMelodyCount< MAX_MELODY_COUNT) {
 			//		lastPlayMelodyNotes[lastPlayMelodyCount++] = note;
 			//	}
-				note = note;// + baseNote;
+				note = note + baseNote;
 				instrument = mainInsturment;
 			}
 
@@ -1064,6 +1064,8 @@ int playNextNote (int hitPressCount, int jumpMaximal) {
 		/*	if(instrument < BLOW_TYPE_INSTRUMENT && instrument != DRUM_INSTRUMENT) {
 		instrument = PIANO_INSTRUMENT;
 	}*/
+		note = baseNote + note;
+
 		MusicNote n = new MusicNote();
 
 		n.instrument = instrument;
@@ -1135,6 +1137,7 @@ int playNextNote (int hitPressCount, int jumpMaximal) {
 	}
 
 	public void stopNote (int note, int atLeastMS_, int noteLastTimeMs_) {
+		note = baseNote + note;
 		if(appContext.isWindInstrument() && appContext.isCurrentSoundBank()) {
 			playerDelegate.playEvent(PLAY_EVENT_STOP_SOLOPLAY_NOTE, note,noteLastTimeMs_);
 			midiEngine.stopNoteFlute(note, atLeastMS_, noteLastTimeMs_);

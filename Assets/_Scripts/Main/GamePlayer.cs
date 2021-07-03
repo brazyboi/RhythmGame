@@ -52,6 +52,7 @@ public class GamePlayer : GameBaseEx
         string fileLocation = Application.streamingAssetsPath + "/songs/" + name;
         soundPlayer.loadMusic(fileLocation, false, appContext.songItem.melody);
         */
+        soundPlayer.adjustBaseNoteByInstrument();
         appContext.playingNoteCount = 0;
         foreach (Transform child in this.musicNotesParent.transform)
         {
