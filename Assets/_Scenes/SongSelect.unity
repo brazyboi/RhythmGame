@@ -429,18 +429,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7663041069750705447, guid: c46909ec40ea49443b551b3b9105ddf8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7663041069750705447, guid: c46909ec40ea49443b551b3b9105ddf8, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7663041069750705447, guid: c46909ec40ea49443b551b3b9105ddf8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 150
-      objectReference: {fileID: 0}
     - target: {fileID: 7663041069888405648, guid: c46909ec40ea49443b551b3b9105ddf8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -488,10 +476,6 @@ PrefabInstance:
     - target: {fileID: 7663041069888405651, guid: c46909ec40ea49443b551b3b9105ddf8, type: 3}
       propertyPath: m_Name
       value: SongSelect
-      objectReference: {fileID: 0}
-    - target: {fileID: 7663041070541742849, guid: c46909ec40ea49443b551b3b9105ddf8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46909ec40ea49443b551b3b9105ddf8, type: 3}

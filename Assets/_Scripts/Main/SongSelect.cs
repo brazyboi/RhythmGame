@@ -8,6 +8,7 @@ public class SongSelect : MonoBehaviour
 {
     public GameObject songTitlePanel;
     public GameObject playButton;
+    public GameObject selectButton;
 
     Text songTitlePanelText;
 
@@ -16,6 +17,13 @@ public class SongSelect : MonoBehaviour
     {
         songTitlePanelText = songTitlePanel.GetComponent<Text>();
         playButton.GetComponent<Button>().onClick.AddListener(playGame);
+        selectButton.GetComponent<Button>().onClick.AddListener(instrumentSelect);
+    }
+
+    void instrumentSelect()
+    {
+        AppContext.instance().prevScene = "SongSelect";
+        SceneManager.LoadScene("RewardScreen", LoadSceneMode.Single);
     }
 
     void playGame()

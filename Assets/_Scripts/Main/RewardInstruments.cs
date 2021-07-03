@@ -30,6 +30,8 @@ public class RewardInstruments : MonoBehaviour
 
     int[] musicIntruments;
 
+    public GameObject backButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,11 @@ public class RewardInstruments : MonoBehaviour
         setUpItemButtons();
 
 
+    }
+
+    void backToPrevScene()
+    {
+        SceneManager.LoadScene(AppContext.instance().prevScene, LoadSceneMode.Single);
     }
 
     void setMusicInstruments()

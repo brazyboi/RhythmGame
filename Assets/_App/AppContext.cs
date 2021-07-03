@@ -14,6 +14,8 @@ public class AppContext  {
 	public bool failed = false;
 	public int playingNoteCount = 0;
 
+	public string prevScene;
+
 	private AppContext() {
 		musicNoteDisplayDuration = 2000;
 	}
