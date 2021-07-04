@@ -114,7 +114,7 @@ public class MidiEngine {
 #endif
 		dlsFileName = "xiaimg";
 		UnityEngine.Debug.Log("midi dls name: " + dlsFileName);
-		soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsFileName);
+		//soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsFileName);
 		UnityEngine.Debug.Log("midi dls name: -2 " + dlsFileName);
 		soundExInfo.cbsize =  Marshal.SizeOf(soundExInfo);
 		soundExInfo.suggestedsoundtype = FMOD.SOUND_TYPE.MIDI;
@@ -138,7 +138,7 @@ public class MidiEngine {
 			UnityEngine.Debug.Log("FMOD.Factory.System_Create Failed");
 			return;
 		}
-		MidiFileSystem.setupMidiFileSystem(mFmodSystem);
+		//MidiFileSystem.setupMidiFileSystem(mFmodSystem);
 		res = mFmodSystem.init(32, FMOD.INITFLAGS.NORMAL, (System.IntPtr) 0);
 		if(res != FMOD.RESULT.OK) {
 			if (mFmodSystem.hasHandle())

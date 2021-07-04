@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreTextScript : MonoBehaviour
+public class ScoreTextScript : GameBaseEx
 {
     private float fadeTime = 0.5f;
 
@@ -14,6 +14,10 @@ public class ScoreTextScript : MonoBehaviour
     public Transform alertText;
     public Text totalScoreText;
 
+    public GameObject skipButton;
+
+    Button skip;
+
     private Vector3 scoreNotifyTextPos;
     private Vector3 alertTextPos;
 
@@ -22,18 +26,37 @@ public class ScoreTextScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         scoreTextCallback = new ScoreTextCallback(this);
         scoreNotifyText.GetComponent<Text>().text = "";
         totalScoreText.text = "";
         alertText.GetComponent<Text>().text = "";
         scoreNotifyTextPos = scoreNotifyText.localPosition;
         alertTextPos = alertText.localPosition;
+
+        skip = skipButton.GetComponent<Button>();
+        skip.onClick.AddListener(skipIntro);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        showSkipButton();
+    }
 
+    void showSkipButton()
+    {
+
+        if (soundPlayer.getFirstMelodyTime() - AppContext.instance().musicNoteDisplayDuration / 2 - soundPlayer.playTime <= 0) 
+        {
+            skipButton.SetActive(false);
+        }
+    }
+
+    void skipIntro()
+    {
+        soundPlayer.skipPrelude(true);
     }
 
     public void updateTotalScoreTexts(string text)
