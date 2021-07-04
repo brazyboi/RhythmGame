@@ -28,7 +28,6 @@ public class MusicNoteController : GameBaseEx
 	bool printLog;
 
 	//long noteScore;
-	private KeyCode keyCode;
 	public ScoreDelegate scoreDelegate;
 	private AppContext appContext = AppContext.instance();
 
@@ -41,6 +40,8 @@ public class MusicNoteController : GameBaseEx
 		ended,
 		missed
     }
+
+	private KeyCode[] playKeys = { KeyCode.Space, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.UpArrow, KeyCode.DownArrow};
 
 	NoteState noteState;
 	public MusicNote Note
@@ -65,7 +66,6 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
-		keyCode = KeyCode.Space;// (lastKeyCode == KeyCode.LeftArrow) ? KeyCode.RightArrow : KeyCode.LeftArrow;
 		createStartEndCircles();
 		if (!onlyPrintOnce)
         {
@@ -242,10 +242,38 @@ public class MusicNoteController : GameBaseEx
 		return length;
 	}
 
+	KeyCode playKey;
+	bool isPlayKeyDown()
+    {
+		foreach(KeyCode key in playKeys)
+        {
+			if(Input.GetKeyDown(key))
+            {
+				playKey = key;
+				return true;
+            }
+        }
+		return false;
+	}
+
+	bool isPlayKeyUp()
+	{
+		/*
+		foreach (KeyCode key in playKeys)
+		{
+			if (!Input.GetKeyUp(key))
+			{
+				return false;
+			}
+		}
+		return true;*/
+		return Input.GetKeyUp(playKey);
+	}
+
 	void checkTapDown()
     {
 		bool bClick = false;
-		if(Input.GetKeyDown(keyCode) && appContext.playingNoteCount==0)
+		if(isPlayKeyDown() && appContext.playingNoteCount==0)
         {
 			bClick = true;
 
@@ -311,7 +339,7 @@ public class MusicNoteController : GameBaseEx
 			{
 				shouldRelease = true;
 			}
-		} else if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(keyCode)) //|| (Input.touchCount == 0)
+		} else if (Input.GetMouseButtonUp(0) || isPlayKeyUp()) //|| (Input.touchCount == 0)
 		{
 			shouldRelease = true;
 		}

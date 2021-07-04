@@ -101,27 +101,10 @@ public class MidiEngine {
 		
 		soundExInfo = new FMOD.CREATESOUNDEXINFO ();
 
-#if UNITY_ANDROID
-		//Debug.Log("Android");
-		string dlsname =  "/mnt/sdcard/xiaimg.tad";
-		soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsname);
-#elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-		 
-#else
-		//string dlsname =  Application.streamingAssetsPath + "/xiaimg.tad";
-		//UnityEngine.Debug.Log("midi dls name: " + dlsname);
-		// soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsname);
-#endif
-		dlsFileName = "xiaimg";
-		UnityEngine.Debug.Log("midi dls name: " + dlsFileName);
-		//soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsFileName);
-		UnityEngine.Debug.Log("midi dls name: -2 " + dlsFileName);
+
 		soundExInfo.cbsize =  Marshal.SizeOf(soundExInfo);
 		soundExInfo.suggestedsoundtype = FMOD.SOUND_TYPE.MIDI;
-
-		// set up DLS file
 		soundExInfoMp3.cbsize =  Marshal.SizeOf(soundExInfoMp3);
-
 		soundExInfoPCM.cbsize =  Marshal.SizeOf(soundExInfoPCM);
 		soundExInfoPCM.defaultfrequency = 44100;
 		soundExInfoPCM.numsubsounds = 2;
@@ -138,7 +121,16 @@ public class MidiEngine {
 			UnityEngine.Debug.Log("FMOD.Factory.System_Create Failed");
 			return;
 		}
-		//MidiFileSystem.setupMidiFileSystem(mFmodSystem);
+#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+		 
+#else
+		dlsFileName = "xiaimg.dls";
+		UnityEngine.Debug.Log("midi dls name: " + dlsFileName);
+		soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsFileName);
+		UnityEngine.Debug.Log("midi dls name: -2 " + dlsFileName);
+		MidiFileSystem.setupMidiFileSystem(mFmodSystem);
+#endif
+
 		res = mFmodSystem.init(32, FMOD.INITFLAGS.NORMAL, (System.IntPtr) 0);
 		if(res != FMOD.RESULT.OK) {
 			if (mFmodSystem.hasHandle())
@@ -181,91 +173,19 @@ public class MidiEngine {
 		return soundHandle;
 	}
 
-	/*
-	bool playSoundFile(string soundFile) {
-		if(mFmodSystem == null)
-			return false;
+	public SoundHandle playMidiSoundFile(string file)
+    {
+		byte[] streams = FileReaderUtils.readMidiZipFile(file);
+		var sh = prepareSoundMidiStream(streams, streams.Length);
+		if(sh!=null)
+        {
+			playSound(sh);
+        }
+		return sh;
 
-		int index = 0;
-		index = findAvaibleSoundPool();
-
-		int result = 0;
-		soundExInfo.length = 0;
-		result = mFmodSystem->createSound(soundFile , FMOD_SOFTWARE , &soundExInfoMp3, &mSoundHandle[index]->sound);
-
-		if(result != FMOD_OK) {
-			return false;
-		}
-
-		result = mSoundHandle[index]->sound->setMode(FMOD_LOOP_OFF);
-
-
-		result = mFmodSystem->playSound(FMOD_CHANNEL_FREE, mSoundHandle[index]->sound, false, &(mSoundHandle[index]->channel));
-
-		return true;
-	}
-
-	public void playMidiNoteWithFile(int note ,int velocity, int deltaTime, string file) {
-		if(file) {
-			playSoundMidi(file);
-		}
-
-	} 
-
-bool playSoundMidi(string midiFile)
-{
-    if(!mFmodSystem) 
-        return false;
-       
-    int index = 0;
-    index = findAvaibleSoundPool();
-    
-    int result = 0;
-    soundExInfo.length = 0;
-    result = mFmodSystem->createSound(midiFile , FMOD_SOFTWARE , &soundExInfoMp3, &mSoundHandle[index]->sound);
-    
-    if(result != FMOD_OK) {
-        return false;
     }
-    
-    result = mSoundHandle[index]->sound->setMode(FMOD_LOOP_OFF);
-    
 
-    result = mFmodSystem->playSound(FMOD_CHANNEL_FREE, mSoundHandle[index]->sound, false, &(mSoundHandle[index]->channel));
-    
-    return true;
-}
-
-	bool playSoundStream(byte[] midiStream, int streamSize)
-{
-    if(!mFmodSystem || !midiStream || streamSize==0) 
-        return false;
-    int index = 0;
-    index = findAvaibleSoundPool();
-    
-    int result = 0;
-    
-    soundExInfoMp3.length = streamSize;
-    
-    
-    result = mFmodSystem->createSound(midiStream , FMOD_SOFTWARE | FMOD_OPENMEMORY, &soundExInfoMp3, &mSoundHandle[index]->sound);
-    
-    if(result != FMOD_OK) {
-        return false;
-    }
-  
-    result = mSoundHandle[index]->sound->setMode(FMOD_LOOP_OFF);
-    
-
-    result = mFmodSystem->playSound(FMOD_CHANNEL_FREE, mSoundHandle[index]->sound, false, &(mSoundHandle[index]->channel));
-
-   
-    //fprintf ( stdout, "playsound: %d ", result);
-    //mFmodSystem->update();
-    return true;
-}
-*/
-	private SoundHandle prepareSoundMidiStream(byte[] midiStream, int streamSize) {
+	public SoundHandle prepareSoundMidiStream(byte[] midiStream, int streamSize) {
 		if(!mFmodSystem.hasHandle() || midiStream == null || streamSize==0) 
 			return null;
 		UnityEngine.Debug.Log("prepareSoundMidiStream: streamSize " + streamSize);
@@ -287,7 +207,7 @@ bool playSoundMidi(string midiFile)
 	}
 		
 
-	private bool playSound(SoundHandle sh) {
+	public bool playSound(SoundHandle sh) {
 		if (sh != null) {
 			FMOD.RESULT result = 0;
 			result = sh.sound.setMode (FMOD.MODE.LOOP_OFF);
@@ -440,6 +360,7 @@ bool playSoundMidi(string midiFile)
 		}
 	}
 
+	//BEGIN=============SYNTH MIDI NOTE RUNTIME==============
 
 	public void addNoteBegin() {
 		isMelodyNote = false;
@@ -536,6 +457,7 @@ bool playSoundMidi(string midiFile)
 		prepareSoundAllNotes ();
 		playSound(soundHandleReady);
 	}
+	//END=============SYNTH MIDI NOTE RUNTIME==============
 	/*
 	public void stopMelodyNote() {
 		int i= 0;
