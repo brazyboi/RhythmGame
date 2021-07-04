@@ -62,12 +62,12 @@ public class GamePlayer : GameBaseEx
         int melodyChannel = 0;
         if (appContext.songItem == null)
         {
-            fileLocation = Application.streamingAssetsPath + "/songs/tian_kong_zhi_cheng.mid";
+            fileLocation = "songs/tian_kong_zhi_cheng.mid";
             melodyChannel = 0;
         } else
         {
             string name = appContext.songItem.path.Replace(".sht", ".mid");
-            fileLocation = Application.streamingAssetsPath + "/songs/" + name;
+            fileLocation =  "songs/" + name;
             melodyChannel = appContext.songItem.melody;
             UnityEngine.Debug.Log("filelocation: " + fileLocation);
         }

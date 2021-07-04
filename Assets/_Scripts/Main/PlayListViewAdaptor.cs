@@ -12,7 +12,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 
 	// Use this for initialization
 	void Start () {
-		loadPlaylist ("/playlist/playlist_battle_all.txt");
+		loadPlaylist ("playlist/playlist_battle_all");
 	}
 
 	public void loadPlaylist(string playlistFile) {

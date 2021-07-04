@@ -7,7 +7,7 @@ public class Playlist {
 	public string name;
 	public List<SongItem> list = new List<SongItem>(); 
 	public static Playlist loadPlaylist(string file) {
-		string jsontext = AppContext.ReadTextFile (file);
+		string jsontext = FileReaderUtils.ReadTextResourceFile (file);
 		return JsonUtility.FromJson<Playlist> (jsontext);
 	}
 }

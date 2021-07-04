@@ -27,6 +27,7 @@ public class DrumNoteScript : MonoBehaviour
 
 	void chooseRandomSprite()
     {
+		return;
 		int rand = (int) (Random.Range(1, 4));
 		if (rand == 1)
         {
