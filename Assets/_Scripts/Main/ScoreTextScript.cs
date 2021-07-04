@@ -15,6 +15,9 @@ public class ScoreTextScript : GameBaseEx
     public Text totalScoreText;
 
     public GameObject skipButton;
+    public GameObject skipButtonText;
+
+    public GameObject countdownText;
 
     Button skip;
 
@@ -23,9 +26,13 @@ public class ScoreTextScript : GameBaseEx
 
     ScoreTextCallback scoreTextCallback;
 
+    bool isInPrelude;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        isInPrelude = true;
 
         scoreTextCallback = new ScoreTextCallback(this);
         scoreNotifyText.GetComponent<Text>().text = "";
@@ -42,15 +49,29 @@ public class ScoreTextScript : GameBaseEx
     // Update is called once per frame
     void Update()
     {
-        showSkipButton();
+
+        if (isInPrelude)
+        {
+            disableSkipButton();
+            countdown();
+        }
     }
 
-    void showSkipButton()
+    void countdown()
     {
+        long countdownTime = ((soundPlayer.getFirstMelodyTime() - AppContext.instance().musicNoteDisplayDuration / 2) - soundPlayer.playTime)/1000;
 
-        if (soundPlayer.getFirstMelodyTime() - AppContext.instance().musicNoteDisplayDuration / 2 - soundPlayer.playTime <= 0) 
+        countdownText.GetComponent<Text>().text = "Countdown: " + countdownTime;
+    }
+
+    void disableSkipButton()
+    {
+        if (soundPlayer.getFirstMelodyTime() - AppContext.instance().musicNoteDisplayDuration / 2 - soundPlayer.playTime <= 0)
         {
             skipButton.SetActive(false);
+            skipButtonText.SetActive(false);
+            isInPrelude = false;
+            countdownText.SetActive(false);
         }
     }
 

@@ -20,6 +20,9 @@ public class PlayPerformance : MonoBehaviour
     void Start()
     {
         songTitlePanelText = songTitlePanel.GetComponentInChildren<Text>();
+
+        songTitlePanelText.text = AppContext.instance().songItem.title;
+
         scorePanelText = scorePanel.GetComponentInChildren<Text>();
         passfailPanelText = passfailPanel.GetComponentInChildren<Text>();
 
