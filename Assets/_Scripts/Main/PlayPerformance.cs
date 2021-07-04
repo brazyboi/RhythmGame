@@ -19,12 +19,12 @@ public class PlayPerformance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        songTitlePanelText = songTitlePanel.GetComponentInChildren<Text>();
+        songTitlePanelText = songTitlePanel.GetComponent<Text>();
 
-        songTitlePanelText.text = AppContext.instance().songItem.title;
+        songTitlePanel.GetComponent<Text>().text = AppContext.instance().songItem.title;
 
-        scorePanelText = scorePanel.GetComponentInChildren<Text>();
-        passfailPanelText = passfailPanel.GetComponentInChildren<Text>();
+        //scorePanelText = scorePanel.GetComponent<Text>();
+        //passfailPanelText = passfailPanel.GetComponent<Text>();
 
         restartButton.GetComponent<Button>().onClick.AddListener(restartSong);
         songsButton.GetComponent<Button>().onClick.AddListener(redirectSongList);
@@ -84,17 +84,20 @@ public class PlayPerformance : MonoBehaviour
     void changeText()
     {
         long perfectPlayScore = ScoreUtils.calculateTotalScore(AppContext.instance().isWindInstrument(), SoundPlayer.singleton().midiEventMan.midiEventListMelody);
-        scorePanelText.text = "" + AppContext.instance().totalScore + "/" + perfectPlayScore;
+        //scorePanelText.text = "" + AppContext.instance().totalScore + "/" + perfectPlayScore;
+
+        long accuracy = 100 * AppContext.instance().totalScore / perfectPlayScore;
+        scorePanel.GetComponent<Text>().text = "Accuracy: " + accuracy + "%";
 
         if (AppContext.instance().failed)
         {
-            passfailPanelText.text = "Fail";
-            passfailPanelText.color = Color.red;
+            passfailPanel.GetComponent<Text>().text = "Fail";
+            passfailPanel.GetComponent<Text>().color = Color.red;
         }
         else
         {
-            passfailPanelText.text = "Pass";
-            passfailPanelText.color = Color.green;
+            passfailPanel.GetComponent<Text>().text = "Pass";
+            passfailPanel.GetComponent<Text>().color = Color.green;
         }
 
         
