@@ -49,9 +49,12 @@ public class MidiEngine {
 	private int index;
 	private int listIndex;
 
+	private MidiFileSystem midiFileSystem;
+
 	private MidiEngine() {
+		GCHandle gch = GCHandle.Alloc(this);
 		mFmodSystem = new FMOD.System ();
-		mFmodSystem.handle = IntPtr.Zero;
+		mFmodSystem.handle = GCHandle.ToIntPtr(gch);
 		dlsFileName  = "";
 		instrumentId = -1;
 
@@ -105,9 +108,14 @@ public class MidiEngine {
 #elif UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 		 
 #else
-        string dlsname =  Application.streamingAssetsPath + "/xiaimg.tad";
-        soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsname);
+		//string dlsname =  Application.streamingAssetsPath + "/xiaimg.tad";
+		//UnityEngine.Debug.Log("midi dls name: " + dlsname);
+		// soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsname);
 #endif
+		dlsFileName = "xiaimg";
+		UnityEngine.Debug.Log("midi dls name: " + dlsFileName);
+		soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsFileName);
+		UnityEngine.Debug.Log("midi dls name: -2 " + dlsFileName);
 		soundExInfo.cbsize =  Marshal.SizeOf(soundExInfo);
 		soundExInfo.suggestedsoundtype = FMOD.SOUND_TYPE.MIDI;
 
@@ -130,7 +138,7 @@ public class MidiEngine {
 			UnityEngine.Debug.Log("FMOD.Factory.System_Create Failed");
 			return;
 		}
-
+		MidiFileSystem.setupMidiFileSystem(mFmodSystem);
 		res = mFmodSystem.init(32, FMOD.INITFLAGS.NORMAL, (System.IntPtr) 0);
 		if(res != FMOD.RESULT.OK) {
 			if (mFmodSystem.hasHandle())
@@ -140,6 +148,7 @@ public class MidiEngine {
 			}   
 		}
 
+		
 	}
 
 
@@ -259,19 +268,20 @@ bool playSoundMidi(string midiFile)
 	private SoundHandle prepareSoundMidiStream(byte[] midiStream, int streamSize) {
 		if(!mFmodSystem.hasHandle() || midiStream == null || streamSize==0) 
 			return null;
-
+		UnityEngine.Debug.Log("prepareSoundMidiStream: streamSize " + streamSize);
 		SoundHandle sh = findAvailableSoundHandle();
 
 		FMOD.RESULT result = 0;
 
 		soundExInfo.length = (uint) streamSize;
-
+		UnityEngine.Debug.Log("prepareSoundMidiStream: create sound step 1");
 		result = mFmodSystem.createSound(midiStream , FMOD.MODE.OPENMEMORY, ref soundExInfo, out sh.sound);
-
-		if(result != FMOD.RESULT.OK) {
-            //UnityEngine.Debug.Log("prepareSoundMidiStream " + result);
+		UnityEngine.Debug.Log("prepareSoundMidiStream: create sound step 2");
+		if (result != FMOD.RESULT.OK) {
+            UnityEngine.Debug.Log("prepareSoundMidiStream " + result);
 			return null;
 		}
+		UnityEngine.Debug.Log("prepareSoundMidiStream: create sound successfully");
 		soundHandles.Add (sh);
 		return sh;
 	}
@@ -283,9 +293,9 @@ bool playSoundMidi(string midiFile)
 			result = sh.sound.setMode (FMOD.MODE.LOOP_OFF);
 			FMOD.ChannelGroup group = new FMOD.ChannelGroup();
 			result = mFmodSystem.playSound (sh.sound, group, false, out sh.channel);
-			//UnityEngine.Debug.Log ("playSound " + result);
+			UnityEngine.Debug.Log ("playSound " + result);
 			if (result != FMOD.RESULT.OK) {
-				//UnityEngine.Debug.Log ("playSound failed");
+				UnityEngine.Debug.Log ("playSound failed");
 				return false;
 			}
 			return true;
@@ -382,6 +392,7 @@ bool playSoundMidi(string midiFile)
 		midiFile.midiTracks.AddRange(tracks);
 		midiFile.timeDivision = (ushort) clks_per_beat;
 		//midiFile.saveMidiToFile (Application.persistentDataPath + "/" + "test.mid");
+		UnityEngine.Debug.Log("makeMidiSoundEx: create sound ");
 		return midiFile.saveMidiToStream ();
 
 
@@ -419,7 +430,14 @@ bool playSoundMidi(string midiFile)
 			return;
 		}
 		SoundHandle sh = prepareSoundMidiStream (soundData, soundData.Length);
-		playSound (sh);
+		if (sh != null)
+		{
+			UnityEngine.Debug.Log("playMidiNote ---- ");
+			playSound(sh);
+		} else
+        {
+			UnityEngine.Debug.Log("prepareSoundMidiStream: return null ");
+		}
 	}
 
 
@@ -661,6 +679,7 @@ bool playSoundMidi(string midiFile)
 	}
 
 
+	
 
 
 }
