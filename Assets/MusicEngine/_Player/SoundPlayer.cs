@@ -152,7 +152,7 @@ public class SoundPlayer  {
 
 	private AppContext appContext;
 
-	private MidiEventMan midiEventMan;
+	public MidiEventMan midiEventMan;
 
 	private long lastNoteTick;
 	private long firstMelodyTick;

@@ -80,7 +80,8 @@ public class PlayPerformance : MonoBehaviour
 
     void changeText()
     {
-        scorePanelText.text = "Score: " + AppContext.instance().totalScore;
+        long perfectPlayScore = ScoreUtils.calculateTotalScore(AppContext.instance().isWindInstrument(), SoundPlayer.singleton().midiEventMan.midiEventListMelody);
+        scorePanelText.text = "" + AppContext.instance().totalScore + "/" + perfectPlayScore;
 
         if (AppContext.instance().failed)
         {
