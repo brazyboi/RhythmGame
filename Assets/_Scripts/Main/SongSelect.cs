@@ -44,14 +44,13 @@ public class SongSelect : MonoBehaviour
 
     void instrumentSelect() 
     {
-        AppContext.instance().prevScene = "SongSelect";
-        SceneManager.LoadScene("RewardScreen", LoadSceneMode.Single);
+        GameManager.prevScene = "SongSelect";
+        GameManager.gotoRewardScreen();
     }
 
     void playGame()
     {
-        UnityEngine.Debug.Log("Play click");
-        SceneManager.LoadScene("PlayScene2D", LoadSceneMode.Single);
+        GameManager.gotoPlayScene();
     }
 
     void setInstrumentImage()

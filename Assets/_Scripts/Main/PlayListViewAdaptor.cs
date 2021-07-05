@@ -51,7 +51,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 	private void OnSelectItem(int index) {
 		selectIndex = index;
 		AppContext.instance().songItem = playlist.list[index];
-		SceneManager.LoadScene ("SongSelect", LoadSceneMode.Single);
+		GameManager.gotoSongSelect();
 	}
 
 

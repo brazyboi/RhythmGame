@@ -45,7 +45,7 @@ public class RewardInstruments : MonoBehaviour
 
     void backToPrevScene()
     {
-        SceneManager.LoadScene(AppContext.instance().prevScene, LoadSceneMode.Single);
+        GameManager.backToPrevScene();
     }
 
     void setMusicInstruments()

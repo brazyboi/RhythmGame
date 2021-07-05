@@ -44,14 +44,15 @@ public class PlayPerformance : MonoBehaviour
 
     void restartSong()
     {
-        SceneManager.LoadScene("PlayScene2D", LoadSceneMode.Single);
+        
         AppContext.instance().totalScore = 0;
+        GameManager.gotoPlayScene();
     }
 
     void redirectSongList()
-    {
-        SceneManager.LoadScene("SongList", LoadSceneMode.Single);
+    { 
         AppContext.instance().totalScore = 0;
+        GameManager.gotoSongList();
     }
 
     // Update is called once per frame

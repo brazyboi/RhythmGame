@@ -9,23 +9,27 @@ public class TitleScreen : MonoBehaviour
     public GameObject playButton;
     public GameObject rewardButton;
     public GameObject shareButton;
+    private SoundHandle soundHandle;
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
     {
         playButton.GetComponent<Button>().onClick.AddListener(startGame);
         rewardButton.GetComponent<Button>().onClick.AddListener(rewards);
+        
     }
 
     void startGame()
     {
-        SceneManager.LoadScene("SongList", LoadSceneMode.Single);
+        GameManager.gotoSongList();
     }
 
     void rewards()
     {
-        AppContext.instance().prevScene = "TitleScreen";
-        SceneManager.LoadScene("RewardScreen", LoadSceneMode.Single);
+        GameManager.prevScene = "TitleScreen";
+        GameManager.gotoRewardScreen();
+        //soundHandle = MidiEngine.instance().playMidiSoundFile("songs/zhouhui_fengling");
     }
 
     void share()
