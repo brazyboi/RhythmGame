@@ -170,6 +170,19 @@ public class MidiEventMan  {
 
 	public void trimNoSoundAtBeginning()
     {
+		long firstMelodyTick = 0;
+		if(midiEventListMelody.Count > 0)
+        {
+			firstMelodyTick = midiEventListMelody[0].tick;
+        }
+		long firstMelodyTickTemp;
+		firstMelodyTickTemp = firstMelodyTick - firstNoteTick;
+		if(firstMelodyTickTemp < 2500)
+        {//make sure firstMelodyTick >= 2500;
+			firstMelodyTickTemp = 2500;
+			firstNoteTick = firstMelodyTick - firstMelodyTickTemp;
+		}
+
 		foreach(MusicNote n in midiEventListHarmony)
         {
 			n.tick -= firstNoteTick;
