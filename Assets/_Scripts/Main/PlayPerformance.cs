@@ -40,6 +40,7 @@ public class PlayPerformance : MonoBehaviour
         scorePanel.GetComponent<Text>().text = "Accuracy: 0%";
         calculateAccuracy();
         animateUpdateAccuracy();
+        PlayerData.saveSongScore(AppContext.instance().songItem.path, (int)(accuracy));
     }
 
     void restartSong()

@@ -43,10 +43,23 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 		//button.colors = cb;
 		Text info = (Text) prefabCell.Find("info").GetComponent<Text>();
 		Text title = prefabCell.Find("title").GetComponent<Text>();
+		Text accuracy = prefabCell.Find("accuracy").GetComponent<Text>();
 		title.text = "" + (index + 1) + ". " + playlist.list[index].title;
-		info.text = playlist.list[index].artist;
+		accuracy.text = "" + PlayerData.getSongScore(playlist.list[index].path) + "%";
+		//info.text = playlist.list[index].artist;
 
 	}
+
+	void lockSongs()
+    {
+		foreach (SongItem s in playlist.list)
+        {
+			if (PlayerData.isSongUnlock(s.level))
+            {
+
+            }
+        }
+    }
 
 	private void OnSelectItem(int index) {
 		selectIndex = index;
