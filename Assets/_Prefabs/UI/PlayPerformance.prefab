@@ -401,6 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3675631170098156882}
   - component: {fileID: 3675631170098156883}
+  - component: {fileID: 416935136549023450}
   m_Layer: 0
   m_Name: PlayPerformance
   m_TagString: Untagged
@@ -440,6 +441,18 @@ MonoBehaviour:
   passfailPanel: {fileID: 3675631170257441030}
   restartButton: {fileID: 3675631171323244242}
   songsButton: {fileID: 3675631169474644806}
+--- !u!114 &416935136549023450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675631170098156880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6590d0e6f73414b91bd94c10aa2887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3675631170257441030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1310,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1

@@ -12,23 +12,30 @@ public class PlayPerformance : MonoBehaviour
     public GameObject restartButton;
     public GameObject songsButton;
 
-    Text songTitlePanelText;
-    Text scorePanelText;
-    Text passfailPanelText;
+    Timer endAccuracyText;
+    private float changeTextTime = 2.0f;
+    bool isChangeAccuracyEnd;
+
+    EndAccuracyCallback endAccuracyCallback;
+
+    long accuracy;
 
     // Start is called before the first frame update
     void Start()
     {
-        songTitlePanelText = songTitlePanel.GetComponent<Text>();
+        init();
+    }
 
+    void init()
+    {
+        isChangeAccuracyEnd = false;
+        accuracy = 0;
         songTitlePanel.GetComponent<Text>().text = AppContext.instance().songItem.title;
-
-        //scorePanelText = scorePanel.GetComponent<Text>();
-        //passfailPanelText = passfailPanel.GetComponent<Text>();
 
         restartButton.GetComponent<Button>().onClick.AddListener(restartSong);
         songsButton.GetComponent<Button>().onClick.AddListener(redirectSongList);
 
+        endAccuracyCallback = new EndAccuracyCallback(this);
     }
 
     void restartSong()
@@ -50,8 +57,10 @@ public class PlayPerformance : MonoBehaviour
         {
             changeText();
         }
-
-
+        if (!isChangeAccuracyEnd)
+        {
+            updateEndAccuracy();
+        }
         //checkTouch();
 
     }
@@ -81,12 +90,21 @@ public class PlayPerformance : MonoBehaviour
         }
     }
 
+    void updateEndAccuracy()
+    {
+        if (endAccuracyText == null)
+        {
+            endAccuracyText = this.gameObject.AddComponent<Timer>() as Timer;
+        }
+        endAccuracyText.startTimer(changeTextTime, endAccuracyCallback);
+    }
+
     void changeText()
     {
         long perfectPlayScore = ScoreUtils.calculateTotalScore(AppContext.instance().isWindInstrument(), SoundPlayer.singleton().midiEventMan.midiEventListMelody);
         //scorePanelText.text = "" + AppContext.instance().totalScore + "/" + perfectPlayScore;
 
-        long accuracy = 100 * AppContext.instance().totalScore / perfectPlayScore;
+        accuracy = 100 * AppContext.instance().totalScore / perfectPlayScore;
         scorePanel.GetComponent<Text>().text = "Accuracy: " + accuracy + "%";
 
         if (AppContext.instance().failed)
@@ -101,6 +119,35 @@ public class PlayPerformance : MonoBehaviour
         }
 
         
+    }
+
+    class EndAccuracyCallback : TimerCallback
+    {
+        PlayPerformance playPerformance;
+        long accuracyTextAmt;
+
+        public EndAccuracyCallback(PlayPerformance playPerformance)
+        {
+            this.playPerformance = playPerformance;
+        }
+
+        public override void onTick(Timer timer, float tick, float timeOut)
+        {
+            if (accuracyTextAmt < playPerformance.accuracy)
+            {
+                accuracyTextAmt++;
+                playPerformance.scorePanel.GetComponent<Text>().text = "Accuracy: " + accuracyTextAmt + "%";
+            } else 
+            {
+                onEnd(timer);
+            }
+        }
+
+        public override void onEnd(Timer timer)
+        {
+            playPerformance.isChangeAccuracyEnd = true;
+        }
+
     }
 
 }
