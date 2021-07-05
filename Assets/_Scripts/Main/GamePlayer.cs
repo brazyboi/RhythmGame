@@ -85,21 +85,29 @@ public class GamePlayer : GameBaseEx
         c.scoreDelegate = noteScoreDelegate;
     }
 
-    GameObject createDrumNote()
+    GameObject createDrumNote(bool reuseOld)
     {
-        Transform t;
-        t = cameraContainer.transform.Find("DrumNote");
-        if(t != null)
+        if(reuseOld)
         {
-            return t.gameObject;
+            Transform t;
+            t = cameraContainer.transform.Find("DrumNoteReuse");
+            if (t != null)
+            {
+                return t.gameObject;
+            }
+        }
+        GameObject o = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
+        o.transform.SetParent(cameraContainer.transform);
+        o.transform.localPosition = new Vector3(0, 10, 0);
+        if (reuseOld)
+        {
+            o.name = "DrumNoteReuse";
         } else
         {
-            GameObject o = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
-            o.transform.SetParent(cameraContainer.transform);
-            o.transform.localPosition = new Vector3(0, 10, 0);
-            o.name = "DrumNote";
-            return o;
+            o.name = "DrumNoteNew";
         }
+        return o;
+
     }
 
     void placeDrumExplosion(long size)
@@ -108,15 +116,12 @@ public class GamePlayer : GameBaseEx
         {
             case SoundPlayer.DRUM_HIT_HEAVY:
                 {
-                    createDrumNote().GetComponent<DrumNoteScript>().restartDrumNote();
+                    createDrumNote(false).GetComponent<DrumNoteScript>().restartDrumNote(DrumNoteScript.HEAVY_DRUM_SCALE, true);
                 }
                 break;
             case SoundPlayer.DRUM_HIT_MEDIUM:
                 {
-                    //  createDrumNote().GetComponent<DrumNoteScript>().restartDrumNote();
-                    //  drumExplosion = Instantiate(drumNote, new Vector3(0, 0, 0), Quaternion.identity);
-                    //  DrumNoteController c = drumExplosion.GetComponent<DrumNoteController>();
-                    //  c.explosionTime = soundPlayer.playTime;
+                    createDrumNote(true).GetComponent<DrumNoteScript>().restartDrumNote(DrumNoteScript.LIGHT_DRUM_SCALE, false);
                 }
                 break;
         }

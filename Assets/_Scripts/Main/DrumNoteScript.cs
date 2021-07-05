@@ -13,11 +13,15 @@ public class DrumNoteScript : MonoBehaviour
 	Sprite sprite;
 
 	public GameObject spriteObj;
+	public static float HEAVY_DRUM_SCALE = 15;
+	public static float LIGHT_DRUM_SCALE = 3;
 
+	private float drumScale = HEAVY_DRUM_SCALE;
 	private SpriteRenderer spriteRenderer;
 	private Timer timer;
-    // Start is called before the first frame update
-    void Start()
+	private bool removeAfterPlay;
+	// Start is called before the first frame update
+	void Start()
     {
 		spriteRenderer = spriteObj.GetComponent<SpriteRenderer>();
 		chooseRandomSprite();
@@ -47,8 +51,10 @@ public class DrumNoteScript : MonoBehaviour
 
     }
 
-	public void restartDrumNote()
+	public void restartDrumNote(float scale, bool removeAfterPlay)
     {
+		drumScale = scale;
+		this.removeAfterPlay = removeAfterPlay;
 		chooseRandomSprite();
 		if (timer != null)
 		{
@@ -75,7 +81,7 @@ public class DrumNoteScript : MonoBehaviour
 			color.a = 1.0f * (timeOut - tick) / timeOut;
 			controller.spriteRenderer.color = color;
 			Vector3 scale = controller.transform.localScale;
-			scale.x = scale.y = 1f * 15 * tick / timeOut;
+			scale.x = scale.y = 1f * controller.drumScale * tick / timeOut;
 			controller.transform.localScale = scale;
 			//Debug.Log("reached onTick, tick = " + tick + " timeOut = " + timeOut);
 		}
@@ -87,6 +93,10 @@ public class DrumNoteScript : MonoBehaviour
 			Color color = controller.spriteRenderer.color;
 			color.a = 0;
 			controller.spriteRenderer.color = color;
+			if(controller.removeAfterPlay)
+            {
+				Destroy(controller.gameObject);
+            }
 		}
 	}
 }
