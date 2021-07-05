@@ -310,6 +310,7 @@ public class SoundPlayer  {
 				}
 			}
 			midiEventMan.sortAllMidiNote ();
+			midiEventMan.trimNoSoundAtBeginning();
 			//if(appContext.isCurrentFluteStyle()) { always adjust it
 			midiEventMan.adjustMelodyNoteLengthByFlute(!isUserPlay, melodyChannel_, instrument== MusicInstrument.DRUM_INSTRUMENT);
 			//}
@@ -473,22 +474,17 @@ public class SoundPlayer  {
 			actualPlayTime = playTime + 2500;
 		}
 		//CCLog("play time: %d" , playTime);
-		if(isPlayLastNote) {
-			//have play last note, so calc the time elapse
-			long lastNoteEndTime = playTime + TIME_TO_COMPLETE_AFTER_PLAY_LAST_NOTE;
-			if(midiEventMan.midiEventListMelody.Count > 0)
-            {
-				MusicNote note = midiEventMan.midiEventListMelody[midiEventMan.midiEventListMelody.Count - 1];
-				lastNoteEndTime = note.tick + note.tickGapNext;
-			}
-
-			if (actualPlayTime > lastNoteEndTime + 500) {
-				playComplete();
-			} 
+		//if(isPlayLastNote)
+		if (actualPlayTime > midiEventMan.getLastMelodyEndTick() + 500)
+		{
+			playComplete();
 			return;
-		}
+		} else if(isPlayLastNote)
+        {
+			return;
+        }
 
-		if(lastComingEventTime == 0) {
+		if (lastComingEventTime == 0) {
 			shootComingNotes();
 			lastComingEventTime = 200;
 

@@ -22,6 +22,9 @@ public class MidiEventMan  {
 	private int lastMelodyI;
 	private int lastHarmonyI;
 
+	//
+	private long firstNoteTick = long.MaxValue;
+
 	public static bool isIncludeMelody(List<MusicNote> list) {
 		for (int i = 0; i < list.Count; i++) {
 			MusicNote n = list [i];
@@ -144,6 +147,12 @@ public class MidiEventMan  {
 		} else {
 			midiEventListHarmony.Add (n);
 		}
+
+		if(firstNoteTick > n.tick)
+        {
+			firstNoteTick = n.tick;
+        }
+
 	}
 		
 
@@ -158,6 +167,30 @@ public class MidiEventMan  {
 			return note2.tick > note1.tick ? -1:1; 
 		});
 	}
+
+	public void trimNoSoundAtBeginning()
+    {
+		foreach(MusicNote n in midiEventListHarmony)
+        {
+			n.tick -= firstNoteTick;
+        }
+		foreach(MusicNote n in midiEventListMelody)
+        {
+			n.tick -= firstNoteTick;
+        }
+		lastNoteTick -= firstNoteTick;
+		firstMelodyTick -= firstNoteTick;
+	}
+
+	public long getLastMelodyEndTick()
+    {
+		if(midiEventListMelody.Count > 0)
+        {
+			MusicNote n = midiEventListMelody[midiEventListMelody.Count - 1];
+			return n.tick + n.tickGapNext;
+        }
+		return 0;
+    }
 
 	public void skipPrelude() {
 	//	removeAllEventBeforeTime(firstMelodyTick, true);
