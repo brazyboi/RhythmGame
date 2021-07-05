@@ -32,7 +32,27 @@ public class GamePlayer : GameBaseEx
 
     void Update()
     {
-        
+        float deltaTick = Time.deltaTime;
+        soundPlayer.timerUpdate(deltaTick);
+    }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        UnityEngine.Debug.Log("OnApplicationFocus!");
+    }
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+        UnityEngine.Debug.Log("OnApplicationPause! pauseStatus=" + pauseStatus);
+        if (pauseStatus)
+        {
+        //    soundPlayer.stopAllNote(0, 0);
+        //    soundPlayer.pausePlay();
+        } else
+        {
+
+        }
+        //TODO: show pause UI
     }
 
     void init()
@@ -53,7 +73,7 @@ public class GamePlayer : GameBaseEx
         soundPlayer.loadMusic(fileLocation, false, appContext.songItem.melody);
         */
         soundPlayer.adjustBaseNoteByInstrument();
-        appContext.playingNoteCount = 0;
+        appContext.playingNote = false;
         foreach (Transform child in this.musicNotesParent.transform)
         {
             GameObject.Destroy(child.gameObject);

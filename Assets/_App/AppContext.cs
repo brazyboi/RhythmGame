@@ -12,7 +12,7 @@ public class AppContext  {
 
 	public long totalScore = 0;
 	public bool failed = false;
-	public int playingNoteCount = 0;
+	public bool playingNote = false;
 
 	public string prevScene;
 

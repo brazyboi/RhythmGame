@@ -30,7 +30,7 @@ public class MusicNoteController : GameBaseEx
 	//long noteScore;
 	public ScoreDelegate scoreDelegate;
 	private AppContext appContext = AppContext.instance();
-
+	
 	
 	private float scaleX;
 	enum NoteState
@@ -273,10 +273,9 @@ public class MusicNoteController : GameBaseEx
 	void checkTapDown()
     {
 		bool bClick = false;
-		if(isPlayKeyDown() && appContext.playingNoteCount==0)
+		if(!appContext.playingNote && isPlayKeyDown())
         {
 			bClick = true;
-
 		}
 		if (soundPlayer.getPlayMode() == SoundPlayer.LEARN_PLAY)
 		{
@@ -315,7 +314,7 @@ public class MusicNoteController : GameBaseEx
 		}
 		if (bClick)
 		{
-			appContext.playingNoteCount++;
+			appContext.playingNote = true;
 			playNote();
 		}
 	}
@@ -345,7 +344,7 @@ public class MusicNoteController : GameBaseEx
 		}
 		if(shouldRelease)
         {
-			appContext.playingNoteCount--;
+			appContext.playingNote = false;
 			disableAppearance();
 
 			float diff = Mathf.Abs(fluteNoteDown.transform.position.y - fluteNoteUp.transform.position.y);
@@ -530,6 +529,12 @@ public class MusicNoteController : GameBaseEx
     {
 		if (soundPlayer.playTime > note.tick + calculateNoteDuration() + 1000)
 		{
+			if(noteState == NoteState.playing)
+            {
+				//should reset playingNote in case skip checkTapRelease() 
+				appContext.playingNote = false;
+
+			}
 			Destroy(gameObject);
 		}
 	}

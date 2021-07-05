@@ -36,7 +36,7 @@ public class GameBaseEx : MonoBehaviour
     private void init()
     {
         _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        _soundPlayer = gameManager.soundPlayer;
+        _soundPlayer = SoundPlayer.singleton();
     }
 
 
