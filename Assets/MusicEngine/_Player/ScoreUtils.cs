@@ -22,30 +22,30 @@ public class ScoreUtils
 		float tapGapTime = Mathf.Abs((float)noteTick - tapTime);
 		string scoreText = "";
 		float score = 0;
-		if (tapGapTime < 100)
+		float tapPerfectScore = 30;
+		if (tapGapTime < 30)
+		{
+			scoreText = "PERFECT";
+			score = tapPerfectScore;
+		}
+		else if (tapGapTime < 60)
 		{
 			scoreText = "GREAT";
-			score = 20 - tapGapTime * 5 / 100;
+			score = tapPerfectScore * 0.93f;
 		}
-		else if (tapGapTime < 300)
-		{
-			scoreText = "GOOD";
-			score = 15 - (tapGapTime - 100) * 5 / 200;
-		}
-		else if (tapGapTime < 500)
-		{
-			scoreText = "JUST";
-			score = 10 - (tapGapTime - 300) * 5 / 200;
-		}
-		else
-		{
-			scoreText = "JUST";
-			score = 5;
-		}
-		if(score < 0)
+		else if (tapGapTime < 130)
         {
-			score = 0;
-        }
+			scoreText = "GREAT";
+			score = tapPerfectScore * 0.88f;
+		} else if(tapGapTime < 200) 
+		{
+			scoreText = "JUST";
+			score = tapPerfectScore * 0.82f;
+		} else
+        {
+			scoreText = "NOT BAD";
+			score = tapPerfectScore * 0.75f;
+		}
 		return (scoreText, (int) score);
 	}
 
@@ -92,7 +92,7 @@ public class ScoreUtils
 			long holdingTime = playTime - tapTime;
 			if (playTime < note.tick + calculateNoteDuration(note))
 			{//only update if before reach to end.
-				return holdingTime / 10;
+				return holdingTime / 50;
 			}
 		}
 		return 0;
@@ -105,9 +105,9 @@ public class ScoreUtils
 		if (isHoldingNote(note, isWindInstrument))
 		{
 			float tapGapTime = Mathf.Abs((float)note.tick + calculateNoteDuration(note) - releaseTime);
-			if (tapGapTime < 100)
+			if (tapGapTime < 200)
 			{
-				score = 50;
+				score = 5;
 			}
 
 		}
