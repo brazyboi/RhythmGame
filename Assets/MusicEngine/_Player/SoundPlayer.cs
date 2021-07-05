@@ -1265,7 +1265,7 @@ int playNextNote (int hitPressCount, int jumpMaximal) {
 					MusicNote musicNote = new MusicNote(mn);
 					musicNote.value = note;
 					musicNote.drumFactorTotal = drumFactorTotal;
-					musicNote.tickGapNext = musicNote.getDuration(appContext.isCurrentSoundBank());
+					//musicNote.tickGapNext =  musicNote.getDuration(appContext.isCurrentSoundBank());
 
 					playerDelegate.playComingNoteNotify(musicNote);
 					//playerDelegate.playComingNoteNotify(note, musicNote.instrument, word ,

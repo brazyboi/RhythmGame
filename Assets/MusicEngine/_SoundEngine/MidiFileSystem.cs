@@ -30,7 +30,7 @@ public class MidiFileSystem
 		{
 			UnityEngine.Debug.Log("mFmodSystem setFileSystem failed:" + res);
 		}
-		FMOD.Debug.Initialize(DEBUG_FLAGS.LOG, DEBUG_MODE.CALLBACK, FMOD_DEBUG_CALLBACK, null);
+		FMOD.Debug.Initialize(DEBUG_FLAGS.NONE, DEBUG_MODE.CALLBACK, FMOD_DEBUG_CALLBACK, null);
 	}
 
 

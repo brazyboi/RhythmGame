@@ -9,11 +9,18 @@ public class ScoreUtils
 		long totalScore = 0;
 		foreach( MusicNote note in midiEventListMelody)
         {
-			totalScore += calculateTapNoteScore(note.tick, note.tick).Item2;
-			totalScore += calculateHoldingNoteScore(note, isWindInstrument, note.tick + calculateNoteDuration(note), note.tick);
-			totalScore += calculateReleaseTimingScore(note, isWindInstrument, note.tick + calculateNoteDuration(note));
+			long score = calculateTapNoteScore(note.tick, note.tick).Item2;
+			totalScore += score;
+			UnityEngine.Debug.Log("calculateTapNoteScore: " + score);
+			score  = calculateHoldingNoteScore(note, isWindInstrument, note.tick + calculateNoteDuration(note), note.tick);
+			totalScore += score;
+			UnityEngine.Debug.Log("calculateHoldingNoteScore: " + score);
+			score= calculateReleaseTimingScore(note, isWindInstrument, note.tick + calculateNoteDuration(note));
+			totalScore += score;
+			UnityEngine.Debug.Log("calculateReleaseTimingScore: " + score);
 
 		}
+		UnityEngine.Debug.Log("Total score: " + totalScore);
 		return totalScore;
 	}
 
@@ -90,7 +97,11 @@ public class ScoreUtils
 		if (isHoldingNote(note, isWindInstrument))
 		{
 			long holdingTime = playTime - tapTime;
-			if (playTime < note.tick + calculateNoteDuration(note))
+			if(holdingTime > calculateNoteDuration(note))
+            {
+				holdingTime = calculateNoteDuration(note);
+			}
+			if (playTime <= note.tick + calculateNoteDuration(note))
 			{//only update if before reach to end.
 				return holdingTime / 50;
 			}

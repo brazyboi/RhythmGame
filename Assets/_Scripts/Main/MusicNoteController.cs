@@ -31,7 +31,6 @@ public class MusicNoteController : GameBaseEx
 	public ScoreDelegate scoreDelegate;
 	private AppContext appContext = AppContext.instance();
 	
-	
 	private float scaleX;
 	enum NoteState
     {
@@ -55,8 +54,8 @@ public class MusicNoteController : GameBaseEx
 
 	private static float prevXPos;
 	private float xPos;
-	private long holdingNoteScore;
-	private long lastRemainingDuration;
+	private  long holdingNoteScore;
+	private  long lastRemainingDuration;
 	// Use this for initialization
 	void Start()
 	{
@@ -413,11 +412,10 @@ public class MusicNoteController : GameBaseEx
 			//do nothing
 			holdingNoteScore = 0;
 		}
-		else
-		{
-			var scoreResult = ScoreUtils.calculateTapNoteScore(soundPlayer.playTime, note.tick);
-			scoreDelegate.updateScore(scoreResult.Item1, (long)scoreResult.Item2, true);
-		}
+		
+		var scoreResult = ScoreUtils.calculateTapNoteScore(soundPlayer.playTime, note.tick);
+		scoreDelegate.updateScore(scoreResult.Item1, (long)scoreResult.Item2, true);
+		
 	}
 
 	void calculateHoldingScore()
@@ -435,6 +433,7 @@ public class MusicNoteController : GameBaseEx
 		if (isHoldingNote())
 		{
 			float score = ScoreUtils.calculateReleaseTimingScore(note, appContext.isWindInstrument(), soundPlayer.playTime);
+			
 			scoreDelegate.updateScore("GOOD", holdingNoteScore, true);
 			if (score > 0)
 			{

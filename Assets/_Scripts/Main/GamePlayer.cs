@@ -60,7 +60,7 @@ public class GamePlayer : GameBaseEx
         noteScoreDelegate = new NoteScoreDelegate(this);
         appContext.musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
+        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
         soundPlayer.setMelodyMute(soundPlayer.getPlayMode() != SoundPlayer.LEARN_PLAY);
     }
 
@@ -94,6 +94,18 @@ public class GamePlayer : GameBaseEx
         soundPlayer.loadMusic(fileLocation, false, melodyChannel);
         soundPlayer.seek(0);
         soundPlayer.startPlay(false);
+
+        /* test distance of note between 100ms.
+        soundPlayer.pausePlay();
+        for (int i=0;i<10; i++)
+        {
+            MusicNote note = new MusicNote();
+            note.tick = i * 200;
+            note.elapseTime = 50;
+            note.tickGapNext = 50;
+            placeNote(note);
+        } */
+
     }
 
     void placeNote(MusicNote note)
@@ -250,8 +262,9 @@ public class GamePlayer : GameBaseEx
         }
         public override void updateSuperScore(string text, long score)
         {
-           // gamePlayer.appContext.totalScore += score;
-           // scoreTextScript.updateAlertText(text + "\n\r" + score);
+            gamePlayer.appContext.totalScore += score;
+            playUIController.updateScoreTexts(text + "\n\r" + score);
+            // scoreTextScript.updateAlertText(text + "\n\r" + score);
 
         }
         public override void missPlayNote(long missScore)

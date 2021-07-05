@@ -65,6 +65,11 @@ public class AppContext  {
     {
 		return true;
     }
+
+	public static long calculateTotalScore()
+    {
+		return ScoreUtils.calculateTotalScore(AppContext.instance().isWindInstrument(), SoundPlayer.singleton().midiEventMan.midiEventListMelody);
+	}
 	/*
 	private static string RootPath  
 	{  
