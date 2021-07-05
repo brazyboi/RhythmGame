@@ -6,9 +6,14 @@ using UnityEngine;
 public class Playlist {
 	public string name;
 	public List<SongItem> list = new List<SongItem>(); 
-	public static Playlist loadPlaylist(string file) {
+	public static Playlist loadPlaylist(string file, int level) {
 		string jsontext = FileReaderUtils.ReadTextResourceFile (file);
-		return JsonUtility.FromJson<Playlist> (jsontext);
+		Playlist playlist = JsonUtility.FromJson<Playlist> (jsontext);
+		foreach(SongItem item in playlist.list)
+        {
+			item.level = level;
+		}
+		return playlist;
 	}
 }
 
@@ -18,5 +23,6 @@ public class SongItem {
 	public string artist;
 	public string path;
 	public int instr;
-	public int melody;    
+	public int melody;
+	public int level;
 }
