@@ -312,7 +312,7 @@ public class SoundPlayer  {
 			midiEventMan.sortAllMidiNote ();
 			midiEventMan.trimNoSoundAtBeginning();
 			//if(appContext.isCurrentFluteStyle()) { always adjust it
-			midiEventMan.adjustMelodyNoteLengthByFlute(!isUserPlay, melodyChannel_, instrument== MusicInstrument.DRUM_INSTRUMENT);
+			midiEventMan.adjustMelodyNoteLengthByFlute();
 			//}
 			minMelodyNote = midiEventMan.minMelodyNote;
 			maxMelodyNote = midiEventMan.maxMelodyNote;

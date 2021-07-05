@@ -60,7 +60,7 @@ public class GamePlayer : GameBaseEx
         noteScoreDelegate = new NoteScoreDelegate(this);
         appContext.musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
-        soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
+        soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
         soundPlayer.setMelodyMute(soundPlayer.getPlayMode() != SoundPlayer.LEARN_PLAY);
     }
 

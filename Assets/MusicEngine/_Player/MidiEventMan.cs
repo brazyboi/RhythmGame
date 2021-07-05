@@ -300,7 +300,7 @@ public class MidiEventMan  {
 	}
 */
 
-	public void adjustMelodyNoteLengthByFlute(bool adjustToNextNotes, int melodyChannel, bool isDrum) {
+	public void adjustMelodyNoteLengthByFlute() {
 		/*if(isDrum) {
 			int melodyChannel1 = melodyChannel % 100;
 			int melodyChannel2 = -1;
@@ -373,42 +373,38 @@ public class MidiEventMan  {
 				return;
 			}
 			//adjust flute type
-			if(adjustToNextNotes) {
-				long gap = 0;
-				for (int i = 0; i < midiEventListMelody.Count; i++) {
-					gap = 0;
-					MusicNote currentNote = midiEventListMelody[i];
-					MusicNote nextNote = null;
-					for (int j = i + 1; j < i + 5; j++) {
-						if (j >= midiEventListMelody.Count) {
-							break;
-						}
-						MusicNote n = midiEventListMelody [j];
-						if (n.tick - currentNote.tick > 0) {
-							nextNote = n;
-							break;
-						}
+			long gap = 0;
+			for (int i = 0; i < midiEventListMelody.Count; i++)
+			{
+				gap = 0;
+				MusicNote currentNote = midiEventListMelody[i];
+				MusicNote nextNote = null;
+				for (int j = i + 1; j < i + 5; j++)
+				{
+					if (j >= midiEventListMelody.Count)
+					{
+						break;
 					}
-					if (nextNote != null) {
-						gap = nextNote.tick - currentNote.tick;
+					MusicNote n = midiEventListMelody[j];
+					if (n.tick - currentNote.tick > 0)
+					{
+						nextNote = n;
+						break;
 					}
-					if(gap <=0 ) {
-						currentNote.tickGapNext = 3000;
-					} else {
-						currentNote.tickGapNext = (int) gap;
-					}
-					
 				}
-			} else {
-				for (int i = 0; i < midiEventListMelody.Count; i++) {
-					MusicNote currentNote = midiEventListMelody[i];
-					if (currentNote.elapseTime <= 0) {
-						currentNote.tickGapNext = 500;
-					} else {
-						currentNote.tickGapNext = currentNote.elapseTime;
-					}
-
+				if (nextNote != null)
+				{
+					gap = nextNote.tick - currentNote.tick;
 				}
+				if (gap <= 0)
+				{
+					currentNote.tickGapNext = 3000;
+				}
+				else
+				{
+					currentNote.tickGapNext = (int)gap;
+				}
+				currentNote.tickGapNext = currentNote.getDuration(true);
 			}
 		}
 	}
