@@ -13,7 +13,7 @@ public class GamePlayer : GameBaseEx
 {
     public GameObject musicNote;
 
-    public GameObject inGameScores;
+    public GameObject playerUI;
     public GameObject drumNote;
     public GameObject playPerformance;
     public GameObject musicNotesParent;
@@ -232,20 +232,20 @@ public class GamePlayer : GameBaseEx
     class NoteScoreDelegate : ScoreDelegate
     {
         GamePlayer gamePlayer;
-        ScoreTextScript scoreTextScript;
+        PlayUIController playUIController;
         public NoteScoreDelegate(GamePlayer c)
         {
             gamePlayer = c;
-            scoreTextScript = gamePlayer.inGameScores.GetComponent<ScoreTextScript>();
+            playUIController = gamePlayer.playerUI.GetComponent<PlayUIController>();
         }
         public override void updateScore(string text, long score, bool final)
         {
             if (final)
             {
                 gamePlayer.appContext.totalScore += score;
-                scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
+                playUIController.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
             }
-            scoreTextScript.updateScoreTexts(text + "\n\r" + score);
+            playUIController.updateScoreTexts(text + "\n\r" + score);
 
         }
         public override void updateSuperScore(string text, long score)
@@ -262,8 +262,8 @@ public class GamePlayer : GameBaseEx
             {
                 gamePlayer.appContext.totalScore = 0;
             }
-            scoreTextScript.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
-            scoreTextScript.updateScoreTexts("MISS" + "\n\r" + missScore);
+            playUIController.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
+            playUIController.updateScoreTexts("MISS" + "\n\r" + missScore);
            // gamePlayer.onGameFailed();
         }
 

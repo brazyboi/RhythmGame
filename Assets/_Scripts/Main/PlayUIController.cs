@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreTextScript : GameBaseEx
+public class PlayUIController : GameBaseEx
 {
     private float fadeTime = 0.5f;
 
@@ -16,7 +16,7 @@ public class ScoreTextScript : GameBaseEx
 
     public GameObject skipButton;
     public GameObject skipButtonText;
-
+    public GameObject backButton;
     public GameObject countdownText;
 
     Button skip;
@@ -44,6 +44,9 @@ public class ScoreTextScript : GameBaseEx
         skip = skipButton.GetComponent<Button>();
         skip.onClick.AddListener(skipIntro);
 
+        Button back = backButton.GetComponent<Button>();
+        back.onClick.AddListener(backHome);
+
     }
 
     // Update is called once per frame
@@ -56,6 +59,8 @@ public class ScoreTextScript : GameBaseEx
             countdown();
         }
     }
+
+
 
     void countdown()
     {
@@ -79,6 +84,12 @@ public class ScoreTextScript : GameBaseEx
     {
         soundPlayer.skipPrelude(true);
     }
+
+    void backHome()
+    {
+        GameManager.gotoTitleScreen();
+    }
+
 
     public void updateTotalScoreTexts(string text)
     {
@@ -108,25 +119,25 @@ public class ScoreTextScript : GameBaseEx
 
     class ScoreTextCallback : TimerCallback
     {
-        ScoreTextScript scoreTextScript;
-        public ScoreTextCallback(ScoreTextScript scoreTextScript)
+        PlayUIController controller;
+        public ScoreTextCallback(PlayUIController controller)
         {
-            this.scoreTextScript = scoreTextScript;
+            this.controller = controller;
         }
         public override void onTick(Timer timer, float tick, float timeOut)
         {
             Vector3 originalPos;
             Transform updateText;
             Color orignalColor;
-            if (timer == scoreTextScript.timerScoreText)
+            if (timer == controller.timerScoreText)
             {
-                originalPos = scoreTextScript.scoreNotifyTextPos;
-                updateText = scoreTextScript.scoreNotifyText;
+                originalPos = controller.scoreNotifyTextPos;
+                updateText = controller.scoreNotifyText;
                 
-            } else if(timer == scoreTextScript.timerAlertText)
+            } else if(timer == controller.timerAlertText)
             {
-                originalPos = scoreTextScript.alertTextPos;
-                updateText = scoreTextScript.alertText;
+                originalPos = controller.alertTextPos;
+                updateText = controller.alertText;
             } else
             {
                 return;

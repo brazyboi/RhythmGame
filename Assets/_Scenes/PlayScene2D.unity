@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 584871729}
   - component: {fileID: 584871730}
   m_Layer: 0
-  m_Name: UI
+  m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1896,7 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicNote: {fileID: 4564344782363365321, guid: 4841a3cf69f0c4266bc3401db09cf463, type: 3}
-  inGameScores: {fileID: 584871728}
+  playerUI: {fileID: 584871728}
   drumNote: {fileID: 6317620090500661734, guid: 5185e2652f22f45aabf20d3fc1f1f12e, type: 3}
   playPerformance: {fileID: 3675631170098156880, guid: 010b55bb3492e6e489b3d013cca6b8b7, type: 3}
   musicNotesParent: {fileID: 1019536890}
