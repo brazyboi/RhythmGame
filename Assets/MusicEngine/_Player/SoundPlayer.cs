@@ -475,7 +475,7 @@ public class SoundPlayer  {
 		}
 		//CCLog("play time: %d" , playTime);
 		//if(isPlayLastNote)
-		if (actualPlayTime > midiEventMan.getLastMelodyEndTick() + 500)
+		if (!isPlayFinished && actualPlayTime > midiEventMan.getLastMelodyEndTick() + 500)
 		{
 			playComplete();
 			return;
