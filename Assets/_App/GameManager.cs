@@ -40,4 +40,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(prevScene, LoadSceneMode.Single);
     }
+
+    public static void gotoLevelScreen()
+    {
+        SceneManager.LoadScene("LevelScreen", LoadSceneMode.Single);
+    }
 }

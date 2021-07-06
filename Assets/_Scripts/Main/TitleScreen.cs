@@ -15,14 +15,14 @@ public class TitleScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playButton.GetComponent<Button>().onClick.AddListener(startGame);
+        playButton.GetComponent<Button>().onClick.AddListener(startGame);   
         rewardButton.GetComponent<Button>().onClick.AddListener(rewards);
         
     }
 
     void startGame()
     {
-        GameManager.gotoSongList();
+        GameManager.gotoLevelScreen();
     }
 
     void rewards()
