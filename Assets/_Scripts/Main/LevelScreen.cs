@@ -40,7 +40,8 @@ public class LevelScreen : MonoBehaviour
 
         for (int i = 0; i < levelButtons.Count; i++)
         {
-            levelButtons[i].GetComponent<Button>().onClick.AddListener(() => directToLevelSongList(i));
+            int index = i;
+            levelButtons[i].GetComponent<Button>().onClick.AddListener(() => directToLevelSongList(index));
         }
 
     }

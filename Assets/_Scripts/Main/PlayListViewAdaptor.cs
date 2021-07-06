@@ -17,7 +17,8 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 
 		//loadPlaylist ("playlist/playlist_battle_all");
 		addFilePaths();
-		loadPlaylist(filePaths[AppContext.instance().curSongListLevel]);
+		UnityEngine.Debug.Log("curSongListLevel: " + AppContext.instance().curSongListLevel);
+		loadPlaylist(filePaths[AppContext.instance().curSongListLevel], AppContext.instance().curSongListLevel);
 	}
 
 	void addFilePaths()
@@ -35,7 +36,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 		filePaths.Add("playlist/playlist_battle_en10");
 	}
 
-	public void loadPlaylist(string playlistFile) {
+	public void loadPlaylist(string playlistFile, int level) {
 		playlist = Playlist.loadPlaylist (playlistFile, 0);
 	}
 
