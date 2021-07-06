@@ -87,6 +87,7 @@ public class PlayUIController : GameBaseEx
 
     void backHome()
     {
+        SoundPlayer.singleton().pausePlay();
         GameManager.gotoTitleScreen();
     }
 

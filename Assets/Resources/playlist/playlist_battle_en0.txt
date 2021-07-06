@@ -33,7 +33,7 @@
 		"title":"Lyphard Melody",
 		"path": "xingkong.sht",
 		"melody": 99,
-        "instr", 0
+        "instr": 0,
 		"artist": "Richard Clayderman"
 		},
         
