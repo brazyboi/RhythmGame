@@ -10,6 +10,7 @@ public class SongSelect : MonoBehaviour
     public GameObject playButton;
     public GameObject selectButton;
     public GameObject instrumentImage;
+    public GameObject backButton;
 
     Image image;
 
@@ -31,6 +32,11 @@ public class SongSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        init();
+    }
+
+    void init()
+    {
         songTitlePanelText = songTitlePanel.GetComponent<Text>();
         songTitlePanelText.text = AppContext.instance().songItem.title;
 
@@ -40,6 +46,12 @@ public class SongSelect : MonoBehaviour
 
         playButton.GetComponent<Button>().onClick.AddListener(playGame);
         selectButton.GetComponent<Button>().onClick.AddListener(instrumentSelect);
+        backButton.GetComponent<Button>().onClick.AddListener(backToSongList);
+    }
+
+    void backToSongList()
+    {
+        GameManager.gotoSongList();
     }
 
     void instrumentSelect() 

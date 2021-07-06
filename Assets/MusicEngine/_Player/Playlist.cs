@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Playlist {
 	public string name;
-	public List<SongItem> list = new List<SongItem>(); 
+	public List<SongItem> list = new List<SongItem>();
+
 	public static Playlist loadPlaylist(string file, int level) {
 		string jsontext = FileReaderUtils.ReadTextResourceFile (file);
 		Playlist playlist = JsonUtility.FromJson<Playlist> (jsontext);

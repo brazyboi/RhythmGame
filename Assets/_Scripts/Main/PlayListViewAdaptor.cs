@@ -10,9 +10,29 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 	int selectIndex = -1;
 	Playlist playlist;
 
+	public List<string> filePaths;
+
 	// Use this for initialization
 	void Start () {
-		loadPlaylist ("playlist/playlist_battle_all");
+
+		//loadPlaylist ("playlist/playlist_battle_all");
+		addFilePaths();
+		loadPlaylist(filePaths[AppContext.instance().curSongListLevel]);
+	}
+
+	void addFilePaths()
+    {
+		filePaths.Add("playlist/playlist_battle_en0");
+		filePaths.Add("playlist/playlist_battle_en1");
+		filePaths.Add("playlist/playlist_battle_en2");
+		filePaths.Add("playlist/playlist_battle_en3");
+		filePaths.Add("playlist/playlist_battle_en4");
+		filePaths.Add("playlist/playlist_battle_en5");
+		filePaths.Add("playlist/playlist_battle_en6");
+		filePaths.Add("playlist/playlist_battle_en7");
+		filePaths.Add("playlist/playlist_battle_en8");
+		filePaths.Add("playlist/playlist_battle_en9");
+		filePaths.Add("playlist/playlist_battle_en10");
 	}
 
 	public void loadPlaylist(string playlistFile) {
@@ -28,6 +48,17 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 	}
 
 	public override void bindCellData (int index, Transform prefabCell) {
+
+		Text info = (Text)prefabCell.Find("info").GetComponent<Text>();
+		Text title = prefabCell.Find("title").GetComponent<Text>();
+		Text accuracy = prefabCell.Find("accuracy").GetComponent<Text>();
+
+		if (!PlayerData.isSongUnlock(playlist.list[index].level))
+		{
+			title.text = "???";
+			return;
+		}
+
 		Button button = (Button)prefabCell.GetComponent<Button> ();
 		button.onClick.AddListener (() => {
 			OnSelectItem(index);
@@ -41,25 +72,12 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 			cb.normalColor = Color.red;
 		}
 		//button.colors = cb;
-		Text info = (Text) prefabCell.Find("info").GetComponent<Text>();
-		Text title = prefabCell.Find("title").GetComponent<Text>();
-		Text accuracy = prefabCell.Find("accuracy").GetComponent<Text>();
+		
 		title.text = "" + (index + 1) + ". " + playlist.list[index].title;
 		accuracy.text = "" + PlayerData.getSongScore(playlist.list[index].path) + "%";
 		//info.text = playlist.list[index].artist;
 
 	}
-
-	void lockSongs()
-    {
-		foreach (SongItem s in playlist.list)
-        {
-			if (PlayerData.isSongUnlock(s.level))
-            {
-
-            }
-        }
-    }
 
 	private void OnSelectItem(int index) {
 		selectIndex = index;
