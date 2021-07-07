@@ -45,7 +45,7 @@ public class PlayUIController : GameBaseEx
         skip.onClick.AddListener(skipIntro);
 
         Button back = backButton.GetComponent<Button>();
-        back.onClick.AddListener(backHome);
+        back.onClick.AddListener(backToSongList);
 
     }
 
@@ -85,10 +85,10 @@ public class PlayUIController : GameBaseEx
         soundPlayer.skipPrelude(true);
     }
 
-    void backHome()
+    void backToSongList()
     {
         SoundPlayer.singleton().pausePlay();
-        GameManager.gotoTitleScreen();
+        GameManager.gotoSongList();
     }
 
 
