@@ -37,7 +37,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 	}
 
 	public void loadPlaylist(string playlistFile, int level) {
-		playlist = Playlist.loadPlaylist (playlistFile, 0);
+		playlist = Playlist.loadPlaylist (playlistFile, level);
 	}
 
 	public override int getTotalCount () {

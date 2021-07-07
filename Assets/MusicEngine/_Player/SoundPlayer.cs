@@ -280,6 +280,16 @@ public class SoundPlayer  {
 		} else {
 			melodyChannel2 = -1;
 		}
+		int pitchValue = 0;
+		if (melodyChannel_ >= 10000)
+		{
+			pitchValue = 1;
+		}
+		else
+		{
+			pitchValue = 0;
+		}
+
 		isPause = true;
 
 		if(musicFile == null && isUserPlay) {
@@ -297,6 +307,7 @@ public class SoundPlayer  {
 			MidiFile midiFile = new MidiFile (filedata, "");
 			List<MidiTrack> tracks = midiFile.Tracks;
 			float ms_per_tick = midiFile.Time.Tempo / (1000f*midiFile.Time.Quarter); //microseconds per tick = microseconds per quarter note / ticks per quarter note
+			UnityEngine.Debug.Log("ms_per_tick: " + ms_per_tick + " Tempo:" + midiFile.Time.Tempo + " querter:" + midiFile.Time.Quarter);
 			for (int i =0; i< tracks.Count; i++) {
 				MidiTrack t = tracks [i];
 				List<MidiNote> notes = t.Notes;
@@ -306,7 +317,7 @@ public class SoundPlayer  {
 						int yyy = 0;
 					}
 
-					midiEventMan.insertMidiNote(i, n, melodyChannel1, melodyChannel2, instrument== MusicInstrument.DRUM_INSTRUMENT, 0,  ms_per_tick);
+					midiEventMan.insertMidiNote(i, n, melodyChannel1, melodyChannel2, instrument== MusicInstrument.DRUM_INSTRUMENT, pitchValue,  ms_per_tick);
 				}
 			}
 			midiEventMan.sortAllMidiNote ();
