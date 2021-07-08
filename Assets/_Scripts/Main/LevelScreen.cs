@@ -67,6 +67,6 @@ public class LevelScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SoundPlayer.singleton().timerUpdate(Time.deltaTime);
     }
 }
