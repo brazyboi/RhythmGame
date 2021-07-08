@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 8353249971638360337, guid: 0402a50d9ab1a08439603646339e786b, type: 3}
+      propertyPath: lockIcon
+      value: 
+      objectReference: {fileID: 4294448432264735837, guid: f8fc4e3bd8399ea4fab1b4014b959c09, type: 3}
     - target: {fileID: 8353249971638360338, guid: 0402a50d9ab1a08439603646339e786b, type: 3}
       propertyPath: m_RootOrder
       value: 3

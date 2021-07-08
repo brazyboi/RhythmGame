@@ -16,6 +16,8 @@ public class LevelScreen : MonoBehaviour
     public GameObject level8;
     public GameObject level9;
 
+    public GameObject lockIcon;
+
     public List<GameObject> levelButtons;
     
 
@@ -39,7 +41,17 @@ public class LevelScreen : MonoBehaviour
         levelButtons.Add(level9);
 
         for (int i = 0; i < levelButtons.Count; i++)
-        {
+        { 
+            if (i > PlayerData.getPlayerLevel())
+            {
+                GameObject locked = Instantiate(lockIcon, new Vector3(0,0,0), Quaternion.identity);
+                locked.transform.parent = levelButtons[i].transform.parent;
+                locked.transform.localPosition = new Vector3(0, 0, 0);
+                levelButtons[i].transform.parent.GetComponentInChildren<Text>().text = "";
+                
+                continue;
+            }
+
             int index = i;
             levelButtons[i].GetComponent<Button>().onClick.AddListener(() => directToLevelSongList(index));
         }

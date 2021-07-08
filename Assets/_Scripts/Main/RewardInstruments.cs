@@ -31,6 +31,7 @@ public class RewardInstruments : MonoBehaviour
     int[] musicIntruments;
 
     public GameObject backButton;
+    public GameObject lockIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +85,13 @@ public class RewardInstruments : MonoBehaviour
 
         for (int i = 0; i < itemButtons.Length; i++)
         {
+            if (!PlayerData.isInstrumentUnlock(i))
+            {
+                itemButtons[i].transform.parent.Find("InstrumentImage").gameObject.SetActive(false);
+                GameObject locked = Instantiate(lockIcon, new Vector3(0, 0, 0), Quaternion.identity);
+                locked.transform.parent = itemButtons[i].transform.parent;
+                locked.transform.localPosition = new Vector3(0, 0, 0);
+            }
             int index = i;
             itemButtons[i].GetComponent<Button>().onClick.AddListener(delegate { onSelectInstrument(index); });
         }

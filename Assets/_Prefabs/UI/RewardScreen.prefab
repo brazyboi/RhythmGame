@@ -1518,6 +1518,7 @@ MonoBehaviour:
   instrument11: {fileID: 8007721439219701671}
   instrument12: {fileID: 8007721438995901468}
   backButton: {fileID: 6541442671385289388}
+  lockIcon: {fileID: 4294448432264735837, guid: f8fc4e3bd8399ea4fab1b4014b959c09, type: 3}
 --- !u!1 &8007721438668846701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,7 +2513,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 960, y: 960}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.713
+  m_MatchWidthOrHeight: 0.924
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
