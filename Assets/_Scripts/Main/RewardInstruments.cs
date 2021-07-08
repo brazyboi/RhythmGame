@@ -143,6 +143,6 @@ public class RewardInstruments : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SoundPlayer.singleton().timerUpdate(Time.deltaTime);
     }
 }
