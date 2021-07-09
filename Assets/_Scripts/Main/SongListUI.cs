@@ -7,6 +7,7 @@ public class SongListUI : MonoBehaviour
 {
     public GameObject backButton;
     public GameObject songsTextTop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class SongListUI : MonoBehaviour
     {
         songsTextTop.GetComponent<Text>().text = "SONGS: LEVEL " + (AppContext.instance().curSongListLevel + 1);
         backButton.GetComponent<Button>().onClick.AddListener(backToLevelScreen);
+
     }
 
     void backToLevelScreen()

@@ -630,6 +630,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114895298105476640, guid: 5ff47a284d0db423da84989976a9157b, type: 3}
+      propertyPath: lockIcon
+      value: 
+      objectReference: {fileID: 4294448432264735837, guid: f8fc4e3bd8399ea4fab1b4014b959c09, type: 3}
     - target: {fileID: 224312354664228860, guid: 5ff47a284d0db423da84989976a9157b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -724,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224471182195664474, guid: 5ff47a284d0db423da84989976a9157b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224471182195664474, guid: 5ff47a284d0db423da84989976a9157b, type: 3}
       propertyPath: m_SizeDelta.y
@@ -784,6 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filePaths: []
+  lockIcon: {fileID: 4294448432264735837, guid: f8fc4e3bd8399ea4fab1b4014b959c09, type: 3}
 --- !u!114 &1230719769
 MonoBehaviour:
   m_ObjectHideFlags: 0

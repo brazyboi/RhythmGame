@@ -53,8 +53,8 @@ public class RewardInstruments : MonoBehaviour
     {           
         musicIntruments = new int[12];
 
-        musicIntruments[0] = MusicInstrument.PIANO_INSTRUMENT;
-        musicIntruments[1] = MusicInstrument.FLUTE_INSTRUMENT;
+        musicIntruments[0] = MusicInstrument.FLUTE_INSTRUMENT;
+        musicIntruments[1] = MusicInstrument.PIANO_INSTRUMENT;
         musicIntruments[2] = MusicInstrument.SAX_INSTRUMENT;
         musicIntruments[3] = MusicInstrument.HARP_INSTRUMENT;
         musicIntruments[4] = MusicInstrument.TRUMPET_INSTRUMENT;

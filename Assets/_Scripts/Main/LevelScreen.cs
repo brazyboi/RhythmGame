@@ -42,7 +42,7 @@ public class LevelScreen : MonoBehaviour
 
         for (int i = 0; i < levelButtons.Count; i++)
         { 
-            if (i > PlayerData.getPlayerLevel())
+            /*if (i > PlayerData.getPlayerLevel())
             {
                 GameObject locked = Instantiate(lockIcon, new Vector3(0,0,0), Quaternion.identity);
                 locked.transform.parent = levelButtons[i].transform.parent;
@@ -50,7 +50,7 @@ public class LevelScreen : MonoBehaviour
                 levelButtons[i].transform.parent.GetComponentInChildren<Text>().text = "";
                 
                 continue;
-            }
+            }*/
 
             int index = i;
             levelButtons[i].GetComponent<Button>().onClick.AddListener(() => directToLevelSongList(index));

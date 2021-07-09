@@ -11,6 +11,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 	Playlist playlist;
 
 	public List<string> filePaths;
+	public GameObject lockIcon;
 
 	// Use this for initialization
 	void Start () {
@@ -56,6 +57,9 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 
 		if (!PlayerData.isSongUnlock(playlist.list[index].level))
 		{
+			GameObject locked = Instantiate(lockIcon, new Vector3(0,0,0), Quaternion.identity);
+			locked.transform.parent = prefabCell;
+			locked.transform.localPosition = new Vector3(0, 0, 0);
 			title.text = "???";
 			return;
 		}
