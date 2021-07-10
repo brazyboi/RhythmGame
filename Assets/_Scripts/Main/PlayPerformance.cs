@@ -36,6 +36,8 @@ public class PlayPerformance : MonoBehaviour
             passfailPanel.GetComponent<Text>().text = "Pass";
             passfailPanel.GetComponent<Text>().color = Color.green;
             PlayerData.unlockSong(AppContext.instance().songItem.level + 1);
+            Debug.Log("new song unlcoked: " + (AppContext.instance().songItem.level + 1));
+            //Debug.Log("SONG LEVEL: " + AppContext.instance().songItem.level
         }
         scorePanel.GetComponent<Text>().text = "Accuracy: 0%";
         calculateAccuracy();

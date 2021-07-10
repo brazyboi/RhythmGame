@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class PlayerData 
 {
-
+    public enum SongStatus{
+        SONG_PASSED,
+        SONG_LOCKED,
+        SONG_IN_PROGRESS
+    }
     public static int saveSongScore(string songId, int accuracy)
     {
         int oldAccuracy = PlayerPrefs.GetInt(songId + "-accuracy", 0);
@@ -31,6 +37,8 @@ public class PlayerData
     public static bool unlockSong(int level)
     {
         int oldLevel = PlayerPrefs.GetInt("songLevel", 0);
+
+        Debug.Log("oldLevel = " + oldLevel + " level = " + level);
         if (oldLevel < level)
         {
             PlayerPrefs.SetInt("songLevel", level);
@@ -42,15 +50,18 @@ public class PlayerData
         return true;
     }
 
-    public static bool isSongUnlock(int songLevel)
+    public static SongStatus getSongStatus(int songLevel)
     {
         int cur = PlayerPrefs.GetInt("songLevel", 0);
-        if(songLevel <= cur)
+        if(songLevel < cur)
         {
-            return true;
+            return SongStatus.SONG_PASSED;
+        } else if(songLevel == cur)
+        {
+            return SongStatus.SONG_IN_PROGRESS;
         } else
         {
-            return false;
+            return SongStatus.SONG_LOCKED;
         }
     }
 

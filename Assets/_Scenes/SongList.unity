@@ -788,7 +788,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filePaths: []
-  lockIcon: {fileID: 4294448432264735837, guid: f8fc4e3bd8399ea4fab1b4014b959c09, type: 3}
 --- !u!114 &1230719769
 MonoBehaviour:
   m_ObjectHideFlags: 0

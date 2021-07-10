@@ -3,32 +3,6 @@
     "folder" : "song_en/",
 	"list": 
 	[ 
-    
-   
-            {
-		"title":"Right Here Waiting",
-		"path": "Rightherewaiting-all.mid",			
-		"artist": "Richard Marx",
-        "instr": 131,
-		"melody": 3
-		}
-        ,
-         {
-        "title": "Wind Bell",
-        "artist": "周蕙",
-		"path": "zhouhui_fengling.sht"	,	
-        "instr": 131,
-        "folder": "",
-        "melody": 0
-		}
-        ,
-        {
-		"title": "California Hotel",
-        "artist": "Eagles",
-		"path": "California_hotel.sht"	,		
-        "melody": 3
-		}
-        ,
          {
 		"title": "The Gray Legend",
         "artist": "Beyond",

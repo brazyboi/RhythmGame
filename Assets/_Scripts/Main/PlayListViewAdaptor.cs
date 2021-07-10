@@ -11,11 +11,9 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 	Playlist playlist;
 
 	public List<string> filePaths;
-	public GameObject lockIcon;
 
 	// Use this for initialization
 	void Start () {
-
 		//loadPlaylist ("playlist/playlist_battle_all");
 		addFilePaths();
 		UnityEngine.Debug.Log("curSongListLevel: " + AppContext.instance().curSongListLevel);
@@ -53,34 +51,51 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 
 		Text info = (Text)prefabCell.Find("info").GetComponent<Text>();
 		Text title = prefabCell.Find("title").GetComponent<Text>();
-		Text accuracy = prefabCell.Find("accuracy").GetComponent<Text>();
+		Text accuracy = prefabCell.Find("accuracy").GetComponent<Text>(); 
 
-		if (!PlayerData.isSongUnlock(playlist.list[index].level))
+		if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_LOCKED)
 		{
-			GameObject locked = Instantiate(lockIcon, new Vector3(0,0,0), Quaternion.identity);
-			locked.transform.parent = prefabCell;
-			locked.transform.localPosition = new Vector3(0, 0, 0);
+			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = true;
 			title.text = "???";
-			return;
+			accuracy.text = "";
+			
+		} else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_PASSED)
+        {
+			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = false;
+
+			Button button = (Button)prefabCell.GetComponent<Button>();
+			button.onClick.AddListener(() => {
+				OnSelectItem(index);
+			});
+
+			ColorBlock cb = button.colors;
+			if (selectIndex == index)
+			{
+				cb.normalColor = Color.white;
+
+			}
+			else
+			{
+				cb.normalColor = Color.red;
+			}
+			//button.colors = cb;
+
+			title.text = "" + (index + 1) + ". " + playlist.list[index].title;
+			accuracy.text = "" + PlayerData.getSongScore(playlist.list[index].path) + "%";
+			//info.text = playlist.list[index].artist;
+			//Debug.Log("cur song level " + playlist.list[index].level + " player level: " + PlayerData.getPlayerLevel());
+		} else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_IN_PROGRESS)
+        {
+			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = false;
+
+			Button button = (Button)prefabCell.GetComponent<Button>();
+			button.onClick.AddListener(() => {
+				OnSelectItem(index);
+			});
+
+			title.text = "" + (index + 1) + ". " + playlist.list[index].title;
+
 		}
-
-		Button button = (Button)prefabCell.GetComponent<Button> ();
-		button.onClick.AddListener (() => {
-			OnSelectItem(index);
-		});
-
-		ColorBlock cb = button.colors;
-		if (selectIndex == index) {
-			cb.normalColor = Color.white;
-
-		} else {
-			cb.normalColor = Color.red;
-		}
-		//button.colors = cb;
-		
-		title.text = "" + (index + 1) + ". " + playlist.list[index].title;
-		accuracy.text = "" + PlayerData.getSongScore(playlist.list[index].path) + "%";
-		//info.text = playlist.list[index].artist;
 
 	}
 

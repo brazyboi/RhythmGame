@@ -10,9 +10,12 @@ public class Playlist {
 	public static Playlist loadPlaylist(string file, int level) {
 		string jsontext = FileReaderUtils.ReadTextResourceFile (file);
 		Playlist playlist = JsonUtility.FromJson<Playlist> (jsontext);
+		int index = 0;
 		foreach(SongItem item in playlist.list)
         {
-			item.level = level;
+			item.level = level * 10 + index;
+			Debug.Log("Level: " + item.level + " Song: " + item.title);
+			index++;
 		}
 		return playlist;
 	}
