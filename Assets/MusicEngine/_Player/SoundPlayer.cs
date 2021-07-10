@@ -470,13 +470,23 @@ public class SoundPlayer  {
 				playTime = (long) newPlayTime;
 			}
 			midiEventMan.lastNoteTick = playTime;
-		}else {
+		}else if(TAP_PLAY == autoPlayMusic) {
 			//if not solo play , need to adjust time by currentNote Time
 			//if(newPlayTime > currentNoteTime) {
 			//	playTime = currentNoteTime;
 			//} else {
 			//	playTime = (long)newPlayTime;
 			//} 
+			if (newPlayTime > currentNoteTime)
+			{
+				playTime = currentNoteTime;
+			}
+			else
+			{
+				playTime = (long)newPlayTime;
+			}
+		}  else
+		{
 			playTime = (long)newPlayTime;
 		} 
 			
@@ -606,7 +616,7 @@ public class SoundPlayer  {
 			return false;
 		}
 
-		return MidiEventMan.isIncludeMelody (currentPlayingMidiEventList);
+		return !MidiEventMan.isIncludeMelody (currentPlayingMidiEventList);
 	}
 
 	void playComplete() {
@@ -997,7 +1007,7 @@ public class SoundPlayer  {
 
 
 
-	int hit(int hitPressCount, bool autoHit) {
+	public int hit(int hitPressCount, bool autoHit) {
 
 		return playReadyNote();
 

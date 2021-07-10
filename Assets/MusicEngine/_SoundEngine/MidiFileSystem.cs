@@ -20,17 +20,17 @@ public class MidiFileSystem
 
 	public static void setupMidiFileSystem(FMOD.System fs)
 	{
-		UnityEngine.Debug.Log("mFmodSystem setFileSystem");
+	//	UnityEngine.Debug.Log("mFmodSystem setFileSystem");
 		FMOD.RESULT res = fs.setFileSystem(MIDI_FILE_OPEN_CALLBACK, MIDI_FILE_CLOSE_CALLBACK, MIDI_FILE_READ_CALLBACK, MIDI_FILE_SEEK_CALLBACK, null, null, -1);
 		if (res == FMOD.RESULT.OK)
 		{
-			UnityEngine.Debug.Log("mFmodSystem setFileSystem successfully");
+		//	UnityEngine.Debug.Log("mFmodSystem setFileSystem successfully");
 		}
 		else
 		{
-			UnityEngine.Debug.Log("mFmodSystem setFileSystem failed:" + res);
+		//	UnityEngine.Debug.Log("mFmodSystem setFileSystem failed:" + res);
 		}
-		FMOD.Debug.Initialize(DEBUG_FLAGS.NONE, DEBUG_MODE.CALLBACK, FMOD_DEBUG_CALLBACK, null);
+	//	FMOD.Debug.Initialize(DEBUG_FLAGS.NONE, DEBUG_MODE.CALLBACK, FMOD_DEBUG_CALLBACK, null);
 	}
 
 
@@ -58,12 +58,12 @@ public class MidiFileSystem
 		}
 		if (mFileBytes != null)
 		{
-			UnityEngine.Debug.Log("MidiFileSystem open successfully: length" + mFileBytes.Length);
+		//	UnityEngine.Debug.Log("MidiFileSystem open successfully: length" + mFileBytes.Length);
 			filesize = (uint) mFileBytes.Length;
 			return FMOD.RESULT.OK;
 		}else
         {
-			UnityEngine.Debug.Log("MidiFileSystem open failed");
+		//	UnityEngine.Debug.Log("MidiFileSystem open failed");
 			return FMOD.RESULT.ERR_FILE_NOTFOUND;
         }
 	}
@@ -139,15 +139,15 @@ public class MidiFileSystem
 	public static FMOD.RESULT MIDI_FILE_OPEN_CALLBACK(IntPtr name, ref uint filesize, ref IntPtr handle, IntPtr userdata)
 	{
 
-		UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK---");
+	//	UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK---");
 		string fileName = Marshal.PtrToStringAuto(name);
-		UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK name:" + fileName);
+	//	UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK name:" + fileName);
 		MidiFileSystem midiFileSystem = new MidiFileSystem();
 		GCHandle gch = GCHandle.Alloc(midiFileSystem);
 		handle = GCHandle.ToIntPtr(gch);
-		UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK GCHandle");
+	//	UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK GCHandle");
 		FMOD.RESULT ret= midiFileSystem.open(fileName, ref filesize);
-		UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK open file" + filesize);
+	//	UnityEngine.Debug.Log("MIDI_FILE_OPEN_CALLBACK open file" + filesize);
 		return ret;
 	}
 
@@ -161,14 +161,14 @@ public class MidiFileSystem
 	[AOT.MonoPInvokeCallback(typeof(FMOD.FILE_CLOSE_CALLBACK))]
 	public static FMOD.RESULT MIDI_FILE_CLOSE_CALLBACK(IntPtr handle, IntPtr userdata)
 	{
-		UnityEngine.Debug.Log("MIDI_FILE_CLOSE_CALLBACK");
+	//	UnityEngine.Debug.Log("MIDI_FILE_CLOSE_CALLBACK");
 		return getMidiFileSystemByHandle(handle).close();
 	}
 
 	[AOT.MonoPInvokeCallback(typeof(FMOD.FILE_READ_CALLBACK))]
 	public static FMOD.RESULT MIDI_FILE_READ_CALLBACK(IntPtr handle, IntPtr buffer, uint sizebytes, ref uint bytesread, IntPtr userdata)
 	{
-		UnityEngine.Debug.Log("MIDI_FILE_READ_CALLBACK");
+	//	UnityEngine.Debug.Log("MIDI_FILE_READ_CALLBACK");
 		//return FMOD.RESULT.ERR_FILE_EOF;
 		return getMidiFileSystemByHandle(handle).read(buffer, sizebytes, ref bytesread);
 	}
@@ -176,7 +176,7 @@ public class MidiFileSystem
 	[AOT.MonoPInvokeCallback(typeof(FMOD.FILE_SEEK_CALLBACK))]
 	public static FMOD.RESULT MIDI_FILE_SEEK_CALLBACK(IntPtr handle, uint pos, IntPtr userdata)
 	{
-		UnityEngine.Debug.Log("MIDI_FILE_SEEK_CALLBACK");
+	//	UnityEngine.Debug.Log("MIDI_FILE_SEEK_CALLBACK");
 		return getMidiFileSystemByHandle(handle).seek(pos);
 	}
 

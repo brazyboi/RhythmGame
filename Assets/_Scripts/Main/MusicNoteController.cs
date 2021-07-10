@@ -475,7 +475,12 @@ public class MusicNoteController : GameBaseEx
 		showTouchEffect();
 		int volume = appContext.isWindInstrument() ? 128 : 180; // volume 0~255
 		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, note.tickGapNext + 3000, true);
+		if (soundPlayer.getPlayMode() == SoundPlayer.TAP_PLAY)
+		{
+			soundPlayer.hit(0, false);
+		}
 		calculateTapScore();
+
 
 	}
 
