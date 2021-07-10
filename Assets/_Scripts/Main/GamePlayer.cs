@@ -38,21 +38,33 @@ public class GamePlayer : GameBaseEx
 
     void OnApplicationFocus(bool hasFocus)
     {
-        UnityEngine.Debug.Log("OnApplicationFocus!");
+        UnityEngine.Debug.Log("OnApplicationFocus! hasFocus="+ hasFocus);
+        if(!hasFocus)
+        {
+        //    pauseGame();
+        }
     }
 
     void OnApplicationPause(bool pauseStatus)
     {
         UnityEngine.Debug.Log("OnApplicationPause! pauseStatus=" + pauseStatus);
-        if (pauseStatus)
+        if (pauseStatus )
         {
-        //    soundPlayer.stopAllNote(0, 0);
-        //    soundPlayer.pausePlay();
+        //    pauseGame();
         } else
         {
 
         }
         //TODO: show pause UI
+    }
+
+   void pauseGame()
+    {
+        if (!soundPlayer.isPause)
+        {
+            playerUI.GetComponent<PlayUIController>().showResumeButton();
+            soundPlayer.pausePlay();
+        }
     }
 
     void init()

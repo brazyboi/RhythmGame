@@ -19,7 +19,7 @@ public class PlayUIController : GameBaseEx
     public GameObject backButton;
     public GameObject countdownText;
 
-    Button skip;
+    
 
     private Vector3 scoreNotifyTextPos;
     private Vector3 alertTextPos;
@@ -41,7 +41,7 @@ public class PlayUIController : GameBaseEx
         scoreNotifyTextPos = scoreNotifyText.localPosition;
         alertTextPos = alertText.localPosition;
 
-        skip = skipButton.GetComponent<Button>();
+        Button skip = skipButton.GetComponent<Button>();
         skip.onClick.AddListener(skipIntro);
 
         Button back = backButton.GetComponent<Button>();
@@ -78,6 +78,23 @@ public class PlayUIController : GameBaseEx
             isInPrelude = false;
             countdownText.SetActive(false);
         }
+    }
+
+    public void showResumeButton()
+    {
+        skipButton.SetActive(true);
+        skipButtonText.SetActive(true);
+        skipButton.GetComponent<Text>().text = "Resume";
+        Button btn = skipButton.GetComponent<Button>();
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(resume);
+    }
+
+    void resume()
+    {
+        soundPlayer.startPlay(true);
+        skipButton.SetActive(false);
+        skipButtonText.SetActive(false);
     }
 
     void skipIntro()

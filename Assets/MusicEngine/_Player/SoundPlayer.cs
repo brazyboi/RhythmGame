@@ -109,7 +109,7 @@ public class SoundPlayer  {
 
 
 	private long prepareNextNoteTimeBase;
-	private bool isPause; 
+	public bool isPause; 
 
 
 	//control coming notes
