@@ -88,6 +88,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 		} else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_IN_PROGRESS)
         {
 			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = false;
+			prefabCell.Find("PlayButton").GetComponent<Image>().color = Color.green;
 
 			Button button = (Button)prefabCell.GetComponent<Button>();
 			button.onClick.AddListener(() => {
