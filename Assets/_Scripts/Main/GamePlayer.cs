@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public abstract class ScoreDelegate
 {
@@ -188,7 +189,10 @@ public class GamePlayer : GameBaseEx
         }
         GameObject baseLine = GameObject.FindGameObjectWithTag("BaseLine");
         baseLine.SetActive(false);
-
+        Analytics.CustomEvent("songFail", new Dictionary<string, object>
+        {
+            { "songLevel", appContext.songItem.level}
+        });
     }
 
     void onGamePlayCompleted()
@@ -202,7 +206,11 @@ public class GamePlayer : GameBaseEx
         }
         GameObject baseLine = GameObject.FindGameObjectWithTag("BaseLine");
         baseLine.SetActive(false);
-
+        
+        Analytics.CustomEvent("songPass", new Dictionary<string, object>
+        {
+            { "songLevel", appContext.songItem.level}
+        }) ;
     }
 
     class Player3DDelegate : PianoPlayerDelegate
