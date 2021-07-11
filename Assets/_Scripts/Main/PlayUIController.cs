@@ -18,8 +18,10 @@ public class PlayUIController : GameBaseEx
     public GameObject skipButtonText;
     public GameObject backButton;
     public GameObject countdownText;
+    public GameObject resumeObject;
+    public GameObject resumeButton;
 
-    
+
 
     private Vector3 scoreNotifyTextPos;
     private Vector3 alertTextPos;
@@ -46,6 +48,9 @@ public class PlayUIController : GameBaseEx
 
         Button back = backButton.GetComponent<Button>();
         back.onClick.AddListener(backToSongList);
+
+        Button resume = resumeButton.GetComponent<Button>();
+        resume.onClick.AddListener(resumePlay);
 
     }
 
@@ -80,21 +85,22 @@ public class PlayUIController : GameBaseEx
         }
     }
 
-    public void showResumeButton()
+    public void pausePlay()
     {
-        skipButton.SetActive(true);
-        skipButtonText.SetActive(true);
-        skipButton.GetComponent<Text>().text = "Resume";
-        Button btn = skipButton.GetComponent<Button>();
-        btn.onClick.RemoveAllListeners();
-        btn.onClick.AddListener(resume);
+        UnityEngine.Debug.Log("PausePlay");
+        if (!soundPlayer.isPlayFinished && !soundPlayer.isPause)
+        {
+            UnityEngine.Debug.Log("PausePlay!!!!!");
+            resumeObject.SetActive(true);
+            soundPlayer.pausePlay();
+        }
     }
 
-    void resume()
+    void resumePlay()
     {
+        UnityEngine.Debug.Log("Resume play!!!!!");
         soundPlayer.startPlay(true);
-        skipButton.SetActive(false);
-        skipButtonText.SetActive(false);
+        resumeObject.SetActive(false);
     }
 
     void skipIntro()

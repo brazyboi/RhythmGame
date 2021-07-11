@@ -41,7 +41,7 @@ public class GamePlayer : GameBaseEx
         UnityEngine.Debug.Log("OnApplicationFocus! hasFocus="+ hasFocus);
         if(!hasFocus)
         {
-        //    pauseGame();
+            pauseGame();
         }
     }
 
@@ -50,7 +50,7 @@ public class GamePlayer : GameBaseEx
         UnityEngine.Debug.Log("OnApplicationPause! pauseStatus=" + pauseStatus);
         if (pauseStatus )
         {
-        //    pauseGame();
+            pauseGame();
         } else
         {
 
@@ -60,11 +60,7 @@ public class GamePlayer : GameBaseEx
 
    void pauseGame()
     {
-        if (!soundPlayer.isPause)
-        {
-            playerUI.GetComponent<PlayUIController>().showResumeButton();
-            soundPlayer.pausePlay();
-        }
+        playerUI.GetComponent<PlayUIController>().pausePlay();
     }
 
     void init()
@@ -290,7 +286,7 @@ public class GamePlayer : GameBaseEx
             }
             playUIController.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
             playUIController.updateScoreTexts("MISS" + "\n\r" + missScore);
-           // gamePlayer.onGameFailed();
+            //gamePlayer.onGameFailed();
         }
 
     }
