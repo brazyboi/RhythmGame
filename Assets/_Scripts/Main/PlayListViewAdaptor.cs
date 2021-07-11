@@ -81,6 +81,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 			//button.colors = cb;
 
 			title.text = "" + (index + 1) + ". " + playlist.list[index].title;
+			accuracy.fontStyle = FontStyle.Normal;
 			accuracy.text = "" + PlayerData.getSongScore(playlist.list[index].path) + "%";
 			//info.text = playlist.list[index].artist;
 			//Debug.Log("cur song level " + playlist.list[index].level + " player level: " + PlayerData.getPlayerLevel());
@@ -94,7 +95,8 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 			});
 
 			title.text = "" + (index + 1) + ". " + playlist.list[index].title;
-
+			accuracy.fontStyle = FontStyle.Italic;
+			accuracy.text = "Current";
 		}
 
 	}

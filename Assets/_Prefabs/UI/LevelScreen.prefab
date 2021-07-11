@@ -2441,4 +2441,5 @@ MonoBehaviour:
   level7: {fileID: 8353249971273629912}
   level8: {fileID: 8353249969790311892}
   level9: {fileID: 8353249971141789042}
+  lockIcon: {fileID: 4294448432264735837, guid: f8fc4e3bd8399ea4fab1b4014b959c09, type: 3}
   levelButtons: []
