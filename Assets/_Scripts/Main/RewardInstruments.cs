@@ -51,7 +51,7 @@ public class RewardInstruments : MonoBehaviour
 
     void setMusicInstruments()
     {           
-        musicIntruments = new int[12];
+        musicIntruments = new int[9];
 
         musicIntruments[0] = MusicInstrument.FLUTE_INSTRUMENT;
         musicIntruments[1] = MusicInstrument.PIANO_INSTRUMENT;
@@ -62,14 +62,14 @@ public class RewardInstruments : MonoBehaviour
         musicIntruments[6] = MusicInstrument.GUITAR_INSTRUMENT;
         musicIntruments[7] = MusicInstrument.ELECTRIC_GUITAR_INSTRMENT;
         musicIntruments[8] = MusicInstrument.ACCORDION_INSTRUMENT;
-        musicIntruments[9] = MusicInstrument.DIZI_INSTRUMENT;
+        /*musicIntruments[9] = MusicInstrument.DIZI_INSTRUMENT;
         musicIntruments[10] = MusicInstrument.OCARINA_INSTRUMENT;
-        musicIntruments[11] = MusicInstrument.XIAO_INSTRUMENT;
+        musicIntruments[11] = MusicInstrument.XIAO_INSTRUMENT;*/
     }
 
     void setUpItemButtons()
     {
-        itemButtons = new GameObject[12];
+        itemButtons = new GameObject[9];
         itemButtons[0] = instrument1;
         itemButtons[1] = instrument2;
         itemButtons[2] = instrument3;
@@ -79,9 +79,9 @@ public class RewardInstruments : MonoBehaviour
         itemButtons[6] = instrument7;
         itemButtons[7] = instrument8;
         itemButtons[8] = instrument9;
-        itemButtons[9] = instrument10;
+        /*itemButtons[9] = instrument10;
         itemButtons[10] = instrument11;
-        itemButtons[11] = instrument12;
+        itemButtons[11] = instrument12;*/
 
         for (int i = 0; i < itemButtons.Length; i++)
         {

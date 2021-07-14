@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using AudienceNetwork;
 using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
@@ -18,7 +19,8 @@ public class TitleScreen : MonoBehaviour
     {
         playButton.GetComponent<Button>().onClick.AddListener(startGame);   
         rewardButton.GetComponent<Button>().onClick.AddListener(rewards);
-        
+
+        AudienceNetworkAds.Initialize();
     }
 
     public void startGame()

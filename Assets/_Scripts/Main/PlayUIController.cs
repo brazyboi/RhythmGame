@@ -71,7 +71,7 @@ public class PlayUIController : GameBaseEx
     {
         long countdownTime = ((soundPlayer.getFirstMelodyTime() - AppContext.instance().musicNoteDisplayDuration / 2) - soundPlayer.playTime)/1000;
 
-        countdownText.GetComponent<Text>().text = "Countdown: " + countdownTime;
+        countdownText.GetComponent<Text>().text = "" + countdownTime;
     }
 
     void disableSkipButton()

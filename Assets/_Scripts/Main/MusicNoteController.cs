@@ -27,6 +27,9 @@ public class MusicNoteController : GameBaseEx
 	static bool onlyPrintOnce = true;
 	bool printLog;
 
+	Timer cubeNoteFade;
+	float fadeTime;
+
 	//long noteScore;
 	public ScoreDelegate scoreDelegate;
 	private AppContext appContext = AppContext.instance();
@@ -76,7 +79,7 @@ public class MusicNoteController : GameBaseEx
 			printLog = false;
         }
 		onlyPrintOnce = true;
-		xPos = UnityEngine.Random.Range(-5, 5);
+		xPos = UnityEngine.Random.Range(-Screen.width/200 - 1, Screen.width/200 +1);
 
 		if (xPos == prevXPos)
 		{
@@ -102,6 +105,7 @@ public class MusicNoteController : GameBaseEx
         {
 			fluteNoteCircle.gameObject.SetActive(appContext.isWindInstrument());
 			noteCube.gameObject.SetActive(!appContext.isWindInstrument());
+			
 			
 		}
 
@@ -362,7 +366,7 @@ public class MusicNoteController : GameBaseEx
     {
 		hideTouchEffect();
 		soundPlayer.stopAllNote(500, 150);
-		noteCube.gameObject.SetActive(false);
+		//noteCube.gameObject.SetActive(false);
 		noteState = NoteState.ended;
 		
 	}
@@ -444,7 +448,7 @@ public class MusicNoteController : GameBaseEx
 
 	void showTouchEffect()
     {
-		Color c = Color.green;
+		Color c = Color.cyan;
 		fluteNoteBarDownInside.GetComponent<SpriteRenderer>().color = c;
 		fluteNoteBarUpInside.GetComponent<SpriteRenderer>().color = c;
 		fluteNoteBarCenter.GetComponent<Renderer>().material.color = c;
@@ -473,6 +477,10 @@ public class MusicNoteController : GameBaseEx
 
 		hitParticle(particle);
 		showTouchEffect();
+		if (!appContext.isWindInstrument())
+        {
+			Timer.createTimer(this.gameObject).startTimer(0.5f, new NoteFadeOutTimerCallback(this));
+		}
 		int volume = appContext.isWindInstrument() ? 128 : 180; // volume 0~255
 		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, note.tickGapNext + 3000, true);
 		if (soundPlayer.getPlayMode() == SoundPlayer.TAP_PLAY)
@@ -488,8 +496,15 @@ public class MusicNoteController : GameBaseEx
     {
 		ParticleSystem p = particleHit.GetComponent<ParticleSystem>();
 		Vector3 pos = particleHit.localPosition;
-		pos.y = fluteNoteDown.transform.localPosition.y;
-		pos.x = fluteNoteDown.transform.localPosition.x;
+		if (appContext.isWindInstrument())
+        {
+			pos.y = fluteNoteDown.transform.localPosition.y;
+			pos.x = fluteNoteDown.transform.localPosition.x;
+		} else {
+			pos.y = noteCube.transform.localPosition.y;
+			pos.x = noteCube.transform.localPosition.x;
+		}
+
 		particleHit.localPosition = pos;
 		p.Play();
 	}
@@ -572,11 +587,15 @@ public class MusicNoteController : GameBaseEx
 		}
 		public override void onTick(Timer timer, float tick, float timeOut)
 		{
+
 			float alpha = (timeOut - tick) / timeOut;
 			controller.setChildrenAlpha(controller.fluteNoteCircle, alpha);
 			controller.setChildrenAlpha(controller.fluteNoteBar, alpha);
 			controller.setChildrenAlpha(controller.fluteNoteDown, alpha);
 			controller.setChildrenAlpha(controller.fluteNoteUp, alpha);
+			controller.setChildrenAlpha(controller.noteCube, alpha);
+
+
 			//	controller.fluteNoteCircle.GetComponent<RenderTexture>().
 		}
 		public override void onEnd(Timer timer)

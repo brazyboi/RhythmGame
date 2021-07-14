@@ -13,11 +13,12 @@ public class PlayPerformance : MonoBehaviour
     public GameObject songsButton;
 
     Timer endAccuracyText;
-    private float changeTextTime = 1.5f;
+    private float changeTextTime;
     long accuracy;
     // Start is called before the first frame update
     void Start()
     {
+        changeTextTime = 1.5f;
         init();
     }
 

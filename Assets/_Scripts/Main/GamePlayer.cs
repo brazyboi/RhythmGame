@@ -23,6 +23,8 @@ public class GamePlayer : GameBaseEx
 
     AppContext appContext;
 
+    int missedNotes;
+
     // Use this for initialization
     void Start()
     {
@@ -66,6 +68,7 @@ public class GamePlayer : GameBaseEx
 
     void init()
     {
+        missedNotes = 0;
         noteScoreDelegate = new NoteScoreDelegate(this);
         appContext.musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
@@ -294,6 +297,12 @@ public class GamePlayer : GameBaseEx
             }
             playUIController.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
             playUIController.updateScoreTexts("MISS" + "\n\r" + missScore);
+            gamePlayer.missedNotes++;
+            Debug.Log("Missed notes: " + gamePlayer.missedNotes + "Player level: " + gamePlayer.appContext.songItem.level);
+            if (gamePlayer.missedNotes > (9 - gamePlayer.appContext.songItem.level / 10))
+            {
+                gamePlayer.onGameFailed();
+            }
             //gamePlayer.onGameFailed();
         }
 

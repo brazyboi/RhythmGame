@@ -80,4 +80,14 @@ public class PlayerData
         return PlayerPrefs.GetString("playerName", "Anynomous"); ;
     }
 
+    public static void resetPlayer()
+    {
+        PlayerPrefs.SetInt("songLevel", 0);
+    }
+
+    public static void unlockEverything()
+    {
+        PlayerPrefs.SetInt("songLevel", 100);
+    }
+
 }
