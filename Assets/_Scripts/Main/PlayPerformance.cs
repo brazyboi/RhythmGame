@@ -27,6 +27,11 @@ public class PlayPerformance : MonoBehaviour
         songTitlePanel.GetComponent<Text>().text = AppContext.instance().songItem.title;
         restartButton.GetComponent<Button>().onClick.AddListener(restartSong);
         songsButton.GetComponent<Button>().onClick.AddListener(redirectSongList);
+        
+        scorePanel.GetComponent<Text>().text = "Accuracy: 0%";
+        calculateAccuracy();
+        animateUpdateAccuracy();
+
         if (AppContext.instance().failed)
         {
             passfailPanel.GetComponent<Text>().text = "Fail";
@@ -37,13 +42,11 @@ public class PlayPerformance : MonoBehaviour
             passfailPanel.GetComponent<Text>().text = "Pass";
             passfailPanel.GetComponent<Text>().color = Color.green;
             PlayerData.unlockSong(AppContext.instance().songItem.level + 1);
+            PlayerData.saveSongScore(AppContext.instance().songItem.path, (int)(accuracy));
+
             Debug.Log("new song unlcoked: " + (AppContext.instance().songItem.level + 1));
             //Debug.Log("SONG LEVEL: " + AppContext.instance().songItem.level
         }
-        scorePanel.GetComponent<Text>().text = "Accuracy: 0%";
-        calculateAccuracy();
-        animateUpdateAccuracy();
-        PlayerData.saveSongScore(AppContext.instance().songItem.path, (int)(accuracy));
     }
 
     void restartSong()

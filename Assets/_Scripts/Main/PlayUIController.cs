@@ -9,6 +9,7 @@ public class PlayUIController : GameBaseEx
 
     Timer timerScoreText;
     Timer timerAlertText;
+    Timer progressBar;
 
     public Transform scoreNotifyText;
     public Transform alertText;
@@ -21,13 +22,12 @@ public class PlayUIController : GameBaseEx
     public GameObject resumeObject;
     public GameObject resumeButton;
 
-
+    public Slider slider;
 
     private Vector3 scoreNotifyTextPos;
     private Vector3 alertTextPos;
 
     ScoreTextCallback scoreTextCallback;
-
     bool isInPrelude;
 
     // Start is called before the first frame update
@@ -35,6 +35,7 @@ public class PlayUIController : GameBaseEx
     {
 
         isInPrelude = true;
+        slider.value = 0.5f;
 
         scoreTextCallback = new ScoreTextCallback(this);
         scoreNotifyText.GetComponent<Text>().text = "";
@@ -58,14 +59,25 @@ public class PlayUIController : GameBaseEx
     void Update()
     {
 
+        updateProgressBar();
+
         if (isInPrelude)
         {
             disableSkipButton();
             countdown();
         }
+
     }
 
+    void updateProgressBar()
+    {
+        //progressBar.startTimer()
 
+        float val = (float) (soundPlayer.playTime) / (float) (soundPlayer.getTotalDuration());
+
+        slider.value = val;
+        //Debug.Log("playtime: " + soundPlayer.playTime + " Total Duration: " + soundPlayer.getTotalDuration() + " Slider value: " + slider.value + " value: " + val);
+    }
 
     void countdown()
     {
@@ -181,4 +193,5 @@ public class PlayUIController : GameBaseEx
             //fade out
         }
     }
+
 }

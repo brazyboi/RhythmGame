@@ -17,6 +17,7 @@ public class LevelScreen : MonoBehaviour
     public GameObject level9;
 
     public GameObject lockIcon;
+    public GameObject backButton;
 
     public List<GameObject> levelButtons;
     
@@ -56,6 +57,13 @@ public class LevelScreen : MonoBehaviour
             levelButtons[i].GetComponent<Button>().onClick.AddListener(() => directToLevelSongList(index));
         }
 
+        backButton.GetComponent<Button>().onClick.AddListener(backToHome);
+
+    }
+
+    void backToHome()
+    {
+        GameManager.gotoTitleScreen();
     }
 
     void directToLevelSongList(int index)

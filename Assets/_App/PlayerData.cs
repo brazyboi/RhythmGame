@@ -83,6 +83,7 @@ public class PlayerData
     public static void resetPlayer()
     {
         PlayerPrefs.SetInt("songLevel", 0);
+
     }
 
     public static void unlockEverything()

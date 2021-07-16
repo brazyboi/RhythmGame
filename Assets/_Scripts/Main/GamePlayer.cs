@@ -21,6 +21,7 @@ public class GamePlayer : GameBaseEx
     public GameObject cameraContainer;
     NoteScoreDelegate noteScoreDelegate;
 
+    public GameObject progressBar;
     AppContext appContext;
 
     int missedNotes;
@@ -185,6 +186,7 @@ public class GamePlayer : GameBaseEx
         
         soundPlayer.pausePlay();
         AppContext.instance().failed = true;
+        progressBar.SetActive(false);
         Instantiate(playPerformance, new Vector3(0, 0, 0), Quaternion.identity);
         foreach (Transform child in this.musicNotesParent.transform)
         {
@@ -202,6 +204,7 @@ public class GamePlayer : GameBaseEx
     {
         soundPlayer.pausePlay();
         AppContext.instance().failed = false;
+        progressBar.SetActive(false);
         Instantiate(playPerformance, new Vector3(0, 0, 0), Quaternion.identity);
         foreach (Transform child in this.musicNotesParent.transform)
         {

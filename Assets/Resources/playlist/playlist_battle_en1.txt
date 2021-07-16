@@ -20,13 +20,6 @@
         "melody": 10007			
 
 		},
-        {
-		"title": "California Dreaming",
-        "artist": "The Mamas and The Papas",
-		"path": "the_mamas_and_the_papas-california_dreaming.sht"	,		
-        "melody": 2
-		}
-        ,
 
     
     {
@@ -59,30 +52,6 @@
         "melody": 10003
 		}
         ,
-    {
-		"title": "Pretty Boy",
-        "artist": "M2M",
-		"path": "M2M-prettyboy-new.sht"	,		
-        "melody": 8
-		}
-        ,
-    {
-		"title": "Scarborough Fair",
-        "artist": "Simon and Garfunkel",
-		"path": "simon_and_garfunkel-scarborough_fair.sht"	,		
-        "melody": 0,
-		"blow": 0
-		}
-        ,
-
-
-	{
-        "title": "God Is a Girl",
-        "artist": "Groove Coverage",
-		"path": "Groove_Coverage_God_is_a_girl.sht"	,		
-        "melody": 3
-		}
-        ,
 		{
         "title": "Hero",
         "artist": "Mariah Carey",
@@ -95,14 +64,6 @@
         "artist": "Michael Jackson",
 		"path": "Michael_Jackson-YouAreNotAlone.sht"	,		
         "melody": 10003
-		}
-        ,
-    
-    {
-		"title": "All I Have to Give",
-        "artist": "Backstreet Boys",
-		"path": "Backstreet_Boys_-_All_I_Have_to_Give.sht"	,		
-        "melody": 3
 		}
         ,
 		{

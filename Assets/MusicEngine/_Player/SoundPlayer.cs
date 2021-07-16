@@ -457,6 +457,8 @@ public class SoundPlayer  {
 
 	}
 
+
+
 	private void addPlayDeltaTime (double deltaTime) {
         deltaTime = deltaTime * 1.2;
 		double newPlayTime = playTime + deltaTime;
