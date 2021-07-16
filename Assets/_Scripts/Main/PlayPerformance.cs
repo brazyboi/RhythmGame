@@ -34,12 +34,12 @@ public class PlayPerformance : MonoBehaviour
 
         if (AppContext.instance().failed)
         {
-            passfailPanel.GetComponent<Text>().text = "Fail";
+            passfailPanel.GetComponent<Text>().text = "FAIL";
             passfailPanel.GetComponent<Text>().color = Color.red;
         }
         else
         {
-            passfailPanel.GetComponent<Text>().text = "Pass";
+            passfailPanel.GetComponent<Text>().text = "PASS";
             passfailPanel.GetComponent<Text>().color = Color.green;
             PlayerData.unlockSong(AppContext.instance().songItem.level + 1);
             PlayerData.saveSongScore(AppContext.instance().songItem.path, (int)(accuracy));

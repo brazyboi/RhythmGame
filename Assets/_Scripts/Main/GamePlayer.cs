@@ -22,6 +22,7 @@ public class GamePlayer : GameBaseEx
     NoteScoreDelegate noteScoreDelegate;
 
     public GameObject progressBar;
+
     AppContext appContext;
 
     int missedNotes;
