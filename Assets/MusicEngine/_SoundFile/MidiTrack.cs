@@ -30,7 +30,7 @@ namespace MidiSheetMusic {
  * in order to update the duration of the MidiNote.
  */ 
 public class MidiTrack {
-    private int tracknum;             /** The track number */
+    public int tracknum;             /** The track number */
     private List<MidiNote> notes;     /** List of Midi notes */
     private int instrument;           /** Instrument for this track */
     private List<MidiEvent> lyrics;   /** The lyrics in this track */
@@ -54,6 +54,7 @@ public class MidiTrack {
             if (mevent.EventFlag == MidiFile.EventNoteOn && mevent.Velocity > 0) {
                 MidiNote note = new MidiNote(mevent.StartTime, mevent.Channel, mevent.Notenumber, 0);
                     note.velocity = mevent.Velocity;
+                    note.tracknum = tracknum;
                 AddNote(note);
             }
             else if (mevent.EventFlag == MidiFile.EventNoteOn && mevent.Velocity == 0) {

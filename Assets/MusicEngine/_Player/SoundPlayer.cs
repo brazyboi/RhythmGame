@@ -269,8 +269,11 @@ public class SoundPlayer  {
 		return midiEventMan.firstMelodyTick;
 	}
 
-	public void loadMusic (string musicFile, bool isUserPlay ,  int melodyChannel_ ) {
-		int instrument = appContext.getInstrument() ;
+	public void loadMusic (string musicFile, SongItem songItem ) {
+		bool isUserPlay = false;
+		int melodyChannel_ = songItem.melody;
+		int melodyTrackNum = songItem.melodyTrack;
+		int instrument = appContext.getInstrument();
 		melodyChannel1 = melodyChannel_ % 100;
 		if(melodyChannel_ > 100) {
 			melodyChannel2 = (melodyChannel_ % 10000) /100 % 100;
@@ -316,8 +319,7 @@ public class SoundPlayer  {
 					if (n.Channel == 9) {
 						int yyy = 0;
 					}
-
-					midiEventMan.insertMidiNote(i, n, melodyChannel1, melodyChannel2, instrument== MusicInstrument.DRUM_INSTRUMENT, pitchValue,  ms_per_tick);
+					midiEventMan.insertMidiNote( i, n, melodyChannel1, melodyChannel2, instrument== MusicInstrument.DRUM_INSTRUMENT, pitchValue,  ms_per_tick, tracks[i].tracknum, melodyTrackNum);
 				}
 			}
 			midiEventMan.sortAllMidiNote ();

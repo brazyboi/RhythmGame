@@ -95,18 +95,13 @@ public class GamePlayer : GameBaseEx
         }
         string fileLocation;
         int melodyChannel = 0;
-        if (appContext.songItem == null)
-        {
-            fileLocation = "songs/tian_kong_zhi_cheng.mid";
-            melodyChannel = 0;
-        } else
-        {
-            string name = appContext.songItem.path.Replace(".sht", ".mid");
-            fileLocation =  "songs/" + name;
-            melodyChannel = appContext.songItem.melody;
-            UnityEngine.Debug.Log("filelocation: " + fileLocation);
-        }
-        soundPlayer.loadMusic(fileLocation, false, melodyChannel);
+        
+        string name = appContext.songItem.path.Replace(".sht", ".mid");
+        fileLocation =  "songs/" + name;
+        melodyChannel = appContext.songItem.melody;
+        UnityEngine.Debug.Log("filelocation: " + fileLocation);
+        
+        soundPlayer.loadMusic(fileLocation, appContext.songItem);
         soundPlayer.seek(0);
         soundPlayer.startPlay(false);
 

@@ -78,8 +78,14 @@ public class PlayPerformance : MonoBehaviour
         long perfectPlayScore = ScoreUtils.calculateTotalScore(AppContext.instance().isWindInstrument(), SoundPlayer.singleton().midiEventMan.midiEventListMelody);
         UnityEngine.Debug.Log("Perfect score: " + perfectPlayScore + "  / play score: " + AppContext.instance().totalScore);
         //scorePanelText.text = "" + AppContext.instance().totalScore + "/" + perfectPlayScore;
-        accuracy = 100 * AppContext.instance().totalScore / perfectPlayScore;
-       
+        if(perfectPlayScore > 0)
+        {
+            accuracy = 100 * AppContext.instance().totalScore / perfectPlayScore;
+        } else
+        {
+            accuracy = 0;
+        }
+
     }
 
     class EndAccuracyCallback : TimerCallback

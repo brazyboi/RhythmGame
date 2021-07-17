@@ -44,6 +44,6 @@ public class TitleScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SoundPlayer.singleton().timerUpdate(Time.deltaTime);
+    //    SoundPlayer.singleton().timerUpdate(Time.deltaTime);
     }
 }

@@ -40,7 +40,7 @@ public class MidiNote : IComparer<MidiNote> {
     private int notenumber;  /** The note, from 0 to 127. Middle C is 60 */
     private int duration;    /** The duration, in pulses */
         public int velocity;
-
+        public int tracknum;
 
     /* Create a new MidiNote.  This is called when a NoteOn event is
      * encountered in the MidiFile.
