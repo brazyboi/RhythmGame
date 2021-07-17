@@ -27,6 +27,7 @@ public class SongItem {
 	public string artist;
 	public string path;
 	public int instr;
-	public int melody;
+	public int melody; //melody channel. if add 10000, the melody pitch will add 12.  
 	public int level;
+	public int melodyTrack;// if > 0 , will use it. otherwise use melody
 }
