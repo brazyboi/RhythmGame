@@ -16,6 +16,10 @@ public class Playlist {
 			item.level = level * 10 + index;
 			Debug.Log("Level: " + item.level + " Song: " + item.title);
 			index++;
+			if(item.speed < 0.1)
+            {
+				item.speed = 1.0f;
+            }
 		}
 		return playlist;
 	}
@@ -30,4 +34,5 @@ public class SongItem {
 	public int melody; //melody channel. if add 10000, the melody pitch will add 12.  
 	public int level;
 	public int melodyTrack;// if > 0 , will use it. otherwise use melody
+	public float speed;
 }

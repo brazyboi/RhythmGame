@@ -310,6 +310,7 @@ public class SoundPlayer  {
 			MidiFile midiFile = new MidiFile (filedata, "");
 			List<MidiTrack> tracks = midiFile.Tracks;
 			float ms_per_tick = midiFile.Time.Tempo / (1000f*midiFile.Time.Quarter); //microseconds per tick = microseconds per quarter note / ticks per quarter note
+			ms_per_tick = ms_per_tick * songItem.speed;
 			UnityEngine.Debug.Log("ms_per_tick: " + ms_per_tick + " Tempo:" + midiFile.Time.Tempo + " querter:" + midiFile.Time.Quarter);
 			for (int i =0; i< tracks.Count; i++) {
 				MidiTrack t = tracks [i];
