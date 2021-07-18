@@ -1,0 +1,820 @@
+{
+	"name": "playlist_battle_0.pls",
+	"list": 
+	[
+ {
+		"title": "Green Sleeves",
+		"path": "lvxiuzi.mid",
+        "artist": "Folk song",
+        "melody": 99,
+		"folder": ""
+
+		} ,
+{
+
+		"title": "The Castle in The Sky",
+        "artist": "Movie Theme",
+		"path": "tian_kong_zhi_cheng.sht"	,	
+        "instr": 0,
+        "melody": 0
+		}
+        ,
+{
+		"title":"Lyphard Melody",
+		"path": "xingkong.sht",
+		"melody": 99,
+        "instr": 0,
+		"artist": "Richard Clayderman"
+		},
+        
+        {
+		"title": "The Sounds Of Silence",
+        "artist": "Simon and Garfunkel",
+		"path": "Simon_Garfunkel_TheSoundsOfSilence.sht"	,	
+        "instr": 0,
+        "melody": 7
+		} ,
+        {
+		"title":"Rondo Alla Turca",
+		"path": "tuerqijinxingqu_s.sht",
+		"melody": 99,
+		"artist": "Mozart"			
+
+		}
+        ,
+ {
+        "title": "Belief",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-xinyang.sht"	,
+        "instr": 131,
+        "melody": 0
+		},
+ {
+		"title": "Chess",
+        "artist": "Faye",
+		"path": "qizi-simple.mid"	,		
+        "melody": 5,
+        "instr": 131,
+		"folder": ""
+		}
+        ,
+{
+		"title":"Fur Elise",
+		"path": "xiangeiailisi.sht",
+		"melody": 99,
+        "artist": "Ludwig van Beethoven",
+		"speed": 1.8				
+
+		},
+
+        {
+		"title": "The Night",
+		"path": "yeyeyeye-drum.sht",
+        "artist": "齐秦",
+		 "folder": "",
+         "instr": 128,
+        "melody": 0			
+
+		}
+        ,
+{
+		"title":"Love Story",
+		"path": "aiqingdegushi.sht",
+		"melody": 99,
+		"artist": "Erich Segal"
+
+		},
+
+         {
+        "title": "Wind Bell",
+        "artist": "周蕙",
+		"path": "zhouhui_fengling.sht"	,	
+        "instr": 131,
+        "folder": "",
+        "melody": 0
+		},
+{
+		"title": "Tear",
+        "artist": "The Daydream",
+		"path": "yanlei.sht",
+        "melody": 99			
+		}
+        ,
+{
+        "title": "First Love",
+        "artist": "张震岳",
+		"path": "aidechutiyan.sht"	,		
+        "melody": 0
+		},
+{
+		"title":"My Heart Will Go On",
+		"path": "CelineDion_MyHeartWillGoOn.sht",			
+		"artist": "Celine Dion",
+        "folder": "song_en/",
+		"melody": 99
+		} ,
+	 
+    {
+		"title":"A Comme Amour", 
+		"path": "qiurisiyu3.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"
+		}
+        ,
+        {
+		"title":"Song From a Secret Garden",
+		"path": "SongFromASecretGarden.sht",			
+		"artist": "Secret Garden",
+		"melody": 99
+		}
+        ,
+		
+        {
+		"title": "Romeo And Juliet",
+        "artist": "Movie Theme",
+		"path": "Movie_Themes_-_Romeo_And_Juliet.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "The Melody of the Night",
+        "level": 2,
+		"path": "ye.sht",
+		"melody": 99,
+		"artist": "Jin Shi"
+		}
+        ,
+        
+        {
+		"title":"Ballade Pour Adeline",
+		"path": "shuibiandeadilina.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"			
+
+		}
+        ,
+        {
+		"title":"The Butterfly Love",
+		"path": "liangzhu_s2.sht",
+		"melody": 99,
+		"artist": "Chinese folk song"			
+
+		}
+        ,
+ {
+		"title":"Edelweiss",
+		"path": "xueronghua_s.sht",
+		"melody": 99,
+        "artist": "Folk song"			
+
+		},
+
+        {
+		"title":"A Lover's Concerto",
+		"path": "aidexiezouqu.sht",
+		"melody": 99,
+		"artist": "Sandy Linzer"			
+		
+		}
+        ,
+        {
+		"title":"Write to The Ocean", 
+		"path": "xiegeihaiyang.sht",
+		"melody": 99,
+		"artist": "Bandari"			
+
+		}
+        ,
+        {
+		"title":"Jardin Secret",
+		"path": "mimidetingyuan.sht",
+		"melody": 99,
+        "artist": "Richard Clayderman"			
+
+		},
+		{
+		"title": "Twinkle, Twinkle Little Star",
+        "level": 1,
+		"path": "xiaoxingxing.sht",
+		"melody": 99,
+		"artist": "Mozart"			
+
+		},
+		
+          {
+		"title": "Happy Birthday",
+        "level": 1,
+		"path": "shengrikuaile.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+		},
+       
+      {
+		"title": "Jingle Bells",
+        "level": 1,
+		"path": "jinglebell.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+
+		}
+        ,
+        {
+		"title": "Beautiful Dreamer",
+        "level": 2,
+		"path": "meilidemengshen.sht",
+		"melody": 99,
+		"artist": "Stephen Foster"			
+
+		}
+		,
+        {
+		"title": "Donna Donna",
+        "level": 1,
+		"path": "tangna.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+		}
+        ,
+  
+        
+        {
+		"title":"Mariage D'amous",
+		"path": "mengzhongdehunli.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"			
+
+		}
+		,
+        {
+		"title": "Boating",
+        "level": 1,
+		"path": "boating.sht",
+		"melody": 10099,
+		"artist": "Kids song"			
+
+		},
+        {
+		"title":"Christmas Eve",
+		"path": "pinganye.sht",
+		"melody": 10099,
+		"artist": "Kids song"			
+
+		}
+        ,
+        {
+		"title":"Danube Waves",
+		"path": "duonaohezhibo.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+
+		}
+        ,
+        {
+		"title": "Troika Galop",
+        "level": 4,
+		"path": "santaoche2.sht",
+		"melody": 99,
+		"artist": "Russian folk song"			
+        
+		},
+        {
+		"title": "Oh, Susanna",
+        "level": 2,
+		"path": "susanna.sht",
+		"melody": 10099,
+		"artist": "Stephen Foster"			
+
+		},
+      
+       
+        {
+		"title": "Old Folks at Home",
+        "level": 2,
+		"path": "guxiangdeqinren.sht",
+		"melody": 99,
+		"artist": "Stephen Foster"			
+
+		}
+        ,
+        
+        {
+		"title": "Dreaming of Home and Mother",
+        "level": 4,
+		"path": "songbie.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+		
+        {
+		"title": "Edelweiss",
+        "level": 1,
+		"path": "xueronghua_s.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		}
+		,
+		{
+		"title": "The Way We Were",
+        "level": 2,
+		"path": "wangriqinghuai.sht",
+		"melody": 10099,
+		"artist": "Folk song"			
+
+		},
+		
+		{
+		"title": "Home on the Range",
+        "level": 2,
+		"path": "caoyuanshangdejiayuan.sht",
+		"melody": 10099,
+		"artist": "Folk song"			
+
+		}
+		,
+		{
+		"title": "Clementine",
+        "level": 1,
+		"path": "xinnianhao.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+		
+		{
+		"title": "Song of Seashore",
+        "level": 2,
+		"path": "haibinzhige.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		}
+        ,
+        {
+		"title": "Red River Valley",
+        "level": 3,
+		"path": "honghegu2.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+        {
+		"title": "Home, Sweet Home",
+        "level": 2,
+		"path": "keaidejia.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		}
+		,
+        {
+		"title": "The Song of Seasons",
+        "level": 2,
+		"path": "sijige.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+        
+		{
+		"title": "The Last Rose Of Summer",
+        "level": 2,
+		"path": "xiatianzuihoumeigui.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+		}
+        ,
+        {
+		"title": "Memory",
+        "level": 2,
+		"path": "huiyi.sht"	,
+		"melody": 99,
+		"artist": "Kids song"		
+
+		},
+        {
+		"title": "Red Dragonfly",
+        "level": 4,
+		"path": "hongqingting.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Do-Re-Mi",
+        "level": 4,
+		"path": "duoremi.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Old Man River",
+        "level": 4,
+		"path": "laorenhe.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Making Hay",
+        "level": 4,
+		"path": "saidaochao.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "The Roads",
+        "level": 4,
+		"path": "xiaolu.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Oh, My Field",
+        "level": 4,
+		"path": "caoyuan.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		},
+	   {
+		"title":" Moonlight Sonata",
+		"path": "yueguangqu.sht",
+		"melody": 10099,
+        "artist": "Ludwig van Beethoven"			
+
+		},
+        
+		{
+		"title":"Dreams of Love",
+		"path": "aizhimeng.sht",
+		"melody": 10099,
+        "artist": "Franz Liszt"			
+
+		}
+        ,
+		{
+		"title":"The Swan",
+		"path": "tiane.sht",
+		"melody": 99,
+        "artist": "Saint Saëns"			
+
+		},
+		{
+		"title":"Frohlicher Landmann", 
+		"path": "kuailedenongfu.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"			
+
+		}
+        ,
+        
+        {
+		"title":"Ballade No. 4",
+		"path": "gangqinxushiqu.sht",
+		"melody": 99,
+        "artist": "Frédéric Chopin"			
+
+		}
+        ,{
+		"title":"Waltz in A minor",
+		"path": "axiaodiaoyuanwuqu.sht",
+		"melody": 99,
+        "artist": "Frédéric Chopin"			
+
+		}
+        ,
+        {
+		"title":"Cradle Lullaby",
+		"path": "yaolanqu.sht",
+		"melody": 99,
+        "artist": "Franz Schubert"
+
+		}
+        ,
+        {
+		"title":"Clair de Lune",
+		"path": "yueguang.sht",
+		"melody": 99,
+        "artist": "Claude Debussy"			
+
+		}
+        ,
+        {
+		"title":"June Barcarolle",
+		"path": "liuyuechuange.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		}
+        ,
+        {
+		"title":"Moon River",
+		"path": "yuelianghe.sht",
+		"melody": 99,
+        "artist": "Folk song"			
+
+		}
+        ,
+        
+        {
+		"title":"Serenade",
+		"path": "xiaoyequ.sht",
+		"melody": 99,
+        "artist": "Franz Schubert"
+
+		}
+        ,
+        {
+		"title":"Traumerei",
+		"path": "menghuanqu.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"
+
+		}
+        ,
+        {
+		"title":"Kinderscenen Op.15",
+		"path": "tongnianqingjing.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"
+
+		}
+        ,
+        
+		{
+		"title":"June Barcarolle",
+		"path": "liuyuechuange_s.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		}
+        ,
+		{
+		"title":"Sonatinas,Op.36",
+		"path": "clementi_xiaozoumingqu.sht",
+		"melody": 99,
+        "artist": "Sonatina Clementi"			
+
+		},
+		{
+		"title":"An der schönen Blauen Donau",
+		"path": "lanseduonaohe.sht",
+		"melody": 99,
+        "artist": "Johann Strauss"			
+
+		},
+		{
+		"title":"Mio Babbino Caro",
+		"path": "woqinaidebaba.sht"	,
+		"melody": 99,
+        "artist": "Giacomo Puccini"		
+
+		}
+        ,
+		{
+		"title":"Swan Lake",
+		"path": "tianehu.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky"			
+
+		},
+		{
+		"title":"Dance of Little Four Swans",
+		"path": "sixiaotiane.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		},
+		{
+		"title":"Ave Maria", 
+		"path": "shengmusong.sht",
+		"melody": 99,
+        "artist": "Wolfgang Amadeus Mozart"			
+
+		},
+		{
+		"title":"Romance",
+		"path": "langmanqu.sht",
+		"melody": 99,
+        "artist": "Wolfgang Amadeus Mozart"			
+
+		},
+		{
+		"title":"Sonatina",
+		"path": "benduofen_xiaozouming.sht"	,
+		"melody": 99,
+        "artist": "Ludwig van Beethoven"		
+
+		},
+		{
+		"title":"Sonata Pathetique",
+		"path": "beiqiangzoumingqu.sht",
+		"melody": 99,
+        "artist": "Ludwig van Beethoven"			
+
+		}
+		,
+		{
+		"title":"On Wings of Song", 
+		"path": "chengzhegeshengdechibang.sht",
+		"melody": 99,
+        "artist": "Felix Mendelssohn"			
+
+		}
+		,
+		{
+		"title":"Spring Song",
+		"path": "chunzhige.sht"	,
+		"melody": 99,
+        "artist": "Felix Mendelssohn"		
+
+		}
+        ,
+        {
+		"title":"Op.30 No.6",
+		"path": "weinisichuange.sht",
+		"melody": 99,
+		"artist": "Felix Mendelssohn"			
+
+		}
+        ,
+        {
+		"title":"Wedding March",
+		"path": "hunlijinxingqu.sht",
+		"melody": 99,
+		"artist": "Felix Mendelssohn"			
+
+		},
+        
+        
+    {
+        "title": "Impermanent firework",
+        "artist": "周杰伦",
+		"path": "jaychou_yanhuayilen.sht"	,		
+        "melody": 3
+		}
+        ,
+        {
+        "title": "Lotus in snow",
+        "artist": "王菲",
+		"path": "wangfei-xuezhonglian.sht"	,		
+        "melody": 10005
+		}
+        ,
+        {
+        "title": "You can hear it",
+        "artist": "周杰伦",
+		"path": "jaychou_nitingdedao.sht"	,		
+        "melody": 12
+		}
+        ,
+         {
+		"title": "Pigeon",
+        "artist": "伍佰",
+		"path": "baige.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "Forever",
+        "artist": "刘德华",
+		"path": "zhanyongyuan.sht"	,		
+        "melody": 3
+		}
+        ,
+
+    {
+        "title": "Free the love",
+        "artist": "范逸臣",
+		"path": "fangsheng.sht"	,		
+        "melody": 10002
+		}
+        ,
+	{
+        "title": "Tropical rainforest",
+        "artist": "S.H.E",
+		"path": "redaiyulin.sht"	,		
+        "melody": 10005
+		}
+        ,
+        {
+        "title": "Leave",
+        "artist": "周杰伦",
+		"path": "jaychou_likai.sht"	,		
+        "melody": 10000
+		}
+        ,
+		{
+        "title": "Tear from Mona Lisa",
+        "artist": "林志炫",
+		"path": "mengnalishadeyanlei.sht"	,		
+        "melody": 0
+		}
+        ,
+                	{
+        "title": "Trace",
+        "artist": "周杰伦",
+		"path": "jaychou-guiji.sht"	,		
+        "melody": 0
+		}
+        ,
+		 {
+        "title": "Ambiguous",
+        "artist": "王菲",
+		"path": "aimei.sht"	,		
+        "melody": 0
+		}
+        ,
+        {
+        "title": "Broken point",
+        "artist": "张敬轩",
+		"path": "zhangjingxuan-duandian.sht"	,		
+        "melody": 0
+		},
+	{
+		"title": "Melody",
+        "artist": "李克勤",
+		"path": "melody_ex.sht",		
+        "melody": 0
+		}
+        ,
+        {
+		"title": "Half Moon Bay",
+        "artist": "张学友",
+		"path": "yuebanwan.sht",
+        "melody": 10000				
+		} ,
+		 {
+        "title": "Don't Say Sorry",
+        "artist": "S.H.E",
+		"path": "SHE-bieshuoduibuqi.sht"	,
+        "melody": 0
+		}
+        ,
+{
+        "title": "Winter Sonata",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "wintersonata.sht"	,		
+        "melody": 0
+		}
+        ,
+		{
+		"title": "Lover in White",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "baiselianren.sht",
+        "melody": 99			
+
+		},
+{
+		"title": "The Night Melody",
+        "artist": "石进",
+		"path": "ye.sht",
+        "melody": 99			
+
+		}
+        ,
+        {
+		"title": "the Stars",
+        "artist": "Vitas",
+		"path": "xingxing.sht",
+        "melody": 99			
+
+		},
+        
+		{
+		"title":"Romance De Amor",
+		"path": "aideluomanshi.sht"	,
+		"melody": 99,
+		"artist": "Spanish song",
+		"speed": 1.3
+		}
+        ,
+         {
+		"title":"Canon",
+		"path": "kanong.sht",
+		"melody": 99,
+		"artist": "Johann Pachelbel"			
+
+		},
+        {
+		"title": "Serenade",
+        "artist": "李克勤",
+		"path": "yuebanxiaoyequ.sht",
+        "melody": 99			
+        
+		}
+
+            
+		
+      ]
+}
