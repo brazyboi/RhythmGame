@@ -1,0 +1,129 @@
+{
+	"name": "playlist_battle_extra.txt",
+    "folder" : "song_en/",
+	"list": 
+	[
+    
+        {
+		"title": "Minuet in G",
+        "artist": "Beethoven",
+		"path": "beethoven-minuet-in-G-flute-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
+        {
+		"title": "Ode to Joy",
+        "artist": "Beethoven",
+		"path": "beethoven-symphony9-4-ode-to-joy-bassoon-piano.sht"	,	
+        "instr": 0,
+        "melody": 10001
+		}
+        ,
+        {
+        "title": "Moonlight Sonata",
+        "artist": "Beethoven",
+		"path": "moonlight-sonata1-clarinet-and-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
+        {
+        "title": "Brahms Lullaby",
+        "artist": "Brahms",
+		"path": "brahms-lullaby-wiegenlied.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
+        {
+        "title": "Cello Sonata Op.38",
+        "artist": "Brahms",
+		"path": "brahms-cello-sonata-Em-1.sht"	,	
+        "instr": 0,
+        "melody": 10001
+		}
+        ,
+        {
+        "title": "Salut d'Amour",
+        "artist": "Elgar",
+		"path": "edward-elgar-salut-d-amour-violin-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        
+        ,
+        {
+        "title": "Minuet in F",
+        "artist": "Mozart",
+		"path": "mozart-minuet-k2-recorder-duet.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        
+        ,
+        {
+        "title": "Rondeau",
+        "artist": "Purcell",
+		"path": "Purcell-Rondeau-SATB-recorders.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
+        {
+        "title": "The Swan",
+        "artist": "Saint-Saens",
+		"path": "saint-saens-carnival-of-the-animals-the-swan.sht"	,	
+        "instr": 0,
+        "melody": 10002
+		}
+        
+        ,
+        
+        {
+        "title": "Gymnopedie No. 1",
+        "artist": "Satie",
+		"path": "Satie-Gymnopedie1-flute-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        
+        ,
+        
+        {
+        "title": "Serenade",
+        "artist": "Schubert",
+		"path": "franz-schubert-standchen-serenade-flute-and-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
+        
+        {
+        "title": "The Blue Danube",
+        "artist": "Strauss",
+		"path": "the-blue-danube-accomp.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
+        
+        {
+        "title": "Album Leaf",
+        "artist": "Tchaikovsky",
+		"path": "Tchaikovsky-op19-no3-fueillet-d-album-flute-and-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
+        
+        {
+        "title": "Chanson Triste",
+        "artist": "Tchaikovsky",
+		"path": "Tchaikovsky-Chanson-Triste-op40-no2-oboe-and-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+    
+    ]
+}

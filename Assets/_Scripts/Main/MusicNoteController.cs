@@ -68,7 +68,7 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
-		createStartEndCircles();
+		//createStartEndCircles();
 		if (!onlyPrintOnce)
         {
 			printLog = true;
@@ -448,7 +448,7 @@ public class MusicNoteController : GameBaseEx
 
 	void showTouchEffect()
     {
-		Color c = Color.cyan;
+		Color c = Color.green;
 		fluteNoteBarDownInside.GetComponent<SpriteRenderer>().color = c;
 		fluteNoteBarUpInside.GetComponent<SpriteRenderer>().color = c;
 		fluteNoteBarCenter.GetComponent<Renderer>().material.color = c;
@@ -482,7 +482,7 @@ public class MusicNoteController : GameBaseEx
 			Timer.createTimer(this.gameObject).startTimer(0.5f, new NoteFadeOutTimerCallback(this));
 		}
 		int volume = appContext.isWindInstrument() ? 128 : 180; // volume 0~255
-		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, note.tickGapNext + 3000, true);
+		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, note.tickGapNext + 500, true);
 		if (soundPlayer.getPlayMode() == SoundPlayer.TAP_PLAY)
 		{
 			soundPlayer.hit(0, false);

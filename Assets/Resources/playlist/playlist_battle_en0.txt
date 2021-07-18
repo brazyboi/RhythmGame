@@ -3,7 +3,9 @@
     "folder" : "song_en/",
 	"list": 
 	[ 
+    
     {
+
 		"title": "The Castle in The Sky",
         "artist": "Movie Theme",
 		"path": "tian_kong_zhi_cheng.sht"	,	
@@ -11,6 +13,10 @@
         "melody": 0
 		}
         ,
+        
+        
+        
+
 		 {
 		"title": "Chess",
         "artist": "Faye",
@@ -44,15 +50,6 @@
         "folder": "",
         "instr": 131,
         "melody": 10004
-		},
-         {
-		"title": "Romantic Night",
-		"path": "yuyedelangman-drum.sht",
-        "artist": "谭咏麟",
-		 "folder": "",	
-         "instr": 128,
-        "melody": 0			
-
 		},
         {
 		"title": "The Night",

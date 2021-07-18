@@ -58,8 +58,10 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = true;
 			title.text = "???";
 			accuracy.text = "";
-			
-		} else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_PASSED)
+			prefabCell.Find("PlayButton").GetComponent<Image>().color = Color.white;
+
+		}
+		else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_PASSED)
         {
 			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = false;
 
@@ -83,9 +85,11 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 			title.text = "" + (index + 1) + ". " + playlist.list[index].title;
 			accuracy.fontStyle = FontStyle.Normal;
 			accuracy.text = "" + PlayerData.getSongScore(playlist.list[index].path) + "%";
+			prefabCell.Find("PlayButton").GetComponent<Image>().color = Color.white;
 			//info.text = playlist.list[index].artist;
 			//Debug.Log("cur song level " + playlist.list[index].level + " player level: " + PlayerData.getPlayerLevel());
-		} else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_IN_PROGRESS)
+		}
+		else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_IN_PROGRESS)
         {
 			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = false;
 			prefabCell.Find("PlayButton").GetComponent<Image>().color = Color.green;
@@ -96,8 +100,8 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 			});
 
 			title.text = "" + (index + 1) + ". " + playlist.list[index].title;
-			accuracy.fontStyle = FontStyle.Italic;
-			accuracy.text = "Current";
+			//accuracy.fontStyle = FontStyle.Italic;
+			//accuracy.text = "Current";
 		}
 
 	}

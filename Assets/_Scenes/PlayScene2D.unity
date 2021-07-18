@@ -1744,7 +1744,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Skip
+  m_Text: SKIP
 --- !u!222 &1171090645
 CanvasRenderer:
   m_ObjectHideFlags: 0

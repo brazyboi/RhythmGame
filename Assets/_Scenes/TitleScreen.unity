@@ -474,6 +474,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5433594043798902007, guid: f1db61c6981f6624892688919ccacf8f, type: 3}
+      propertyPath: m_Text
+      value: SCI-MELODY
+      objectReference: {fileID: 0}
     - target: {fileID: 5433594044432779074, guid: f1db61c6981f6624892688919ccacf8f, type: 3}
       propertyPath: m_Name
       value: TitleScreen
