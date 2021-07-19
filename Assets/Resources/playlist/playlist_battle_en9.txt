@@ -4,79 +4,62 @@
 	"list": 
 	[ 
 
-         {
-        "title": "Free from Love",
-        "artist": "张惠妹",
-		"path": "zhanghuimei_jietuo.sht"	,		
-        "melody": 0
-		}
-        ,
-		 {
-        "title": "Can I Hug you?",
-        "artist": "张惠妹",
-		"path": "zhanghuimei_wokeyibaonima.sht"	,		
-        "melody": 10002
-		}
-        ,
-         {
-        "title": "My Love",
-        "artist": "张韶涵",
-		"path": "zhangshaohan_wodezuiai.sht"	,		
-        "melody": 10006
-		}
+  {
+		"title":"Swan Lake",
+		"path": "tianehu.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky"			
 
-        ,
-         {
-        "title": "Don't Say Sorry",
-        "artist": "S.H.E",
-		"path": "SHE-bieshuoduibuqi.sht"	,
-        "melody": 0
-		}
-        ,
-         
-          {
-		"title": "Lovely Girl",
-        "artist": "周杰伦",
-		"path": "keainvren.sht"	,		
-        "melody": 0
-		}
-        ,
+		},
+		{
+		"title":"Dance of Little Four Swans",
+		"path": "sixiaotiane.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
 
+		},
 		{
-        "title": "The Wonderful World",
-        "artist": "齐秦",
-		"path": "qiqin-waimiandeshijie.sht"	,		
-        "melody": 13
+		"title":"Ave Maria", 
+		"path": "shengmusong.sht",
+		"melody": 99,
+        "artist": "Wolfgang Amadeus Mozart"			
+
+		},
+		{
+		"title":"Romance",
+		"path": "langmanqu.sht",
+		"melody": 99,
+        "artist": "Wolfgang Amadeus Mozart"			
+
+		},
+		{
+		"title":"Sonatina",
+		"path": "benduofen_xiaozouming.sht"	,
+		"melody": 99,
+        "artist": "Ludwig van Beethoven"		
+
+		},
+		{
+		"title":"Sonata Pathetique",
+		"path": "beiqiangzoumingqu.sht",
+		"melody": 99,
+        "artist": "Ludwig van Beethoven"			
+
+		}
+		,
+		{
+		"title":"Spring Song",
+		"path": "chunzhige.sht"	,
+		"melody": 99,
+        "artist": "Felix Mendelssohn"		
+
 		}
         ,
-		
-		{
-        "title": "Gone with the Wind",
-        "artist": "齐秦",
-		"path": "qiqin-wangshisuifeng.sht"	,		
-        "melody": 3
-		}
-        ,
-        
         {
-        "title": "The Noon in the City",
-        "artist": "许美静",
-		"path": "chenglideyueguang.sht"	,		
-        "melody": 5
-		}
-        ,
-    {
-        "title": "Winter Sonata",
-        "artist": "<<冬季恋歌>>插曲",
-		"path": "wintersonata.sht"	,		
-        "melody": 0
-		}
-        ,
-		{
-		"title": "Lover in White",
-        "artist": "<<冬季恋歌>>插曲",
-		"path": "baiselianren.sht",
-        "melody": 99			
+		"title":"Op.30 No.6",
+		"path": "weinisichuange.sht",
+		"melody": 99,
+		"artist": "Felix Mendelssohn"			
 
 		}
 

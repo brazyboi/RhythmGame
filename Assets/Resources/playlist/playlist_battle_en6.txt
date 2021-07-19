@@ -5,95 +5,82 @@
 	"list": 
 	[ 
     {
-        "title": "Belief",
-        "artist": "张信哲",
-		"path": "zhangxinzhe-xinyang.sht"	,
-        "instr": 131,
-        "melody": 0
-		},
-    {
-        "title": "Impermanent firework",
-        "artist": "周杰伦",
-		"path": "jaychou_yanhuayilen.sht"	,		
-        "melody": 3
-		}
-        ,
-        {
-        "title": "Lotus in snow",
-        "artist": "王菲",
-		"path": "wangfei-xuezhonglian.sht"	,		
-        "melody": 10005
-		}
-        ,
-        {
-        "title": "You can hear it",
-        "artist": "周杰伦",
-		"path": "jaychou_nitingdedao.sht"	,		
-        "melody": 12
-		}
-        ,
-         {
-		"title": "Pigeon",
-        "artist": "伍佰",
-		"path": "baige.sht"	,		
-        "melody": 0
-		}
-        ,
-        {
-        "title": "Forever",
-        "artist": "刘德华",
-		"path": "zhanyongyuan.sht"	,		
-        "melody": 3
-		}
-        ,
+		"title": "Home, Sweet Home",
+        "level": 2,
+		"path": "keaidejia.sht",
+		"melody": 99,
+		"artist": "Folk song"			
 
-    {
-        "title": "Free the love",
-        "artist": "范逸臣",
-		"path": "fangsheng.sht"	,		
-        "melody": 10002
 		}
-        ,
-	{
-        "title": "Tropical rainforest",
-        "artist": "S.H.E",
-		"path": "redaiyulin.sht"	,		
-        "melody": 10005
-		}
-        ,
+		,
         {
-        "title": "Leave",
-        "artist": "周杰伦",
-		"path": "jaychou_likai.sht"	,		
-        "melody": 10000
-		}
-        ,
+		"title": "The Song of Seasons",
+        "level": 2,
+		"path": "sijige.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		},
+        
 		{
-        "title": "Tear from Mona Lisa",
-        "artist": "林志炫",
-		"path": "mengnalishadeyanlei.sht"	,		
-        "melody": 0
-		}
-        ,
-                	{
-        "title": "Trace",
-        "artist": "周杰伦",
-		"path": "jaychou-guiji.sht"	,		
-        "melody": 0
-		}
-        ,
-		 {
-        "title": "Ambiguous",
-        "artist": "王菲",
-		"path": "aimei.sht"	,		
-        "melody": 0
+		"title": "The Last Rose Of Summer",
+        "level": 2,
+		"path": "xiatianzuihoumeigui.sht",
+		"melody": 99,
+		"artist": "Kids song"			
 		}
         ,
         {
-        "title": "Broken point",
-        "artist": "张敬轩",
-		"path": "zhangjingxuan-duandian.sht"	,		
-        "melody": 0
+		"title": "Memory",
+        "level": 2,
+		"path": "huiyi.sht"	,
+		"melody": 99,
+		"artist": "Kids song"		
+
+		},
+        {
+		"title": "Red Dragonfly",
+        "level": 4,
+		"path": "hongqingting.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Do-Re-Mi",
+        "level": 4,
+		"path": "duoremi.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Old Man River",
+        "level": 4,
+		"path": "laorenhe.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "Making Hay",
+        "level": 4,
+		"path": "saidaochao.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
+		}
+        ,
+        {
+		"title": "The Roads",
+        "level": 4,
+		"path": "xiaolu.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+        
 		}
 
       ]

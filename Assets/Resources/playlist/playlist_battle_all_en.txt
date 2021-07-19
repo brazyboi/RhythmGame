@@ -19,6 +19,14 @@
         "melody": 0
 		}
         ,
+        {
+		"title":"Fur Elise",
+		"path": "xiangeiailisi.sht",
+		"melody": 99,
+        "artist": "Ludwig van Beethoven",
+		"speed": 1.8				
+
+		},
 {
 		"title":"Lyphard Melody",
 		"path": "xingkong.sht",
@@ -26,7 +34,6 @@
         "instr": 0,
 		"artist": "Richard Clayderman"
 		},
-        
         {
 		"title": "The Sounds Of Silence",
         "artist": "Simon and Garfunkel",
@@ -58,15 +65,6 @@
 		"folder": ""
 		}
         ,
-{
-		"title":"Fur Elise",
-		"path": "xiangeiailisi.sht",
-		"melody": 99,
-        "artist": "Ludwig van Beethoven",
-		"speed": 1.8				
-
-		},
-
         {
 		"title": "The Night",
 		"path": "yeyeyeye-drum.sht",
@@ -98,6 +96,13 @@
         "artist": "The Daydream",
 		"path": "yanlei.sht",
         "melody": 99			
+		}
+        ,
+{
+        "title": "Winter Sonata",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "wintersonata.sht"	,		
+        "melody": 0
 		}
         ,
 {
@@ -136,15 +141,6 @@
         "melody": 0
 		}
         ,
-        {
-		"title": "The Melody of the Night",
-        "level": 2,
-		"path": "ye.sht",
-		"melody": 99,
-		"artist": "Jin Shi"
-		}
-        ,
-        
         {
 		"title":"Ballade Pour Adeline",
 		"path": "shuibiandeadilina.sht",
@@ -224,6 +220,21 @@
 		"path": "meilidemengshen.sht",
 		"melody": 99,
 		"artist": "Stephen Foster"			
+
+		}
+       ,
+		{
+		"title": "Lover in White",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "baiselianren.sht",
+        "melody": 99			
+
+		},
+{
+		"title": "The Night Melody",
+        "artist": "石进",
+		"path": "ye.sht",
+        "melody": 99			
 
 		}
 		,
@@ -714,27 +725,6 @@
         "melody": 10000
 		}
         ,
-		{
-        "title": "Tear from Mona Lisa",
-        "artist": "林志炫",
-		"path": "mengnalishadeyanlei.sht"	,		
-        "melody": 0
-		}
-        ,
-                	{
-        "title": "Trace",
-        "artist": "周杰伦",
-		"path": "jaychou-guiji.sht"	,		
-        "melody": 0
-		}
-        ,
-		 {
-        "title": "Ambiguous",
-        "artist": "王菲",
-		"path": "aimei.sht"	,		
-        "melody": 0
-		}
-        ,
         {
         "title": "Broken point",
         "artist": "张敬轩",
@@ -761,28 +751,6 @@
         "melody": 0
 		}
         ,
-{
-        "title": "Winter Sonata",
-        "artist": "<<冬季恋歌>>插曲",
-		"path": "wintersonata.sht"	,		
-        "melody": 0
-		}
-        ,
-		{
-		"title": "Lover in White",
-        "artist": "<<冬季恋歌>>插曲",
-		"path": "baiselianren.sht",
-        "melody": 99			
-
-		},
-{
-		"title": "The Night Melody",
-        "artist": "石进",
-		"path": "ye.sht",
-        "melody": 99			
-
-		}
-        ,
         {
 		"title": "the Stars",
         "artist": "Vitas",
@@ -799,20 +767,34 @@
 		"speed": 1.3
 		}
         ,
-         {
-		"title":"Canon",
-		"path": "kanong.sht",
-		"melody": 99,
-		"artist": "Johann Pachelbel"			
-
-		},
         {
 		"title": "Serenade",
         "artist": "李克勤",
 		"path": "yuebanxiaoyequ.sht",
         "melody": 99			
         
+		},
+      {
+        "title": "Tear from Mona Lisa",
+        "artist": "林志炫",
+		"path": "mengnalishadeyanlei.sht"	,		
+        "melody": 0
 		}
+        ,
+                	{
+        "title": "Trace",
+        "artist": "周杰伦",
+		"path": "jaychou-guiji.sht"	,		
+        "melody": 0
+		}
+        ,
+		 {
+        "title": "Ambiguous",
+        "artist": "王菲",
+		"path": "aimei.sht"	,		
+        "melody": 0
+		}
+
 
             
 		

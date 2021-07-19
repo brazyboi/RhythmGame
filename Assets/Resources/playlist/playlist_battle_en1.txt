@@ -3,83 +3,73 @@
     "folder" : "song_en/",
 	"list": 
 	[ 
-         {
-		"title": "The Gray Legend",
-        "artist": "Beyond",
-		"path": "huiseguiji.sht",
-        "folder": "",
-        "melody": 10006			
-
-		}
-        ,
-        {
-		"title": "Who Will Venture With Me",
-        "artist": "Beyond",
-		"path": "shuibanwochuangdang.sht",
-        "folder": "",
-        "melody": 10007			
+{
+		"title":"Love Story",
+		"path": "aiqingdegushi.sht",
+		"melody": 99,
+		"artist": "Erich Segal"
 
 		},
-
-    
-    {
-		"title": "Sealed With a Kiss",
-        "artist": "Bobby Vinton",
-		"path": "Bobby_Vinton_-_Sealed_With_a_Kiss.sht"	,		
-        "melody": 10003
+{
+        "title": "Winter Sonata",
+        "artist": "<<冬季恋歌>>插曲",
+		"path": "wintersonata.sht"	,		
+        "melody": 0
 		}
         ,
-    {
-		"title": "No Matter What",
-        "artist": "Boyzone",
-		"path": "Boyzone_-_No_Matter_What.sht"	,		
-        "melody": 10003
-		}
-        ,
-        {
-		"title": "Let the Music Heal Your Soul",
-        "artist": "Backstreet Boys",
-		"path": "Backstreet_Boys_-_Let_the_Music_Heal_Your_Soul.sht"	,		
-        "melody": 10003
-		}
-        ,
-       
-  
-    {
-		"title": "Just Dance",
-        "artist": "Lady Gaga",
-		"path": "LadyGaga-Just_Dance.sht"	,		
-        "melody": 10003
-		}
-        ,
-		{
-        "title": "Hero",
-        "artist": "Mariah Carey",
-		"path": "mariah_carey-hero.sht"	,		
-        "melody": 10002
-		}
-        ,
-		{
-        "title": "You Are Not Alone",
-        "artist": "Michael Jackson",
-		"path": "Michael_Jackson-YouAreNotAlone.sht"	,		
-        "melody": 10003
-		}
-        ,
-		{
-        "title": "God Father",
-        "artist": "<<God Father>>",
-		"path": "godfather.sht"	,		
+         {
+        "title": "Wind Bell",
+        "artist": "周蕙",
+		"path": "zhouhui_fengling.sht"	,	
+        "instr": 131,
+        "folder": "",
         "melody": 0
 		},
+{
+		"title": "Tear",
+        "artist": "The Daydream",
+		"path": "yanlei.sht",
+        "melody": 99			
+		}
+        ,
+        {
+		"title": "Troika Galop",
+        "level": 4,
+		"path": "santaoche2.sht",
+		"melody": 99,
+		"artist": "Russian folk song"			
+        
+		}
+		,
 		{
-		"title":"Soledad",
-		"path": "westlife_soledad.sht",			
-		"artist": "Westlife",
+		"title":"My Heart Will Go On",
+		"path": "CelineDion_MyHeartWillGoOn.sht",			
+		"artist": "Celine Dion",
+        "folder": "song_en/",
+		"melody": 99
+		} ,
+	 
+    {
+		"title":"A Comme Amour", 
+		"path": "qiurisiyu3.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"
+		}
+        ,
+        {
+		"title":"Song From a Secret Garden",
+		"path": "SongFromASecretGarden.sht",			
+		"artist": "Secret Garden",
 		"melody": 99
 		}
-       
-         
+        ,
+		
+        {
+		"title": "Romeo And Juliet",
+        "artist": "Movie Theme",
+		"path": "Movie_Themes_-_Romeo_And_Juliet.sht"	,		
+        "melody": 0
+		} 
 		
       ]
 }

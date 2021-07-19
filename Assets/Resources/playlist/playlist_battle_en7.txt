@@ -4,93 +4,81 @@
 	"list": 
 	[ 
     
-     {
-    "title": "Heal the World",
-        "artist": "Michael Jackson",
-		"path": "healtheworld.sht"	,		
-        "melody": 10003
-		}
-        ,
-    	{
-        "title": "Secret Signal",
-        "artist": "Jay",
-		"path": "jaychou-anhao.sht"	,	
-		 "folder": "",		
-        "melody": 3
-		}
-		,
-        {
-		"title": "Piano after war",
-        "artist": "周杰伦",
-		"path": "zhizhanzhishang.sht"	,		
-        "melody": 2
-		}
-        ,
-     {
-		"title": "Love you every day",
-        "artist": "张学友",
-		"path": "meitianainiduoyixie.sht"	,		
-        "melody": 1
-		}
-        ,
-      {
-		"title": "Kiss bye",
-        "artist": "张学友",
-		"path": "kissbye.sht"	,		
-        "melody": 0
-		}
-        ,
-     
-        {
-		"title": "Late fall",
-        "artist": "黄凯芹",
-		"path": "wanqiu.sht"	,		
-        "melody": 4
-		}
-        ,
-		
-        {
-        "title": "Unfogotten Love",
-        "artist": "张学友",
-		"path": "jiuqingmianmian-flute.sht"	,		
-        "melody": 10000
-		}
-        ,
-        {
-        "title": "Forget Love",
-        "artist": "刘德华",
-		"path": "wangqingshui.sht"	,		
-        "melody": 10000
-		}
-        ,
-	{
-        "title": "Drifting",
-        "artist": "刘德华",
-		"path": "piaoliu.sht"	,		
-        "melody": 0
-		}
-        ,
-        {
-		"title": "Love is Gone",
-        "artist": "张学友",
-		"path": "qingyishi.sht"	,		
-        "melody": 0
-		}, 
-        {
-		"title": "Melody",
-        "artist": "李克勤",
-		"path": "melody_ex.sht",		
-        "melody": 0
-		}
-        ,
-        {
+		{
 		"title": "Half Moon Bay",
         "artist": "张学友",
 		"path": "yuebanwan.sht",
         "melody": 10000				
+		} ,
+		 {
+        "title": "Don't Say Sorry",
+        "artist": "S.H.E",
+		"path": "SHE-bieshuoduibuqi.sht"	,
+        "melody": 0
 		}
+        ,
+	   {
+		"title":" Moonlight Sonata",
+		"path": "yueguangqu.sht",
+		"melody": 10099,
+        "artist": "Ludwig van Beethoven"			
+
+		},
         
+		{
+		"title":"Dreams of Love",
+		"path": "aizhimeng.sht",
+		"melody": 10099,
+        "artist": "Franz Liszt"			
+
+		}
+        ,
+		{
+		"title":"The Swan",
+		"path": "tiane.sht",
+		"melody": 99,
+        "artist": "Saint Saëns"			
+
+		},
+		{
+		"title":"Frohlicher Landmann", 
+		"path": "kuailedenongfu.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"			
+
+		}
+        ,
         
+        {
+		"title":"Ballade No. 4",
+		"path": "gangqinxushiqu.sht",
+		"melody": 99,
+        "artist": "Frédéric Chopin"			
+
+		}
+        ,{
+		"title":"Waltz in A minor",
+		"path": "axiaodiaoyuanwuqu.sht",
+		"melody": 99,
+        "artist": "Frédéric Chopin"			
+
+		}
+        ,
+        {
+		"title":"Cradle Lullaby",
+		"path": "yaolanqu.sht",
+		"melody": 99,
+        "artist": "Franz Schubert"
+
+		}
+        ,
+        {
+		"title":"Clair de Lune",
+		"path": "yueguang.sht",
+		"melody": 99,
+        "artist": "Claude Debussy"			
+
+		}
         
         
 		

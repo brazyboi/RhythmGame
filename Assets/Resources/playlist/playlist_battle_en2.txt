@@ -4,134 +4,80 @@
 	"list": 
 	[ 
          
-    		{
-        "title": "One thousand Heartbreaking \nReasons",
-        "artist": "张学友",
-		"path": "yiqiangeshangxindeliyou.sht"	,
-        "folder": "",
-        "melody": 3
-		}
-        ,        
+
     {
-        "title": "Love You So Much",
-        "artist": "刘若英",
-		"path": "henaihenaini-all.sht"	,		
-        "melody": 0
-		}
-        ,
-        {
-        "title": "First Love",
-        "artist": "张震岳",
-		"path": "aidechutiyan.sht"	,		
-        "melody": 0
-		},
-
-        {
-        "title": "Night Melody",
+        "title": "Impermanent firework",
         "artist": "周杰伦",
-		"path": "jaychou_yequ.sht"	,		
-        "melody": 0
-		}
-        ,
-
-		{
-        "title": "Chess",
-        "artist": "王菲",
-		"path": "qizi.sht"	,		
-        "melody": 5
-		}
-        ,
-		{
-        "title": "Forgiveness",
-        "artist": "张信哲",
-		"path": "kuanrong.sht"	,		
-        "melody": 10004
-		}
-        ,
-		{
-        "title": "Love Feeling",
-        "artist": "辛晓琪",
-		"path": "weidao.sht"	,		
-        "melody": 0
-		}
-        ,
-		{
-        "title": "The Stars",
-        "artist": "周杰伦",
-		"path": "jaychou_xingqing.sht"	,		
+		"path": "jaychou_yanhuayilen.sht"	,		
         "melody": 3
 		}
         ,
         {
-        "title": "Don't worry about my being \nsad",
-        "artist": "张信哲",
-		"path": "zhangxinzhe-biepawoshangxin.sht"	,
-        "melody": 0
-		},
-		{
-        "title": "The Courage",
-        "artist": "梁静茹",
-		"path": "yongqi-all.sht"	,		
-        "melody": 0
+        "title": "You can hear it",
+        "artist": "周杰伦",
+		"path": "jaychou_nitingdedao.sht"	,		
+        "melody": 12
 		}
         ,
+
         {
-        "title": "Never Tell Him",
-        "artist": "张信哲",
-		"path": "buyaoduitashuo.sht"	,		
-        "melody": 2
-		} ,
-		{
-		"title":"Falling Slowly",
-		"path": "Once_FallingSlowly.sht",			
-		"artist": "Once",
+		"title":"Danube Waves",
+		"path": "duonaohezhibo.sht",
 		"melody": 99,
-        "folder": "song_en/",
-		"blow": 0
-		}
-        ,
-		{
-		"title":"God is a Girl",
-		"path": "GrooveCoverage_GodisaGirl.sht",			
-		"artist": "Groove Coverage",
-        "folder": "song_en/",
-		"melody": 99
-		}
-        ,
-		{
-		"title":"My Heart Will Go On",
-		"path": "CelineDion_MyHeartWillGoOn.sht",			
-		"artist": "Celine Dion",
-        "folder": "song_en/",
-		"melody": 99
-		}
-        ,
-		{
-		"title": "When Can I See You Again",
-        "artist": "Babyface",
-		"path": "Babyface_-_When_Can_I_See_You_Again.sht"	,	
-        "folder": "song_en/",
-        "melody": 1
+		"artist": "Kids song"			
+
 		}
         ,
          {
-		"title": "No One Else Comes Close",
-        "artist": "Backstreet Boys",
-		"path": "Backstreet_Boys_-_No_One_Else_Comes_Close.sht"	,	
-        "folder": "song_en/",
+		"title": "Pigeon",
+        "artist": "伍佰",
+		"path": "baige.sht"	,		
         "melody": 0
 		}
         ,
 
-		{
-		"title":"Butterfly Waltz",
-		"path": "BrianCrain_ButterflyWaltz.sht",	
-        "folder": "song_en/",		
-		"artist": "Brian Crain",
-		"melody": 99
-		}
-     
+{
+		"title": "Dreaming of Home and Mother",
+        "level": 4,
+		"path": "songbie.sht",
+		"melody": 99,
+		"artist": "Folk song"			
 
+		},
+		
+        {
+		"title": "Edelweiss",
+        "level": 1,
+		"path": "xueronghua_s.sht",
+		"melody": 99,
+		"artist": "Folk song"			
+
+		}
+		,
+		{
+		"title":"Romance De Amor",
+		"path": "aideluomanshi.sht"	,
+		"melody": 99,
+		"artist": "Spanish song",
+		"speed": 1.3
+		}
+        ,
+        {
+		"title": "Serenade",
+        "artist": "李克勤",
+		"path": "yuebanxiaoyequ.sht",
+        "melody": 99,
+		"melodyTrack": 1			
+        
+		}
+		,
+		{
+		"title":"On Wings of Song", 
+		"path": "chengzhegeshengdechibang.sht",
+		"melody": 99,
+        "artist": "Felix Mendelssohn"			
+
+		}
 		
       ]
 }

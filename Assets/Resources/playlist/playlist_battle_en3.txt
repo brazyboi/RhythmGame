@@ -5,88 +5,12 @@
 	"list": 
 	[ 
        
-    {
-		"title":"Love Story",
-		"path": "aiqingdegushi.sht",
-		"melody": 99,
-		"artist": "Erich Segal"
-
-		},
-    {
-		"title":"A Comme Amour", 
-		"path": "qiurisiyu3.sht",
-		"melody": 99,
-		"artist": "Richard Clayderman"
-		}
-        ,
-        {
-		"title":"Song From a Secret Garden",
-		"path": "SongFromASecretGarden.sht",			
-		"artist": "Secret Garden",
-		"melody": 99
-		}
-        ,
-		{
-		"title":"Romance De Amor",
-		"path": "aideluomanshi.sht"	,
-		"melody": 99,
-		"artist": "Spanish song"
-		}
-        ,
-        {
-		"title": "Romeo And Juliet",
-        "artist": "Movie Theme",
-		"path": "Movie_Themes_-_Romeo_And_Juliet.sht"	,		
-        "melody": 0
-		}
-        ,
-        {
-		"title": "The Melody of the Night",
-        "level": 2,
-		"path": "ye.sht",
-		"melody": 99,
-		"artist": "Jin Shi"
-		}
-        ,
-        
-       {
-		"title":"Canon",
-		"path": "kanong.sht",
-		"melody": 99,
-		"artist": "Johann Pachelbel"			
-
-		},
-        {
-		"title":"Rondo Alla Turca",
-		"path": "tuerqijinxingqu_s.sht",
-		"melody": 99,
-		"artist": "Mozart"			
-
-		}
-        ,
-        
-        {
-		"title":"Mariage D'amous",
-		"path": "mengzhongdehunli.sht",
-		"melody": 99,
-		"artist": "Richard Clayderman"			
-
-		}
-		,
-        
-        {
+          {
 		"title":"Ballade Pour Adeline",
 		"path": "shuibiandeadilina.sht",
 		"melody": 99,
 		"artist": "Richard Clayderman"			
 
-		}
-        ,
-        {
-		"title":"Lyphard Melody",
-		"path": "xingkong.sht",
-		"melody": 99,
-		"artist": "Richard Clayderman"
 		}
         ,
         {
@@ -97,12 +21,20 @@
 
 		}
         ,
+ {
+		"title":"Edelweiss",
+		"path": "xueronghua_s.sht",
+		"melody": 99,
+        "artist": "Folk song"			
+
+		},
+
         {
 		"title":"A Lover's Concerto",
 		"path": "aidexiezouqu.sht",
 		"melody": 99,
 		"artist": "Sandy Linzer"			
-
+		
 		}
         ,
         {
@@ -120,18 +52,29 @@
         "artist": "Richard Clayderman"			
 
 		},
-        {
-		"title":"Casablanca",
-		"path": "Casablanca.sht",			
-		"artist": "<<Casablanca>>",
-		"melody": 99
-		}
-        ,
-        {
-		"title":"Dance of Fireflies",
-		"path": "yinghuochongzhiwu.sht",
+		{
+		"title": "Twinkle, Twinkle Little Star",
+        "level": 1,
+		"path": "xiaoxingxing.sht",
 		"melody": 99,
-        "artist": "-"			
+		"artist": "Mozart"			
+
+		},
+		
+          {
+		"title": "Happy Birthday",
+        "level": 1,
+		"path": "shengrikuaile.sht",
+		"melody": 99,
+		"artist": "Kids song"			
+		},
+       
+      {
+		"title": "Jingle Bells",
+        "level": 1,
+		"path": "jinglebell.sht",
+		"melody": 99,
+		"artist": "Kids song"			
 
 		}
 		

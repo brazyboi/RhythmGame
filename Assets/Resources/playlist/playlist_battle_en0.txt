@@ -5,6 +5,14 @@
 	[ 
     
     {
+		"title": "Green Sleeves",
+		"path": "lvxiuzi.mid",
+        "artist": "Folk song",
+        "melody": 99,
+		"folder": ""
+
+		} ,
+{
 
 		"title": "The Castle in The Sky",
         "artist": "Movie Theme",
@@ -13,11 +21,44 @@
         "melody": 0
 		}
         ,
-        
-        
-        
+        {
+		"title":"Fur Elise",
+		"path": "xiangeiailisi.sht",
+		"melody": 99,
+        "artist": "Ludwig van Beethoven",
+		"speed": 1.8				
 
-		 {
+		},
+{
+		"title":"Lyphard Melody",
+		"path": "xingkong.sht",
+		"melody": 99,
+        "instr": 0,
+		"artist": "Richard Clayderman"
+		},
+        {
+		"title": "The Sounds Of Silence",
+        "artist": "Simon and Garfunkel",
+		"path": "Simon_Garfunkel_TheSoundsOfSilence.sht"	,	
+        "instr": 0,
+        "melody": 7
+		} ,
+        {
+		"title":"Rondo Alla Turca",
+		"path": "tuerqijinxingqu_s.sht",
+		"melody": 99,
+		"artist": "Mozart"			
+
+		}
+        ,
+ {
+        "title": "Belief",
+        "artist": "张信哲",
+		"path": "zhangxinzhe-xinyang.sht"	,
+        "instr": 131,
+        "melody": 0
+		},
+ {
 		"title": "Chess",
         "artist": "Faye",
 		"path": "qizi-simple.mid"	,		
@@ -27,31 +68,6 @@
 		}
         ,
         {
-		"title": "The Sounds Of Silence",
-        "artist": "Simon and Garfunkel",
-		"path": "Simon_Garfunkel_TheSoundsOfSilence.sht"	,	
-        "instr": 0,
-        "melody": 7
-		}
-        ,
-
-        {
-		"title":"Lyphard Melody",
-		"path": "xingkong.sht",
-		"melody": 99,
-        "instr": 0,
-		"artist": "Richard Clayderman"
-		},
-        
-    {
-        "title": "AMANI",
-        "artist": "Beyond",
-		"path": "beyond-amani.sht"	,
-        "folder": "",
-        "instr": 131,
-        "melody": 10004
-		},
-        {
 		"title": "The Night",
 		"path": "yeyeyeye-drum.sht",
         "artist": "齐秦",
@@ -60,30 +76,5 @@
         "melody": 0			
 
 		}
-        ,
-	    {
-		"title":"Right Here Waiting",
-		"path": "Rightherewaiting-all.mid",			
-		"artist": "Richard Marx",
-        "instr": 131,
-		"melody": 3
-		}
-        ,
-         {
-        "title": "Wind Bell",
-        "artist": "周蕙",
-		"path": "zhouhui_fengling.sht"	,	
-        "instr": 131,
-        "folder": "",
-        "melody": 0
-		}
-        ,
-        {
-		"title": "California Hotel",
-        "artist": "Eagles",
-		"path": "California_hotel.sht"	,		
-        "melody": 3
-		}
-       
       ]
 }

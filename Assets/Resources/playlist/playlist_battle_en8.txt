@@ -4,85 +4,84 @@
 	"list": 
 	[ 
 
- {
-		"title": "Going Home",
-        "artist": "Sax song",
-		"path": "Goinghome-all.mid"	,
-        "folder": "",		
-        "melody": 6			
+  {
+		"title":"June Barcarolle",
+		"path": "liuyuechuange.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		}
+        ,
+   {
+        "title": "Lotus in snow",
+        "artist": "王菲",
+		"path": "wangfei-xuezhonglian.sht"	,		
+        "melody": 10005
+		}
+        ,
+        {
+		"title":"Moon River",
+		"path": "yuelianghe.sht",
+		"melody": 99,
+        "artist": "Folk song"			
+
+		}
+        ,
+        
+        {
+		"title":"Serenade",
+		"path": "xiaoyequ.sht",
+		"melody": 99,
+        "artist": "Franz Schubert"
+
+		}
+        ,
+        {
+		"title":"Traumerei",
+		"path": "menghuanqu.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"
+
+		}
+        ,
+        {
+		"title":"Kinderscenen Op.15",
+		"path": "tongnianqingjing.sht",
+		"melody": 99,
+        "artist": "Robert Schumann"
+
+		}
+        ,
+        
+		{
+		"title":"June Barcarolle",
+		"path": "liuyuechuange_s.sht",
+		"melody": 99,
+        "artist": "Tchaikovsky June Barcarolle"			
+
+		}
+        ,
+		{
+		"title":"Sonatinas,Op.36",
+		"path": "clementi_xiaozoumingqu.sht",
+		"melody": 99,
+        "artist": "Sonatina Clementi"			
 
 		},
 		{
-		"title": "Song Bird",
-        "artist": "Sax 名曲",
-		"path": "songbird.mid"	,		
-        "melody": 10015
+		"title":"An der schönen Blauen Donau",
+		"path": "lanseduonaohe.sht",
+		"melody": 99,
+        "artist": "Johann Strauss"			
+
 		},
-        {
-        "title": "The Moon in the City",
-        "artist": "许美静",
-		"path": "chenglideyueguang.sht"	,		
-        "melody": 5
-		}
-        ,
-
 		{
-        "title": "Midnight Blues",
-        "artist": "Beyond",
-		"path": "beyond-wuyeyuanqu.sht"	,		
-        "melody": 10011
-		}
-		,
-		{
-        "title": "Forgive Me Today",
-        "artist": "Beyond",
-		"path": "beyond-yuanliangwojintian.sht"	,		
-        "melody": 10008
-		}
-		,
-		{
-        "title": "Under a Vast Sky",
-        "artist": "Beyond",
-		"path": "beyond-haikuotiankong.sht"	,		
-        "melody": 10000,
-		"blow" : 0
-		}
-		,
-      {
-		"title": "Love You",
-        "artist": "Beyond",
-		"path": "xihuanni.sht",
-        "melody": 10000				
+		"title":"Mio Babbino Caro",
+		"path": "woqinaidebaba.sht"	,
+		"melody": 99,
+        "artist": "Giacomo Puccini"		
 
 		}
-        ,
-        {
-		"title": "Goodbye My Dream",
-        "artist": "Beyond",
-		"path": "zaijianlixiang.sht",
-        "melody": 10000				
-
-		}
-        ,
-
-        {
-		"title": "The Earth",
-        "artist": "Beyond",
-		"path": "dadi.sht",
-        "melody": 10006		
-
-		}
-        ,
-       
-    
-        {
-		"title": "Cold Rain Night",
-        "artist": "Beyond",
-		"path": "lenyuye.sht",
-        "melody": 10008			
-    
-		}
-
 
       ]
 }
