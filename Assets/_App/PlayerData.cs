@@ -91,4 +91,26 @@ public class PlayerData
         PlayerPrefs.SetInt("songLevel", 100);
     }
 
+    public static void seeTutorial()
+    {
+        PlayerPrefs.SetInt("tutorial", 1);
+    }
+
+    public static bool hasSeenTutorial()
+    {
+        int tut = PlayerPrefs.GetInt("tutorial", 0);
+        if (tut == 0)
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
+
+    public static void resetTutorial()
+    {
+        PlayerPrefs.SetInt("tutorial", 0);
+    }
+
 }

@@ -44,7 +44,15 @@ public class SongSelect : MonoBehaviour
 
         setInstrumentImage();
 
-        playButton.GetComponent<Button>().onClick.AddListener(playGame);
+        if (PlayerData.hasSeenTutorial())
+        {
+            playButton.GetComponent<Button>().onClick.AddListener(playGame);
+        } else
+        {
+            PlayerData.seeTutorial();
+            playButton.GetComponent<Button>().onClick.AddListener(goTutorial);
+        }
+       
         selectButton.GetComponent<Button>().onClick.AddListener(instrumentSelect);
         backButton.GetComponent<Button>().onClick.AddListener(backToSongList);
     }
@@ -58,6 +66,12 @@ public class SongSelect : MonoBehaviour
     {
         GameManager.prevScene = "SongSelect";
         GameManager.gotoRewardScreen();
+    }
+
+    void goTutorial()
+    {
+        GameManager.prevScene = "SongSelect";
+        GameManager.gotoTutorialScreen();
     }
 
     void playGame()

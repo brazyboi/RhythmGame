@@ -45,4 +45,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("LevelScreen", LoadSceneMode.Single);
     }
+
+    public static void gotoTutorialScreen()
+    {
+        SceneManager.LoadScene("TutorialScreen", LoadSceneMode.Single);
+    }
+
 }

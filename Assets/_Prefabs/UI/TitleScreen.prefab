@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: MUSIC BEAT
+  m_Text: SCI-MELODY
 --- !u!1 &5433594043873880478
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 5433594043873880478}
   rewardButton: {fileID: 5433594045508462118}
-  shareButton: {fileID: 5433594044498335584}
+  tutorialButton: {fileID: 5433594044498335584}
   text: {fileID: 0}
 --- !u!82 &236188662
 AudioSource:
@@ -728,7 +728,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Share
+  m_Text: How to Play
 --- !u!1 &5433594044898240533
 GameObject:
   m_ObjectHideFlags: 0

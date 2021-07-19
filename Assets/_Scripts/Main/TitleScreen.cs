@@ -10,7 +10,7 @@ public class TitleScreen : MonoBehaviour
 {
     public GameObject playButton;
     public GameObject rewardButton;
-    public GameObject shareButton;
+    public GameObject tutorialButton;
     private SoundHandle soundHandle;
     public Text text;
 
@@ -19,8 +19,10 @@ public class TitleScreen : MonoBehaviour
     {
         playButton.GetComponent<Button>().onClick.AddListener(startGame);   
         rewardButton.GetComponent<Button>().onClick.AddListener(rewards);
+        tutorialButton.GetComponent<Button>().onClick.AddListener(tutorial);
 
         AudienceNetworkAds.Initialize();
+        //PlayerData.resetTutorial();
     }
 
     public void startGame()
@@ -36,9 +38,11 @@ public class TitleScreen : MonoBehaviour
         //soundHandle = MidiEngine.instance().playMidiSoundFile("songs/zhouhui_fengling");
     }
 
-    void share()
+    void tutorial()
     {
         // show popup for share
+        GameManager.prevScene = "TitleScreen";
+        GameManager.gotoTutorialScreen();
     }
 
     // Update is called once per frame
