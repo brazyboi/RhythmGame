@@ -10,6 +10,9 @@ public class TutorialScreen : GameBaseEx
     public GameObject popupPrefab;
     public GameObject baseLine;
     //public GameObject tapNotif
+    public GameObject shortNote1;
+    public GameObject shortNote2;
+    public GameObject longNote;
     
 
     public List<string> notifs = new List<string>();
@@ -19,6 +22,9 @@ public class TutorialScreen : GameBaseEx
     {
         
         setNotifs();
+        shortNote1.SetActive(false);
+        shortNote2.SetActive(false);
+        longNote.SetActive(false);
         popupNextButton.GetComponent<Button>().onClick.AddListener(() => updatePopupText(0));
     }
 
@@ -27,6 +33,8 @@ public class TutorialScreen : GameBaseEx
         notifs.Add("In this game, notes will fall down according the melody of the song.");
         notifs.Add("Tap at the precise time to gain more points. ");
         notifs.Add("There is a glowing yellow line that indicates the optimal time.");
+        notifs.Add("For short notes like these, tap or press any of the WASD and arrow keys.");
+        notifs.Add("For long notes like these, tap and hold the note or press any of the WASD and arrow keys.");
         /*notifs.Add("Here's an example of a short note: ");
         notifs.Add("short");
         notifs.Add("Here's an example of a long note: ");
@@ -40,6 +48,27 @@ public class TutorialScreen : GameBaseEx
         {
             GameManager.backToPrevScene();
             return;
+        }
+
+        if (index == 2)
+        {
+            baseLine.SetActive(true);
+        }
+
+        if (index == 3)
+        {
+            shortNote1.SetActive(true);
+            shortNote2.SetActive(true);
+        } else if (index == 4)
+        {
+            longNote.SetActive(true);
+            shortNote1.SetActive(false);
+            shortNote2.SetActive(false);
+        } else
+        {
+            longNote.SetActive(false);
+            shortNote1.SetActive(false);
+            shortNote2.SetActive(false);
         }
 
         /*if (notifs[index] == "short")
