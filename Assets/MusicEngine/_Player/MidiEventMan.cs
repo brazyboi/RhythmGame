@@ -48,6 +48,7 @@ public class MidiEventMan  {
 		firstMelodyTick = 0;
 		isOverFirstMelody = false;
 		lastNoteTick = 0;
+		firstNoteTick = long.MaxValue;
 	}
 
 	public int length() {
@@ -183,17 +184,21 @@ public class MidiEventMan  {
 
 	public void trimNoSoundAtBeginning()
     {
-		long firstMelodyTick = 0;
-		if(midiEventListMelody.Count > 0)
+		firstMelodyTick = 0;
+		if (midiEventListMelody.Count > 0)
         {
 			firstMelodyTick = midiEventListMelody[0].tick;
-        }
+			//UnityEngine.Debug.Log("firstMelodyTick: " + firstMelodyTick + " firstNoteTick:" + firstNoteTick);
+
+		}
 		long firstMelodyTickTemp;
 		firstMelodyTickTemp = firstMelodyTick - firstNoteTick;
-		if(firstMelodyTickTemp < 2500)
+		//UnityEngine.Debug.Log("firstMelodyTickTemp: " + firstMelodyTickTemp);
+		if (firstMelodyTickTemp < 2500)
         {//make sure firstMelodyTick >= 2500;
 			firstMelodyTickTemp = 2500;
 			firstNoteTick = firstMelodyTick - firstMelodyTickTemp;
+			//UnityEngine.Debug.Log("firstNoteTick: " + firstMelodyTickTemp);
 		}
 
 		foreach(MusicNote n in midiEventListHarmony)
