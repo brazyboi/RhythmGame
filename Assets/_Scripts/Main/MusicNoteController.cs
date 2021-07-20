@@ -69,15 +69,7 @@ public class MusicNoteController : GameBaseEx
 	void initNote()
     {
 		//createStartEndCircles();
-		if (!onlyPrintOnce)
-        {
-			printLog = true;
-			
-
-		} else
-        {
-			printLog = false;
-        }
+		printLog = false;
 		onlyPrintOnce = true;
 		xPos = UnityEngine.Random.Range(-Screen.width/200 - 1, Screen.width/200 +1);
 

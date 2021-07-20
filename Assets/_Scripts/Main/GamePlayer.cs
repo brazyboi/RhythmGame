@@ -75,6 +75,7 @@ public class GamePlayer : GameBaseEx
         appContext.musicNoteDisplayDuration = 3500;
         soundPlayer.playerDelegate = new Player3DDelegate(this);
         soundPlayer.setPlayMode(SoundPlayer.NON_STOP_TAP_PLAY);
+        //soundPlayer.setPlayMode(SoundPlayer.LEARN_PLAY);
         soundPlayer.setMelodyMute(soundPlayer.getPlayMode() != SoundPlayer.LEARN_PLAY);
     }
 
@@ -297,7 +298,7 @@ public class GamePlayer : GameBaseEx
             playUIController.updateTotalScoreTexts("" + gamePlayer.appContext.totalScore);
             playUIController.updateScoreTexts("MISS" + "\n\r" + missScore);
             gamePlayer.missedNotes++;
-            Debug.Log("Missed notes: " + gamePlayer.missedNotes + "Player level: " + gamePlayer.appContext.songItem.level);
+            //ßDebug.Log("Missed notes: " + gamePlayer.missedNotes + "Player level: " + gamePlayer.appContext.songItem.level);
             if (gamePlayer.missedNotes > (9 - gamePlayer.appContext.songItem.level / 10))
             {
                 gamePlayer.onGameFailed();
