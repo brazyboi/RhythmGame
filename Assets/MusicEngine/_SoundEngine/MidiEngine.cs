@@ -116,18 +116,18 @@ public class MidiEngine {
      */    
 
 		FMOD.RESULT res = FMOD.Factory.System_Create (out mFmodSystem);
-		UnityEngine.Debug.Log("FMOD.Factory.System_Create" + res);
+		//UnityEngine.Debug.Log("FMOD.Factory.System_Create" + res);
 		if (res != FMOD.RESULT.OK) {
-			UnityEngine.Debug.Log("FMOD.Factory.System_Create Failed");
+		//	UnityEngine.Debug.Log("FMOD.Factory.System_Create Failed");
 			return;
 		}
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 		 
 #else
 		dlsFileName = "xiaimg.dls";
-		UnityEngine.Debug.Log("midi dls name: " + dlsFileName);
+		//UnityEngine.Debug.Log("midi dls name: " + dlsFileName);
 		soundExInfo.dlsname = Marshal.StringToHGlobalAuto(dlsFileName);
-		UnityEngine.Debug.Log("midi dls name: -2 " + dlsFileName);
+		//UnityEngine.Debug.Log("midi dls name: -2 " + dlsFileName);
 		MidiFileSystem.setupMidiFileSystem(mFmodSystem);
 #endif
 
@@ -188,20 +188,20 @@ public class MidiEngine {
 	public SoundHandle prepareSoundMidiStream(byte[] midiStream, int streamSize) {
 		if(!mFmodSystem.hasHandle() || midiStream == null || streamSize==0) 
 			return null;
-		UnityEngine.Debug.Log("prepareSoundMidiStream: streamSize " + streamSize);
+		//UnityEngine.Debug.Log("prepareSoundMidiStream: streamSize " + streamSize);
 		SoundHandle sh = findAvailableSoundHandle();
 
 		FMOD.RESULT result = 0;
 
 		soundExInfo.length = (uint) streamSize;
-		UnityEngine.Debug.Log("prepareSoundMidiStream: create sound step 1");
+		//UnityEngine.Debug.Log("prepareSoundMidiStream: create sound step 1");
 		result = mFmodSystem.createSound(midiStream , FMOD.MODE.OPENMEMORY, ref soundExInfo, out sh.sound);
-		UnityEngine.Debug.Log("prepareSoundMidiStream: create sound step 2");
+		//UnityEngine.Debug.Log("prepareSoundMidiStream: create sound step 2");
 		if (result != FMOD.RESULT.OK) {
-            UnityEngine.Debug.Log("prepareSoundMidiStream " + result);
+        //    UnityEngine.Debug.Log("prepareSoundMidiStream " + result);
 			return null;
 		}
-		UnityEngine.Debug.Log("prepareSoundMidiStream: create sound successfully");
+		//UnityEngine.Debug.Log("prepareSoundMidiStream: create sound successfully");
 		soundHandles.Add (sh);
 		return sh;
 	}
@@ -213,9 +213,9 @@ public class MidiEngine {
 			result = sh.sound.setMode (FMOD.MODE.LOOP_OFF);
 			FMOD.ChannelGroup group = new FMOD.ChannelGroup();
 			result = mFmodSystem.playSound (sh.sound, group, false, out sh.channel);
-			UnityEngine.Debug.Log ("playSound " + result);
+		//	UnityEngine.Debug.Log ("playSound " + result);
 			if (result != FMOD.RESULT.OK) {
-				UnityEngine.Debug.Log ("playSound failed");
+		//		UnityEngine.Debug.Log ("playSound failed");
 				return false;
 			}
 			return true;
@@ -352,11 +352,11 @@ public class MidiEngine {
 		SoundHandle sh = prepareSoundMidiStream (soundData, soundData.Length);
 		if (sh != null)
 		{
-			UnityEngine.Debug.Log("playMidiNote ---- ");
+		//	UnityEngine.Debug.Log("playMidiNote ---- ");
 			playSound(sh);
 		} else
         {
-			UnityEngine.Debug.Log("prepareSoundMidiStream: return null ");
+		//	UnityEngine.Debug.Log("prepareSoundMidiStream: return null ");
 		}
 	}
 
