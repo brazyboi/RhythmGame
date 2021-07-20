@@ -17,6 +17,14 @@
         "melody": 0
 		}
         ,
+		{
+        "title": "Rondeau",
+        "artist": "Purcell",
+		"path": "Purcell-Rondeau-SATB-recorders.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
          {
         "title": "Wind Bell",
         "artist": "周蕙",

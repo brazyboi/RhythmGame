@@ -54,6 +54,14 @@
 
 		}
 		,
+		 {
+        "title": "Brahms Lullaby",
+        "artist": "Brahms",
+		"path": "brahms-lullaby-wiegenlied.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        ,
 		{
 		"title":"Romance De Amor",
 		"path": "aideluomanshi.sht"	,

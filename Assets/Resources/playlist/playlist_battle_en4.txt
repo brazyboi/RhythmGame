@@ -37,6 +37,16 @@
 		"artist": "Kids song"			
 		}
         ,
+
+		{
+        "title": "Minuet in F",
+        "artist": "Mozart",
+		"path": "mozart-minuet-k2-recorder-duet.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        
+        ,
   
         
         {

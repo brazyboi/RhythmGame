@@ -14,6 +14,15 @@
 		}
 		,
         {
+        "title": "Rondeau",
+        "artist": "Purcell",
+		"path": "Purcell-Rondeau-SATB-recorders.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        
+		,
+        {
 		"title": "The Song of Seasons",
         "level": 2,
 		"path": "sijige.sht",

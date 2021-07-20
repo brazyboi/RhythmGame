@@ -21,6 +21,15 @@
 
 		}
         ,
+		{
+        "title": "Salut d'Amour",
+        "artist": "Elgar",
+		"path": "edward-elgar-salut-d-amour-violin-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		}
+        
+        ,
  {
 		"title":"Edelweiss",
 		"path": "xueronghua_s.sht",

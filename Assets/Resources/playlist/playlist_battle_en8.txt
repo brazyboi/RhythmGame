@@ -62,7 +62,7 @@
 		}
         ,
 		{
-		"title":"Sonatinas,Op.36",
+		"title":"Sonatinas, Op.36",
 		"path": "clementi_xiaozoumingqu.sht",
 		"melody": 99,
         "artist": "Sonatina Clementi"			
@@ -75,6 +75,7 @@
         "artist": "Johann Strauss"			
 
 		},
+
 		{
 		"title":"Mio Babbino Caro",
 		"path": "woqinaidebaba.sht"	,

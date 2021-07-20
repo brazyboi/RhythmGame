@@ -11,6 +11,15 @@
         "melody": 3
 		}
         ,
+        {
+        "title": "The Swan",
+        "artist": "Saint-Saens",
+		"path": "saint-saens-carnival-of-the-animals-the-swan.sht"	,	
+        "instr": 0,
+        "melody": 10002
+		}
+        
+        ,
      {
         "title": "the Coral Sea",
         "artist": "周杰伦",

@@ -26,6 +26,13 @@
 
 		},
 		{
+        "title": "Chanson Triste",
+        "artist": "Tchaikovsky",
+		"path": "Tchaikovsky-Chanson-Triste-op40-no2-oboe-and-piano.sht"	,	
+        "instr": 0,
+        "melody": 1
+		},
+		{
 		"title":"Romance",
 		"path": "langmanqu.sht",
 		"melody": 99,

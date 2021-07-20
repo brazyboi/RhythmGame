@@ -56,7 +56,9 @@
         "artist": "Frédéric Chopin"			
 
 		}
-        ,{
+
+        ,
+		{
 		"title":"Waltz in A minor",
 		"path": "axiaodiaoyuanwuqu.sht",
 		"melody": 99,

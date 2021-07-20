@@ -4,7 +4,14 @@
     "Des": "钢琴曲",
 	"list": 
 	[ 
-       
+       {
+        "title": "Cello Sonata Op.38",
+        "artist": "Brahms",
+		"path": "brahms-cello-sonata-Em-1.sht"	,	
+        "instr": 0,
+        "melody": 10001
+		}
+        ,
       {
 		"title": "Oh, Susanna",
         "level": 2,
