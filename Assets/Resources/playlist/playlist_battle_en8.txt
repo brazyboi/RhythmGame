@@ -12,13 +12,13 @@
 
 		}
         ,
-   {
-        "title": "Lotus in snow",
-        "artist": "王菲",
-		"path": "wangfei-xuezhonglian.sht"	,		
-        "melody": 10005
-		}
-        ,
+{
+		"title":"Love Story",
+		"path": "aiqingdegushi.sht",
+		"melody": 99,
+		"artist": "Erich Segal"
+
+		},
         {
 		"title":"Moon River",
 		"path": "yuelianghe.sht",

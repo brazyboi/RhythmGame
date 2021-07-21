@@ -16,7 +16,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 	void Start () {
 		//loadPlaylist ("playlist/playlist_battle_all");
 		addFilePaths();
-		UnityEngine.Debug.Log("curSongListLevel: " + AppContext.instance().curSongListLevel);
+		//UnityEngine.Debug.Log("curSongListLevel: " + AppContext.instance().curSongListLevel);
 		loadPlaylist(filePaths[AppContext.instance().curSongListLevel], AppContext.instance().curSongListLevel);
 	}
 

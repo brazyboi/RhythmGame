@@ -473,7 +473,7 @@ public class MusicNoteController : GameBaseEx
         {
 			Timer.createTimer(this.gameObject).startTimer(0.5f, new NoteFadeOutTimerCallback(this));
 		}
-		int volume = appContext.isWindInstrument() ? 128 : 180; // volume 0~255
+		int volume = appContext.isWindInstrument() ? 100 : 180; // volume 0~255
 		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, note.tickGapNext + 500, true);
 		if (soundPlayer.getPlayMode() == SoundPlayer.TAP_PLAY)
 		{
