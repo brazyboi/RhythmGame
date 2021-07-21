@@ -10,12 +10,12 @@ namespace csmidi
     {
         public static void saveToFile(string filePath, List<MidiTrackEx> midiTracks, ushort timeDivision)
         {
-            Console.WriteLine("Saving MIDI to type 1 file...");
+            //Console.WriteLine("Saving MIDI to type 1 file...");
             // first of all check if a file with the name already exists
             if (File.Exists(filePath)) File.Delete(filePath);
             FileStream midiFileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.None);
             BinaryWriter midiWriter = new BinaryWriter(midiFileStream);
-            Console.WriteLine("The new MIDI file has {0} tracks!", midiTracks.Count);
+            //Console.WriteLine("The new MIDI file has {0} tracks!", midiTracks.Count);
 
             // first of all write MIDI header string
             midiWriter.Write(Encoding.ASCII.GetBytes("MThd"));
@@ -72,18 +72,18 @@ namespace csmidi
             }
             midiWriter.Close();
             // close filestream and finish
-            Console.WriteLine("Successfully finished creating MIDI file!");
+            //Console.WriteLine("Successfully finished creating MIDI file!");
         }   // end of function
 
 
 		public static byte[] saveToStream(List<MidiTrackEx> midiTracks, ushort timeDivision)
 		{
-			Console.WriteLine("Saving MIDI to type 1 file...");
+			//Console.WriteLine("Saving MIDI to type 1 file...");
 			// first of all check if a file with the name already exists
 			MemoryStream stream = new MemoryStream();
 			//FileStream midiFileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.None);
 			BinaryWriter midiWriter = new BinaryWriter(stream);
-			Console.WriteLine("The new MIDI file has {0} tracks!", midiTracks.Count);
+			//Console.WriteLine("The new MIDI file has {0} tracks!", midiTracks.Count);
 
 			// first of all write MIDI header string
 			midiWriter.Write(Encoding.ASCII.GetBytes("MThd"));
@@ -136,7 +136,7 @@ namespace csmidi
 			}
 			midiWriter.Close();
 			// close filestream and finish
-			Console.WriteLine("Successfully finished creating MIDI file!");
+			//Console.WriteLine("Successfully finished creating MIDI file!");
 			return stream.ToArray ();
 		}   // end of function
 

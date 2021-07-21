@@ -183,7 +183,7 @@ public class MidiFileSystem
 	[AOT.MonoPInvokeCallback(typeof(FMOD.FILE_ASYNCREAD_CALLBACK))]
 	public static FMOD.RESULT MIDI_FILE_ASYNCREAD_CALLBACK(IntPtr info, IntPtr userdata)
 	{
-		UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK");
+	//	UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK");
 		ASYNCREADINFO asyncReadInfo = Marshal.PtrToStructure<ASYNCREADINFO>(info);
 		/*
 		public struct ASYNCREADINFO
@@ -201,15 +201,15 @@ public class MidiFileSystem
 		MidiFileSystem midiFileSystem = getMidiFileSystemByHandle(asyncReadInfo.handle);
 		if(asyncReadInfo.offset != 0)
         {
-			UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK offset is not 0=========: " + asyncReadInfo.offset + " sizeBytes:" + asyncReadInfo.sizebytes + " readbytes:" + asyncReadInfo.bytesread);
+		//	UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK offset is not 0=========: " + asyncReadInfo.offset + " sizeBytes:" + asyncReadInfo.sizebytes + " readbytes:" + asyncReadInfo.bytesread);
         } else
         {
-			UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK offset is 0 ++++++: " + asyncReadInfo.offset + " sizeBytes:" + asyncReadInfo.sizebytes + " readbytes:" + asyncReadInfo.bytesread);
+		//	UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK offset is 0 ++++++: " + asyncReadInfo.offset + " sizeBytes:" + asyncReadInfo.sizebytes + " readbytes:" + asyncReadInfo.bytesread);
 		}
 		var ret = midiFileSystem.asyncRead(asyncReadInfo.buffer, asyncReadInfo.sizebytes, asyncReadInfo.offset, ref asyncReadInfo.bytesread);
 		
-		UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK read bytes is .......:" + " sizeBytes:" + asyncReadInfo.sizebytes + " readbytes:" + asyncReadInfo.bytesread);
-		UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK return is .......:" + ret);
+		//UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK read bytes is .......:" + " sizeBytes:" + asyncReadInfo.sizebytes + " readbytes:" + asyncReadInfo.bytesread);
+		//UnityEngine.Debug.Log("MIDI_FILE_ASYNCREAD_CALLBACK return is .......:" + ret);
 		asyncReadInfo.done(info, ret);
 		return ret;
 	}
@@ -217,14 +217,14 @@ public class MidiFileSystem
 	[AOT.MonoPInvokeCallback(typeof(FMOD.FILE_ASYNCCANCEL_CALLBACK))]
 	public static FMOD.RESULT MIDI_FILE_ASYNCCANCEL_CALLBACK(IntPtr info, IntPtr userdata)
 	{
-		UnityEngine.Debug.Log("MIDI_FILE_ASYNCCANCEL_CALLBACK");
+	//	UnityEngine.Debug.Log("MIDI_FILE_ASYNCCANCEL_CALLBACK");
 		return FMOD.RESULT.OK;
 	}
 	[AOT.MonoPInvokeCallback(typeof(FMOD.DEBUG_CALLBACK))]
 	public static RESULT FMOD_DEBUG_CALLBACK(DEBUG_FLAGS flags, IntPtr file, int line, IntPtr func, IntPtr message)
     {
 		string text = Marshal.PtrToStringAuto(message);
-		UnityEngine.Debug.Log("FMOD LOG: ===== log:" + text);
+	//	UnityEngine.Debug.Log("FMOD LOG: ===== log:" + text);
 		return FMOD.RESULT.OK;
 	}
 }

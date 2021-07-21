@@ -312,7 +312,7 @@ public class MidiEngine {
 		midiFile.midiTracks.AddRange(tracks);
 		midiFile.timeDivision = (ushort) clks_per_beat;
 		//midiFile.saveMidiToFile (Application.persistentDataPath + "/" + "test.mid");
-		UnityEngine.Debug.Log("makeMidiSoundEx: create sound ");
+		//UnityEngine.Debug.Log("makeMidiSoundEx: create sound ");
 		return midiFile.saveMidiToStream ();
 
 
