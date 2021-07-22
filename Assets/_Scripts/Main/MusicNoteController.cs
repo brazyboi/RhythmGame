@@ -201,6 +201,10 @@ public class MusicNoteController : GameBaseEx
     {
 		fluteNoteCircle.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
 		fluteNoteDown.localPosition = new Vector3(noteCube.localPosition.x, startPos, noteCube.localPosition.z);
+		if(endPos < startPos)
+        {
+			endPos = startPos;
+		}
 		fluteNoteUp.localPosition = new Vector3(noteCube.localPosition.x, endPos, noteCube.localPosition.z);
 
 	}
@@ -343,7 +347,7 @@ public class MusicNoteController : GameBaseEx
 			disableAppearance();
 
 			float diff = Mathf.Abs(fluteNoteDown.transform.position.y - fluteNoteUp.transform.position.y);
-			Debug.Log("diff = " + diff);
+			//Debug.Log("diff = " + diff);
 			if (diff <= 0.5f)
 			{
 				hitParticle(particle);
@@ -473,8 +477,16 @@ public class MusicNoteController : GameBaseEx
         {
 			Timer.createTimer(this.gameObject).startTimer(0.5f, new NoteFadeOutTimerCallback(this));
 		}
-		int volume = appContext.isWindInstrument() ? 100 : 180; // volume 0~255
-		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, note.tickGapNext + 500, true);
+		int volume = note.velocity;// appContext.isWindInstrument() ? 100 : 180; // volume 0~255
+		int duration = note.tickGapNext + 500;
+		if (!appContext.isWindInstrument())
+        {
+			volume = (int) (volume * 1.3f);
+			duration = note.elapseTime;
+		}
+
+		UnityEngine.Debug.Log("Volume: " + volume);
+		soundPlayer.playNote(note.value, appContext.getInstrument(), volume, duration, true);
 		if (soundPlayer.getPlayMode() == SoundPlayer.TAP_PLAY)
 		{
 			soundPlayer.hit(0, false);

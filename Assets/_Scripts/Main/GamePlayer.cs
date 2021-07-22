@@ -43,7 +43,7 @@ public class GamePlayer : GameBaseEx
 
     void OnApplicationFocus(bool hasFocus)
     {
-        UnityEngine.Debug.Log("OnApplicationFocus! hasFocus="+ hasFocus);
+        //UnityEngine.Debug.Log("OnApplicationFocus! hasFocus="+ hasFocus);
         if(!hasFocus)
         {
             pauseGame();
@@ -52,7 +52,7 @@ public class GamePlayer : GameBaseEx
 
     void OnApplicationPause(bool pauseStatus)
     {
-        UnityEngine.Debug.Log("OnApplicationPause! pauseStatus=" + pauseStatus);
+        //UnityEngine.Debug.Log("OnApplicationPause! pauseStatus=" + pauseStatus);
         if (pauseStatus )
         {
             pauseGame();
@@ -60,7 +60,6 @@ public class GamePlayer : GameBaseEx
         {
 
         }
-        //TODO: show pause UI
     }
 
    void pauseGame()
@@ -100,7 +99,7 @@ public class GamePlayer : GameBaseEx
         string name = appContext.songItem.path.Replace(".sht", ".mid");
         fileLocation =  "songs/" + name;
         melodyChannel = appContext.songItem.melody;
-        UnityEngine.Debug.Log("filelocation: " + fileLocation);
+        //UnityEngine.Debug.Log("filelocation: " + fileLocation);
         
         soundPlayer.loadMusic(fileLocation, appContext.songItem);
         soundPlayer.seek(0);

@@ -37,7 +37,8 @@
 		"title": "Tear",
         "artist": "The Daydream",
 		"path": "yanlei.sht",
-        "melody": 99			
+        "melody": 99,
+		"speed": 1.4			
 		}
         ,
         {
