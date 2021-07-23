@@ -56,7 +56,7 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 		if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_LOCKED)
 		{
 			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = true;
-			title.text = "";
+			title.text = "???";
 			accuracy.text = "";
 			prefabCell.Find("PlayButton").gameObject.SetActive(false);
 

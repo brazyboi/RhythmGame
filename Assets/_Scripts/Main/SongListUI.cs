@@ -16,7 +16,7 @@ public class SongListUI : MonoBehaviour
 
     void init()
     {
-        songsTextTop.GetComponent<Text>().text = "SONGS: LEVEL " + (AppContext.instance().curSongListLevel + 1);
+        songsTextTop.GetComponent<Text>().text = "songs: level " + (AppContext.instance().curSongListLevel + 1);
         backButton.GetComponent<Button>().onClick.AddListener(backToLevelScreen);
 
     }

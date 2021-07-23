@@ -28,7 +28,7 @@ public class PlayPerformance : MonoBehaviour
         restartButton.GetComponent<Button>().onClick.AddListener(restartSong);
         songsButton.GetComponent<Button>().onClick.AddListener(redirectSongList);
         
-        scorePanel.GetComponent<Text>().text = "Accuracy: 0%";
+        scorePanel.GetComponent<Text>().text = "accuracy: 0%";
         calculateAccuracy();
         animateUpdateAccuracy();
 
