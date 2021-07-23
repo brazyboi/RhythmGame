@@ -4,12 +4,12 @@
 	"list": 
 	[ 
 {
-		"title":"Love Story",
-		"path": "aiqingdegushi.sht",
-		"melody": 99,
-		"artist": "Erich Segal"
-
-		},
+        "title": "Lotus in snow",
+        "artist": "王菲",
+		"path": "wangfei-xuezhonglian.sht"	,		
+        "melody": 10005
+		}
+        ,
 {
         "title": "Winter Sonata",
         "artist": "<<冬季恋歌>>插曲",
@@ -37,7 +37,8 @@
 		"title": "Tear",
         "artist": "The Daydream",
 		"path": "yanlei.sht",
-        "melody": 99			
+        "melody": 99,
+		"speed": 1.4			
 		}
         ,
         {

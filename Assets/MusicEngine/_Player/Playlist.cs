@@ -14,7 +14,7 @@ public class Playlist {
 		foreach(SongItem item in playlist.list)
         {
 			item.level = level * 10 + index;
-			Debug.Log("Level: " + item.level + " Song: " + item.title);
+			//Debug.Log("Level: " + item.level + " Song: " + item.title);
 			index++;
 			if(item.speed < 0.1)
             {

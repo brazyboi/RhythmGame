@@ -32,7 +32,7 @@ public class FileReaderUtils  {
 
 
 	public static byte[] readSoundFont(string filename) {
-		UnityEngine.Debug.Log("read sound font: " + filename);
+		//UnityEngine.Debug.Log("read sound font: " + filename);
 		return ReadBinaryResourceFile("soundfont/" + filename);
 	}
 
@@ -88,7 +88,7 @@ public class FileReaderUtils  {
 			//WWW www = new WWW(Application.streamingAssetsPath + name);  
 			//while(!www.isDone){};  
 			//fileContent = www.text;
-			UnityEngine.Debug.Log("UnityWebRequest reading.....");
+			//UnityEngine.Debug.Log("UnityWebRequest reading.....");
 			UnityWebRequest request = UnityWebRequest.Get(Application.streamingAssetsPath + filename);
 			request.SendWebRequest();
 			while (!request.isDone)
@@ -120,7 +120,7 @@ public class FileReaderUtils  {
 
 	public static byte[] ReadBinaryResourceFile(string filename)
 	{
-		UnityEngine.Debug.Log("ReadBinaryResourceFile: " + filename);
+		//UnityEngine.Debug.Log("ReadBinaryResourceFile: " + filename);
 		var textFile = Resources.Load<TextAsset>(filename);
 		return textFile.bytes;
 	}
