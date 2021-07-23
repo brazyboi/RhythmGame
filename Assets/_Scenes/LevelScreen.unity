@@ -429,6 +429,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8353249971197190588, guid: 0402a50d9ab1a08439603646339e786b, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353249971197190588, guid: 0402a50d9ab1a08439603646339e786b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7593924
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353249971197190588, guid: 0402a50d9ab1a08439603646339e786b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8353249971638360336, guid: 0402a50d9ab1a08439603646339e786b, type: 3}
       propertyPath: m_Name
       value: LevelScreen

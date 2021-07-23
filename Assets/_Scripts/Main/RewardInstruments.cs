@@ -91,6 +91,7 @@ public class RewardInstruments : MonoBehaviour
                 GameObject locked = Instantiate(lockIcon, new Vector3(0, 0, 0), Quaternion.identity);
                 locked.transform.parent = itemButtons[i].transform.parent;
                 locked.transform.localPosition = new Vector3(0, 0, 0);
+                continue;
             }
             int index = i;
             itemButtons[i].GetComponent<Button>().onClick.AddListener(delegate { onSelectInstrument(index); });

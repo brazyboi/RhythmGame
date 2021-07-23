@@ -429,30 +429,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 795568912, guid: f61ccaf4601894a4da7ff6cac8b7fd93, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 795568912, guid: f61ccaf4601894a4da7ff6cac8b7fd93, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 795568912, guid: f61ccaf4601894a4da7ff6cac8b7fd93, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 8007721437714782831, guid: f61ccaf4601894a4da7ff6cac8b7fd93, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8007721437870758471, guid: f61ccaf4601894a4da7ff6cac8b7fd93, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8007721438113698321, guid: f61ccaf4601894a4da7ff6cac8b7fd93, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8007721438588306936, guid: f61ccaf4601894a4da7ff6cac8b7fd93, type: 3}
       propertyPath: m_Name
       value: RewardScreen

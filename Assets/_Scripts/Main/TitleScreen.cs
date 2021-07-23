@@ -23,6 +23,7 @@ public class TitleScreen : MonoBehaviour
 
         AudienceNetworkAds.Initialize();
         //PlayerData.resetTutorial();
+        //PlayerData.resetPlayer();
     }
 
     public void startGame()

@@ -56,9 +56,9 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 		if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_LOCKED)
 		{
 			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = true;
-			title.text = "???";
+			title.text = "";
 			accuracy.text = "";
-			prefabCell.Find("PlayButton").GetComponent<Image>().color = Color.white;
+			prefabCell.Find("PlayButton").gameObject.SetActive(false);
 
 		}
 		else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_PASSED)
@@ -86,12 +86,14 @@ public class PlayListViewAdaptor : ListViewBaseAdaptor {
 			accuracy.fontStyle = FontStyle.Normal;
 			accuracy.text = "" + PlayerData.getSongScore(playlist.list[index].path) + "%";
 			prefabCell.Find("PlayButton").GetComponent<Image>().color = Color.white;
+			prefabCell.Find("PlayButton").gameObject.SetActive(true);
 			//info.text = playlist.list[index].artist;
 			//Debug.Log("cur song level " + playlist.list[index].level + " player level: " + PlayerData.getPlayerLevel());
 		}
 		else if (PlayerData.getSongStatus(playlist.list[index].level) == PlayerData.SongStatus.SONG_IN_PROGRESS)
         {
 			prefabCell.Find("LockIcon").GetComponent<Image>().enabled = false;
+			prefabCell.Find("PlayButton").gameObject.SetActive(true);
 			prefabCell.Find("PlayButton").GetComponent<Image>().color = Color.green;
 
 			Button button = (Button)prefabCell.GetComponent<Button>();
