@@ -566,6 +566,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1017362404623356, guid: 5ff47a284d0db423da84989976a9157b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1881683183673598, guid: 5ff47a284d0db423da84989976a9157b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -843,10 +847,10 @@ RectTransform:
   m_Father: {fileID: 965530943}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -7.5000005}
-  m_SizeDelta: {x: 0, y: -14.999999}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -6.871498, y: -39.606003}
+  m_SizeDelta: {x: 739.9536, y: 129.212}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469027841
 MonoBehaviour:
@@ -861,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.87227273, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -869,19 +873,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a6c65f0c3a22ff442b772cbec65e0e14, type: 3}
-    m_FontSize: 60
+    m_Font: {fileID: 12800000, guid: 567daf12a47b549b0bd35c34cfa4ce9e, type: 2}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: songs
+  m_Text: SONGS
 --- !u!222 &1469027842
 CanvasRenderer:
   m_ObjectHideFlags: 0
