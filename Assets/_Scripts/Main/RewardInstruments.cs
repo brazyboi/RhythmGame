@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class RewardInstruments : MonoBehaviour
 {
@@ -42,6 +43,10 @@ public class RewardInstruments : MonoBehaviour
         setUpItemButtons();
 
         backButton.GetComponent<Button>().onClick.AddListener(backToPrevScene);
+        Analytics.CustomEvent("SelectInstrument", new Dictionary<string, object>
+        {
+            { "playerLevel", PlayerData.getPlayerLevel()}
+        });
     }
 
     void backToPrevScene()

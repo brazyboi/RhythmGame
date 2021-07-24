@@ -24,6 +24,7 @@ public class TitleScreen : MonoBehaviour
         AudienceNetworkAds.Initialize();
         //PlayerData.resetTutorial();
         //PlayerData.resetPlayer();
+        Analytics.CustomEvent("launchGame");
     }
 
     public void startGame()
