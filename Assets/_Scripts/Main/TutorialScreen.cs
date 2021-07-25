@@ -26,6 +26,7 @@ public class TutorialScreen : GameBaseEx
         shortNote2.SetActive(false);
         longNote.SetActive(false);
         popupNextButton.GetComponent<Button>().onClick.AddListener(() => updatePopupText(0));
+        PlayerData.seeTutorial();
     }
 
     void setNotifs()
@@ -39,6 +40,7 @@ public class TutorialScreen : GameBaseEx
         notifs.Add("short");
         notifs.Add("Here's an example of a long note: ");
         notifs.Add("long");*/
+        notifs.Add("If you miss too many notes, you will fail the level.");
         notifs.Add("And that's all! Now begin playing!");
     }
 
