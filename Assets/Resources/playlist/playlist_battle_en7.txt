@@ -4,12 +4,14 @@
 	"list": 
 	[ 
     
-		{
-		"title": "Half Moon Bay",
-        "artist": "张学友",
-		"path": "yuebanwan.sht",
-        "melody": 10000				
-		} ,
+		
+{
+		"title":"A Comme Amour", 
+		"path": "qiurisiyu3.sht",
+		"melody": 99,
+		"artist": "Richard Clayderman"
+		}
+        ,
 		 {
         "title": "Don't Say Sorry",
         "artist": "S.H.E",

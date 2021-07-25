@@ -59,12 +59,11 @@
 		} ,
 	 
     {
-		"title":"A Comme Amour", 
-		"path": "qiurisiyu3.sht",
-		"melody": 99,
-		"artist": "Richard Clayderman"
-		}
-        ,
+		"title": "Half Moon Bay",
+        "artist": "张学友",
+		"path": "yuebanwan.sht",
+        "melody": 10000				
+		} ,
         {
 		"title":"Song From a Secret Garden",
 		"path": "SongFromASecretGarden.sht",			
