@@ -28,7 +28,7 @@ public class InterstitialAdScene : BaseScene
 
         // Create the interstitial unit with a placement ID (generate your own on the Facebook app settings).
         // Use different ID for each ad placement in your app.
-        interstitialAd = new InterstitialAd("YOUR_PLACEMENT_ID");
+        interstitialAd = new InterstitialAd("530781888165908_533251127918984");
 
         interstitialAd.Register(gameObject);
 
