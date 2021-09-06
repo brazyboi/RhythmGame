@@ -14,6 +14,9 @@ public class TitleScreen : MonoBehaviour
     private SoundHandle soundHandle;
     public Text text;
 
+    public GameObject titleLinebreak;
+    public GameObject titleNoLinebreak;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,10 @@ public class TitleScreen : MonoBehaviour
         rewardButton.GetComponent<Button>().onClick.AddListener(rewards);
         tutorialButton.GetComponent<Button>().onClick.AddListener(tutorial);
 
+#if UNITY_ANDROID
+        titleLinebreak.SetActive(true);
+        titleNoLinebreak.SetActive(false);
+#endif
         AudienceNetworkAds.Initialize();
         //PlayerData.resetTutorial();
         //PlayerData.resetPlayer();

@@ -27,6 +27,8 @@ public class MusicNoteController : GameBaseEx
 	static bool onlyPrintOnce = true;
 	bool printLog;
 
+	bool useParticle = true;
+
 	Timer cubeNoteFade;
 	float fadeTime;
 
@@ -68,15 +70,20 @@ public class MusicNoteController : GameBaseEx
 
 	void initNote()
     {
+
+#if UNITY_ANDROID
+		useParticle = false;
+#endif
+
 		//createStartEndCircles();
 		printLog = false;
 		onlyPrintOnce = true;
-		xPos = UnityEngine.Random.Range(-Screen.width/200 - 1, Screen.width/200 +1);
+		xPos = UnityEngine.Random.Range(-Screen.width/200 + 1, Screen.width/200 - 1);
 
-		if (xPos == prevXPos)
+		/*if (xPos == prevXPos)
 		{
 			xPos += 2;
-		}
+		}*/
 		//Debug.Log(xPos);
 		updateNotePosition(xPos);
 		prevXPos = xPos;
@@ -498,19 +505,25 @@ public class MusicNoteController : GameBaseEx
 
 	void hitParticle(Transform particleHit)
     {
-		ParticleSystem p = particleHit.GetComponent<ParticleSystem>();
-		Vector3 pos = particleHit.localPosition;
-		if (appContext.isWindInstrument())
+		if (useParticle)
         {
-			pos.y = fluteNoteDown.transform.localPosition.y;
-			pos.x = fluteNoteDown.transform.localPosition.x;
-		} else {
-			pos.y = noteCube.transform.localPosition.y;
-			pos.x = noteCube.transform.localPosition.x;
-		}
+			ParticleSystem p = particleHit.GetComponent<ParticleSystem>();
+			Vector3 pos = particleHit.localPosition;
+			if (appContext.isWindInstrument())
+			{
+				pos.y = fluteNoteDown.transform.localPosition.y;
+				pos.x = fluteNoteDown.transform.localPosition.x;
+			}
+			else
+			{
+				pos.y = noteCube.transform.localPosition.y;
+				pos.x = noteCube.transform.localPosition.x;
+			}
 
-		particleHit.localPosition = pos;
-		p.Play();
+			particleHit.localPosition = pos;
+			p.Play();
+		}
+		
 	}
 
 	// Update is called once per frame

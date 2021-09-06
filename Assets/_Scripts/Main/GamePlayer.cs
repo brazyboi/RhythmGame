@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
+using AudienceNetwork;
 
 public abstract class ScoreDelegate
 {
@@ -22,6 +23,12 @@ public class GamePlayer : GameBaseEx
     NoteScoreDelegate noteScoreDelegate;
 
     public GameObject progressBar;
+    public GameObject interstitialAd;
+
+    public GameObject blackBackground;
+    public GameObject nebulaBackground;
+
+    int justShownAd = 0;
 
     AppContext appContext;
 
@@ -30,9 +37,16 @@ public class GamePlayer : GameBaseEx
     // Use this for initialization
     void Start()
     {
+        //AudienceNetworkAds.Initialize();
         appContext = AppContext.instance();
         init();
         startPlay();
+
+#if UNITY_ANDROID
+        blackBackground.SetActive(true);
+        nebulaBackground.SetActive(false);
+#endif
+
     }
 
     void Update()
@@ -190,6 +204,16 @@ public class GamePlayer : GameBaseEx
         }
         GameObject baseLine = GameObject.FindGameObjectWithTag("BaseLine");
         baseLine.SetActive(false);
+        /*if (justShownAd == 2)
+        {
+            justShownAd = 0;
+        }
+        else
+        {
+            interstitialAd.GetComponent<InterstitialAdScript>().showAdWhenReady();
+            justShownAd++;
+        }
+        //StartCoroutine(interstitialAd.GetComponent<InterstitialAdScript>().showAdWhenReady());*/
         Analytics.CustomEvent("songFail", new Dictionary<string, object>
         {
             { "songLevel", appContext.songItem.level}
@@ -208,7 +232,16 @@ public class GamePlayer : GameBaseEx
         }
         GameObject baseLine = GameObject.FindGameObjectWithTag("BaseLine");
         baseLine.SetActive(false);
-        
+        if (justShownAd == 2)
+        {
+            justShownAd = 0;
+        } else
+        {
+            interstitialAd.GetComponent<InterstitialAdScript>().showAdWhenReady();
+            justShownAd++;
+        }
+        //StartCoroutine(interstitialAd.GetComponent<InterstitialAdScript>().showAdWhenReady());
+
         Analytics.CustomEvent("songPass", new Dictionary<string, object>
         {
             { "songLevel", appContext.songItem.level}
