@@ -100,6 +100,11 @@ public class GamePlayer : GameBaseEx
         string fileLocation = Application.streamingAssetsPath + "/songs/" + name;
         soundPlayer.loadMusic(fileLocation, false, appContext.songItem.melody);
         */
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            gameManager.speed = 10;
+        }
+
         appContext.totalScore = 0;
         soundPlayer.adjustBaseNoteByInstrument();
         appContext.playingNote = false;

@@ -80,10 +80,10 @@ public class MusicNoteController : GameBaseEx
 		onlyPrintOnce = true;
 		xPos = UnityEngine.Random.Range(-Screen.width/200 + 1, Screen.width/200 - 1);
 
-		/*if (xPos == prevXPos)
+		if (xPos == prevXPos)
 		{
-			xPos += 2;
-		}*/
+			xPos += prevXPos < 0 ? 2: -2;
+		}
 		//Debug.Log(xPos);
 		updateNotePosition(xPos);
 		prevXPos = xPos;
@@ -223,6 +223,11 @@ public class MusicNoteController : GameBaseEx
 			collider.localPosition = fluteNoteDown.transform.localPosition;
 			Vector3 scale = fluteNoteBar.localScale;
 			scale.y = scale.x * 1.1f;
+			//if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+			{
+				scale.y = scale.y * 1.3f;
+				scale.x = scale.x * 1.2f;
+			}
 			collider.localScale = scale;
 		} else
         {
