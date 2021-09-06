@@ -223,11 +223,6 @@ public class MusicNoteController : GameBaseEx
 			collider.localPosition = fluteNoteDown.transform.localPosition;
 			Vector3 scale = fluteNoteBar.localScale;
 			scale.y = scale.x * 1.1f;
-			//if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-			{
-				scale.y = scale.y * 1.3f;
-				scale.x = scale.x * 1.2f;
-			}
 			collider.localScale = scale;
 		} else
         {
@@ -281,6 +276,20 @@ public class MusicNoteController : GameBaseEx
 		return Input.GetKeyUp(playKey);
 	}
 
+	bool isTapOnNote(Vector3 pos)
+	{
+		Ray ray = Camera.main.ScreenPointToRay(pos);
+		RaycastHit hit;
+		if (Physics.Raycast(ray, out hit))
+		{
+			if (hit.collider.gameObject == collider.gameObject)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 	void checkTapDown()
     {
 		bool bClick = false;
@@ -295,6 +304,22 @@ public class MusicNoteController : GameBaseEx
 				bClick = true;
 			}
 		}
+#if UNITY_ANDROID || UNITY_IOS
+		else if(!appContext.playingNote){
+			for (int i = 0; i < Input.touchCount; ++i)
+			{
+				if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
+				{
+					// Construct a ray from the current touch coordinates
+					if (isTapOnNote(Input.GetTouch(i).position))
+					{
+						bClick = true;
+						break;
+					}
+				}
+			}
+		}
+#else
 		else if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ) 
 		{
 			
@@ -305,24 +330,9 @@ public class MusicNoteController : GameBaseEx
 				//Debug.Log ("I'm hitting "+hit.collider.name);
 				hitNote ();
 			}*/
-
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit))
-			{
-				if (hit.collider.gameObject == collider.gameObject)
-				{
-					//Debug.Log("Name = " + hit.collider.name);
-					//Debug.Log("Tag = " + hit.collider.tag);
-					//Debug.Log("Hit Point = " + hit.point);
-					//Debug.Log("Object position = " + hit.collider.gameObject.transform.position);
-					//Debug.Log("--------------");
-					bClick = true;
-				}
-			}
-
-
+			bClick = isTapOnNote(Input.mousePosition);
 		}
+#endif
 		if (bClick)
 		{
 			appContext.playingNote = true;
@@ -333,7 +343,7 @@ public class MusicNoteController : GameBaseEx
 	bool checkTapTooEarly()
     {
 		float playTime = SoundPlayer.singleton().playTime;
-		if (note.tick - playTime > 400)
+		if (note.tick - playTime > 900)
 		{
 			return true;
 		}
@@ -583,7 +593,7 @@ public class MusicNoteController : GameBaseEx
 	void checkNoteMissPlay()
     {
 
-		if(note.tick >= soundPlayer.playTime + 300 )
+		if(soundPlayer.playTime <= note.tick + 300)
         {
 			return;
         }

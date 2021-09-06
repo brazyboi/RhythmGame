@@ -336,7 +336,7 @@ public class GamePlayer : GameBaseEx
             playUIController.updateScoreTexts("MISS" + "\n\r" + missScore);
             gamePlayer.missedNotes++;
             //ßDebug.Log("Missed notes: " + gamePlayer.missedNotes + "Player level: " + gamePlayer.appContext.songItem.level);
-            if (gamePlayer.missedNotes >= 5)
+            if (gamePlayer.missedNotes >= 8)
             {
                 gamePlayer.onGameFailed();
             }
