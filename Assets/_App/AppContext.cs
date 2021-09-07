@@ -13,6 +13,7 @@ public class AppContext  {
 	public long totalScore = 0;
 	public bool failed = false;
 	public bool playingNote = false;
+	public HashSet<int> touchIndexs = new HashSet<int>();
 
 	public int curSongListLevel = 0;
 	private AppContext() {

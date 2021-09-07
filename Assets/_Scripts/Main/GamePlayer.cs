@@ -108,6 +108,7 @@ public class GamePlayer : GameBaseEx
         appContext.totalScore = 0;
         soundPlayer.adjustBaseNoteByInstrument();
         appContext.playingNote = false;
+        appContext.touchIndexs.Clear();
         foreach (Transform child in this.musicNotesParent.transform)
         {
             GameObject.Destroy(child.gameObject);

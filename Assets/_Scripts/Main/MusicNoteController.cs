@@ -26,7 +26,7 @@ public class MusicNoteController : GameBaseEx
 	bool initialClick = true;
 	static bool onlyPrintOnce = true;
 	bool printLog;
-
+	int touchIndex = -1;
 	bool useParticle = true;
 
 	Timer cubeNoteFade;
@@ -329,14 +329,20 @@ public class MusicNoteController : GameBaseEx
 			}
 		}
 #if UNITY_ANDROID || UNITY_IOS
-		else if(!appContext.playingNote){
+		else// if(!appContext.playingNote)
+		{
 			for (int i = 0; i < Input.touchCount; ++i)
 			{
+				if(appContext.touchIndexs.Contains(i))
+                {
+					continue;
+                }
 				if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
 				{
 					// Construct a ray from the current touch coordinates
 					if (isTapOnNote(Input.GetTouch(i).position))
 					{
+						touchIndex = i;
 						bClick = true;
 						break;
 					}
@@ -361,6 +367,7 @@ public class MusicNoteController : GameBaseEx
 #endif
 		if (bClick)
 		{
+			appContext.touchIndexs.Add(touchIndex);
 			appContext.playingNote = true;
 			playNote();
 		}
@@ -385,13 +392,24 @@ public class MusicNoteController : GameBaseEx
 			{
 				shouldRelease = true;
 			}
-		} else if (Input.GetMouseButtonUp(0) || isPlayKeyUp()) //|| (Input.touchCount == 0)
+		}
+#if UNITY_ANDROID || UNITY_IOS
+		else if(Input.GetTouch(touchIndex).phase.Equals(TouchPhase.Ended) ||
+			Input.GetTouch(touchIndex).phase.Equals(TouchPhase.Canceled))
+		{
+			
+			shouldRelease = true;
+		}
+#else
+		else if (Input.GetMouseButtonUp(0) || isPlayKeyUp()) //|| (Input.touchCount == 0)
 		{
 			shouldRelease = true;
 		}
+#endif
 		if(shouldRelease)
         {
 			appContext.playingNote = false;
+			appContext.touchIndexs.Remove(touchIndex);
 			disableAppearance();
 
 			float diff = Mathf.Abs(fluteNoteDown.transform.position.y - fluteNoteUp.transform.position.y);
@@ -492,11 +510,18 @@ public class MusicNoteController : GameBaseEx
 
 	void showTouchEffect()
     {
-		Color c = Color.green;
-		fluteNoteBarDownInside.GetComponent<SpriteRenderer>().color = c;
-		fluteNoteBarUpInside.GetComponent<SpriteRenderer>().color = c;
-		fluteNoteBarCenter.GetComponent<Renderer>().material.color = c;
-		touchEffect.SetActive(true);
+		if(appContext.isWindInstrument())
+        {
+			Color c = Color.green;
+			fluteNoteBarDownInside.GetComponent<SpriteRenderer>().color = c;
+			fluteNoteBarUpInside.GetComponent<SpriteRenderer>().color = c;
+			fluteNoteBarCenter.GetComponent<Renderer>().material.color = c;
+			
+        } else
+        {
+			noteCube.gameObject.SetActive(false);
+		}
+		touchEffect.SetActive(true); 
     }
 
 	void hideTouchEffect()
@@ -610,7 +635,7 @@ public class MusicNoteController : GameBaseEx
             {
 				//should reset playingNote in case skip checkTapRelease() 
 				appContext.playingNote = false;
-
+				appContext.touchIndexs.Remove(touchIndex);
 			}
 			Destroy(gameObject);
 		}
