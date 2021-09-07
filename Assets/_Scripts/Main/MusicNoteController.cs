@@ -223,6 +223,11 @@ public class MusicNoteController : GameBaseEx
 			collider.localPosition = fluteNoteDown.transform.localPosition;
 			Vector3 scale = fluteNoteBar.localScale;
 			scale.y = scale.x * 1.1f;
+		//	if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+			{
+				scale.y = scale.y * 2f;
+				scale.x = scale.x * 2f;
+			}
 			collider.localScale = scale;
 		} else
         {
@@ -279,6 +284,25 @@ public class MusicNoteController : GameBaseEx
 	bool isTapOnNote(Vector3 pos)
 	{
 		Ray ray = Camera.main.ScreenPointToRay(pos);
+		RaycastHit[] hits;
+		hits = Physics.RaycastAll(ray);
+		Transform oldest = null;
+		for (int i = 0; i < hits.Length; i++)
+		{
+			RaycastHit hit = hits[i];
+			if(oldest == null || oldest.position.y > hit.transform.position.y)
+            {
+				oldest = hit.transform;
+            }
+		}
+
+		if (oldest!=null && oldest.gameObject == collider.gameObject)
+		{
+			return true;
+		}
+		return false;
+		/*
+		Ray ray = Camera.main.ScreenPointToRay(pos);
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit))
 		{
@@ -287,7 +311,7 @@ public class MusicNoteController : GameBaseEx
 				return true;
 			}
 		}
-		return false;
+		return false;*/
 	}
 
 	void checkTapDown()
@@ -320,17 +344,19 @@ public class MusicNoteController : GameBaseEx
 			}
 		}
 #else
-		else if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ) 
-		{
-			
-			/*
-			Vector3 pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-			if (hit != null && hit.collider != null && hit.collider.gameObject == gameObject) {
-				//Debug.Log ("I'm hitting "+hit.collider.name);
-				hitNote ();
-			}*/
-			bClick = isTapOnNote(Input.mousePosition);
+		else if (!appContext.playingNote) {
+			if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+			{
+
+				/*
+				Vector3 pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+				if (hit != null && hit.collider != null && hit.collider.gameObject == gameObject) {
+					//Debug.Log ("I'm hitting "+hit.collider.name);
+					hitNote ();
+				}*/
+				bClick = isTapOnNote(Input.mousePosition);
+			}
 		}
 #endif
 		if (bClick)
